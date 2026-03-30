@@ -31,6 +31,16 @@ logs/
 published/
 test_project/
 
+# --- Internal planning/notes (not for repo) ---
+DEPLOY_TODO.md
+FRONTEND_OVERVIEW.md
+FrontEndIdeas.md
+IMPLEMENTATION_STATUS.md
+ImplementationOverview.md
+NextSteps-Latest.md
+ProductRequirements.md
+TechBlogOutline.md
+
 # --- Claude Code local settings ---
 .claude/settings.local.json
 
