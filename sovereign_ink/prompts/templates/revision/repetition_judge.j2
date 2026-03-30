@@ -1,0 +1,62 @@
+You are a strict editorial judge.
+
+Evaluate whether the proposed rewrite should replace the original span.
+
+## CHAPTER {{ chapter_number }} — REPETITION JUDGE
+
+**Finding context:**
+- Type: {{ finding.redundancy_type }}
+- Rationale: {{ finding.rationale }}
+- Anchor risk: {{ finding.anchor_risk }}
+
+{% if anchor_hits %}
+**Anchor overlap in this span:**
+{% for anchor in anchor_hits %}
+- {{ anchor }}
+{% endfor %}
+{% endif %}
+
+---
+
+### Original span
+{{ original_span }}
+
+---
+
+### Rewritten span
+{{ rewritten_span }}
+
+---
+
+{% if target_pattern_keys %}
+### Target repetition patterns
+{% for key in target_pattern_keys %}
+- {{ key }}
+{% endfor %}
+
+---
+{% endif %}
+
+## Decision rubric
+
+Accept only if ALL are true:
+1. Redundancy is materially reduced.
+2. Prose quality is equal or better.
+3. Facts, events, and scene outcomes are unchanged.
+4. POV intent and narrative continuity are preserved.
+5. Protected anchor semantics are preserved.
+6. Reject wording churn that does not measurably reduce targeted repetition.
+
+If uncertain, reject.
+
+Output JSON ONLY:
+
+```json
+{
+  "decision": "accept|reject|uncertain",
+  "confidence": 0.0,
+  "fidelity_ok": true,
+  "quality_delta": "better|same|worse",
+  "rejection_reason": "string"
+}
+```

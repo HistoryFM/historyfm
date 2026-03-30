@@ -1,0 +1,197 @@
+# =============================================================================
+# Sovereign Ink — Generation Configuration
+# =============================================================================
+# This file controls every tuneable parameter of the novel generation pipeline.
+# Edit values below to customise behaviour.  Delete the file (or individual
+# keys) to fall back to built-in defaults.
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# Model assignments
+# ---------------------------------------------------------------------------
+# Each pipeline stage can use a different model.  Sonnet is the default for
+# quality-critical tasks; Haiku is used for lightweight utility work.
+
+model_world_building: "claude-sonnet-4-6"
+model_structural_planning: "claude-opus-4-6"
+model_prose_generation: "claude-sonnet-4-6"
+model_revision_structural: "claude-sonnet-4-6"
+model_revision_structural_opus: "claude-opus-4-6"
+model_revision_creative: "claude-sonnet-4-6"
+model_revision_polish: "claude-sonnet-4-6"
+model_utility: "claude-haiku-4-5-20251001"
+
+# ---------------------------------------------------------------------------
+# Generation parameters
+# ---------------------------------------------------------------------------
+
+# Temperature controls creativity vs determinism (0.0–1.0).
+temperature_world_building: 0.7   # Moderate creativity for lore & settings
+temperature_prose: 0.85           # Higher creativity for narrative prose
+temperature_revision: 0.6         # Lower creativity for analytical revision
+
+# Maximum tokens the model may produce in a single API call.
+max_tokens_per_call: 16384
+
+# Retry behaviour for transient API errors / rate limits.
+max_retries: 3
+retry_base_delay: 2.0             # Seconds; doubles on each retry (exponential backoff)
+
+# ---------------------------------------------------------------------------
+# Chapter limits (for testing — set to null to generate all chapters)
+# ---------------------------------------------------------------------------
+
+max_chapters: null
+
+# ---------------------------------------------------------------------------
+# Chapter length targets (word counts)
+# ---------------------------------------------------------------------------
+
+target_words_per_chapter: 3000
+min_words_per_chapter: 2000
+max_words_per_chapter: 4500
+
+# ---------------------------------------------------------------------------
+# Revision passes
+# ---------------------------------------------------------------------------
+
+# Total number of revision passes applied to the manuscript.
+# 3 consolidated passes: structural, voice_and_dialogue, polish
+# (reduced from 7 — see IMPLEMENTATION_STATUS.md for rationale)
+num_revision_passes: 3
+
+# Number of chapters considered in each sliding-window revision pass.
+revision_window_size: 3
+enable_selective_opus_structural_revision: true
+immediate_jeopardy_opus_threshold_per_10k_words: 2.5
+
+# ---------------------------------------------------------------------------
+# Quality checkpoint
+# ---------------------------------------------------------------------------
+
+# Pause after generating the first N chapters so you can review quality
+# before the pipeline continues with the remaining chapters.
+enable_quality_checkpoint: false
+checkpoint_after_chapters: [2]
+
+# ---------------------------------------------------------------------------
+# Quality gates (pre-save acceptance)
+# ---------------------------------------------------------------------------
+# When enabled, Stage 4 runs deterministic detectors on generated prose and
+# retries failing chapters before saving v0_raw.  Stage 3 validates
+# pressure-architecture completeness before persisting the structure.
+# Start with gates disabled; enable on one track for canary comparison.
+
+enable_quality_gates: false
+gate_strict_structure_validation: false
+gate_max_chapter_retries: 1
+gate_max_ending_retries: 2
+gate_max_jeopardy_deficit_scenes: 1
+gate_max_exposition_drag_runs: 1
+# Craft gates (Sonnet-only — never trigger Opus)
+gate_rhythm_cv_threshold: 0.45
+gate_short_sentence_ratio_threshold: 0.10
+gate_max_psychologizing_per_1k_words: 5.0
+# Opus escalation tier — only structural gates in this list may escalate to Opus
+opus_eligible_gates:
+  - "offstage_opposition"
+  - "immediate_jeopardy"
+
+# Contract-first enforcement mode:
+# - safe: emit compliance artifacts, do not hard-stop on contract failures
+# - strict: fail-closed, chapter is rejected on any contract/compliance failure
+contract_enforcement_mode: "safe"
+contract_fail_closed: false
+max_contract_retries: 2
+semantic_validator_enabled: false
+semantic_validator_model: "claude-sonnet-4-6"
+semantic_confidence_threshold: 0.70
+adversarial_verifier_enabled: false
+adversarial_verifier_model: "claude-sonnet-4-6"
+adversarial_trigger: "both"
+
+# ---------------------------------------------------------------------------
+# Pressure contracts (Stage 3 scene-level enforcement)
+# ---------------------------------------------------------------------------
+# When enabled, Stage 3 scene breakdowns must include executable pressure
+# contract fields (opponent_move, pov_countermove, failure_event, etc.).
+# Stage 4 uses contracts to constrain generation and localize rewrites.
+
+enable_pressure_contracts: false
+strict_pressure_contract_validation: false
+gate_max_scene_retries: 2
+gate_opus_scene_escalation: true
+
+# ---------------------------------------------------------------------------
+# Phase 5: Literary quality elevation (all off by default)
+# ---------------------------------------------------------------------------
+# Enable these features one at a time on a canary project to measure impact.
+# All new fields have safe defaults and existing projects are unaffected.
+
+# Improvement 1: Voice differentiation per POV
+# Injects narrative_register from CharacterProfile into chapter prompts as a
+# binding constraint. Requires characters to have narrative_register populated
+# (new projects will have it; existing projects gracefully degrade to generic voice spec).
+enable_narrative_register: false
+
+# Improvement 2: Physical interruption contracts
+# Enforces physical_interruption scene field: verifies presence in prose and
+# flags if the interruption was immediately rationalized as symbolic.
+enable_physical_interruption_contracts: false
+
+# Improvement 3: Petty moment contracts
+# Enforces petty_moment chapter field: verifies the pettiness appears and is
+# not immediately rationalized/redeemed by the narrator.
+enable_petty_moment_contracts: false
+
+# Improvement 4: Scene ending variation gate
+# Cross-chapter gate comparing consecutive chapter endings for tonal monotony.
+# Fails when consecutive endings share the same dark/reflective/sealed-letter shape.
+enable_ending_variation_gate: false
+gate_max_consecutive_similar_endings: 2
+gate_ending_similarity_threshold: 0.50
+
+# ---------------------------------------------------------------------------
+# Context management
+# ---------------------------------------------------------------------------
+
+# Approximate maximum tokens that fit in the model's context window.
+# Leave headroom below the true limit for safety.
+max_context_tokens: 180000
+
+# Target word count for per-chapter summaries used as continuity context.
+summary_target_words: 250
+
+# ---------------------------------------------------------------------------
+# Cost tracking (USD per 1 000 tokens)
+# ---------------------------------------------------------------------------
+# Add entries here when new models are used.
+
+cost_per_1k_input_tokens:
+  "claude-sonnet-4-6": 0.003
+  "claude-sonnet-4-20250514": 0.003
+  "claude-opus-4-6": 0.015
+  "claude-haiku-4-5-20251001": 0.001
+
+cost_per_1k_output_tokens:
+  "claude-sonnet-4-6": 0.015
+  "claude-sonnet-4-20250514": 0.015
+  "claude-opus-4-6": 0.075
+  "claude-haiku-4-5-20251001": 0.005
+
+# ---------------------------------------------------------------------------
+# Published content mapping for frontend sync/deploy
+# ---------------------------------------------------------------------------
+novels:
+  - project_dir: louisiana_purchase_phase11_v2_3ch
+    slug: louisiana-purchase
+    title: "The Louisiana Purchase"
+    description: "A sweeping tale of the diplomatic gamble that doubled a young nation's territory and reshaped the future of a continent."
+  - project_dir: john_tyler_succession_12ch
+    slug: john-tyler-succession
+    title: "His Accidency"
+    description: "April 1841: the President is dead and no one agrees who governs. John Tyler's fight to own the office transforms presidential succession forever."
+  - project_dir: alien_sedition_acts_12ch
+    slug: alien-sedition-acts
+    title: "The Faithless Cabinet: Adams, Pickering, and the War That Never Was"
+    description: "A two-voiced historical novella in which President John Adams fights France abroad and his own traitorous Secretary of State at home, choosing peace over party and paying for it with his presidency."

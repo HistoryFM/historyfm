@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Light mode palette (default) */
+:root {
+  --theme-font-scale: 1;
+  --theme-parchment: #FAF8F5;
+  --theme-parchment-dark: #F0EDE8;
+  --theme-ink: #1a1a1a;
+  --theme-ink-light: #4a4a4a;
+  --theme-ink-muted: #7a7a7a;
+  --theme-accent: #5B7A6B;
+  --theme-accent-dark: #4A6558;
+  --theme-accent-light: #E8F0EC;
+  --theme-rule: #D4CFC7;
+  --theme-rule-light: #E8E4DD;
+}
+
+/* Dark mode — warm candlelight palette */
+.dark {
+  --theme-parchment: #1C1917;
+  --theme-parchment-dark: #292524;
+  --theme-ink: #E7E5E4;
+  --theme-ink-light: #A8A29E;
+  --theme-ink-muted: #78716C;
+  --theme-accent: #7DA08D;
+  --theme-accent-dark: #9CB8A8;
+  --theme-accent-light: #1E2A23;
+  --theme-rule: #44403C;
+  --theme-rule-light: #292524;
+}
+
+/* Tailwind theme tokens reference the CSS variables so utilities stay dynamic */
+@theme inline {
+  --color-parchment: var(--theme-parchment);
+  --color-parchment-dark: var(--theme-parchment-dark);
+  --color-ink: var(--theme-ink);
+  --color-ink-light: var(--theme-ink-light);
+  --color-ink-muted: var(--theme-ink-muted);
+  --color-accent: var(--theme-accent);
+  --color-accent-dark: var(--theme-accent-dark);
+  --color-accent-light: var(--theme-accent-light);
+  --color-rule: var(--theme-rule);
+  --color-rule-light: var(--theme-rule-light);
+
+  --font-serif: "Lora", Georgia, "Times New Roman", serif;
+  --font-display: "Playfair Display", Georgia, serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--theme-parchment);
+    color: var(--theme-ink);
+    font-family: var(--font-serif);
+  }
+}
+
+/* Chapter prose styles */
+.prose-chapter {
+  font-size: calc(1.125rem * var(--theme-font-scale));
+  line-height: 1.8;
+  color: var(--theme-ink);
+}
+
+.prose-chapter p {
+  margin-bottom: 1.5em;
+}
+
+.prose-chapter h2 {
+  font-family: var(--font-display);
+  font-size: calc(1.375rem * var(--theme-font-scale));
+  font-weight: 700;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+  color: var(--theme-ink);
+}
+
+.prose-chapter h3 {
+  font-family: var(--font-display);
+  font-size: calc(1.125rem * var(--theme-font-scale));
+  font-weight: 600;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+}
+
+.prose-chapter blockquote {
+  border-left: 2px solid var(--theme-rule);
+  padding-left: 1.25em;
+  margin: 1.5em 0;
+  color: var(--theme-ink-light);
+  font-style: italic;
+}
+
+.prose-chapter em {
+  font-style: italic;
+}
+
+.prose-chapter strong {
+  font-weight: 700;
+}
+
+.prose-chapter hr {
+  border: none;
+  border-top: 1px solid var(--theme-rule);
+  margin: 2.5em auto;
+  width: 4rem;
+}
+
+.prose-chapter ul,
+.prose-chapter ol {
+  margin: 1.5em 0;
+  padding-left: 1.5em;
+}
+
+.prose-chapter li {
+  margin-bottom: 0.5em;
+}

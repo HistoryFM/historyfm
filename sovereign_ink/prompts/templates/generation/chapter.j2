@@ -1,0 +1,450 @@
+You are writing a chapter of a historical fiction novel. This is the moment where all the planning, world-building, and structural design converge into living prose. Write with the intensity and craft of a novelist at the peak of their powers.
+
+---
+
+## CHAPTER {{ chapter_outline.chapter_number }}: {{ chapter_outline.title }}
+
+**POV Character:** {{ chapter_outline.pov_character }}
+**Setting:** {{ chapter_outline.setting }}
+**Time Period:** {{ chapter_outline.time_period }}
+**Political Context:** {{ chapter_outline.political_context }}
+
+**Chapter Goal:** {{ chapter_outline.chapter_goal }}
+**Central Conflict:** {{ chapter_outline.conflict }}
+**Key Turn:** {{ chapter_outline.turn }}
+**Consequences:** {{ chapter_outline.consequences }}
+{% if chapter_outline.hard_reveal %}
+**Hard Reveal (mandatory):** {{ chapter_outline.hard_reveal }}
+{% endif %}
+{% if chapter_outline.soft_reversal %}
+**Soft Reversal (mandatory):** {{ chapter_outline.soft_reversal }}
+{% endif %}
+{% if chapter_outline.on_page_opposing_move %}
+**On-Page Opposing Move (mandatory):** {{ chapter_outline.on_page_opposing_move }}
+{% endif %}
+{% if chapter_outline.ending_mode %}
+**Ending Mode (mandatory):** {{ chapter_outline.ending_mode }}
+{% endif %}
+{% if chapter_outline.petty_moment %}
+**Petty Moment (mandatory — do NOT rationalize):** {{ chapter_outline.petty_moment }}
+Include this moment exactly as described. Do NOT immediately explain it as strategic. Do NOT have the character reflect on its meaning or recognize it as a flaw. Do NOT resolve it with a redemptive thought. Do NOT use "but" or "however" to pivot to something nobler. Let it sit. The reader will recognize the character; you do not need to manage their judgment.
+{% endif %}
+
+{% if synopsis %}
+---
+
+## NOVEL SYNOPSIS (approved creative direction)
+
+{{ synopsis }}
+{% endif %}
+
+---
+
+## SCENE PLAN
+
+{% for scene in scene_breakdown.scenes %}
+### Scene {{ scene.scene_number }}
+- **POV:** {{ scene.pov }}
+- **Setting:** {{ scene.setting }}
+- **Goal:** {{ scene.goal }}
+- **Opposition:** {{ scene.opposition }}
+{% if scene.immediate_risk %}
+- **Immediate Risk:** {{ scene.immediate_risk }}
+{% endif %}
+{% if scene.irreversible_cost_if_fail %}
+- **Irreversible Cost If Fail:** {{ scene.irreversible_cost_if_fail }}
+{% endif %}
+{% if scene.power_shift_target %}
+- **Power Shift Target:** {{ scene.power_shift_target }}
+{% endif %}
+- **Turn:** {{ scene.turn }}
+- **Consequences:** {{ scene.consequences }}
+- **Emotional Beat:** {{ scene.emotional_beat }}
+{% if scene.register is defined and scene.register and scene.register != "neutral" %}
+- **Register:** {{ scene.register }} — write this scene in a {{ scene.register }} register. A "wry" scene uses shorter sentences, understatement, and dry observation. An "urgent" scene uses clipped syntax and compressed time. An "intimate" scene slows down and gets close to sensory detail. A "combative" scene crackles with short exchanges and physical tension. A "sardonic" scene observes with detached irony. Match your prose rhythm, vocabulary, and narrative distance to this register.
+{% endif %}
+{% if scene.continuity_notes %}
+- **Continuity Notes:** {{ scene.continuity_notes }}
+{% endif %}
+{% if scene.dialogue_dynamics is defined and scene.dialogue_dynamics %}
+- **Dialogue Dynamics** (THIS IS A SCENE, NOT A BRIEFING — write dialogue as power negotiation, not information delivery):
+{% for key, value in scene.dialogue_dynamics.items() %}
+  - **{{ key | replace("_", " ") | title }}:** {{ value }}
+{% endfor %}
+{% endif %}
+{% if scene.supporting_cast_pressure %}
+- **Supporting Cast Pressure:** {{ scene.supporting_cast_pressure }}
+{% endif %}
+{% if scene.gate_profile is defined and scene.gate_profile %}
+- **PRESSURE CONTRACT (binding — must be realized in prose):**
+  - Gate Profile: {{ scene.gate_profile }}
+  {% if scene.opponent_present_on_page is defined %}
+  - Opponent On Page: {{ scene.opponent_present_on_page }}
+  {% endif %}
+  {% if scene.opponent_actor %}
+  - Opponent Actor: {{ scene.opponent_actor }}
+  {% endif %}
+  {% if scene.opponent_move %}
+  - Opponent Move (MUST appear on page): {{ scene.opponent_move }}
+  {% endif %}
+  {% if scene.pov_countermove %}
+  - POV Countermove (MUST appear on page): {{ scene.pov_countermove }}
+  {% endif %}
+  {% if scene.failure_event_if_no_action %}
+  - Failure Event If No Action: {{ scene.failure_event_if_no_action }}
+  {% endif %}
+  {% if scene.deadline_or_clock %}
+  - Deadline / Clock: {{ scene.deadline_or_clock }}
+  {% endif %}
+  {% if scene.required_end_hook %}
+  - Required End Hook (chapter ending MUST leave this unresolved): {{ scene.required_end_hook }}
+  {% endif %}
+{% endif %}
+{% if scene.dominant_sense is defined and scene.dominant_sense %}
+- **Dominant Sense (binding):** {{ scene.dominant_sense }} — anchor at least 2 sensory details in this scene to this sense. The scene's physical world should be palpable through {{ scene.dominant_sense }}, not just sight. Weave these details into the action; do not cluster them in the opening paragraph.
+{% endif %}
+{% if scene.externalization_gesture is defined and scene.externalization_gesture %}
+- **Externalization Gesture (binding):** {{ scene.externalization_gesture }} — this gesture MUST appear in the scene to reveal the POV character's emotional state. Do NOT follow it with narrator explanation of what it means or what the character felt. Let the reader infer. The gesture replaces interior-state narration; it does not precede it.
+{% endif %}
+{% if scene.physical_interruption is defined and scene.physical_interruption %}
+- **Physical Interruption (binding):** {{ scene.physical_interruption }} — this bodily interruption MUST appear in the scene. CRITICAL: do NOT turn it into a metaphor. Do NOT have the character reflect on what it symbolizes. Do NOT use it to illustrate the weight of the decision. It is irreducible physical reality — the body intruding on thought without meaning. Write it and move on. If you find yourself writing "as if" or "like the weight of" or "a reminder that" immediately after, delete those words.
+{% endif %}
+
+{% endfor %}
+
+---
+
+{% if era_tone_guide %}
+## STYLE DIRECTIVES
+
+- **Language Register:** {{ era_tone_guide.language_register }}
+- **Narrative Voice:** {{ era_tone_guide.narrative_voice_calibration }}
+- **Dialogue Style:** {{ era_tone_guide.dialogue_style_guide }}
+{% if era_tone_guide.forbidden_terms %}
+- **Forbidden Terms:** {{ era_tone_guide.forbidden_terms | join(", ") }}
+{% endif %}
+{% endif %}
+
+---
+
+{% if character_profiles %}
+## RELEVANT CHARACTER PROFILES
+
+{% for char in character_profiles %}
+### {{ char.name }} ({{ char.role }})
+- **Political Objective:** {{ char.political_objective }}
+- **Personal Fear:** {{ char.personal_fear }}
+- **Hidden Motivation:** {{ char.hidden_motivation }}
+- **Moral Conflict:** {{ char.moral_conflict }}
+{% if char.emotional_blind_spot %}
+- **Emotional Blind Spot:** {{ char.emotional_blind_spot }}
+{% endif %}
+{% if char.involuntary_tell %}
+- **Involuntary Tell:** {{ char.involuntary_tell }}
+{% endif %}
+{% if char.private_need_they_wont_name %}
+- **Private Need They Won't Name:** {{ char.private_need_they_wont_name }}
+{% endif %}
+- **Speech Style:** {{ char.voice_patterns.speech_style }}
+- **Class Markers:** {{ char.voice_patterns.class_markers }}
+- **Verbal Tics:** {{ char.voice_patterns.verbal_tics }}
+{% if char.speech_fracture_profile %}
+- **Speech Fracture Profile:**
+{% for key, value in char.speech_fracture_profile.items() %}
+  - {{ key }}: {{ value }}
+{% endfor %}
+{% endif %}
+{% if char.relationships %}
+- **Key Relationships:**
+{% for rel in char.relationships %}
+  - {{ rel.character_name }}: {{ rel.nature }} (tension: {{ rel.tension }})
+{% endfor %}
+{% endif %}
+
+{% endfor %}
+{% endif %}
+
+---
+
+## POV NARRATIVE VOICE SPECIFICATION (BINDING)
+
+{% set pov_character_name = chapter_outline.pov_character %}
+{% set pov_char = namespace(found=none) %}
+{% for char in character_profiles %}
+{% if char.name == pov_character_name %}
+{% set pov_char.found = char %}
+{% endif %}
+{% endfor %}
+
+{% if pov_char.found and pov_char.found.narrative_register %}
+### NARRATIVE VOICE FOR {{ pov_character_name }} (FROM CHARACTER PROFILE — BINDING)
+
+The narrative voice MUST shift when writing from this POV. These are not suggestions. The prose around {{ pov_character_name }} must feel like a different mind is narrating, not merely a different character speaking.
+
+{% for key, value in pov_char.found.narrative_register.items() %}
+- **{{ key | replace("_", " ") | title }}:** {{ value }}
+{% endfor %}
+
+**ENFORCEMENT:** Every paragraph must reflect this register. If you write a paragraph that could have been written for any other POV character in this novel, rewrite it. The metaphor choices, sentence rhythm, and consciousness style above are binding constraints, not style suggestions. A reader who sees only the prose — with character names redacted — must be able to identify the POV character from the voice alone.
+{% elif pov_character_name == "James K. Polk" %}
+### NARRATIVE VOICE FOR POLK
+- **Sentence structure:** Predominantly short, declarative. Subordinate clauses are sparse and tactical.
+- **Metaphor domain:** Military/surveying/engineering. Avoid financial metaphor language.
+- **Self-awareness:** High tactical clarity, low emotional clarity.
+- **Physical sensation:** Suppressed until unavoidable.
+- **Avoid:** Extended psychological essays about other people.
+{% elif pov_character_name == "Sarah Childress Polk" %}
+### NARRATIVE VOICE FOR SARAH
+- **Sentence structure:** Alternates concise observations with layered longer sentences.
+- **Metaphor domain:** Domestic/textile/architectural. Avoid financial and accounting language.
+- **Self-awareness:** Sharp about others, partial about her own ambition.
+- **Physical sensation:** Acute but socially filtered.
+- **Avoid:** Terms like "arithmetic," "calculation," "instrument," and "ledger."
+{% elif pov_character_name == "Robert J. Walker" %}
+### NARRATIVE VOICE FOR WALKER
+- **Sentence structure:** Medium-length, qualified, iterative.
+- **Metaphor domain:** Financial/commercial/accounting.
+- **Self-awareness:** Sees trade-offs, underestimates his own ambition.
+- **Physical sensation:** Sparse; used for social reading, not lyric texture.
+- **Avoid:** Lyrical flights and ornate symbolic prose.
+{% else %}
+### NARRATIVE VOICE FOR {{ pov_character_name }}
+- **Sentence structure:** Match this POV's temperament and class position; avoid generic neutral cadence.
+- **Metaphor domain:** Keep metaphor choices consistent with this POV's profession, upbringing, and obsessions.
+- **Self-awareness:** Include at least one meaningful blind spot per chapter.
+- **Physical sensation:** Ground this POV in body and environment, not pure abstraction.
+- **Avoid:** Reusing another POV character's metaphor family and sentence rhythm.
+{% endif %}
+
+---
+
+{% if major_players %}
+## HISTORICAL FIGURES REFERENCE
+
+These are the correct titles for historical figures appearing in or referenced by this chapter. Use ONLY these titles — do not substitute titles from other time periods.
+
+{% for player in major_players %}
+### {{ player.name }}
+- **Title at time of chapter:** {{ player.current_title }}
+- **Role:** {{ player.role }}
+{% endfor %}
+{% endif %}
+
+---
+
+{% if continuity_ledger %}
+## CONTINUITY LEDGER (relevant entries)
+
+{% if continuity_ledger is mapping %}
+{% for key, value in continuity_ledger.items() %}
+- **{{ key }}:** {{ value }}
+{% endfor %}
+{% else %}
+{% for entry in continuity_ledger %}
+{% if entry is mapping %}
+{% for key, value in entry.items() %}
+- **{{ key }}:** {{ value }}
+{% endfor %}
+{% else %}
+- {{ entry }}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endif %}
+
+---
+
+{% if prior_summaries %}
+## STORY SO FAR (rolling context)
+
+{% for summary in prior_summaries %}
+{% if summary is mapping %}
+**Chapter {{ summary.chapter_number | default("?") }}:** {{ summary.summary | default(summary) }}
+{% else %}
+{{ summary }}
+{% endif %}
+
+{% endfor %}
+{% endif %}
+
+---
+
+{% if next_chapter_outlines %}
+## UPCOMING CHAPTERS (for foreshadowing)
+
+{% for upcoming in next_chapter_outlines %}
+**Chapter {{ upcoming.chapter_number }}: {{ upcoming.title }}**
+- Goal: {{ upcoming.chapter_goal }}
+- Conflict: {{ upcoming.conflict }}
+- Turn: {{ upcoming.turn }}
+
+{% endfor %}
+{% endif %}
+
+---
+
+{% if banned_phrases %}
+## BANNED PHRASES (do NOT use these — they appeared in earlier chapters)
+
+The following phrases, similes, metaphors, and constructions have already been used in prior chapters. You MUST NOT reuse them or close variants. Find original alternatives.
+
+{% for phrase in banned_phrases %}
+- "{{ phrase }}"
+{% endfor %}
+{% endif %}
+
+{% if banned_constructions %}
+## BANNED CONSTRUCTION PATTERNS (do NOT reuse these structural templates)
+
+The following sentence-level construction patterns have been used in prior chapters. Do NOT reuse the same pattern structure, even with different slot fillers. If a banned pattern is "the [WEIGHT-NOUN] of [X] settling upon [Y]", then "the burden of responsibility settling upon his shoulders" AND "the weight of grief pressing upon her chest" are BOTH violations because they use the same construction template.
+
+{% for construction in banned_constructions %}
+- {{ construction }}
+{% endfor %}
+{% endif %}
+
+{% if chapter_ending_warning %}
+---
+
+## CHAPTER ENDING VARIETY WARNING
+
+{{ chapter_ending_warning }}
+{% endif %}
+
+---
+
+## ENDING MODE REFERENCE (for the assigned ending_mode above)
+
+Do NOT end this chapter with the default "alone in a dark room contemplating a sealed letter / the rain / the gap between knowledge and action." That shape has been used. Use the assigned `ending_mode` and make its tonal register **distinct** from the previous chapter's ending.
+
+**What each ending mode requires:**
+
+- **cliffhanger_action**: The chapter ends mid-crisis, with an adversarial action unresolved. The last sentence is a threat, an arrival, a door opening. No reflection. Example: *"The door opened before he reached it. Barbé-Marbois stood in the doorway, not knocking."*
+
+- **reversal_reveal**: The final beat reinterprets everything that preceded it. The last line delivers information that changes the chapter's meaning retroactively. Example: *"He set down the letter and noticed, for the first time, that it had been opened and resealed."*
+
+- **arrival_of_threat**: A new pressure arrives at chapter's end — a person, a courier, a document — that the reader knows will force action in the next chapter. Example: *"Monroe's carriage had been seen at the gate. He was three days early."*
+
+- **moral_breach**: The chapter ends on an action the character cannot take back. No explanation, no redemption. Example: *"He signed it. The seal was still warm when the courier took it."*
+
+- **relationship_rupture**: The chapter ends on a broken or newly strained relationship. A door closed, a name not used, a silence that means something different than it did at chapter open. Example: *"Livingston did not watch him go."*
+
+- **public_countdown**: The chapter ends with a clock, a vote, a deadline, a public event that cannot be stopped. The next chapter's urgency is already in motion. Example: *"The session would reconvene at nine. He had until then."*
+
+- **mid_action**: The chapter ends in the middle of an action that is not yet complete. Literal interruption — a sentence left unfinished, a hand not yet reaching its destination. Example: *"He was still writing the salutation when the candle went out."*
+
+- **mundane_detail**: The chapter ends on a concrete, non-symbolic physical detail. No weight, no meaning, no thematic freight. Just the texture of the world. Example: *"He put on his hat. One of the buttons on his coat was loose."*
+
+- **comic_beat**: The chapter ends on a wry or humorous note — dry observation, absurdist juxtaposition, something that deflates the preceding gravity without dismissing it. Example: *"The Treaty of San Ildefonso, on which the fate of the republic now depended, had been written on paper of notably poor quality."*
+
+- **sensory_non_symbolic**: The chapter ends on a pure sensory impression that carries no symbolic meaning. The reader experiences the physical world and nothing more. Example: *"The ink had dried. The room smelled of tallow and old paper."*
+
+- **bureaucratic_pivot**: The chapter ends with a procedural or administrative turn — a form filed, a meeting scheduled, a document categorized — that is the machinery of history. Example: *"He marked the file 'Pending ministerial review' and set it with the others."*
+
+**ANTI-PATTERN:** If your current last paragraph contains the words "alone," "quiet," "dark," "fire," "reflection," "wondered," and a sealed letter or rain — you have written the default ending. Rewrite it to match the assigned mode above.
+
+---
+
+## THE FIVE LAWS — BINDING CREATIVE CONSTRAINTS
+
+These are not suggestions. They are laws. Every scene you write will be audited against them, and violations will be sent back for mandatory revision. Comply on the first pass.
+
+**LAW 1: SHOW, NEVER TELL.**
+Do not name emotions, states, or qualities. Dramatise them through action, dialogue, and sensory detail.
+- VIOLATION: "He felt a surge of anger" → FIX: He set down his glass with enough force to crack the stem.
+- VIOLATION: "The atmosphere was oppressive" → FIX: No one had opened the windows; the air tasted of tallow and sweat.
+- VIOLATION: "She was nervous" → FIX: She smoothed her skirts for the third time, eyes on the door.
+- VIOLATION: "His loyalty was absolute" → FIX: Show loyalty through an action he takes at personal cost.
+If you catch yourself naming an emotion or state directly, rewrite the sentence. Every paragraph must contain at least one concrete, observable detail.
+
+**LAW 2: THE POV CHARACTER MUST ACT.**
+The POV character is not a camera. In every scene, the POV character must DO something that changes the situation — interrupt someone, make a demand, refuse an order, withhold information, lie strategically, redirect a conversation, produce a document, stand up to leave, set a condition. If the POV character's verbs are dominated by "observed," "noticed," "watched," "studied," "felt," and "understood," the scene has failed. The POV character has a GOAL in every scene (see the scene plan). They must actively pursue it, not merely witness events. Passive observation is forbidden.
+
+**LAW 3: SENSORY GROUNDING — 3 DETAILS, 2 SENSES, EVERY SCENE.**
+Every scene (between scene breaks) MUST contain at least THREE sensory details from at least TWO different senses (sight, sound, smell, taste, touch, temperature). At least two details per scene must be NON-VISUAL (sound/smell/taste/touch/temperature/body sensation). These details must exist for their own sake and not be immediately translated into symbolism. These must be woven into the action throughout the scene — not clustered in the opening paragraph. After the first paragraph, the physical world must not disappear. Examples of integrated sensory detail:
+- "The wax seal broke with a soft crack, releasing the faint smell of camphor" (touch + sound + smell)
+- "The gallery's marble floor sent cold through his thin-soled boots" (touch/temperature)
+- "Someone had left a window open; the curtain bellied inward, carrying the sound of a dog barking two streets away" (sight + sound)
+
+**LAW 4: NO REPETITION WITHIN A CHAPTER.**
+Do not reuse the same sentence construction, metaphor, simile, or narrative beat more than once in a chapter. If a character's smile is described once, find a completely different way to render their expression the second time. If a physical sensation is used to convey impact ("the weight of X settled upon Y"), it may appear ONCE. State each insight, revelation, or emotional realisation ONCE — do not restate it in different words across multiple paragraphs. Never repeat a line of dialogue or a character's reaction verbatim. Trust the reader.
+
+**LAW 5: MATCH THE REGISTER.**
+Check the register assignment for each scene in the scene plan above. The register is a binding creative constraint that controls prose style:
+
+REGISTER REFERENCE:
+- **ceremonial**: Formal, elevated syntax. Longer sentences with subordinate clauses. Latinate vocabulary. The prose should feel heavy with ritual and precedent.
+- **conspiratorial**: Short, clipped sentences. Frequent pauses and silences. Characters speak in half-sentences and implications. The prose should feel like eavesdropping.
+- **urgent**: Compressed syntax. Short paragraphs. Minimal description — only what matters NOW. Dialogue is interrupted, overlapping, breathless. Time pressure dominates.
+- **intimate**: Close third person. Physical details — warmth of skin, texture of fabric, the way someone's hands move. Longer sensory passages. The prose slows down and gets close.
+- **combative**: Rapid exchanges. Characters interrupt each other. Physical tension — standing, pacing, slamming things. Short sharp sentences alternate with sudden silence.
+- **reflective**: Interior monologue dominates. Longer paragraphs. Memory intrudes. The prose rhythm should feel meditative, with occasional sharp disruptions.
+- **sardonic**: Dry, understated observation. The narrator notices absurdity. Shorter sentences with unexpected turns. Deadpan delivery of outrageous facts.
+- **solemn**: Reserved for funerals, oaths, and genuine tragedy. If every scene reads as solemn, the register system has failed.
+
+A chapter where every scene reads at the same emotional temperature has failed — even if each scene is individually well-written. Vary sentence length, vocabulary, and rhythm to match each scene's register.
+
+---
+
+## SECONDARY GUIDELINES
+
+These are enforced by revision passes. Follow them, but the Five Laws above take absolute priority.
+
+- **Historical title accuracy.** Use ONLY the title a figure held at the time of this chapter. Consult the HISTORICAL FIGURES REFERENCE section.
+- **Period terminology clarity.** When a period term has shifted meaning (e.g., "the Democracy" for the Democratic Party), contextualise it on first use.
+- **No melodramatic inflation.** Reserve intense language for genuine climaxes. Not every moment is the most important moment.
+- **No formulaic qualifiers.** Do not narrate manner with "with [adjective] [noun]" formulas (e.g., "with evident warmth," "with practiced grace"). Show the action instead.
+- **No filtering.** Write "The clock struck eight" not "He heard the clock strike eight." Eliminate "seemed to," "appeared to," "began to."
+- **THE SILENCE RULE (mandatory).** When a short line (<15 words), silence, or physical gesture carries the moment, do NOT append narrator explanation of what it meant, contained, transmitted, or "was not." If you write "They were not X. They were Y." after a dramatic beat, delete the gloss and keep the beat.
+- **FALLIBILITY RULE (mandatory).** At least once per chapter, the POV character must misread or misname their own motive. Show the gap between what they think they are doing and what they are actually doing.
+- **RHYTHM RULE.** Vary sentence and paragraph lengths deliberately. Include at least three short paragraphs per scene and let short sentences break dense thought.
+- **DIALOGUE NATURALNESS RULE.** Not every line should be polished. Include interruptions, trailing thoughts, and concise lines; at least 20% of dialogue lines should be under ten words.
+- **STRUCTURAL VARIETY RULE.** Do not repeat chapter-ending architecture. If prior endings were solitary reflection in a quiet room, end this chapter in a different dramatic mode.
+- **IMMEDIATE JEOPARDY RULE.** Every scene must present a concrete risk before scene midpoint. Stakes cannot remain purely strategic or deferred.
+- **SURPRISE DENSITY RULE.** By roughly 65% of chapter length, introduce at least one non-trivial development that forces reinterpretation of prior assumptions.
+- **ON-PAGE OPPOSITION RULE.** Opponent pressure must arrive as action, not only information.
+- **ENDING PROPULSION RULE.** The final 250 words must contain unresolved external pressure that compels immediate continuation.
+- **EXPOSITION BUDGET RULE.** Do not run long blocks of policy exposition without action/dialogue progression.
+- **SUPPORTING CAST PRESSURE RULE.** Advance at least one non-POV character agenda that adds disruption, triangulation, or subplot heat.
+- **Limit physical stress reactions** to at most TWO per chapter, reserved for the single most pivotal moment.
+- **Distinguish character voices.** Each character's dialogue must be identifiable without attribution tags. Consult voice profiles above.
+- **Dialogue must be drama, not information.** Every exchange must contain disagreement, subtext, evasion, or a power shift. Two characters calmly exchanging facts is exposition wearing a costume.
+
+---
+
+## INSTRUCTIONS
+
+Write the full chapter as prose in **Markdown format**. Follow these directives precisely:
+
+1. **Follow the scene plan.** Execute each scene in order. Every scene's goal, turn, and consequences must be realised in the prose.
+
+2. **Maintain era-appropriate tone.** No modern language, no anachronisms, no Wikipedia-style exposition. The prose should feel as if it were written by a literary novelist immersed in the period. Verify that all historical references are accurate to the specific year and setting — do not confuse events or terminology from later periods.
+
+3. **Write vivid, dramatic prose.** Show, do not tell (see CRAFT WARNING #10 — this is enforced, not aspirational). Use concrete sensory detail — at least 3 per scene from 2+ senses (see CRAFT WARNING #11). The reader should feel present in the physical world, not reading an analytical summary.
+
+4. **Differentiate character voices.** Each character's dialogue MUST be distinguishable by speech pattern, vocabulary, sentence structure, and rhetorical habits. Consult the voice profiles above. A reader should be able to identify the speaker from the dialogue alone. Dialogue must be dramatic, not informational — two characters exchanging facts is not dialogue, it is exposition wearing a costume. Every exchange must contain disagreement, evasion, subtext, or a shift in power.
+
+5. **Each scene must have a clear turn.** Something must change in every scene — a revelation, a decision, a betrayal, a shift in power. If nothing changes, the scene has no purpose.
+
+6. **Respect continuity.** Honour every continuity note. Characters cannot know information they haven't received. Objects must be where they were last placed. Injuries persist. The timeline is sacrosanct.
+
+7. **Embed foreshadowing.** Use the upcoming chapter outlines to plant subtle seeds. Foreshadowing should be invisible on first read and devastating on re-read.
+
+{% if target_words %}
+8. **Target length: approximately {{ target_words }} words.** This is a guide, not a prison — let the story breathe — but significant deviation suggests structural problems.
+{% endif %}
+
+9. **Use scene breaks.** Separate scenes with a Markdown horizontal rule (`---`).
+
+10. **Open strong and close stronger.** The first paragraph must pull the reader in. The final paragraph must make them turn the page.
+
+11. **Trust the reader.** State each idea once. Do not narrate what dialogue already conveyed. Do not explain your own metaphors. Let silence, gesture, and implication do their work.
+
+12. **Compulsion targets (mandatory):**
+   - Every scene must pay off immediate jeopardy with concrete consequences.
+   - Include at least one hard reveal and one soft reversal in the chapter.
+   - Ensure at least one direct adversarial collision is on-page.
+   - Use the assigned `ending_mode` and avoid reflective deceleration.
+   - **Pressure contract realization:** For every scene with a PRESSURE CONTRACT section, you MUST write the `opponent_move` and `pov_countermove` as on-page action. The opponent must visibly act; the POV must visibly respond. Narrating about these actions offstage violates the contract. If `required_end_hook` is specified, the chapter MUST end with that pressure unresolved.
+
+Write the chapter now. Output ONLY the chapter prose in Markdown. No meta-commentary, no notes to self, no JSON.

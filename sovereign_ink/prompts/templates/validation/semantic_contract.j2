@@ -1,0 +1,25 @@
+## CONTRACT SEMANTIC VALIDATION
+
+You are validating whether chapter prose satisfies required chapter and scene contracts.
+Return strict JSON only.
+
+Chapter number: {{ chapter_number }}
+
+### Required chapter beats
+{{ chapter_beats_json }}
+
+### Required scene contracts
+{{ scene_contracts_json }}
+
+### Instructions
+- Evaluate each requirement independently.
+- Mark `passed=true` only when the requirement is explicitly present on-page.
+- Keep output compact and strictly schema-compliant.
+- Provide exactly one evidence span for each passed requirement.
+- Each `quote` must be short (<= 180 chars) and copied verbatim.
+- Each `reason` must be concise (<= 140 chars), plain text only.
+- For failed requirements, explain why evidence is missing/insufficient.
+- Provide overall confidence from 0.0 to 1.0.
+
+### Chapter text
+{{ chapter_text }}

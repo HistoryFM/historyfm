@@ -1,0 +1,142 @@
+You are performing a **structural and escalation revision pass** on a chapter of a historical fiction novel. This is the first revision pass. Its concerns are the architecture of the chapter — pacing, scene structure, dramatic flow, narrative logic — and the escalation of stakes and tension throughout.
+
+---
+
+## CHAPTER {{ chapter_number }} — STRUCTURAL & ESCALATION REVISION
+
+**Chapter Outline:**
+- **Title:** {{ chapter_outline.title }}
+- **POV Character:** {{ chapter_outline.pov_character }}
+- **Chapter Goal:** {{ chapter_outline.chapter_goal }}
+- **Central Conflict:** {{ chapter_outline.conflict }}
+- **Key Turn:** {{ chapter_outline.turn }}
+- **Consequences:** {{ chapter_outline.consequences }}
+{% if chapter_outline.ending_mode %}
+- **Ending Mode (binding):** {{ chapter_outline.ending_mode }}
+{% endif %}
+- **Target Word Count:** {{ chapter_outline.estimated_word_count }}
+
+{% if novel_structure_summary %}
+**Novel Structure Context:**
+{{ novel_structure_summary }}
+{% endif %}
+
+---
+
+## CURRENT DRAFT
+
+{{ chapter_content }}
+
+{% if original_draft %}
+---
+
+## ORIGINAL DRAFT (v0_raw — for reference)
+
+The following is the original raw draft before any revision passes. If earlier revision passes cut scenes, characters, exchanges, or sensory detail that were strong and dramatically effective, you may RESTORE them — provided they serve the chapter's goal and do not introduce the structural problems this pass is designed to fix. Do not restore material merely because it existed; restore it only if its absence weakens the chapter.
+
+<original_draft>
+{{ original_draft }}
+</original_draft>
+{% endif %}
+
+{% if quality_audit %}
+---
+
+{{ quality_audit }}
+
+The audit above identifies specific, concrete violations in this draft. You MUST address every issue flagged. These are not suggestions — they are mandatory fixes. A revision that ignores audit findings has failed.
+{% endif %}
+
+---
+
+## REVISION DIRECTIVES
+
+Analyse and revise the chapter focusing on structural architecture AND stakes escalation:
+
+### Non-Negotiable Rule
+
+0. **THE SILENCE RULE.** When a short line (<15 words), silence, or physical gesture carries emotional weight, do NOT follow it with narrator explanation of what it meant, what it contained, what it transmitted, or what it was not. If you find a "not X, but Y" gloss after a dramatic beat, cut the gloss and keep the beat.
+
+### Structure
+
+1. **Scene Architecture.** Does every scene have a clear beginning, middle, and end? Is there a discernible turn in each scene — a moment where something shifts? Scenes that meander without a turn must be restructured or cut.
+
+2. **Pacing.** Is the chapter's rhythm appropriate to its content? Action sequences should be taut with short sentences and paragraphs. Deliberative scenes can breathe longer, but they must never stall. Check for:
+   - Sagging middles where tension dissipates
+   - Rushed climactic moments that deserve more space
+   - Repetitive beats that pad without progressing
+
+3. **Scene Order and Transitions.** Are scenes in the optimal order for dramatic effect? Do transitions maintain momentum? The end of one scene should create an implicit question that the next scene begins to answer.
+
+4. **Chapter Arc.** Does the chapter have a satisfying dramatic shape? The opening should establish stakes quickly. The middle should escalate conflict. The ending should deliver the key turn and propel the reader forward.
+
+5. **Goal Fulfilment.** Does the chapter accomplish its stated goal: "{{ chapter_outline.chapter_goal }}"? If not, identify what is missing and restructure to fulfil it.
+
+6. **Proportionality.** Is the word count appropriate? Material that doesn't serve the chapter's goal should be cut. Material that is underdeveloped for its importance should be expanded.
+
+### Escalation
+
+7. **Stakes Clarity.** In every scene, the reader must understand what is at risk — and for whom. If the stakes are abstract, make them concrete and personal. Abstract stakes do not create tension; personal consequences do.
+7a. **Immediate Jeopardy Realization (mandatory).** Every scene must contain at least one explicit immediate-risk beat and one explicit consequence beat ("if X fails now, Y is lost/damaged/exposed"). Do not imply consequences only through tone; state a concrete cost.
+7b. **On-Page Opposition Realization (mandatory).** Every scene must include at least one direct adversarial move on the page (challenge, refusal, counteroffer, threat, procedural block, or exposure attempt) and one countermove. Reported/offstage opposition alone is insufficient.
+7c. **Pressure Contract Compliance (mandatory when contracts are present).** If the chapter was generated with scene-level pressure contracts, verify that each scene realizes its `opponent_move` and `pov_countermove` as on-page action, not narration about offstage events. If a contract specifies a `required_end_hook`, the chapter ending MUST leave that pressure unresolved.
+
+8. **Progressive Escalation.** The chapter must not plateau. Each scene should raise the pressure relative to the one before. Check for scenes that reduce tension without narrative justification, comfortable conversations where characters should feel the walls closing in, and moments of relief that last too long.
+
+9. **Ticking Clocks.** Where possible, introduce or reinforce time pressure. Deadlines, approaching enemies, imminent votes, trials at dawn — these create urgency.
+
+10. **The Turn's Impact.** The chapter's key turn ("{{ chapter_outline.turn }}") should land with force. If its execution feels muted, heighten it: increase the surprise, deepen the betrayal, raise the cost.
+
+11. **Chapter Ending.** The final paragraph must leave the reader in a state of heightened anticipation or dread. End on a question, a threat, a revelation — never on resolution.
+   If `ending_mode` is specified in the chapter outline, you MUST realize that mode explicitly.
+
+### Show-Don't-Tell & Agency Audits
+
+12. **Show-Don't-Tell Audit.** Scan the draft for paragraphs that tell rather than show. Any sentence that names an emotion directly ("He felt afraid," "The atmosphere was tense," "She was angry") without dramatising it through action, dialogue, or sensory detail must be rewritten. Telling often indicates a scene that is structurally underdeveloped — the writer is summarising rather than dramatising. Common offenders: "His loyalty was absolute," "She understood the implications," "The tension was palpable." Convert each into a concrete moment that demonstrates the quality without naming it.
+
+13. **MANDATORY AGENCY INSERTION.** Before revising, perform this check for each scene:
+  a. List the POV character's subject-verb pairs (where the POV character is the grammatical subject).
+  b. If more than 60% are perception/state verbs (felt, watched, noticed, observed, understood, realized, knew, saw, heard, seemed, studied, noted, considered, recognised), the scene FAILS the agency check.
+  c. For every FAILING scene, you MUST add at least ONE of the following — this is not optional:
+    - The POV character interrupts another character and redirects the conversation
+    - The POV character makes a demand, sets a condition, or refuses something
+    - The POV character physically acts to change the situation (closes a door, produces a document, stands up to leave, pours a drink without being asked)
+    - The POV character withholds information that another character wants
+    - The POV character lies, deflects, or strategically misrepresents their position
+    - The POV character asks a question that puts the other character on the defensive
+  A scene that fails the agency check CANNOT pass this revision without at least one inserted action.
+
+14. **Sensory Grounding Check.** Verify that every scene contains at least 3 sensory details from at least 2 different senses. If a scene is purely cerebral — characters talking and thinking in a void — add physical environment: temperature, sound, smell, the feel of surfaces, the quality of light. Sensory detail should be distributed throughout the scene, not front-loaded in a single decorative paragraph.
+
+14a. **Sensory Preservation Mandate.** When restructuring or cutting a passage, if the original contains non-visual sensory detail (smell, taste, touch, sound, temperature), your restructured version MUST include equivalent sensory grounding. Structural revision commonly strips physical texture while tightening prose — this is a regression. If you cut a sensory-rich paragraph, redistribute its sensory content into the surrounding text. The revised chapter must have equal or greater non-visual sensory coverage than the input draft.
+
+15. **Exposition Drag Rewrite Macro (mandatory when flagged).** For any flagged abstract run, rewrite it as conflict beats in this sequence: ask → deny → threaten/pressure → concede/countermove. Preserve core information, but deliver it through scene action and adversarial exchange.
+15a. **Default anti-drag guard.** Even when no detector flag is present, no scene may contain more than two consecutive analytical/expository paragraphs without an on-page conflict beat (question, interruption, refusal, demand, deadline, or tactical concession).
+
+### Correction Exemplars — Before/After
+
+Use these concrete examples as models for the transformations required.
+
+**Offstage Opposition → On-Page Collision:**
+
+BEFORE (fails): "Word came that Talleyrand had rejected the memorandum. Reports suggested that Napoleon was reconsidering."
+AFTER (passes): "Talleyrand produced the memorandum and set it on the desk. 'France does not negotiate sovereignty on the basis of American legal theory.' He slid a counter-document across the surface. Livingston picked it up, read the first paragraph, and set it down. 'Then we have nothing further to discuss.' He stood."
+
+WHY: The opponent ACTS on page (produces, slides). The POV RESPONDS with action (picks up, stands). Conflict is dramatized through observable behavior.
+
+**Abstract Jeopardy → Concrete Immediate Risk:**
+
+BEFORE (fails): "Jefferson considered the constitutional implications. The question weighed on his mind."
+AFTER (passes): "If he did not sign Monroe's commission before the Senate reconvened at dawn, Pickering would force a floor vote demanding disclosure — and Jefferson had no constitutional answer that would survive the afternoon. He reached for the pen."
+
+WHY: A deadline (dawn), a concrete adversarial action (floor vote), a personal cost (no answer), and a POV action (reaches for pen).
+
+### Critical Constraints
+
+**Do NOT inflate the prose.** This pass is about restructuring and sharpening, not adding. If you add material for escalation, cut an equal amount of weaker material elsewhere. The chapter should emerge tighter, not longer.
+
+{% if word_count_floor %}
+**HARD WORD COUNT FLOOR: {{ word_count_floor }} words.** The original draft was {{ v0_word_count }} words. Your revision MUST NOT fall below {{ word_count_floor }} words. This is a refinement pass, not a reduction pass. Do not cut scenes, remove characters, eliminate exchanges, or compress passages into summary. If you tighten one section, expand another that deserves more development. A revision that loses more than 15% of the original word count has cut too aggressively and must restore material.
+{% endif %}
+
+**Output the fully revised chapter in Markdown.** Preserve scene breaks (`---`). Do not add commentary or annotations — output only the revised prose.

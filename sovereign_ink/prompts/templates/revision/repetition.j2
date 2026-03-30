@@ -1,0 +1,64 @@
+You are performing a **repetition and language polish pass** on a chapter of a historical fiction novel. This pass focuses exclusively on eliminating redundancy, tightening prose, and ensuring every sentence earns its place.
+
+---
+
+## CHAPTER {{ chapter_number }} — REPETITION & POLISH REVISION
+
+**Chapter Outline:**
+- **Title:** {{ chapter_outline.title }}
+- **POV Character:** {{ chapter_outline.pov_character }}
+- **Chapter Goal:** {{ chapter_outline.chapter_goal }}
+- **Target Word Count:** {{ chapter_outline.estimated_word_count }}
+
+{% if era_tone_guide %}
+**Language Register:** {{ era_tone_guide.language_register }}
+**Narrative Voice:** {{ era_tone_guide.narrative_voice_calibration }}
+{% endif %}
+
+{% if novel_structure_summary %}
+**Novel Structure Context:**
+{{ novel_structure_summary }}
+{% endif %}
+
+---
+
+## CURRENT DRAFT
+
+{{ chapter_content }}
+
+---
+
+## REVISION DIRECTIVES
+
+Revise the chapter focusing EXCLUSIVELY on repetition, redundancy, and prose quality:
+
+1. **Lexical Repetition.** Identify words and phrases that recur too frequently. AI-generated prose is particularly prone to repeating:
+   - Favourite adjectives ("dark," "sharp," "cold," "heavy")
+   - Sentence-opening patterns ("He knew…," "She felt…," "The room was…")
+   - Transitional crutches ("Meanwhile," "However," "In that moment")
+   - Atmospheric descriptors ("shadows," "silence," "tension")
+   Replace repeated terms with varied alternatives, or restructure sentences to eliminate the need for them.
+
+2. **Semantic Repetition.** Identify passages where the same idea, emotion, or observation is expressed multiple times in different words. A character's fear should be established once, powerfully—not restated in every other paragraph. Trust the reader.
+
+3. **Sentence Structure Variety.** Check for monotonous syntax. If five consecutive sentences follow the same pattern (subject-verb-object), restructure for variety. Mix short declarative sentences with longer, more complex constructions. Use fragments sparingly but deliberately for emphasis.
+
+4. **Dead Weight.** Cut or compress:
+   - Adverbs that duplicate what the verb already conveys ("shouted loudly," "whispered quietly")
+   - Hedging language ("seemed to," "appeared to," "began to")
+   - Filtering ("He noticed that…," "She saw that…," "He could hear…")—go directly to the perception
+   - Throat-clearing sentences that restate what has just happened
+
+5. **Overwriting.** Historical fiction risks purple prose. Check for passages where the language calls attention to itself rather than serving the story. Metaphors should be fresh, not ornate. Description should be precise, not lush for its own sake.
+
+6. **Paragraph Architecture.** Each paragraph should have a purpose and an optimal length for its content. Long paragraphs work for sustained description or complex thought. Short paragraphs create emphasis and urgency. Vary paragraph length to control rhythm.
+
+7. **Cliché Elimination.** Remove or reimagine any clichéd phrases, especially period-fiction clichés: "the die was cast," "blood ran cold," "steely gaze," "with bated breath," "a chill ran down his spine." Find original ways to express these ideas.
+
+8. **Final Polish.** After addressing all the above, do a final read for:
+   - Awkward phrasing or unclear antecedents
+   - Missing or misplaced punctuation
+   - Tense consistency
+   - Proper noun consistency (names, titles, places)
+
+**Output the fully revised chapter in Markdown.** Preserve scene breaks (`---`). Do not add commentary or annotations—output only the revised prose.

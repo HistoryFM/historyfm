@@ -1,0 +1,130 @@
+# Louisiana Purchase -- Phase 11 Canary Run
+# Inherits Phase 10 config. Phase 11 surgical fixes:
+#   A) Lower Opus jeopardy trigger threshold: 2.5 → 1.0
+#      This ensures any chapter with > 1.0 jeopardy-deficit scenes per 10k words
+#      triggers the Opus structural revision, aligning with the acceptance target.
+#   B) immediate_jeopardy_deficit_scenes already in pass_regression_critical_metrics
+#      (carried forward from Phase 10) — regression guard retries on jeopardy increase.
+#   C) _build_jeopardy_recovery_macro in stage5_revision.py (code-level, Phase 11).
+#      Injects scene-indexed repair directives when jeopardy is in critical regressions.
+
+model_world_building: "claude-sonnet-4-6"
+model_structural_planning: "claude-sonnet-4-6"
+model_prose_generation: "claude-sonnet-4-6"
+model_revision_structural: "claude-sonnet-4-6"
+model_revision_structural_opus: "claude-opus-4-6"
+model_revision_creative: "claude-sonnet-4-6"
+model_revision_polish: "claude-sonnet-4-6"
+model_utility: "claude-haiku-4-5-20251001"
+
+temperature_world_building: 0.7
+temperature_prose: 0.85
+temperature_revision: 0.6
+max_tokens_per_call: 16384
+max_retries: 3
+retry_base_delay: 2.0
+
+max_chapters: 12
+target_words_per_chapter: 3000
+min_words_per_chapter: 2000
+max_words_per_chapter: 4500
+
+num_revision_passes: 3
+revision_window_size: 3
+enable_selective_opus_structural_revision: true
+# Phase 11 Change A: lowered from 2.5 → 1.0
+# Any chapter with > 1.0 jeopardy-deficit scenes/10k triggers Opus structural revision.
+immediate_jeopardy_opus_threshold_per_10k_words: 1.0
+
+enable_quality_checkpoint: false
+checkpoint_after_chapters: [2]
+
+# --- QUALITY GATES ENABLED ---
+enable_quality_gates: true
+gate_strict_structure_validation: false
+gate_max_chapter_retries: 2
+gate_max_ending_retries: 3
+gate_max_jeopardy_deficit_scenes: 1
+gate_max_exposition_drag_runs: 1
+gate_rhythm_cv_threshold: 0.45
+gate_short_sentence_ratio_threshold: 0.10
+gate_max_psychologizing_per_1k_words: 5.0
+opus_eligible_gates:
+  - "offstage_opposition"
+  - "immediate_jeopardy"
+
+# --- PRESSURE CONTRACTS ENABLED ---
+enable_pressure_contracts: false
+strict_pressure_contract_validation: false
+gate_max_scene_retries: 2
+gate_opus_scene_escalation: true
+stage4_max_total_repair_attempts: 8
+stage4_scene_count_tolerance: 1
+next_max_convergence_attempts: 8
+next_max_identical_failure_streak: 3
+
+# --- PHASE 5: LITERARY QUALITY ELEVATION --- ALL ENABLED ---
+enable_narrative_register: true
+enable_physical_interruption_contracts: true
+enable_petty_moment_contracts: true
+enable_ending_variation_gate: true
+gate_max_consecutive_similar_endings: 2
+gate_ending_similarity_threshold: 0.50
+
+# --- PHASE 7: REVISION REGRESSION FIXES ---
+enable_targeted_voice_revision: true
+voice_pass_max_regression_retry: 1
+
+# --- PHASE 8: LENGTH + PASS-LEVEL REGRESSION GUARDRAILS ---
+enable_length_guardrails: true
+# Stage 4 (prose generation) caps: unchanged from phase 10
+length_soft_cap_ratio: 1.10
+length_hard_cap_ratio: 1.25
+# Stage 5 (revision) caps: raised in Phase 10, carried forward
+revision_soft_cap_ratio: 1.30
+revision_hard_cap_ratio: 1.50
+length_guard_max_retries: 2
+
+pass_regression_max_retry: 1
+pass_regression_delta_threshold: 0
+# Phase 11 Change B: immediate_jeopardy_deficit_scenes already present (carried from Phase 10)
+# Regression guard retries when jeopardy deficits increase vs v0 baseline.
+pass_regression_critical_metrics:
+  - "repetition_patterns"
+  - "sensory_deficit_scenes"
+  - "immediate_jeopardy_deficit_scenes"
+
+# --- SMART REPETITION V2 ---
+enable_smart_repetition_pass: true
+smart_repetition_require_effective_reduction: true
+semantic_validator_enabled: true
+adversarial_verifier_enabled: false
+
+# --- PHASE 9: TARGETED SURGICAL FIXES (carried forward) ---
+
+# Change A: Chapter completion gate — detects truncated endings, repairs tail
+enable_chapter_completion_gate: true
+gate_max_completion_retries: 2
+
+# Change C: Exposition drag in critical retry set — triggers pass-level retry + macro
+# Phase 10 also adds a second targeted retry when drag doesn't improve (code-level).
+critical_retry_include_exposition_drag: true
+
+# Change D: Dedup-first surgery on chapters > 5000 words before polish pass
+enable_long_chapter_dedup_first: true
+dedup_first_soft_cap_words: 5000
+
+max_context_tokens: 180000
+summary_target_words: 250
+
+cost_per_1k_input_tokens:
+  "claude-sonnet-4-6": 0.003
+  "claude-sonnet-4-20250514": 0.003
+  "claude-opus-4-6": 0.015
+  "claude-haiku-4-5-20251001": 0.001
+
+cost_per_1k_output_tokens:
+  "claude-sonnet-4-6": 0.015
+  "claude-sonnet-4-20250514": 0.015
+  "claude-opus-4-6": 0.075
+  "claude-haiku-4-5-20251001": 0.005

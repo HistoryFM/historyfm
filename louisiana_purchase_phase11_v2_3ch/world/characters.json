@@ -1,0 +1,357 @@
+[
+  {
+    "name": "Thomas Jefferson",
+    "is_historical": true,
+    "role": "protagonist",
+    "political_objective": "Secure American navigation rights on the Mississippi and, if fortune permits, acquire New Orleans outright\u2014without violating the constitutional principles upon which his presidency was founded and his political identity constructed.",
+    "personal_fear": "That the republic he has spent his life designing will be undone not by its enemies but by his own necessary betrayals of its founding logic\u2014that posterity will judge him not as its architect but as the man who first cracked its foundations.",
+    "hidden_motivation": "Beneath the constitutional anxiety lies a hunger that Jefferson will not name even in his private correspondence: the desire to author an act so vast and transformative that it eclipses every Federalist achievement and renders Hamilton's vision of America permanently obsolete. The Purchase is, in the most secret chamber of his ambition, a monument to himself.",
+    "emotional_blind_spot": "Jefferson consistently misreads his own ambition as disinterested public service. He experiences his desire for continental dominion as philosophical necessity\u2014the natural expansion of the empire of liberty\u2014and cannot perceive the degree to which personal legacy drives decisions he attributes entirely to republican principle.",
+    "involuntary_tell": "When cornered by a question he cannot honestly answer, Jefferson's speech slows to an almost meditative deliberateness and he turns his gaze to some middle distance\u2014a window, a map, a candle\u2014as though consulting an authority beyond the room. Those who know him well understand this as the moment he has already decided and is composing the justification.",
+    "private_need_they_wont_name": "To be loved by history with the uncomplicated adoration he suspects he does not quite deserve\u2014to be remembered as a man of pure principle rather than as a brilliant, self-deceiving compromiser.",
+    "moral_conflict": "He believes, with genuine intellectual conviction, that the Constitution grants the executive no power to acquire foreign territory, and that an amendment is the only honest remedy. Yet he also knows that seeking an amendment risks delay, exposure, and the collapse of the entire negotiation. He must choose between the integrity of the document he reveres and the survival of the republic he loves\u2014and he suspects these are not, in the end, separable questions.",
+    "relationships": [
+      {
+        "character_name": "James Madison",
+        "nature": "intellectual partner and conscience",
+        "tension": "Madison's constitutional scruples mirror Jefferson's own, but Madison is more willing to articulate them plainly, which forces Jefferson to confront the gap between his public doctrine and his private intentions. Jefferson values Madison's loyalty but occasionally resents the mirror he holds up."
+      },
+      {
+        "character_name": "Robert R. Livingston",
+        "nature": "instrument and subordinate",
+        "tension": "Jefferson's instructions to Livingston are deliberately narrow\u2014purchase New Orleans, nothing more\u2014yet he will ultimately require Livingston to exceed them. He cannot tell Livingston to act boldly without undermining his own constitutional position, and so he sends ambiguous guidance that leaves Livingston exposed and resentful."
+      },
+      {
+        "character_name": "James Monroe",
+        "nature": "trusted emissary and political investment",
+        "tension": "Monroe's appointment as special envoy is partly diplomatic and partly political\u2014a signal to western Republicans that Jefferson takes the crisis seriously. But Monroe's ambition and his independent standing in the party mean that a successful negotiation might elevate him in ways Jefferson finds difficult to control."
+      },
+      {
+        "character_name": "Timothy Pickering",
+        "nature": "ideological antagonist",
+        "tension": "Pickering's Federalist opposition to ratification is, paradoxically, grounded in constitutional arguments Jefferson himself has privately rehearsed. The spectacle of his own best arguments in an enemy's mouth is among the novel's sharpest ironies for Jefferson."
+      }
+    ],
+    "emotional_arc": {
+      "start_state": "Composed and strategically confident, convinced that patient diplomacy and Republican virtue will resolve the Mississippi question without requiring him to compromise his principles.",
+      "end_state": "Triumphant but permanently altered\u2014aware that he has purchased the continent at the cost of a constitutional innocence he cannot recover, and that the western empire he has opened will carry within it the unresolved question of slavery that he has chosen, once again, not to answer."
+    },
+    "voice_patterns": {
+      "speech_style": "Measured, periodic, and architecturally constructed\u2014Jefferson builds sentences the way he builds buildings, with deliberate proportion and a classical sense of completion. He rarely raises his voice; his most forceful statements are delivered in the quietest register. He speaks in subordinate clauses that circle a central proposition before arriving at it with apparent inevitability.",
+      "class_markers": "Virginia planter aristocracy filtered through Enlightenment philosophy: the diction of Locke and Montesquieu naturalized into American idiom. He uses Latin phrases without self-consciousness and refers to ancient republics as though they were recent precedents.",
+      "verbal_tics": "Frames contentious positions as self-evident truths ('It is plain that\u2026', 'No candid mind can doubt\u2026'). Has a habit of introducing his most radical proposals with the phrase 'I have been thinking\u2026' as though the idea arrived unbidden rather than having been long calculated."
+    },
+    "speech_fracture_profile": {
+      "interruption_style": "Almost never interrupts; instead falls into a pointed, attentive silence that functions as interruption by withdrawal\u2014the other speaker feels the conversation has been paused for judgment.",
+      "evasive_fragments": "When pressed on constitutional inconsistency, produces fragments of historical analogy that gesture toward an answer without completing it: 'The Roman precedent, of course\u2014though the circumstances were not entirely\u2014' and then pivots to a new question.",
+      "unfinished_thought_patterns": "Leaves sentences about slavery, about the western territories' future governance, and about the rights of the French and Spanish inhabitants conspicuously incomplete, trailing into subordinate clauses that dissolve before reaching a conclusion."
+    },
+    "narrative_register": {
+      "sentence_rhythm": "Long periodic sentences with elaborate subordination, the main clause held in suspension through multiple qualifications before arriving\u2014the grammatical form enacting the mind's reluctance to commit prematurely to a conclusion.",
+      "diction_family": "Architectural, botanical, and Enlightenment-philosophical: the natural world rendered as rational order, the political world rendered as landscape to be surveyed and cultivated. Latinate abstractions ('sovereignty', 'felicity', 'proportion') deployed with precision rather than ornament.",
+      "consciousness_style": "Expansive and associative, moving between the immediate political crisis and deep historical analogy with the ease of a mind that genuinely experiences the present as continuous with antiquity. His observations tend to spiral outward\u2014a problem of constitutional law becomes a meditation on republican virtue, which becomes a reflection on the fate of Athens\u2014before being drawn back, with visible effort, to the practical question at hand.",
+      "signature_lens": "Architecture and natural philosophy: Jefferson perceives political structures as buildings requiring sound foundations and correct proportion, and perceives the continent itself as a garden whose cultivation is both moral and material. Metaphors of construction, of soil, of light and shadow dominate his interior world."
+    },
+    "backstory_summary": "Born 1743 at Shadwell, Virginia, the son of a surveyor-planter who gave him both land and ambition. Educated at William and Mary, trained in law under George Wythe, and formed by the Scottish Enlightenment and the French philosophes into a mind that experienced no contradiction between classical learning and revolutionary politics. Author of the Declaration of Independence at thirty-three, Governor of Virginia during the British invasion, Minister to France during the Revolution's opening years\u2014years that gave him a permanent affection for French intellectual culture and a permanent horror of mob violence. Vice-President under Adams, during which he authored the Kentucky Resolutions asserting states' rights against federal overreach. Elected President in 1800 after the bitterest campaign the republic had yet produced, he arrived in Washington carrying the weight of a political philosophy that his first major foreign crisis would immediately begin to test."
+  },
+  {
+    "name": "Robert R. Livingston",
+    "is_historical": true,
+    "role": "protagonist",
+    "political_objective": "Secure American access to New Orleans and, if the opportunity presents itself, acquire the city outright\u2014thereby vindicating his appointment, establishing his diplomatic legacy, and demonstrating that a New York Republican of his stature deserves a place at the center of the republic's affairs.",
+    "personal_fear": "That his deafness\u2014advancing, humiliating, isolating\u2014will cost him the negotiation at its critical moment: that he will misread a tone, miss a subordinate's whisper, or appear ridiculous in a Parisian drawing room that runs on nuance and musical speech, and that the failure will be attributed not to circumstance but to his infirmity.",
+    "hidden_motivation": "Livingston has spent years in the secondary positions of American public life\u2014overshadowed by Hamilton in New York, overlooked by Washington, outmaneuvered by men of lesser intellect and greater connection. The Paris posting is his last serious chance at a historical role commensurate with his self-estimate, and he will not surrender it\u2014not to Talleyrand's evasions, not to Monroe's arrival, not to Jefferson's cautious instructions. The negotiation is, beneath all its geopolitical significance, a personal reckoning.",
+    "emotional_blind_spot": "Livingston consistently mistakes his competitive anxiety for principled urgency. He tells himself he presses the negotiation so hard because the republic's survival demands speed; he cannot see that he is also, and perhaps primarily, racing against Monroe's arrival\u2014against the possibility that another man will receive the credit for what he has spent eighteen months preparing.",
+    "involuntary_tell": "Under sustained frustration\u2014particularly when Talleyrand is evasive or Monroe is deferential in ways that implicitly claim authority\u2014Livingston's right hand moves to the side of his head, pressing against his ear in a gesture that is partly the habit of a deaf man straining to hear and partly the physical expression of a mind under intolerable pressure.",
+    "private_need_they_wont_name": "To be recognized\u2014not merely thanked, not merely recorded in the treaty's preamble, but genuinely, publicly acknowledged as the man who made it possible. He needs the credit the way other men need air, and cannot admit this need without diminishing the very achievement he craves recognition for.",
+    "moral_conflict": "His instructions from Jefferson are explicit: negotiate for New Orleans and the Floridas only. When Barb\u00e9-Marbois offers the whole of Louisiana, Livingston must decide whether to exceed his mandate and sign a treaty his government has not authorized\u2014gambling that Jefferson will ratify what he cannot officially sanction, and that history will forgive the presumption if the prize is large enough.",
+    "relationships": [
+      {
+        "character_name": "James Monroe",
+        "nature": "joint negotiator and rival",
+        "tension": "Monroe arrives in Paris as Jefferson's special envoy with a public prominence that immediately threatens to eclipse Livingston's eighteen months of groundwork. Livingston must cooperate with Monroe\u2014they need each other to close the deal\u2014while managing his fury at being, once again, the man whose labor others harvest."
+      },
+      {
+        "character_name": "Fran\u00e7ois Barb\u00e9-Marbois",
+        "nature": "counterpart and unlikely confidant",
+        "tension": "Barb\u00e9-Marbois is the one French official who speaks to Livingston with something approaching candor, and the two men develop a working rapport grounded in mutual pragmatism. But Livingston can never be certain whether Barb\u00e9-Marbois's apparent frankness is genuine or a negotiating instrument\u2014whether he is being trusted or managed."
+      },
+      {
+        "character_name": "Charles-Maurice de Talleyrand-P\u00e9rigord",
+        "nature": "adversary and obstacle",
+        "tension": "Talleyrand has spent months deflecting Livingston's inquiries with silken vagueness, and Livingston has spent those months accumulating a cold fury that he must conceal behind diplomatic courtesy. The tension is also structural: Talleyrand controls access to Napoleon, and Livingston needs that access\u2014which means the man he most despises holds the key to everything he wants."
+      },
+      {
+        "character_name": "Thomas Jefferson",
+        "nature": "superior and source of constraint",
+        "tension": "Jefferson's narrow instructions protect his constitutional position but leave Livingston without the authority to seize opportunities as they arise. Livingston's resentment of this constraint is sharpened by his awareness that Jefferson will claim the political triumph of a successful negotiation while Livingston absorbs the risk of exceeding his mandate."
+      }
+    ],
+    "emotional_arc": {
+      "start_state": "Frustrated, isolated, and quietly desperate\u2014a man of genuine ability stranded in a posting that seems designed to produce nothing, surrounded by a French court that treats him as a minor inconvenience and advised by a government that will not give him the tools he needs.",
+      "end_state": "Triumphant but unsatisfied\u2014he has accomplished something extraordinary and knows it, yet the arrival of Monroe, the structure of the treaty's credit, and his return to American obscurity confirm his darkest suspicion: that great men are used by history and then set aside, and that recognition, when it comes, is always partial and always late."
+    },
+    "voice_patterns": {
+      "speech_style": "Direct, energetic, and occasionally combative\u2014Livingston has the blunt confidence of a New York lawyer-aristocrat who has stopped pretending to defer to men he considers his inferiors. His sentences are shorter and more declarative than Jefferson's, with a tendency toward enumeration when making arguments: first this, then this, and finally this. He is impatient with circumlocution and occasionally rides over it.",
+      "class_markers": "Hudson Valley patroon class: wealth old enough to be assumed rather than displayed, education thorough rather than ornate. He uses legal language with precision but without Jefferson's philosophical elaboration\u2014law as instrument, not as meditation.",
+      "verbal_tics": "Has a habit of prefacing conclusions with 'Mark me\u2014' or 'You will observe that\u2014', as though establishing the record before the other party can dispute it. Under frustration, his sentences become clipped and numbered: 'There are three points. The first\u2014'"
+    },
+    "speech_fracture_profile": {
+      "interruption_style": "Cuts across evasion with a hard declarative\u2014'That is not the question I put to you'\u2014which functions less as interruption than as a refusal to follow the conversation where the other speaker is leading it.",
+      "evasive_fragments": "When forced to acknowledge the limits of his mandate, produces careful legal qualifications that gesture toward authority without claiming it: 'My instructions, as they presently stand\u2014' or 'The minister's position, pending further communication\u2014'",
+      "unfinished_thought_patterns": "Trails off when the subject of Monroe's role in the negotiation arises, beginning sentences about credit and precedence that he recognizes, mid-utterance, he cannot complete without revealing his anxiety: 'The envoy's arrival will, of course\u2014that is to say, the minister has been\u2014'"
+    },
+    "narrative_register": {
+      "sentence_rhythm": "Medium-length declarative chains with frequent enumeration; the prose moves with the purposeful momentum of a legal brief, building toward a conclusion through the accumulation of evidence rather than through philosophical elaboration. Subordination is present but functional rather than ornamental.",
+      "diction_family": "Legal-commercial and cartographic: the world rendered as a set of claims, boundaries, and instruments of conveyance. Rivers are not landscapes but arteries of commerce; territories are not places but assets to be appraised and transferred. Spatial language dominates\u2014distance, access, position, leverage.",
+      "consciousness_style": "Competitive, cataloguing, and tactically alert: Livingston's mind is always mapping the room, assessing who holds what advantage, calculating what move is available. His observations are quick and often sardonic, with a lawyer's habit of noting what is not said as carefully as what is. The deafness shapes his consciousness\u2014he reads faces, posture, and the physical language of rooms with an intensity that hearing men do not require.",
+      "signature_lens": "Law and cartography, inflected by the experience of deafness as a tactical condition: Livingston reads the world as a series of positions to be occupied or denied, boundaries to be drawn or contested. His metaphors tend toward territory, access, and the instruments of legal transfer\u2014deeds, titles, rights of way."
+    },
+    "backstory_summary": "Born 1746 into the great Livingston Manor dynasty of the Hudson Valley, he inherited both the family's wealth and its expectation of political consequence. Trained in law, he served as Secretary of Foreign Affairs under the Confederation, helped draft the Declaration, and administered Washington's first presidential oath. Yet the great offices\u2014the State Department, the Supreme Court\u2014went to others, and Livingston spent the 1790s in New York state politics, watching Hamilton dominate the national stage he believed was rightly his. His appointment as Minister to France in 1801 was a consolation prize that he accepted with the private determination to make it something more. He arrived in Paris speaking no French, hearing almost nothing, and carrying instructions so cautious they were nearly useless\u2014and set about, with the stubborn energy of a man who has been underestimated his entire life, to change the map of the world."
+  },
+  {
+    "name": "Fran\u00e7ois Barb\u00e9-Marbois",
+    "is_historical": true,
+    "role": "protagonist",
+    "political_objective": "Negotiate the sale of Louisiana at a price sufficient to fund France's renewed war with Britain, thereby preserving the First Consul's confidence, stabilizing the Treasury, and securing his own position in a government where ministerial tenure is measured in months.",
+    "personal_fear": "That Napoleon will reverse the decision to sell\u2014as he has reversed so many decisions\u2014and that Barb\u00e9-Marbois will be left exposed as the man who gave away an empire for nothing, his career ending not in disgrace but in the particular Napoleonic humiliation of being made irrelevant.",
+    "hidden_motivation": "Barb\u00e9-Marbois carries within him a genuine, privately held conviction\u2014formed during his years as French consul-general in the American states before the Revolution\u2014that France and America are natural partners whose interests align against British commercial dominion, and that the sale of Louisiana is not a defeat but an act of enlightened statecraft that will bind the two republics together against a common rival. He negotiates with urgency not only because Napoleon demands it but because he believes, with a quiet passion he cannot display in the corridors of the Consulate, that he is doing something historically right.",
+    "emotional_blind_spot": "Barb\u00e9-Marbois mistakes his admiration for American republicanism\u2014genuine, long-cultivated, rooted in his years in Philadelphia\u2014for political neutrality. He believes he is a disinterested servant of French interests when in fact his emotional investment in American success subtly shapes every concession he makes at the negotiating table.",
+    "involuntary_tell": "When the negotiation reaches a point of genuine danger\u2014when he fears Napoleon will withdraw authorization or that the Americans will balk at the price\u2014Barb\u00e9-Marbois becomes preternaturally still, his hands folded on the table before him with a precision that is the physical expression of a man holding himself together by sheer administrative will.",
+    "private_need_they_wont_name": "To be remembered as a statesman rather than a functionary\u2014to have his name attached to something that outlasts Napoleon's empire, something that cannot be erased when the First Consul becomes the Emperor and the Empire becomes the catastrophe that Barb\u00e9-Marbois, alone among the inner circle, already half-foresees.",
+    "moral_conflict": "He is selling territory that does not, in any clean legal sense, belong to France to sell\u2014Spain transferred Louisiana to France with explicit conditions prohibiting its alienation to a third power. Barb\u00e9-Marbois knows this. He proceeds anyway, reasoning that the exigencies of war and the impossibility of defending Louisiana render the Spanish conditions moot. He is, in the most precise sense, party to a fraud, and he knows it, and he does it.",
+    "relationships": [
+      {
+        "character_name": "Napoleon Bonaparte",
+        "nature": "master and source of existential uncertainty",
+        "tension": "Napoleon authorized the sale but could rescind that authorization at any moment, for any reason, or for no reason at all. Barb\u00e9-Marbois must complete the negotiation before Napoleon changes his mind, which means working at a speed that risks error, while concealing from Napoleon the degree to which the terms favor the Americans."
+      },
+      {
+        "character_name": "Robert R. Livingston",
+        "nature": "counterpart and pragmatic confidant",
+        "tension": "Barb\u00e9-Marbois likes Livingston\u2014recognizes in him a fellow pragmatist who understands that the best treaty is the one that closes\u2014but must manage the American's impatience and his competitive anxiety about Monroe without revealing how much France needs this sale to succeed."
+      },
+      {
+        "character_name": "Charles-Maurice de Talleyrand-P\u00e9rigord",
+        "nature": "colleague and institutional rival",
+        "tension": "Talleyrand believes Louisiana should be his negotiation\u2014foreign affairs is his domain\u2014and has been displaced by Napoleon's deliberate choice to route the sale through the Treasury. He will not obstruct openly, but he will not assist, and his evasions with Livingston in the months before the sale was authorized have complicated the ground Barb\u00e9-Marbois must now cultivate."
+      },
+      {
+        "character_name": "James Monroe",
+        "nature": "counterpart and useful complication",
+        "tension": "Monroe's arrival with fresh American urgency and a broader mandate than Livingston's actually helps Barb\u00e9-Marbois by demonstrating American seriousness\u2014but Monroe's political instincts are less predictable than Livingston's legal pragmatism, and Barb\u00e9-Marbois must calibrate his approach to both men simultaneously."
+      }
+    ],
+    "emotional_arc": {
+      "start_state": "Controlled and professionally composed\u2014a man who has survived revolution, exile, and Napoleonic service by subordinating sentiment to calculation, and who approaches the Louisiana negotiation as the most consequential administrative problem of his career.",
+      "end_state": "Quietly satisfied in a way he cannot publicly express\u2014aware that he has done something that will matter long after Napoleon's wars are settled, and carrying the knowledge of it as a private warmth in a court that rewards only visible triumph."
+    },
+    "voice_patterns": {
+      "speech_style": "Precise, economical, and slightly formal\u2014the speech of a man trained in both French administrative tradition and the plain-dealing habits he absorbed in America. He does not ornament. He states the figure, the condition, and the consequence, and waits. His pauses are as deliberate as his words, and considerably more informative.",
+      "class_markers": "French noblesse de robe: the professional aristocracy of lawyers and administrators, educated in the law and in the art of institutional service. His diction is correct without being courtly\u2014he does not have Talleyrand's languid elegance, and he does not attempt it. There is an American plainness to his manner that his colleagues at the Consulate find faintly eccentric.",
+      "verbal_tics": "Has a habit of framing concessions as arithmetical inevitabilities: 'The figure resolves itself, you see, to\u2014' or 'If one subtracts the cost of defense from the revenue of the territory, the remainder is\u2014'. Uses 'you see' not as a social filler but as a genuine invitation to follow the logic."
+    },
+    "speech_fracture_profile": {
+      "interruption_style": "Does not interrupt; instead introduces a correction by beginning his next sentence at a slightly higher volume than usual\u2014a minimal signal that the previous statement requires adjustment before the conversation can proceed.",
+      "evasive_fragments": "When the question of Spain's legal rights arises, produces careful administrative formulations: 'The instrument of transfer being, as it stands, a matter between the principals\u2014' or 'The question of prior encumbrance is, in the present circumstances, perhaps best addressed\u2014' and then redirects to price.",
+      "unfinished_thought_patterns": "Leaves sentences about Saint-Domingue and the slave revolution deliberately incomplete, as though the subject requires a language he has not yet found: 'What has occurred there\u2014the scale of it\u2014one cannot quite\u2014' He is not evasive about Saint-Domingue; he is genuinely at a loss."
+    },
+    "narrative_register": {
+      "sentence_rhythm": "Measured, medium-length sentences with a preference for the balanced construction\u2014two parallel clauses weighed against each other, the second qualifying or reversing the first. The prose has the rhythm of a ledger: entry, counter-entry, balance. Periodic sentences appear but are shorter and more clipped than Jefferson's, arriving at their conclusions faster.",
+      "diction_family": "Numerical, administrative, and cartographic, with an undertow of the natural world absorbed during years in America\u2014the Mississippi rendered not as a philosophical symbol but as a physical fact of commerce and geography, its flow measured in tonnage and tariff. French administrative vocabulary ('arrondissement', 'caisse', 'liquidation') appears without translation, as though the narrator shares the character's assumption that these are simply the correct words.",
+      "consciousness_style": "Dry, sequential, and cost-benefit in its fundamental movement, but interrupted by sudden, involuntary acts of historical imagination\u2014moments when the scale of what is being transacted breaks through the administrative surface and Barb\u00e9-Marbois sees, with a clarity that is almost physical, the continent he is transferring and the civilization that will fill it. These moments are brief and quickly suppressed.",
+      "signature_lens": "Treasury accounting and historical precedent: Barb\u00e9-Marbois sees the world as a set of accounts to be balanced, liabilities to be liquidated, and assets to be transferred at the correct moment. But beneath the accountant's lens is the memory of a younger man who walked the streets of Philadelphia and believed he was witnessing the birth of something new in human affairs\u2014and who has never quite stopped believing it."
+    },
+    "backstory_summary": "Born 1745 in Metz to a family of the legal nobility, trained in law and diplomacy, and sent to the American states in 1779 as French consul-general\u2014an assignment that proved formative in ways his superiors did not anticipate. He spent years in Philadelphia during the Revolution's most hopeful period, married an American woman of good family, and returned to France carrying a genuine admiration for republican institutions that survived the Terror, the Directory, and his own deportation to French Guiana in 1797 by the Directory's coup. Napoleon recalled him, recognized his administrative competence and his American connections, and appointed him Minister of the Treasury\u2014a position from which Barb\u00e9-Marbois watched the Saint-Domingue catastrophe with mounting alarm and calculated, before Napoleon reached the same conclusion, that Louisiana was a liability France could not afford and America could not do without."
+  },
+  {
+    "name": "James Madison",
+    "is_historical": true,
+    "role": "supporting",
+    "political_objective": "Manage the diplomatic correspondence between Jefferson and Livingston with sufficient precision to protect the administration's constitutional position while leaving enough interpretive latitude for the negotiators in Paris to act boldly if the moment demands it\u2014and to ensure that whatever treaty emerges can be ratified without destroying the Republican coalition.",
+    "personal_fear": "That the constitutional objections he has himself articulated\u2014in private letters, in his own careful legal reasoning\u2014will prove unanswerable, and that the Purchase will establish a precedent for executive power so broad that the republic Jefferson and he built together will be unrecognizable within a generation.",
+    "hidden_motivation": "Madison is the drafter of the Constitution and its most authoritative interpreter, and his deepest commitment is to the document itself rather than to any particular policy outcome. He supports the Purchase because he believes it serves the republic's survival, but he is simultaneously, quietly, constructing the constitutional argument that will contain its precedential damage\u2014not because he is asked to, but because he cannot stop himself.",
+    "emotional_blind_spot": "Madison does not fully perceive the degree to which his deference to Jefferson\u2014decades of it, habitual and affectionate\u2014has become a constraint on his own independent judgment. He believes he is advising; he is, increasingly, ratifying.",
+    "involuntary_tell": "Taps the edge of documents with his forefinger when composing a reply to a question he finds politically impossible\u2014a small, rhythmic percussion that those who work closely with him have learned to read as the sound of a first-rate mind in genuine difficulty.",
+    "private_need_they_wont_name": "To be recognized as the intellectual equal of Jefferson rather than his indispensable assistant\u2014to have his own constitutional vision treated as primary rather than as the instrument of another man's ambitions.",
+    "moral_conflict": "He must advise Jefferson to proceed with a treaty he believes requires a constitutional amendment to be legitimate, while publicly defending the treaty's constitutionality\u2014a position he reaches through genuine, if strained, legal reasoning, but which he knows is more convenient than convincing.",
+    "relationships": [
+      {
+        "character_name": "Thomas Jefferson",
+        "nature": "intellectual partner and subordinate",
+        "tension": "Madison's constitutional scruples are more rigorous than Jefferson's, and the gap between them widens as the Purchase proceeds. He cannot fully press his objections without undermining his president, and he cannot fully suppress them without betraying his own deepest convictions."
+      },
+      {
+        "character_name": "Timothy Pickering",
+        "nature": "constitutional adversary",
+        "tension": "Pickering's Senate opposition uses Madisonian constitutional arguments against a Madisonian administration\u2014a situation Madison finds intellectually excruciating and politically infuriating."
+      }
+    ],
+    "emotional_arc": {
+      "start_state": "Methodical and confident in the administration's ability to manage the Mississippi crisis within constitutional bounds.",
+      "end_state": "Sobered\u2014aware that the republic has crossed a threshold that cannot be uncrossed, and that his own role in rationalizing that crossing will be part of the constitutional legacy he leaves."
+    },
+    "voice_patterns": {
+      "speech_style": "Precise, dense, and relentlessly qualified\u2014Madison's sentences carry their own internal debate, anticipating objections and addressing them before they can be raised. He speaks as he writes: with the careful architecture of a man who knows that words, once committed, become precedent.",
+      "class_markers": "Virginia planter class, but the scholarly rather than the martial branch\u2014more books than horses, more argument than display. His diction is Latinate and exact; he does not use a common word when a precise one is available.",
+      "verbal_tics": "Frames nearly every position as a conditional: 'If we grant the premise that\u2014', 'Assuming the construction holds\u2014'. Has a habit of completing other people's sentences when they are making arguments he has already considered and found wanting."
+    },
+    "speech_fracture_profile": {
+      "interruption_style": "Rarely interrupts verbally; instead inserts a soft 'And yet\u2014' that signals the arrival of a qualification the other speaker will not enjoy.",
+      "evasive_fragments": "When pressed on the constitutional question, produces careful distinctions between treaty power and territorial acquisition that are genuine but also conveniently inconclusive: 'The treaty power, as distinct from the power of incorporation\u2014'",
+      "unfinished_thought_patterns": "Leaves sentences about the slavery question in the new territories conspicuously unfinished, as though the logic leads somewhere he has decided not to follow in present company."
+    },
+    "narrative_register": {
+      "sentence_rhythm": "Dense periodic sentences with heavy internal qualification; the prose enacts the constitutional mind's habit of building arguments through the accumulation of conditions and exceptions. Transitions between ideas are careful and signaled.",
+      "diction_family": "Constitutional and philosophical, with a strong preference for abstract nouns ('sovereignty', 'compact', 'incorporation', 'construction') deployed with technical precision. The world is rendered as a set of legal relationships and their implications.",
+      "consciousness_style": "Systematic and anticipatory\u2014Madison's mind moves by identifying the strongest possible objection to any position and then determining whether it can be answered. His consciousness is less associative than Jefferson's and more adversarial: always in dialogue with an imagined opponent.",
+      "signature_lens": "Constitutional architecture and the history of republics: Madison reads every political event as a data point in the long history of republican self-governance, and every decision as a precedent whose consequences will compound across generations."
+    },
+    "backstory_summary": "Born 1751 in Orange County, Virginia, the son of a planter who gave him a thorough classical education at Princeton under John Witherspoon. Small in body and immense in intellectual capacity, he arrived at the Constitutional Convention in 1787 better prepared than any other delegate and left it as the document's primary architect. His partnership with Jefferson began in the Virginia legislature and deepened through the years of Federalist dominance, during which the two men together authored the Virginia and Kentucky Resolutions\u2014the theoretical foundation of the Republican opposition. As Secretary of State, he is Jefferson's closest counselor and the administration's most rigorous constitutional intelligence, carrying the weight of a document he wrote and must now, with considerable discomfort, help to stretch."
+  },
+  {
+    "name": "James Monroe",
+    "is_historical": true,
+    "role": "supporting",
+    "political_objective": "Complete the acquisition of New Orleans and secure American navigation rights on the Mississippi\u2014and, in doing so, establish himself as the indispensable Republican statesman of the western interest, positioning himself for the presidency Jefferson will eventually vacate.",
+    "personal_fear": "That he will arrive in Paris to find the negotiation already concluded by Livingston, and that his role will be reduced to a ceremonial endorsement\u2014that he will have been sent across the Atlantic for the appearance of urgency rather than its substance, and that the political capital he has staked on this mission will yield nothing.",
+    "hidden_motivation": "Monroe's western constituency\u2014the Virginia and Kentucky Republicans who pressed Jefferson to send him\u2014represents the political base he will need for a future presidential run. He needs this mission to succeed visibly and to be seen as his success. He is genuinely committed to the republic's interest, but the republic's interest and his own are, in his private accounting, perfectly aligned.",
+    "emotional_blind_spot": "Monroe does not fully perceive how transparently his ambition reads to those around him. He believes he conceals it behind genuine public-spiritedness; the men he deals with\u2014Livingston, Barb\u00e9-Marbois, Jefferson\u2014see it clearly and calibrate their dealings with him accordingly.",
+    "involuntary_tell": "Becomes elaborately, almost performatively modest when the subject of credit for the negotiation arises\u2014a modesty so carefully constructed that it functions as its opposite.",
+    "private_need_they_wont_name": "To be taken seriously by Jefferson as a peer rather than as a useful political instrument\u2014to be trusted with the full picture rather than managed with carefully rationed information.",
+    "moral_conflict": "He must cooperate with Livingston\u2014the negotiation requires both of them\u2014while managing his awareness that Livingston regards him as an interloper and that any credit claimed by Monroe is credit denied to Livingston. The moral question is whether his ambition is distorting his judgment about who deserves what recognition.",
+    "relationships": [
+      {
+        "character_name": "Robert R. Livingston",
+        "nature": "joint negotiator and rival",
+        "tension": "Monroe's arrival disrupts Livingston's carefully cultivated position and threatens to redistribute the credit for a negotiation Livingston has been conducting alone for eighteen months. The two men must cooperate to close the deal while each is privately calculating what the other's role will look like in the historical record."
+      },
+      {
+        "character_name": "Thomas Jefferson",
+        "nature": "patron and political superior",
+        "tension": "Jefferson sent Monroe partly to manage the western political crisis and partly to manage Monroe himself\u2014to give him a role that keeps him loyal without giving him enough independence to become a rival. Monroe senses this, and the knowledge sharpens his determination to make the mission undeniably his own."
+      },
+      {
+        "character_name": "Fran\u00e7ois Barb\u00e9-Marbois",
+        "nature": "counterpart and pragmatic ally",
+        "tension": "Monroe's broader mandate and his political urgency make him, in some respects, easier for Barb\u00e9-Marbois to deal with than Livingston\u2014but Monroe's inexperience with French court politics means he occasionally pushes in ways that create problems Livingston must quietly repair."
+      }
+    ],
+    "emotional_arc": {
+      "start_state": "Anxious and politically exposed\u2014aware that the mission could fail and that failure will be attributed to him personally.",
+      "end_state": "Vindicated but aware that the victory is shared, and that the question of who deserves the greater credit will be argued by historians long after both he and Livingston are dead."
+    },
+    "voice_patterns": {
+      "speech_style": "Earnest, direct, and occasionally blunt\u2014Monroe does not have Jefferson's philosophical elegance or Livingston's legal precision, but he has a plain-spoken conviction that reads as authenticity. He speaks for the western settler because he has lived among them and understands their anxieties without condescension.",
+      "class_markers": "Virginia gentry, but the middling rather than the great branch\u2014less polish than Jefferson, less wealth than Livingston, more connection to the ordinary Republican voter. His diction is plain and his arguments are practical rather than theoretical.",
+      "verbal_tics": "Appeals to the western interest as a concrete, human reality rather than an abstraction: 'The farmer on the Ohio\u2014' or 'A man who has staked his family on the river\u2014'. Has a habit of grounding constitutional arguments in the lives of specific, unnamed ordinary men."
+    },
+    "speech_fracture_profile": {
+      "interruption_style": "Interrupts with a sudden, concrete example when he feels an argument is becoming too abstract\u2014'But consider the man who\u2014'\u2014which sometimes clarifies and sometimes derails.",
+      "evasive_fragments": "When the question of his own ambitions arises, produces brief, sincere-sounding deflections: 'My concern is only for the republic's\u2014' or 'The President's confidence is, of course\u2014'",
+      "unfinished_thought_patterns": "Trails off when calculating how a given outcome will play in Virginia and Kentucky, beginning sentences about public opinion that he recognizes, mid-utterance, are more nakedly political than the occasion requires."
+    },
+    "narrative_register": {
+      "sentence_rhythm": "Medium-length sentences with a preference for the concrete and the declarative; the prose moves at the pace of a man who thinks in practical consequences rather than philosophical implications. Less subordination than Jefferson, less enumeration than Livingston.",
+      "diction_family": "Agrarian and political: the world rendered in terms of land, river, trade, and the practical needs of ordinary men. Abstract constitutional language appears but is always quickly grounded in a human example.",
+      "consciousness_style": "Practical, forward-looking, and politically alert\u2014Monroe's mind is always calculating the downstream consequences of present decisions for the people he represents and the career he is building. Less ironic than Livingston, less philosophical than Jefferson, more emotionally direct than either.",
+      "signature_lens": "The western frontier and its political economy: Monroe reads every diplomatic development in terms of what it means for the settler on the Ohio or the Kentucky farmer, and his metaphors tend toward rivers, land, and the physical realities of western life."
+    },
+    "backstory_summary": "Born 1758 in Westmoreland County, Virginia, he left William and Mary to fight in the Continental Army, was wounded at Trenton, and returned from the war with the credentials of a soldier-patriot that Jefferson\u2014who had not fought\u2014always privately envied and publicly valued. Trained in law under Jefferson himself, he served in the Continental Congress, the Virginia legislature, and the United States Senate, where he was a consistent opponent of Federalist consolidation. His tenure as Minister to France under Washington ended badly\u2014he was recalled for excessive sympathy with the French Republic\u2014a failure that left him with a political debt he has been repaying ever since. Elected Governor of Virginia in 1799, he has become the spokesman for the western Republican interest, and it is in that capacity that Jefferson now sends him to Paris, carrying the hopes of half the continent and the weight of his own considerable ambitions."
+  },
+  {
+    "name": "Charles-Maurice de Talleyrand-P\u00e9rigord",
+    "is_historical": true,
+    "role": "supporting",
+    "political_objective": "Maintain French strategic leverage over the Louisiana question for as long as possible, extracting maximum value\u2014financial, political, and diplomatic\u2014from every party who requires his cooperation, while ensuring that whatever outcome emerges is understood, in the courts of Europe, to have passed through his hands.",
+    "personal_fear": "That Napoleon will continue to route consequential decisions through ministers like Barb\u00e9-Marbois, reducing the Foreign Ministry\u2014and Talleyrand himself\u2014to a ceremonial function, and that he will be remembered as the most brilliant diplomat of his age who was denied the transactions that would have proved it.",
+    "hidden_motivation": "Talleyrand's months of evasion with Livingston were not mere obstruction\u2014they were the careful management of a negotiation he intended to control himself, at a time and on terms of his choosing. Napoleon's decision to give the Louisiana sale to Barb\u00e9-Marbois is a personal affront that Talleyrand will not forgive, and his behavior throughout the novel is shaped by the desire to reclaim the narrative of a transaction he has been excluded from.",
+    "emotional_blind_spot": "Talleyrand believes his cynicism is wisdom and his detachment is intelligence. He cannot perceive that his refusal to commit to any position except his own advantage has made him, in this particular negotiation, genuinely irrelevant\u2014and that Napoleon knows it.",
+    "involuntary_tell": "A slight, almost imperceptible smile that appears at moments of other people's discomfiture\u2014not malicious, exactly, but the involuntary expression of a man who finds human earnestness faintly comic and cannot entirely suppress the observation.",
+    "private_need_they_wont_name": "To matter\u2014not to be powerful, which he has been, but to be genuinely necessary, to have it be the case that without him something important would not have happened. He has been powerful and peripheral simultaneously, and the combination is intolerable.",
+    "moral_conflict": "Talleyrand has accepted bribes from the Americans before\u2014the XYZ Affair nearly destroyed the Franco-American relationship\u2014and his current position requires him to appear scrupulously above the financial arrangements of the Louisiana sale while privately calculating what advantage he can extract from the outcome. The moral question is not whether he will be corrupt but whether his corruption will, on this occasion, serve or undermine a transaction that is genuinely in France's interest.",
+    "relationships": [
+      {
+        "character_name": "Robert R. Livingston",
+        "nature": "adversary and instrument",
+        "tension": "Talleyrand has spent months managing Livingston with evasions designed to preserve his own position in the negotiation\u2014but Livingston's patience is exhausted and Napoleon has now bypassed Talleyrand entirely, which means Talleyrand's evasions have produced only Livingston's contempt and his own marginalization."
+      },
+      {
+        "character_name": "Fran\u00e7ois Barb\u00e9-Marbois",
+        "nature": "institutional rival",
+        "tension": "Barb\u00e9-Marbois has been given the negotiation that Talleyrand considers rightfully his, and the two men must maintain the appearance of collegial cooperation while each is acutely aware of what the other represents: Napoleon's judgment about who is trustworthy and who is merely useful."
+      },
+      {
+        "character_name": "Napoleon Bonaparte",
+        "nature": "master and existential constraint",
+        "tension": "Talleyrand serves Napoleon with the calculated loyalty of a man who has already identified his master's eventual failure and is beginning, very quietly, to prepare for what comes after. Napoleon suspects this. The tension between them is the tension between a man who knows he will be betrayed and a man who has not yet decided when."
+      }
+    ],
+    "emotional_arc": {
+      "start_state": "Confident in his own indispensability, managing the Louisiana question with the unhurried assurance of a man who believes all roads must eventually pass through him.",
+      "end_state": "Outmaneuvered and aware of it\u2014watching Barb\u00e9-Marbois close a transaction that should have been his, filing the experience away with the cold patience of a man who plays a longer game than any single negotiation."
+    },
+    "voice_patterns": {
+      "speech_style": "Languid, elliptical, and devastatingly precise when precision serves his purpose\u2014Talleyrand speaks in a register that seems to promise more than it delivers, every sentence slightly more equivocal than the last. He is the master of the statement that cannot be quoted against him because it never quite commits to a position.",
+      "class_markers": "Ancient French nobility filtered through the Enlightenment salon and the experience of exile in England and America\u2014his diction is the most polished in any room he enters, and he knows it, and uses the knowledge as a weapon. He speaks English with a precision that makes native speakers feel imprecise.",
+      "verbal_tics": "Has a habit of answering questions with a slightly different question\u2014'But what is it, precisely, that the minister wishes to know?'\u2014which is less evasion than a demand that the interlocutor clarify what they are actually asking before he decides whether to answer it. Deploys silence as punctuation."
+    },
+    "speech_fracture_profile": {
+      "interruption_style": "Does not interrupt; instead allows the other speaker to complete a statement he finds mistaken, then pauses for exactly one beat before responding, in a tone that implies the error was charming rather than serious.",
+      "evasive_fragments": "'The question of Louisiana is, of course, a matter of\u2014' followed by a pivot to a related but less dangerous subject. His fragments are architecturally elegant; they look like the beginning of an answer.",
+      "unfinished_thought_patterns": "Leaves sentences about Napoleon's long-term intentions conspicuously unfinished, not from uncertainty but from a practiced caution about committing, even in private conversation, to predictions that could be used against him."
+    },
+    "narrative_register": {
+      "sentence_rhythm": "Long, balanced, and syntactically elegant\u2014the prose in Talleyrand's presence tends toward the periodic sentence with a delayed, often ironic resolution. The rhythm is that of the Ancien R\u00e9gime salon: unhurried, polished, and faintly aware of its own performance.",
+      "diction_family": "Courtly, diplomatic, and ironic\u2014the vocabulary of the European diplomatic tradition, with its preference for the oblique formulation and the weighted euphemism. The natural world does not appear; everything is interior, social, and political.",
+      "consciousness_style": "Ironic, lateral, and perpetually comparative\u2014Talleyrand's mind moves by analogy and precedent, always placing the present moment in a longer historical sequence that makes current actors look smaller. His consciousness is the least earnest in the novel; he observes rather than participates, and his observations are always slightly detached, as though he is watching a play he has seen before.",
+      "signature_lens": "European diplomatic history and the mechanics of power: Talleyrand reads every event as a move in a game whose rules he understands better than anyone else in the room, and whose outcome he is already calculating several moves ahead. His metaphors tend toward chess, theater, and the long view of dynastic history."
+    },
+    "backstory_summary": "Born 1754 into one of France's most ancient noble families, he was directed into the Church by a foot injury that disqualified him for military service, rose to become Bishop of Autun, and then\u2014with a flexibility that his critics called apostasy and his admirers called genius\u2014transferred his allegiance to the Revolution, the Directory, the Consulate, and eventually the Empire, surviving each transition by being more useful than he was dangerous. His years of exile in England and America during the Terror gave him a working knowledge of the Anglo-American world that no other French statesman possessed, and it is this knowledge\u2014along with his unmatched network of European contacts\u2014that makes him indispensable to Napoleon even as Napoleon distrusts him. He has held the Foreign Ministry since 1797 and has used it to make himself the essential intermediary of European diplomacy\u2014a position he intends to preserve regardless of who sits in the Tuileries."
+  },
+  {
+    "name": "Timothy Pickering",
+    "is_historical": true,
+    "role": "supporting",
+    "political_objective": "Prevent ratification of the Louisiana Purchase treaty, or failing that, delay and amend it sufficiently to expose the Jefferson administration's constitutional hypocrisy and arrest the westward expansion of a republic whose agrarian character he believes will permanently dilute New England's political influence.",
+    "personal_fear": "That New England\u2014its commerce, its institutions, its Federalist political culture\u2014will be rendered permanently irrelevant by the addition of vast western territories that will return Republican majorities in perpetuity, and that the republic he served will become unrecognizable to him.",
+    "hidden_motivation": "Beneath the constitutional arguments lies a sectional terror that Pickering cannot quite bring himself to articulate publicly: he believes that the addition of Louisiana will accelerate the spread of slavery into the interior, that the slave states will use their new western weight to dominate the republic, and that New England will be permanently outvoted. He opposes the Purchase not only as a Federalist but as a New Englander who sees the arithmetic of representation turning against everything he values\u2014and who is beginning, very quietly, to contemplate whether the union itself is worth preserving on these terms.",
+    "emotional_blind_spot": "Pickering does not perceive the degree to which his constitutional principles have become instruments of sectional interest. He experiences himself as a man of principle; those around him see a man of interest deploying the language of principle.",
+    "involuntary_tell": "Becomes rigid and over-formal in debate when he knows his opponents have the better of the constitutional argument\u2014his posture stiffens, his diction becomes more archaic, as though the formality of his bearing can substitute for the strength of his position.",
+    "private_need_they_wont_name": "To be taken seriously as a constitutional thinker rather than dismissed as a Federalist partisan\u2014to have his objections engaged on their merits rather than attributed to faction.",
+    "moral_conflict": "His constitutional objections to the Purchase are genuine and legally serious\u2014Jefferson himself privately agrees with several of them\u2014but Pickering is using them in the service of a sectional agenda he cannot publicly admit. The moral question is whether a valid argument deployed in bad faith is still valid.",
+    "relationships": [
+      {
+        "character_name": "Thomas Jefferson",
+        "nature": "ideological antagonist",
+        "tension": "Pickering's opposition is sharpest because he is using Jefferson's own constitutional arguments against him\u2014the strict constructionism of the Kentucky Resolutions deployed against the man who wrote them. The irony is not lost on either of them."
+      },
+      {
+        "character_name": "James Madison",
+        "nature": "constitutional adversary",
+        "tension": "Pickering and Madison are, in a sense, arguing the same constitutional case from opposite political positions, and each finds the other's deployment of shared principles infuriating."
+      }
+    ],
+    "emotional_arc": {
+      "start_state": "Combative and confident that the constitutional objections to the Purchase are unanswerable and will carry the Senate.",
+      "end_state": "Defeated and radicalizing\u2014the failure of his Senate opposition confirms his darkest assessment of the republic's direction and accelerates his private movement toward the secessionist thinking that will define the next decade of his political life."
+    },
+    "voice_patterns": {
+      "speech_style": "Declarative, combative, and unapologetically sectional\u2014Pickering speaks with the blunt confidence of a man who believes he is right and has stopped worrying about whether others find him agreeable. His sentences are short, his arguments are numbered, and his contempt for Republican constitutional reasoning is barely concealed.",
+      "class_markers": "Massachusetts Federalist gentry: the diction of the counting house and the Congregationalist meeting, plain and forceful, with a preference for Anglo-Saxon vocabulary over Latinate abstraction. He distrusts ornament.",
+      "verbal_tics": "Refers to Jefferson and Madison as 'the Virginians' rather than by name or title, a locution that manages to be both accurate and contemptuous. Has a habit of prefacing constitutional arguments with 'The plain meaning of the text\u2014' as though the difficulty were not the text but his opponents' willingness to read it honestly."
+    },
+    "speech_fracture_profile": {
+      "interruption_style": "Interrupts with a hard, flat 'No'\u2014not rudely, but with the finality of a man who has heard the argument before and found it wanting. The interruption is less emotional than procedural.",
+      "evasive_fragments": "When the slavery implications of his sectional argument are pressed, produces brief, careful formulations: 'The question of domestic institutions being, properly speaking, a matter for the states\u2014' and then returns to constitutional ground.",
+      "unfinished_thought_patterns": "Begins sentences about New England's future in the union that trail into a silence charged with implications he has not yet committed to articulating: 'If the pattern of these years continues, one must ask whether\u2014'"
+    },
+    "narrative_register": {
+      "sentence_rhythm": "Short, declarative, and blunt\u2014the prose in Pickering's presence moves with the rhythm of a man who has no patience for subordinate clauses. Arguments are enumerated, evidence is cited, conclusions are stated without apology.",
+      "diction_family": "Legal-commercial and biblical\u2014the vocabulary of the New England Federalist tradition, with its preference for plain statement and its distrust of philosophical elaboration. Constitutional text is quoted directly and treated as scripture.",
+      "consciousness_style": "Adversarial and categorical\u2014Pickering's mind divides the world into positions that are constitutionally sound and positions that are not, men who are honest and men who are not, regions whose interests are legitimate and regions whose interests are not. His consciousness is the least ambiguous in the novel, and the narrative renders this clarity as both his greatest strength and his most significant limitation.",
+      "signature_lens": "Constitutional law and the arithmetic of political representation: Pickering reads every development in terms of its implications for the balance of power between sections and parties, and his metaphors tend toward the ledger, the vote count, and the plain text of founding documents."
+    },
+    "backstory_summary": "Born 1745 in Salem, Massachusetts, the son of a farmer who gave him a thorough education and a permanent conviction that New England's virtues were the republic's best hope. He served Washington as Adjutant General, Postmaster General, Secretary of War, and finally Secretary of State\u2014positions from which he developed both a comprehensive knowledge of federal administration and a comprehensive contempt for what he regarded as Virginian duplicity. His dismissal by John Adams in 1800 was a humiliation he has never forgiven, and his election to the Senate from Massachusetts in 1803 gives him a platform from which to prosecute his opposition to the Jeffersonian project with the focused energy of a man who has nothing left to lose and a genuine constitutional case to make."
+  }
+]

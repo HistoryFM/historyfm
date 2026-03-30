@@ -1,0 +1,107 @@
+You are outlining every chapter of a historical fiction novel. Each chapter outline is a contract—it specifies exactly what the chapter must accomplish narratively, dramatically, and thematically. These outlines will directly drive prose generation, so precision matters.
+
+**Novel Specification:**
+- **Title:** {{ novel_spec.title or "To be determined" }}
+- **Era:** {{ novel_spec.era_start }}–{{ novel_spec.era_end }}
+- **Region:** {{ novel_spec.region }}
+- **Central Event:** {{ novel_spec.central_event }}
+- **POV Count:** {{ novel_spec.pov_count }}
+- **Thematic Focus:** {{ novel_spec.thematic_focus | join(", ") }}
+{% if novel_spec.synopsis %}
+- **Approved Synopsis:** {{ novel_spec.synopsis }}
+{% endif %}
+
+**World State Summary:**
+
+*Characters:*
+{% for char in world_state.characters %}
+- **{{ char.name }}** ({{ char.role }}): {{ char.political_objective }}
+  - Arc: {{ char.emotional_arc.start_state }} → {{ char.emotional_arc.end_state }}
+{% endfor %}
+
+*Key Historical Events:*
+{% for event in world_state.historical_context.key_events %}
+- {{ event.date }}: {{ event.event }} — {{ event.significance }}
+{% endfor %}
+
+**Act Structure:**
+{% for act in act_structure.acts %}
+**Act {{ act.act_number }}: {{ act.title }}** (Chapters {{ act.chapters | join(", ") }})
+{{ act.description }}
+Key beats:
+{% for beat in act.dramatic_beats %}
+  - {{ beat }}
+{% endfor %}
+Stakes: {{ act.stakes_level }}
+
+{% endfor %}
+
+**Your task:**
+
+Create a detailed outline for EVERY chapter in the novel (chapters {{ act_structure.acts[0].chapters[0] }} through {{ act_structure.acts[-1].chapters[-1] }}). For each chapter provide:
+
+1. **Chapter Number**: Sequential integer.
+2. **Title**: Evocative chapter title.
+3. **POV Character**: Which character's perspective drives this chapter. Rotate POVs to maintain balance.
+4. **Setting**: Specific physical location with period detail.
+5. **Time Period**: In-story date or date-range for the chapter events.
+6. **Political Context**: The political situation at the start of this chapter—what has just happened, what is at stake.
+7. **Chapter Goal**: What this chapter must accomplish narratively (1–2 sentences).
+8. **Conflict**: The central conflict or tension driving the chapter.
+9. **Turn**: The key turning point or revelation—the moment that changes something irreversibly.
+10. **Consequences**: What changes as a result of this chapter's events—state changes for characters, relationships, and political landscape.
+11. **Hard Reveal**: One non-trivial reveal that reinterprets earlier assumptions (mandatory: minimum one per chapter).
+12. **Soft Reversal**: One softer but meaningful reversal in expected momentum (mandatory: minimum one per chapter).
+13. **On-Page Opposing Move**: The opposing force's active move that happens on-page (not via memo/report).
+14. **Ending Mode**: Pick exactly one ending taxonomy: `cliffhanger_action`, `reversal_reveal`, `arrival_of_threat`, `moral_breach`, `relationship_rupture`, `public_countdown`, `mid_action`, `mundane_detail`, `comic_beat`, `sensory_non_symbolic`, `bureaucratic_pivot`.
+15. **Petty Moment** (strongly recommended): A moment of vanity, jealousy, or triviality that the narrative does NOT rationalize, contextualize as strategic, or redeem. The character is petty, and the narrative lets it stand without explanation. This is mandatory for great fiction — characters who operate at peak moral seriousness at all times produce admiration without recognition. At least one petty moment per chapter makes the reader feel they are watching a real person. Examples: "Livingston is quietly pleased that his French pronunciation is better than Monroe's and dwells on the comparison for two sentences without irony or strategic purpose," "Jefferson notices that Hamilton's portrait is better lit in the hallway and resents it briefly before returning to the dispatch," "Barbé-Marbois is irritated that the clerk used the wrong honorific and corrects him in front of witnesses over something that has no bearing on the negotiation." Leave empty only if the chapter cannot plausibly include one.
+16. **Estimated Word Count**: Target word count for this chapter.
+17. **Act Number**: Which act this chapter belongs to.
+
+**Critical requirements:**
+- Every dramatic beat listed in the act structure must appear in at least one chapter outline.
+- POV distribution should be roughly balanced across the novel.
+- Chapters within an act should build progressively toward the act's climax.
+- Each chapter must have a clear TURN—no chapter should be pure setup or pure denouement.
+- **Reveal budget (mandatory):** every chapter includes at least one hard reveal and one soft reversal.
+- **Compulsion pacing rule:** by roughly 65% of chapter runtime, include a development that forces readers to reinterpret prior assumptions.
+- **Antagonist pressure rule:** every chapter must include one active opposing move on-page.
+- **Ending variation rule:** do not repeat the same `ending_mode` in consecutive chapters.
+- Time periods must follow historical chronology and respect the key events timeline.
+- Word counts should sum to the target length ({{ novel_spec.desired_length }}).
+{% if min_words is defined and max_words is defined and target_words is defined %}
+- **Each chapter's estimated_word_count MUST be between {{ min_words }} and {{ max_words }} words.** The target is {{ target_words }} words per chapter. Do NOT plan any chapter above {{ max_words }} words — oversized chapters cost 3× more to revise and systematically fail quality gates.
+{% endif %}
+{% if novel_spec.synopsis %}
+- **SYNOPSIS POV MANDATE (NON-NEGOTIABLE):** The approved synopsis names specific characters as POV protagonists. Re-read the synopsis above and identify every character it describes as witnessing, observing, narrating, or experiencing events from their perspective. These characters MUST be used as the POV characters in your chapter outlines. Do NOT invent alternative POV characters to replace them. Do NOT substitute fictional characters for the synopsis's named POV characters. The POV rotation must use exactly the characters the synopsis specifies. If the synopsis names {{ novel_spec.pov_count }} POV characters, those are your {{ novel_spec.pov_count }} POV characters — no substitutions.
+{% else %}
+- At least one fictional (non-historical) character should appear as a POV character. The reader needs a character they can follow from the inside — someone whose thoughts, fears, and choices they experience directly.
+{% endif %}
+
+**Output a JSON array** of chapter outlines matching this schema:
+
+```json
+[
+  {
+    "chapter_number": <integer>,
+    "title": "<string>",
+    "pov_character": "<string>",
+    "setting": "<string>",
+    "time_period": "<string>",
+    "political_context": "<string>",
+    "chapter_goal": "<string>",
+    "conflict": "<string>",
+    "turn": "<string>",
+    "consequences": "<string>",
+    "hard_reveal": "<string>",
+    "soft_reversal": "<string>",
+    "on_page_opposing_move": "<string>",
+    "ending_mode": "<string: cliffhanger_action|reversal_reveal|arrival_of_threat|moral_breach|relationship_rupture|public_countdown|mid_action|mundane_detail|comic_beat|sensory_non_symbolic|bureaucratic_pivot>",
+    "petty_moment": "<string — a moment of vanity/jealousy/triviality the narrative does NOT rationalize, or empty>",
+    "estimated_word_count": <integer>,
+    "act_number": <integer>
+  }
+]
+```
+
+Produce ONLY the JSON array. No preamble, no commentary, no markdown fences.

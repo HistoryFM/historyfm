@@ -1,0 +1,150 @@
+You are performing the **final polish pass** on a chapter of a historical fiction novel. This is the last revision pass. It combines repetition elimination, thematic coherence, and line-level prose quality into a single comprehensive edit.
+
+---
+
+## CHAPTER {{ chapter_number }} — FINAL POLISH
+
+**Chapter Outline:**
+- **Title:** {{ chapter_outline.title }}
+- **POV Character:** {{ chapter_outline.pov_character }}
+- **Chapter Goal:** {{ chapter_outline.chapter_goal }}
+- **Key Turn:** {{ chapter_outline.turn }}
+- **Consequences:** {{ chapter_outline.consequences }}
+{% if chapter_outline.ending_mode %}
+- **Ending Mode (binding):** {{ chapter_outline.ending_mode }}
+{% endif %}
+
+{% if novel_structure_summary %}
+**Novel Structure Context:**
+{{ novel_structure_summary }}
+{% endif %}
+
+---
+
+{% if banned_phrases %}
+## BANNED PHRASES (already used elsewhere in the novel — do NOT reuse)
+
+{% for phrase in banned_phrases %}
+- "{{ phrase }}"
+{% endfor %}
+{% endif %}
+
+{% if other_chapter_phrases %}
+## PHRASES USED IN OTHER CHAPTERS (avoid repetition)
+
+The following distinctive phrases appear in other chapters of this novel. If any of them also appear in THIS chapter, replace them with original alternatives.
+
+{% for phrase in other_chapter_phrases %}
+- "{{ phrase }}"
+{% endfor %}
+{% endif %}
+
+{% if banned_constructions %}
+## BANNED CONSTRUCTION PATTERNS (already used elsewhere — do NOT reuse)
+
+The following sentence-level construction patterns have been used elsewhere in the novel. If any of these patterns appear in THIS chapter (even with different nouns, adjectives, or names filling the slots), replace them with structurally different constructions.
+
+{% for construction in banned_constructions %}
+- {{ construction }}
+{% endfor %}
+{% endif %}
+
+---
+
+## CURRENT DRAFT
+
+{{ chapter_content }}
+
+{% if original_draft %}
+---
+
+## ORIGINAL DRAFT (v0_raw — for reference)
+
+The following is the original raw draft before any revision passes. If previous revision passes cut material that contained strong imagery, vivid sensory detail, or effective dramatic moments, and the current draft is weaker for their absence, you may RESTORE that material — rewritten to fix any issues that caused it to be cut. This is your last chance to recover good prose that was lost in revision.
+
+<original_draft>
+{{ original_draft }}
+</original_draft>
+{% endif %}
+
+{% if quality_audit %}
+---
+
+{{ quality_audit }}
+
+Treat every issue above as a mandatory fix target for this polish pass. These are advisory detections from deterministic checks and must be addressed unless a literal false positive is obvious in-context.
+{% endif %}
+
+---
+
+## REVISION DIRECTIVES
+
+This is the final pass. Revise with precision — every change should make the prose stronger, not just different.
+
+### Non-Negotiable Rule
+
+0. **THE SILENCE RULE.** If a short line, silence, or gesture already carries the emotional beat, do not add explanatory narrator gloss afterward. Keep the dramatic beat; cut the annotation.
+
+### Repetition Elimination
+
+1. **Lexical repetition.** Identify words and phrases that recur too frequently. AI-generated prose is particularly prone to repeating:
+   - Any sentence pattern used to convey impact or surprise (e.g., "[noun] struck/hit [character] with [adjective] force/weight") — allow AT MOST ONE per chapter
+   - Formulaic manner phrases ("with evident [noun]," "with practiced [noun]," "with unmistakable [noun]") — replace with specific action or cut entirely
+   - Favourite adjectives and atmospheric crutch words
+   - Sentence-opening patterns and transitional crutches
+   Count how many times each recurring construction appears. If any appears more than twice, replace all but one instance with varied alternatives or restructure entirely.
+   - Identity-template overuse ("the [noun] of a man who...", "with the [noun] of one who...") — permit at most ONE total instance of this family in the chapter
+
+2. **Semantic repetition.** Identify passages where the same idea, emotion, or observation is expressed multiple times in different words. A character's fear should be established once, powerfully — not restated in every other paragraph. Trust the reader. Cut the weaker restatements.
+
+3. **Cross-chapter dedup.** Check the "banned phrases" and "other chapter phrases" lists above. If any of those phrases or close variants appear in THIS chapter, replace them with original alternatives. The novel must not reuse the same similes, metaphors, or distinctive constructions across chapters.
+
+### Prose Quality
+
+4. **Sentence structure variety.** Check for monotonous syntax. If consecutive sentences follow the same pattern, restructure for variety. Mix short declarative sentences with longer, more complex constructions. Use fragments sparingly but deliberately for emphasis.
+
+4a. **Rhythm audit.** If paragraph lengths are uniform or nearly all dialogue lines are long and polished, rebalance cadence: add short paragraphs, short dialogue lines, and abrupt transitions after dense analytic prose.
+
+5. **Dead weight.** Cut or compress:
+   - Adverbs that duplicate what the verb already conveys ("shouted loudly")
+   - Hedging language ("seemed to," "appeared to," "began to")
+   - Filtering ("He noticed that…," "She saw that…") — go directly to the perception
+   - Throat-clearing sentences that restate what has just happened
+
+6. **Cliché elimination.** Remove or reimagine any clichéd phrases, especially period-fiction clichés: "the die was cast," "blood ran cold," "steely gaze," "with bated breath." Find original ways to express these ideas.
+
+7. **Paragraph architecture.** Each paragraph should have a purpose and an optimal length. Vary paragraph length to control rhythm.
+
+7a. **Sensory preservation.** If you tighten or cut a passage that contains non-visual sensory detail (smell, taste, touch, sound, temperature, physical sensation), redistribute that sensory content nearby rather than losing it. The polished chapter must have equal or greater non-visual sensory grounding than the input. A passage that is crisper but emptier of physical texture is not an improvement.
+
+### Thematic Coherence
+
+8. **Theme through action.** Themes must be dramatised, not stated. Check that thematic tensions are embodied in concrete moments — through the POV character's choices or through events they witness. Remove any passage where a character reflects on What It All Means.
+
+9. **Symbolic texture.** Identify objects, settings, and recurring images that carry thematic weight. Let them acquire significance through context, not through heavy-handed narration.
+
+10. **Moral complexity.** If a character makes a morally correct choice, the cost should be visible. If they make a compromised choice, the reasoning should be clear. Remove any moment that reduces a theme to a simple moral lesson.
+
+### Final Checks
+
+11. **Historical accuracy.** Verify that no anachronistic terms, events, or references have crept in. Characters should not reference events that have not yet occurred in the story's timeline.
+
+12. **Continuity.** Check that character names, titles, and physical details are consistent with earlier chapters.
+
+13. **The final paragraph** of this chapter must propel the reader into the next chapter. It should not resolve neatly — it should open a question or create anticipation.
+   If `ending_mode` is specified in the chapter outline, you MUST realize that mode in the final beat.
+
+14. **Ending-only retry behavior.** If quality context includes an ending-propulsion deficit directive, rewrite ONLY the final 250-400 words to restore propulsion while preserving continuity and the chapter body.
+
+15. **Ending propulsion contract (mandatory when an ending-retry directive is present).** If the quality context above contains an `ENDING-ONLY RETRY DIRECTIVE` or `STRICT ENDING CONTRACT` block, the following rules override all soft guidelines:
+    - **FORBIDDEN** endings: pure reflection without active external consequence (a character alone, thinking or feeling, with no on-page opposing force); stillness as a final image (empty room, character staring, silence falling); summary prose recapping events without adding forward pressure; rhetorical questions as the final beat.
+    - **REQUIRED** in the final ~150 words: at least one unresolved external force marker — a deadline, threat, opposition move, irreversible commitment, or immediate action window. The pressure must be UNRESOLVED at cut-off (do not answer the threat, satisfy the deadline, or resolve the commitment within the chapter).
+    - Reflective deceleration terms (`thought`, `wondered`, `reflected`, `alone`, `quiet`, `contemplated`, `mused`) are **forbidden in the final paragraph** unless an active external consequence appears in the same paragraph.
+
+{% if word_count_floor %}
+### Word Count Constraint
+
+**HARD WORD COUNT FLOOR: {{ word_count_floor }} words.** The original draft was {{ v0_word_count }} words. Your final polish MUST NOT produce fewer than {{ word_count_floor }} words. Polish means improving every sentence, not deleting paragraphs. Tighten individual sentences, but preserve the chapter's substance and dramatic scope. If the draft is approaching the floor, stop cutting and focus on improving what remains.
+{% endif %}
+
+**Output the fully revised chapter in Markdown.** Preserve scene breaks (`---`). Do not add commentary or annotations — output only the revised prose.

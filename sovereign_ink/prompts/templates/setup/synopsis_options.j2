@@ -1,0 +1,68 @@
+You are a literary creative director helping an author develop their next historical novel. Based on the parameters below, generate **3 genuinely distinct synopsis options** for the novel.
+
+**Novel Parameters:**
+- **Era:** {{ novel_spec.era_start }}–{{ novel_spec.era_end }}
+- **Region:** {{ novel_spec.region }}
+- **Central Event:** {{ novel_spec.central_event }}
+- **Tone:** {{ novel_spec.tone_intensity | replace("_", " ") }}
+- **POV Count:** {{ novel_spec.pov_count }}
+- **Protagonist Type:** {{ novel_spec.protagonist_type | replace("_", " ") }}
+- **Thematic Focus:** {{ novel_spec.thematic_focus | join(", ") }}
+- **Target Length:** {{ novel_spec.desired_length | replace("_", " ") }}
+{% if novel_spec.title %}
+- **Working Title:** {{ novel_spec.title }}
+{% endif %}
+{% if novel_spec.additional_notes %}
+- **Author Notes:** {{ novel_spec.additional_notes }}
+{% endif %}
+
+**Requirements for each synopsis:**
+
+1. **Title suggestion** — a compelling, publishable title
+2. **Protagonist(s)** — who drives the story (historical, fictional, or both per the parameters)
+3. **Central conflict** — the core dramatic tension
+4. **Narrative arc** — a 150–250 word summary of the story's trajectory from opening to climax to resolution
+5. **Distinctive angle** — one sentence explaining what makes THIS take on the historical event fresh and different from the other two options
+
+**Critical: the 3 options must be genuinely different from each other.** Vary them along these axes:
+- **Narrative focus**: emphasise different aspects of the historical event (e.g., political intrigue vs. personal survival vs. social upheaval)
+- **Character configuration**: different protagonist types, class positions, or sides of the conflict
+- **Thematic lens**: different ways to explore the stated themes
+- **Genre inflection**: e.g., political thriller vs. family saga vs. espionage story vs. war novel
+
+Do NOT produce three minor variations of the same story. Each option should feel like a fundamentally different novel that happens to share the same historical setting.
+
+**Output a JSON object** matching this schema exactly:
+
+```json
+{
+  "options": [
+    {
+      "number": 1,
+      "title": "<string>",
+      "protagonists": "<string: brief description of protagonist(s)>",
+      "central_conflict": "<string: one sentence>",
+      "narrative_arc": "<string: 150-250 words>",
+      "distinctive_angle": "<string: one sentence>"
+    },
+    {
+      "number": 2,
+      "title": "<string>",
+      "protagonists": "<string>",
+      "central_conflict": "<string>",
+      "narrative_arc": "<string: 150-250 words>",
+      "distinctive_angle": "<string>"
+    },
+    {
+      "number": 3,
+      "title": "<string>",
+      "protagonists": "<string>",
+      "central_conflict": "<string>",
+      "narrative_arc": "<string: 150-250 words>",
+      "distinctive_angle": "<string>"
+    }
+  ]
+}
+```
+
+Produce ONLY the JSON object. No preamble, no commentary, no markdown fences.

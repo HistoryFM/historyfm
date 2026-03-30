@@ -1,0 +1,95 @@
+You are a prose quality auditor for a historical fiction novel. Your task is to analyse a chapter draft and produce a structured report of specific, actionable violations. This report will be used by revision passes to fix problems the original generation missed.
+
+---
+
+## CHAPTER {{ chapter_number }} — QUALITY AUDIT
+
+**POV Character:** {{ pov_character }}
+
+{% if scene_registers %}
+**Assigned Scene Registers:**
+{% for scene_num, register in scene_registers.items() %}
+- Scene {{ scene_num }}: {{ register }}
+{% endfor %}
+{% endif %}
+
+---
+
+## CHAPTER DRAFT
+
+{{ chapter_content }}
+
+---
+
+## AUDIT INSTRUCTIONS
+
+Analyse the chapter above and produce a JSON report. For EACH scene (separated by `---` scene breaks), evaluate:
+
+### 1. POV AGENCY
+- List every clause where the POV character ({{ pov_character }}) is the grammatical subject.
+- Categorise each verb as **PERCEPTION** (watched, noticed, felt, observed, studied, understood, realised, knew, heard, saw, considered, recognised, detected, sensed, noted) or **ACTION** (said, demanded, turned, refused, stood, crossed, produced, wrote, closed, opened, interrupted, grabbed, set down, poured, walked, decided).
+- Calculate the percentage of PERCEPTION verbs.
+- If >60% are perception verbs, flag as `"PASSIVE"`. Otherwise `"ACTIVE"`.
+
+### 2. SENSORY COUNT
+- List every concrete sensory detail and classify by sense: sight, sound, smell, touch/temperature, taste.
+- Count distinct senses used.
+- If fewer than 3 details OR fewer than 2 senses, flag as `"SENSORY_DEFICIENT"`. Otherwise `"ADEQUATE"`.
+
+### 3. DIALOGUE FUNCTION
+- For each dialogue exchange (a back-and-forth between characters), categorise as:
+  - `"EXPOSITION"`: One character delivers information with no friction, disagreement, or subtext. The other character's role is to prompt more information.
+  - `"DRAMA"`: Characters disagree, evade, shift power, or operate with subtext.
+  - `"MIXED"`: Contains elements of both.
+- If >50% of exchanges are EXPOSITION, flag as `"LECTURE"`. Otherwise `"DRAMATIC"`.
+
+### 4. REGISTER COMPLIANCE
+- Check the assigned register for this scene (see above).
+- Does the prose actually match? Consider: sentence length, paragraph length, dialogue-to-narration ratio, vocabulary choices, pacing.
+- If the scene reads at the same solemn-analytical tone as every other scene regardless of its register assignment, flag as `"REGISTER_FLAT"`. Otherwise `"COMPLIANT"`.
+
+### 5. DUPLICATE CHECK
+- Are any dialogue lines repeated verbatim or near-verbatim elsewhere in the chapter?
+- Are any narrative beats (character reactions, metaphors, descriptions) repeated?
+- List any duplicates found.
+
+---
+
+## OUTPUT FORMAT
+
+Respond with ONLY a JSON object (no markdown fences, no commentary) matching this structure:
+
+```
+{
+  "scenes": [
+    {
+      "scene_number": 1,
+      "pov_agency": {
+        "status": "PASSIVE" or "ACTIVE",
+        "perception_pct": <integer 0-100>,
+        "perception_verbs": ["felt", "watched", ...],
+        "action_verbs": ["said", "stood", ...]
+      },
+      "sensory": {
+        "status": "SENSORY_DEFICIENT" or "ADEQUATE",
+        "details": [{"detail": "...", "sense": "sight"}],
+        "distinct_senses": <integer>
+      },
+      "dialogue": {
+        "status": "LECTURE" or "DRAMATIC",
+        "exchanges": [{"summary": "...", "type": "EXPOSITION"}]
+      },
+      "register": {
+        "status": "REGISTER_FLAT" or "COMPLIANT",
+        "assigned": "conspiratorial",
+        "actual_description": "solemn and analytical"
+      },
+      "duplicates": ["description of any duplicate found"]
+    }
+  ],
+  "chapter_level": {
+    "worst_issues": ["PASSIVE scenes: 1,2,3", "LECTURE dialogue in scene 2"],
+    "overall_register_variation": "FLAT" or "VARIED"
+  }
+}
+```

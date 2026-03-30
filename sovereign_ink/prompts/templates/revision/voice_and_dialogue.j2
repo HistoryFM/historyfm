@@ -1,0 +1,180 @@
+You are performing a **voice and dialogue revision pass** on a chapter of a historical fiction novel. This pass focuses on character voice differentiation, dialogue quality, period authenticity, and restrained emotional interiority.
+
+---
+
+## CHAPTER {{ chapter_number }} — VOICE & DIALOGUE REVISION
+
+**Chapter Outline:**
+- **Title:** {{ chapter_outline.title }}
+- **POV Character:** {{ chapter_outline.pov_character }}
+- **Chapter Goal:** {{ chapter_outline.chapter_goal }}
+- **Central Conflict:** {{ chapter_outline.conflict }}
+
+## POV NARRATIVE VOICE SPECIFICATION (BINDING)
+
+{% set pov_character_name = chapter_outline.pov_character %}
+{% if pov_character_name == "James K. Polk" %}
+- **Sentence structure:** Predominantly short, declarative; minimal subordinate clauses.
+- **Metaphor domain:** Military/surveying/engineering; avoid financial language.
+- **Self-awareness profile:** Tactical clarity, emotional blind spots.
+{% elif pov_character_name == "Sarah Childress Polk" %}
+- **Sentence structure:** Alternates concise observations with longer layered sentences.
+- **Metaphor domain:** Domestic/textile/architectural; avoid accounting metaphors.
+- **Self-awareness profile:** Sharp about others, partial about her own ambition.
+{% elif pov_character_name == "Robert J. Walker" %}
+- **Sentence structure:** Medium-length, qualifying, iterative.
+- **Metaphor domain:** Financial/commercial/accounting.
+- **Self-awareness profile:** Aware of trade-offs, under-aware of ambition.
+{% else %}
+- Keep this POV's narrative texture distinct from every other POV in sentence rhythm, metaphor family, and blind spots.
+{% endif %}
+
+{% if character_profiles %}
+**Character Voice Profiles:**
+{% for char in character_profiles %}
+- **{{ char.name }}** ({{ char.role }}):
+  - Speech Style: {{ char.voice_patterns.speech_style }}
+  - Class Markers: {{ char.voice_patterns.class_markers }}
+  - Verbal Tics: {{ char.voice_patterns.verbal_tics }}
+{% if char.emotional_blind_spot %}
+  - Emotional Blind Spot: {{ char.emotional_blind_spot }}
+{% endif %}
+{% if char.involuntary_tell %}
+  - Involuntary Tell: {{ char.involuntary_tell }}
+{% endif %}
+{% if char.private_need_they_wont_name %}
+  - Private Need They Won't Name: {{ char.private_need_they_wont_name }}
+{% endif %}
+{% if char.speech_fracture_profile %}
+  - Speech Fracture Profile:
+{% for key, value in char.speech_fracture_profile.items() %}
+    - {{ key }}: {{ value }}
+{% endfor %}
+{% endif %}
+{% endfor %}
+{% endif %}
+
+{% if era_tone_guide %}
+**Dialogue Style Guide:**
+{{ era_tone_guide.dialogue_style_guide }}
+
+**Forbidden Terms:** {{ era_tone_guide.forbidden_terms | join(", ") }}
+
+{% if era_tone_guide.example_dialogue_snippets %}
+**Reference Dialogue Examples:**
+{% for snippet in era_tone_guide.example_dialogue_snippets %}
+{{ snippet }}
+{% endfor %}
+{% endif %}
+{% endif %}
+
+{% if novel_structure_summary %}
+**Novel Structure Context:**
+{{ novel_structure_summary }}
+{% endif %}
+
+---
+
+## CURRENT DRAFT
+
+{{ chapter_content }}
+
+{% if original_draft %}
+---
+
+## ORIGINAL DRAFT (v0_raw — for reference)
+
+The following is the original raw draft before any revision passes. If the structural pass cut dialogue, sensory detail, or character moments that were strong and dramatically effective, you may RESTORE them — provided they serve voice differentiation and don't reintroduce the structural problems the first pass corrected.
+
+<original_draft>
+{{ original_draft }}
+</original_draft>
+{% endif %}
+
+{% if quality_audit %}
+---
+
+{{ quality_audit }}
+
+The warnings above identify quality regressions or issues detected in the current draft. Address them during this voice revision pass. Do NOT introduce new repetition patterns, exposition drag, or jeopardy deficits while revising dialogue and voice.
+{% endif %}
+
+---
+
+## REVISION DIRECTIVES
+
+Revise the chapter focusing on dialogue quality, character voice, and emotional restraint:
+
+### Non-Negotiable Rule
+
+0. **THE SILENCE RULE.** When a short line (<15 words), silence, or gesture carries emotional weight, do NOT add narrator interpretation immediately afterward. Let the line stand.
+
+### Voice Distinctiveness
+
+1. **Every character must sound like themselves.** A reader should be able to identify the speaker from the dialogue alone, without attribution tags. An old judge's syntax, vocabulary, and rhythm must differ from a young firebrand's. A society matron must sound different from a spy. Check each character's lines against their voice profile above.
+
+2. **Eliminate dialogue homogeneity.** AI-generated dialogue tends to give every character the same constructions. Scan all dialogue in the chapter and identify any phrasing pattern, verbal tic, or sentence structure used by more than one character. If two characters hedge, qualify, or express doubt in the same way, rewrite one so each has a distinctive voice. Each character should have their own sentence structures, rhetorical habits, and verbal tics — no sharing.
+
+3. **Vary directness.** Some characters speak plainly. Others hedge, deflect, and insinuate. Match the character's directness to their personality and their situation. A character in danger speaks differently from one in safety.
+
+### Dialogue Quality
+
+4. **Subtext over text.** Characters in positions of danger do not speak plainly — they hedge, deflect, insinuate, and test. Revise any dialogue where characters say exactly what they mean. Political speech is especially coded: a compliment may be a threat, an inquiry may be an accusation.
+
+5. **Dialogue as action.** Every line must DO something: reveal character, advance plot, shift a relationship, or disrupt power dynamics. Cut any dialogue that exists solely to convey information. Find a more organic way to deliver exposition.
+
+6. **Period authenticity.** Purge every trace of modern speech. No modern idioms, no contemporary psychological vocabulary. Forms of address must be era-appropriate.
+
+7. **Power dynamics in conversation.** Dialogue between characters of unequal status should reflect that inequality. Who speaks first? Who speaks longest? Who asks questions and who gives answers?
+
+### Emotional Restraint
+
+8. **Do NOT add physical stress reactions.** Do not insert "throat constricted," "blood drained," "hands trembled," "heart hammered," or similar involuntary physical reactions. The chapter should have at most TWO such reactions total, reserved for the single most pivotal moment. If the draft already has too many, remove the excess.
+
+9. **Do NOT explain what dialogue means.** When dialogue carries subtext, do NOT follow it with narration explaining what the speaker really meant. If a character delivers a veiled threat, let the threat stand. Do not add "The warning was delivered with surgical precision" or similar editorial commentary. Trust the reader.
+
+10. **Interiority through action, not narration.** Replace "He felt afraid" with physical behaviour that shows fear without naming it. But do this SPARINGLY. Not every moment needs interior commentary. Sometimes a character simply speaks and acts, and the reader infers the rest.
+
+11. **State each emotional insight once.** If the POV character has a realisation, dramatise it once and move forward. Do not restate the same realisation in three different formulations across three paragraphs.
+11a. **Emotional leak requirement.** The POV character must display at least one involuntary emotional leak in this chapter (gesture, fractured syntax, misplaced aggression, or self-contradictory action) that aligns with their blind spot.
+
+### Attribution
+
+12. **Reduce reliance on "he said/she said"** by replacing attribution with action beats that reveal character. Use "said" when attribution is necessary — avoid creative synonyms (exclaimed, opined, retorted).
+
+### Dialogue Quality Gate
+
+13. **Dialogue-to-narration ratio.** Check the balance between dialogue and narration. A chapter with almost no dialogue reads like an essay. A chapter with too much reads like a screenplay. In chapters where multiple characters are present, aim for 25–40% dialogue by word count. If dialogue is below 15%, the chapter is likely over-narrated — convert exposition into character confrontation where information emerges through conflict rather than narration.
+
+14. **Dialogue as drama, not information exchange.** Every dialogue exchange must contain at least one of: disagreement, subtext, evasion, or power shift. If two characters are having a conversation where they simply share information with no friction, the dialogue exists solely for exposition. Restructure it so the information emerges through conflict — one character resists revealing it, another tries to extract it, a third overhears what they should not.
+
+15. **Voice differentiation audit.** Read all dialogue in the chapter. For each speaking character, check: (a) Could this line be attributed to any other character in the scene without sounding wrong? If yes, the voice is not distinct enough — rewrite using that character's specific speech patterns from the voice profiles above. (b) Do any two characters use the same distinctive construction, hedge phrase, or rhetorical habit? If yes, reassign the construction to only one character.
+15a. **Dialogue fracture audit.** In high-conflict exchanges include interruptions, trailing-off lines, and response mismatch (answering around the question). If all lines are rhetorically complete, break the polish and restore urgency.
+15b. **Attribution overuse cap.** In confrontational exchanges, avoid repetitive "`said` storms". Replace repeated tags with action beats, interruptions, or silence-driven turns so dialogue feels combative rather than transcript-like.
+15c. **Construction anti-cloning (mandatory).** Avoid repeating the same identity-comparison construction more than once per chapter (e.g., "the expression/stillness/patience of a man who..." or equivalent templates). If used once for emphasis, all other instances must be rewritten with different syntax.
+
+### Period Terminology
+
+16. **Modern-clarity check for period terms.** Check for any period-accurate terms that a modern reader might misinterpret. If a term has shifted meaning since the era of the novel (e.g., "the Democracy" for the Democratic Party, "republican" for a philosophy rather than a party, "the Administration" as a proper noun), ensure first usage in the chapter establishes the meaning clearly, or substitute the modern-clear equivalent.
+
+### DO NO HARM — Preservation Mandates
+
+This voice revision pass must IMPROVE dialogue and voice WITHOUT introducing regressions in other quality dimensions. The voice pass is the most common source of regressions in the revision pipeline — the directives below are mandatory, not advisory.
+
+1. **Do NOT introduce new repeated phrases.** Before rewriting any passage, check whether your replacement phrase, construction, or wording already appears elsewhere in the chapter. If it does, choose a different construction. AI revision commonly introduces new n-gram repetitions (e.g., reusing "with evident [noun]" or the same simile structure twice) — this is the single most common regression.
+
+2. **Do NOT strip sensory detail.** If a passage contains physical/sensory grounding (smell, taste, touch, sound, temperature), your rewrite MUST preserve equivalent sensory content. Do not replace a sensory-rich passage with pure dialogue or narration. A scene that gains voice distinctiveness but loses physical texture is a regression.
+
+3. **Do NOT weaken jeopardy.** If a passage contains immediate risk markers (deadlines, threats, consequences, institutional pressure, explicit failure costs), your rewrite MUST preserve equivalent jeopardy language. Do not soften stakes while improving dialogue.
+
+4. **Minimise the scope of your rewrite.** Only rewrite passages where dialogue or voice is demonstrably weak. If a paragraph contains no dialogue and its narrative voice already matches the POV specification above, LEAVE IT UNCHANGED — copy it verbatim into your output. The fewer passages you touch, the fewer regressions you introduce.
+
+5. **Frequency check before output.** After completing your revision, mentally scan for any content word or construction pattern you used more than 3 times. If you find one, vary at least half the instances.
+
+{% if word_count_floor %}
+### Word Count Constraint
+
+**HARD WORD COUNT FLOOR: {{ word_count_floor }} words.** The original draft was {{ v0_word_count }} words. Your revision MUST NOT produce fewer than {{ word_count_floor }} words. Voice and dialogue revision should replace weak prose with strong prose, not delete content wholesale. If you cut a passage, replace it with something better of similar length.
+{% endif %}
+
+**Output the fully revised chapter in Markdown.** Preserve scene breaks (`---`). Do not add commentary or annotations — output only the revised prose.

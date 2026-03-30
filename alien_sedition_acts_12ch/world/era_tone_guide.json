@@ -1,0 +1,52 @@
+{
+  "language_register": "Formal late-eighteenth-century literary English, modelled on the prose of the Federalist era: elevated without ostentation, precise without pedantry. The register draws on the rhetorical traditions of classical republicanism\u2014Ciceronian in its periodic sentences, Augustan in its irony\u2014while remaining accessible to modern readers. Political and legal discourse employs the vocabulary of the founders; private scenes permit a warmer, more direct idiom without sacrificing period authenticity.",
+  "vocabulary_constraints": [
+    "Prefer Latinate vocabulary for educated, professional, and political characters (deliberation, exigency, remonstrance, approbation, dissimulation); reserve Germanic plainness for merchants, soldiers, and working people.",
+    "Use period-appropriate currency: dollars and cents for American commerce, livres and assignats for French contexts; avoid anachronistic financial abstractions.",
+    "Distances rendered in miles or leagues depending on context; naval distances in leagues or nautical leagues; never kilometres or metric units.",
+    "Political factions named as contemporaries named them: Federalists, Democratic-Republicans (or simply Republicans), the Directory, the Committee; never modern shorthand such as Dems or party apparatus.",
+    "Ships referred to by their rated class or rig: frigate, sloop-of-war, brig, schooner; never generic vessel in contexts where precision is available.",
+    "Newspapers and pamphlets treated as actors with moral weight: the Aurora, the Gazette of the United States; their editors named and their partisanship acknowledged without modern media vocabulary.",
+    "Titles and forms of address strictly observed: President, Secretary, Citizen (for French interlocutors), Mr., Mrs., Madam, Your Excellency; never first names between men of unequal or formal standing unless intimacy is dramatically established.",
+    "Avoid clinical or bureaucratic abstraction: write the Treasury Department bleeds rather than fiscal shortfall; write the mob pressed toward the statehouse rather than civil unrest escalated.",
+    "Emotional states rendered through period idiom and physical symptom, not psychological label: a man is sensible of his disgrace, not traumatized; a woman is agitated in her spirits, not anxious.",
+    "War and diplomacy vocabulary drawn from period usage: the law of nations, maritime depredation, letters of marque, quasi-war, envoy extraordinary, sine qua non; never modernised equivalents."
+  ],
+  "forbidden_terms": [
+    "okay",
+    "guys",
+    "basically",
+    "pretty much",
+    "kind of",
+    "sort of",
+    "no way",
+    "absolutely (as casual affirmation)",
+    "impact (as verb)",
+    "leverage (as verb)",
+    "agenda (in modern political-strategy sense)",
+    "narrative (in modern spin sense)",
+    "toxic",
+    "trauma",
+    "triggered",
+    "gaslighting",
+    "boundaries (psychological sense)",
+    "stressed out",
+    "paranoid (casual sense)",
+    "optics",
+    "pushback",
+    "going forward",
+    "at the end of the day",
+    "game-changer",
+    "deal-breaker",
+    "red flag (figurative modern sense)"
+  ],
+  "dialogue_style_guide": "Dialogue must be stratified by class, education, and office. Men of the founding generation\u2014Adams, Hamilton, Pickering, Jefferson\u2014speak in complete, architecturally balanced sentences, deploying subordinate clauses as instruments of precision or evasion; their courtesy is elaborate and their insults oblique, delivered through implication and conditional phrasing rather than direct accusation. Merchants and sea-captains speak more plainly, their sentences shorter, their oaths saltier, their patience with circumlocution visibly limited. French characters, whether rendered in translation or accented English, carry the rhetorical habits of the Directory: florid, legalistic, and capable of menace dressed as compliment. Emotion is not suppressed but displaced: a man who is furious does not say so; he speaks with a studied quietness that is more alarming than shouting. Grief is formal; affection is restrained; contempt is expressed through excessive politeness. Forms of address must be scrupulously observed and their violation used as a dramatic signal. Silence and interruption carry as much weight as speech.",
+  "narrative_voice_calibration": "Close third-person, shifting between principal characters at chapter boundaries, never mid-scene. The voice is that of a supremely informed contemporary observer\u2014intimate with the characters' reasoning, sceptical of their self-justifications, and possessed of a mordant irony that never collapses into condescension. Modelled on Hilary Mantel in its willingness to inhabit a character's consciousness without endorsing it, and on Umberto Eco in its delight in the texture of institutional power. Sentences vary deliberately: long, coiling periods for scenes of political calculation; short, percussive clauses for violence or revelation. The narrator does not editorialise on history's verdict; the reader is trusted to arrive at judgement unaided. Emotional temperature runs cool on the surface, volcanic beneath.",
+  "example_dialogue_snippets": [
+    "'Mr. Secretary, I did not appoint you to conduct my foreign policy in my absence.' / 'No, sir. You appointed me to conduct it in your presence, which you have not seen fit to provide.'",
+    "'They ask for money, Citizen Marshal\u2014nothing more.' / 'They ask for everything, Mr. Pinckney. Money is merely the form the demand takes this week.'",
+    "'You will ruin him.' / 'I will correct him. If the correction proves fatal to his ambitions, the fault lies with the ambitions, not the correction.'",
+    "'The Acts will not stand, Colonel. No republic has ever long survived the power to silence its own citizens.' / 'This republic, madam, has not yet survived anything. We do not yet know what it requires.'",
+    "'I am told the General speaks well of the measure.' / 'The General speaks well of every measure that enlarges his army. That is not endorsement; it is appetite.'"
+  ]
+}

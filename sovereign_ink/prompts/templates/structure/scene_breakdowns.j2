@@ -1,0 +1,139 @@
+You are breaking down each chapter of a historical fiction novel into individual scenes. Scene breakdowns are the most granular planning artifact—they translate chapter outlines into the atomic units of prose generation.
+
+**Novel Specification:**
+- **Title:** {{ novel_spec.title or "To be determined" }}
+- **Era:** {{ novel_spec.era_start }}–{{ novel_spec.era_end }}
+- **Region:** {{ novel_spec.region }}
+- **Central Event:** {{ novel_spec.central_event }}
+- **Tone:** {{ novel_spec.tone_intensity }}
+
+**Era Tone Guide:**
+- **Language Register:** {{ world_state.era_tone_guide.language_register }}
+- **Narrative Voice:** {{ world_state.era_tone_guide.narrative_voice_calibration }}
+
+**Characters:**
+{% for char in world_state.characters %}
+- **{{ char.name }}** ({{ char.role }}): {{ char.political_objective }}
+{% endfor %}
+
+**Chapter Outlines to Break Down:**
+{% for chapter in chapter_outlines %}
+---
+**Chapter {{ chapter.chapter_number }}: {{ chapter.title }}**
+- POV: {{ chapter.pov_character }}
+- Setting: {{ chapter.setting }}
+- Time: {{ chapter.time_period }}
+- Political Context: {{ chapter.political_context }}
+- Goal: {{ chapter.chapter_goal }}
+- Conflict: {{ chapter.conflict }}
+- Turn: {{ chapter.turn }}
+- Consequences: {{ chapter.consequences }}
+- Target Words: {{ chapter.estimated_word_count }}
+{% endfor %}
+
+**Your task:**
+
+For EACH chapter listed above, create a scene-by-scene breakdown. Each chapter should contain 3–6 scenes. For each scene provide:
+
+1. **Scene Number**: Sequential within the chapter (starting at 1).
+2. **POV**: Point-of-view character for this scene (usually the chapter's POV, but can shift for key moments).
+3. **Setting**: Specific physical location, described with enough detail to anchor the prose.
+4. **Goal**: What the POV character is trying to accomplish in this scene.
+5. **Opposition**: The obstacle, antagonist, or opposing force.
+6. **Immediate Risk**: Concrete jeopardy that can hurt someone before the scene midpoint.
+7. **Irreversible Cost If Fail**: What is permanently lost if the POV fails in this scene.
+8. **Power Shift Target**: Who should hold more leverage by scene end than at scene start.
+9. **Turn**: The pivotal moment that shifts the scene's direction—something must change.
+10. **Consequences**: What changes as a result of this scene. These must feed into subsequent scenes.
+11. **Emotional Beat**: The dominant emotional note—dread, exhilaration, grief, resolve, betrayal, etc.
+12. **Continuity Notes**: Specific details that must be tracked for consistency—props, character knowledge, time of day, injuries, what information characters have or lack.
+13. **Complexity Score**: 1–10 estimate of writing difficulty. Higher scores mean the scene demands more nuance—multiple subtexts, unreliable perceptions, complex choreography, etc.
+14. **Register**: The tonal register for this scene. Choose from: solemn, wry, urgent, intimate, ceremonial, combative, reflective, sardonic, grieving, elated, conspiratorial. Not every scene in a chapter should have the same register — vary the tone to prevent monotony. A chapter that is entirely solemn is as much a failure as one that is entirely wry. Let the emotional beat guide the register, but do not let them be identical — a scene's emotional beat is "dread" but its register might be "wry" (gallows humour) or "intimate" (quiet terror shared between two people).
+15. **Supporting Cast Pressure**: Which non-POV character agenda adds disruption pressure in this scene.
+16. **Dialogue Dynamics** (REQUIRED for any scene with significant dialogue between 2+ characters; null for solo/action scenes): A structured description of the scene's conversational power dynamics. This is the most important field for preventing expository dialogue. It must contain:
+  - `character_a_wants`: What the first speaking character's hidden objective is — what they want OUT OF THE CONVERSATION, not what information they want to convey
+  - `character_b_wants`: What the second speaking character's hidden objective is
+  - `character_a_hides`: What the first character is concealing, reluctant to reveal, or strategically withholding
+  - `character_b_hides`: What the second character is concealing or withholding
+  - `power_shift`: How the balance of power between characters changes DURING the exchange — who starts with leverage, who gains it, and what causes the shift
+  - `subtext`: What the conversation is REALLY about underneath the surface topic (e.g., "This is a seduction scene disguised as a policy briefing" or "Two people negotiating loyalty while pretending to discuss logistics")
+
+17. **PRESSURE CONTRACT (mandatory)** — These fields form an executable contract that prose generation must satisfy. They are NOT descriptive intent; they are verifiable commitments:
+  - `gate_profile`: One of `external_collision` (adversary physically present and acting), `institutional_pressure` (career/political/legal risk from an identifiable actor or institution), or `internal_conflict` (moral/philosophical opposition — allowed only for ≤ 1 scene per chapter, and only when the scene's dramatic engine is genuinely interior).
+  - `opponent_present_on_page` (bool): True if an opposing actor is physically in the scene. Must be True for `external_collision`. For `institutional_pressure`, the actor may be present through a proxy (messenger, document, delegation). For `internal_conflict`, may be False.
+  - `opponent_actor`: The specific entity providing opposition. For `external_collision`: a named character. For `institutional_pressure`: a named person, delegation, or institutional body. For `internal_conflict`: "self" or a named moral principle.
+  - `opponent_move`: The concrete adversarial ACTION the opponent performs on-page. Must be an observable verb phrase: "produces a legal opinion arguing X," "delivers a petition demanding Y," "refuses to answer and changes the subject," "publicly associates Z's position with cowardice." Abstract descriptions like "resists" or "opposes" are REJECTED. For `internal_conflict`: the specific conviction or memory that blocks the POV character's intended action.
+  - `pov_countermove`: The concrete ACTION the POV character takes in response. Must be an observable verb phrase: "sets a condition," "produces a counter-document," "lies about the source," "stands to leave." "Considers" or "realizes" alone are REJECTED — the POV must DO something.
+  - `failure_event_if_no_action`: What observable consequence happens WITHIN this scene if the POV fails to act. Not a future conditional ("could lead to…") but an in-scene event: "the delegation walks out," "the document reaches the wrong hands," "the opponent secures the alliance first."
+  - `deadline_or_clock`: Time pressure operating in this scene, if any. Explicit deadlines ("Monroe arrives tomorrow," "the vote is at dawn") create urgency. Empty string if no explicit clock.
+  - `required_end_hook` (terminal scene only): For the LAST scene of each chapter, the specific unresolved external pressure that must remain open at scene end. Must name a concrete incoming threat, deadline, or unanswered adversarial move. Empty for non-terminal scenes.
+
+18. **Dominant Sense** (optional but strongly recommended): Which NON-VISUAL sense (smell, taste, touch, sound, temperature) should anchor this scene's physical world. Choose one and commit to it — force the writing away from the visual default. Examples: "sound" (the scene is anchored by what the POV character hears), "touch/temperature" (cold stone, rough wool, damp air), "smell" (tallow smoke, river mud, ink). Leave empty only if the scene is genuinely vision-dominant (a high-speed chase, a confrontation across a large public space).
+
+19. **Externalization Gesture** (optional but strongly recommended): The specific physical action that reveals the POV character's emotional state WITHOUT narrator explanation. Must be a concrete, observable behavior that implies the interior state rather than naming it. Examples: "folds and refolds the letter without reading it," "sets the glass down without drinking," "walks to the window and does not turn around when the door opens," "aligns the documents on the desk with excessive precision." Do NOT write cognition verbs — this is an action, not a thought.
+
+20. **Physical Interruption** (optional but strongly encouraged for long interior/deliberation scenes): A moment where the body intrudes on thought. Must be irreducible texture — NOT symbolic, NOT a metaphor for anything, NOT immediately rationalized as meaningful. The body just interrupts. Examples: "hand cramp forces him to set down the quill mid-sentence," "stomach growls loudly during the treaty reading," "desperate need to relieve himself disrupts his concentration at a critical moment," "boot seam bites his heel and he cannot ignore it." Avoid: anything that gets turned into metaphor for the political weight of the decision. Leave empty if the scene has no natural opportunity for bodily interruption.
+
+**Critical requirements:**
+- The chapter's TURN must be embodied in exactly one scene's turn.
+- Scene consequences must chain logically—Scene 2's setup should emerge from Scene 1's consequences.
+- The final scene of each chapter must create forward momentum into the next chapter.
+- Every scene must include immediate jeopardy, not just strategic discussion.
+- At least one scene in every chapter must stage the chapter's on-page opposing move directly.
+- Complexity scores should reflect genuine difficulty, not just action density. A quiet scene with layered subtext may be a 9; a straightforward action scene may be a 4.
+- Continuity notes are critical—they prevent contradictions during generation.
+- Register variation is mandatory. No chapter may have all scenes at the same register. If a chapter has 4 scenes, at least 2 different registers must be used.
+- **At most 1 scene per chapter** may use `gate_profile: internal_conflict`. All other scenes must have an identifiable external or institutional opponent with a concrete move/countermove pair.
+- **opponent_move and pov_countermove** must be action verbs, not cognition verbs. "Realizes the danger" is not an opponent_move. "Delivers a petition demanding immediate action" is.
+
+**Output a JSON array** of scene breakdowns matching this schema:
+
+```json
+[
+  {
+    "chapter_number": <integer>,
+    "scenes": [
+      {
+        "scene_number": <integer>,
+        "pov": "<string>",
+        "setting": "<string>",
+        "goal": "<string>",
+        "opposition": "<string>",
+        "immediate_risk": "<string>",
+        "irreversible_cost_if_fail": "<string>",
+        "power_shift_target": "<string>",
+        "turn": "<string>",
+        "consequences": "<string>",
+        "emotional_beat": "<string>",
+        "continuity_notes": "<string>",
+        "complexity_score": <integer: 1-10>,
+        "register": "<string: solemn|wry|urgent|intimate|ceremonial|combative|reflective|sardonic|grieving|elated|conspiratorial>",
+        "supporting_cast_pressure": "<string>",
+        "dialogue_dynamics": {
+          "character_a_wants": "<string>",
+          "character_b_wants": "<string>",
+          "character_a_hides": "<string>",
+          "character_b_hides": "<string>",
+          "power_shift": "<string>",
+          "subtext": "<string>"
+        },
+        "gate_profile": "<string: external_collision|institutional_pressure|internal_conflict>",
+        "opponent_present_on_page": <boolean>,
+        "opponent_actor": "<string>",
+        "opponent_move": "<string — concrete observable action verb phrase>",
+        "pov_countermove": "<string — concrete observable action verb phrase>",
+        "failure_event_if_no_action": "<string — observable in-scene consequence>",
+        "deadline_or_clock": "<string or empty>",
+        "required_end_hook": "<string — terminal scenes only, else empty>",
+        "dominant_sense": "<string: smell|taste|touch|sound|temperature — or empty>",
+        "externalization_gesture": "<string — concrete observable behavior implying POV emotional state, or empty>",
+        "physical_interruption": "<string — irreducible bodily intrusion on thought, NOT symbolic, or empty>"
+      }
+    ]
+  }
+]
+```
+
+Note: `dialogue_dynamics` should be `null` for scenes without significant dialogue (solo scenes, pure action, etc.).
+
+Produce ONLY the JSON array. No preamble, no commentary, no markdown fences.

@@ -1,0 +1,85 @@
+You are designing the macro act-level structure for a historical fiction novel. The act structure is the novel's dramatic skeleton—it determines the shape of the reader's emotional journey from opening page to final line.
+
+**Novel Specification:**
+- **Title:** {{ novel_spec.title or "To be determined" }}
+- **Era:** {{ novel_spec.era_start }}–{{ novel_spec.era_end }}
+- **Region:** {{ novel_spec.region }}
+- **Central Event:** {{ novel_spec.central_event }}
+- **Tone:** {{ novel_spec.tone_intensity }}
+- **Desired Length:** {{ novel_spec.desired_length }}
+- **Thematic Focus:** {{ novel_spec.thematic_focus | join(", ") }}
+- **POV Count:** {{ novel_spec.pov_count }}
+{% if novel_spec.synopsis %}
+- **Approved Synopsis:** {{ novel_spec.synopsis }}
+{% endif %}
+{% if novel_spec.additional_notes %}
+- **Additional Notes:** {{ novel_spec.additional_notes }}
+{% endif %}
+
+**World State Summary:**
+
+*Era:* {{ world_state.historical_context.era_description[:500] }}...
+
+*Characters:*
+{% for char in world_state.characters %}
+- **{{ char.name }}** ({{ char.role }}): {{ char.political_objective }}
+  - Moral conflict: {{ char.moral_conflict }}
+  - Arc: {{ char.emotional_arc.start_state }} → {{ char.emotional_arc.end_state }}
+{% endfor %}
+
+*Key Historical Events:*
+{% for event in world_state.historical_context.key_events[:10] %}
+- {{ event.date }}: {{ event.event }}
+{% endfor %}
+
+*Macro-Outcomes (guardrails):*
+{% for outcome in world_state.historical_context.macro_outcomes %}
+- {{ outcome }}
+{% endfor %}
+
+**Your task:**
+
+{% if novel_spec.synopsis %}
+The author has approved the synopsis above as the creative direction. The act structure must serve this specific narrative — the inciting incident, major turning points, and resolution should align with the story described in the synopsis.
+{% endif %}
+
+Design a 3- or 4-act structure for this novel. For each act provide:
+
+1. **Act Number**: Sequential integer starting at 1.
+2. **Title**: A thematic title that captures the act's essence (not a plot summary).
+3. **Description**: 100–200 words describing the act's narrative purpose, the dramatic trajectory, and what it accomplishes in the overall story arc.
+4. **Dramatic Beats**: 4–6 key dramatic beats that MUST occur in this act. These are the tent-pole moments—the scenes the reader will remember.
+5. **Stakes Level**: How the stakes escalate—personal, professional, political, national, existential. Each successive act should raise the stakes.
+6. **Chapters**: Which chapter numbers belong to this act. Distribute chapters proportionally: Act 1 ~25%, Act 2 ~50% (or Acts 2+3 in a 4-act), Final Act ~25%.
+
+**Critical requirements:**
+- The inciting incident must occur in Act 1.
+- Each act must end on a turning point that makes the next act inevitable.
+- The final act must resolve the central thematic tensions, not just the plot.
+- Character arcs must be embedded in the structure—each act should show a distinct phase of the characters' journeys.
+- The structure must respect the historical timeline and macro-outcomes.
+{% if novel_spec.desired_length == "novella_50k" %}
+- Target total: ~50,000 words across 8–12 chapters.
+{% else %}
+- Target total: ~120,000 words across 20–30 chapters.
+{% endif %}
+
+**Output a single JSON object** matching this schema:
+
+```json
+{
+  "num_acts": <integer: 3 or 4>,
+  "acts": [
+    {
+      "act_number": <integer>,
+      "title": "<string>",
+      "description": "<string: 100-200 words>",
+      "dramatic_beats": ["<string>"],
+      "stakes_level": "<string>",
+      "chapters": [<integer>]
+    }
+  ]
+}
+```
+
+Produce ONLY the JSON object. No preamble, no commentary, no markdown fences.

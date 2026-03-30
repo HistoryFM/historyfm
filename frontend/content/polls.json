@@ -1,0 +1,15 @@
+{
+  "polls": [
+    {
+      "id": "next-era",
+      "question": "Which historical era should we dramatize next?",
+      "options": [
+        { "id": "revolution", "label": "The American Revolution", "description": "1775–1783" },
+        { "id": "civil-war", "label": "The Civil War", "description": "1861–1865" },
+        { "id": "reconstruction", "label": "Reconstruction", "description": "1865–1877" },
+        { "id": "gilded-age", "label": "The Gilded Age", "description": "1870–1900" },
+        { "id": "war-of-1812", "label": "The War of 1812", "description": "1812–1815" }
+      ]
+    }
+  ]
+}

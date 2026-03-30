@@ -1,0 +1,110 @@
+You are designing the cast of characters for a historical fiction novel. These characters must be psychologically complex, historically plausible, and dramatically compelling. They are not archetypes or mouthpieces—they are people shaped by the pressures of their era, driven by contradictory desires, and trapped in webs of obligation, ambition, and fear.
+
+**Novel Specification:**
+- **Title:** {{ novel_spec.title or "To be determined" }}
+- **Era:** {{ novel_spec.era_start }}–{{ novel_spec.era_end }}
+- **Region:** {{ novel_spec.region }}
+- **Central Event:** {{ novel_spec.central_event }}
+- **Tone:** {{ novel_spec.tone_intensity }}
+- **POV Count:** {{ novel_spec.pov_count }}
+- **Protagonist Type:** {{ novel_spec.protagonist_type }}
+- **Thematic Focus:** {{ novel_spec.thematic_focus | join(", ") }}
+{% if novel_spec.synopsis %}
+- **Approved Synopsis:** {{ novel_spec.synopsis }}
+{% endif %}
+{% if novel_spec.additional_notes %}
+- **Additional Notes:** {{ novel_spec.additional_notes }}
+{% endif %}
+
+**Historical Context:**
+{{ historical_context.era_description }}
+
+**Key Historical Figures Already Identified:**
+{% for player in historical_context.major_players %}
+- {{ player.name }} — {{ player.role }} ({{ player.position }})
+{% endfor %}
+
+**Your task:**
+
+Create {{ novel_spec.pov_count }} POV characters plus 3–5 significant supporting characters. For each character:
+
+1. **Name**: Full name, era-appropriate.
+2. **Is Historical**: Whether this character is a real historical figure.
+3. **Role**: Narrative function (protagonist, antagonist, supporting, etc.).
+4. **Political Objective**: What they are trying to achieve in the public sphere.
+5. **Personal Fear**: Their deepest private fear—the thing they cannot let others see.
+6. **Hidden Motivation**: The true reason behind their actions, concealed from the world.
+7. **Moral Conflict**: The central ethical dilemma they face throughout the novel.
+8. **Emotional Blind Spot**: What they consistently misread about their own feelings or motives.
+9. **Involuntary Tell**: The bodily/social behavior that leaks their emotional state under pressure.
+10. **Private Need They Won't Name**: The one need they cannot admit, even to themselves.
+11. **Relationships**: 2–4 relationships with other characters in the cast. Each relationship should contain tension or conflict.
+12. **Emotional Arc**: A start state and end state describing their psychological journey across the novel.
+13. **Voice Patterns**: How they speak—speech style, class markers, verbal tics. This must be distinctive enough that a reader could identify the character from dialogue alone.
+14. **Speech Fracture Profile**: How their dialogue breaks under stress (`interruption_style`, `evasive_fragments`, `unfinished_thought_patterns`).
+15. **Narrative Register**: How the prose narrative voice shifts when this character is the POV. Not how they speak — how the *narrator* writes around them. Include:
+    - `sentence_rhythm`: Sentence length and structure (e.g. "long periodic with late subordination", "clipped declarative chains", "medium-length with frequent enumeration")
+    - `diction_family`: The vocabulary domain that shapes description and metaphor (e.g. "architectural, botanical, Latinate", "legal-commercial, enumerative", "numerical, bureaucratic, ironic")
+    - `consciousness_style`: How this character's mind moves (e.g. "expansive, associative, naturalist's eye for light", "competitive, cataloguing, tactical", "dry, sequential, cost-benefit")
+    - `signature_lens`: The profession or obsession through which they interpret the world (e.g. "architecture and botany", "law and deafness as tactical handicap", "Treasury accounting and precedent")
+    This field is mandatory for every POV character and must be distinctive enough that two chapters by different POVs read as written by different minds.
+16. **Backstory Summary**: 100–200 words covering the character's life up to the novel's opening page.
+
+**Critical requirements:**
+{% if novel_spec.synopsis %}
+- **SYNOPSIS CHARACTER MANDATE:** The approved synopsis above names specific characters as POV protagonists. Re-read the synopsis carefully and identify every character it describes as having a perspective, witnessing events, observing, or narrating. These characters MUST appear in your cast as POV protagonists — do NOT replace them with invented alternatives. You may add fictional supporting characters, but the synopsis's named POV characters are non-negotiable. If the synopsis names historical figures as POV characters, those historical figures must be POV characters in your cast.
+{% endif %}
+- POV characters should embody different facets of the thematic tensions ({{ novel_spec.thematic_focus | join(", ") }}).
+- Characters should have conflicting goals that generate organic dramatic friction.
+- If protagonist_type is "{{ novel_spec.protagonist_type }}", ensure the cast reflects that.
+- Historical figures must behave within historically documented parameters—dramatise, but do not contradict the record.
+- Every character must have a clear reason to be in the story; there are no passengers.
+
+**Output a JSON array** of character profiles matching this schema:
+
+```json
+[
+  {
+    "name": "<string>",
+    "is_historical": <boolean>,
+    "role": "<string: protagonist | antagonist | supporting | catalyst>",
+    "political_objective": "<string>",
+    "personal_fear": "<string>",
+    "hidden_motivation": "<string>",
+    "moral_conflict": "<string>",
+    "emotional_blind_spot": "<string>",
+    "involuntary_tell": "<string>",
+    "private_need_they_wont_name": "<string>",
+    "relationships": [
+      {
+        "character_name": "<string>",
+        "nature": "<string: e.g. mentor, rival, lover, subordinate>",
+        "tension": "<string: source of conflict>"
+      }
+    ],
+    "emotional_arc": {
+      "start_state": "<string>",
+      "end_state": "<string>"
+    },
+    "voice_patterns": {
+      "speech_style": "<string>",
+      "class_markers": "<string>",
+      "verbal_tics": "<string>"
+    },
+    "speech_fracture_profile": {
+      "interruption_style": "<string>",
+      "evasive_fragments": "<string>",
+      "unfinished_thought_patterns": "<string>"
+    },
+    "narrative_register": {
+      "sentence_rhythm": "<string: e.g. 'long periodic with late subordination'>",
+      "diction_family": "<string: e.g. 'architectural, botanical, Latinate'>",
+      "consciousness_style": "<string: e.g. 'expansive, associative, naturalist'>",
+      "signature_lens": "<string: the profession/obsession that shapes metaphor choice>"
+    },
+    "backstory_summary": "<string: 100-200 words>"
+  }
+]
+```
+
+Produce ONLY the JSON array. No preamble, no commentary, no markdown fences.

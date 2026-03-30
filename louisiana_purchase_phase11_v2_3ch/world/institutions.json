@@ -1,0 +1,242 @@
+[
+  {
+    "name": "Office of the First Consul of the French Republic",
+    "type": "executive autocracy",
+    "power_level": "dominant",
+    "constraints": [
+      "Nominal constitutional framework of the Consulate requires Council of State deliberation for major legislative acts, though Napoleon routinely circumvents its spirit",
+      "Military campaigns and colonial ventures are constrained by treasury insolvency and the ruinous cost of the Saint-Domingue expedition",
+      "The Peace of Amiens with Britain is fragile; any action perceived as aggressive expansion risks renewed war before France is prepared",
+      "Legitimacy rests on plebiscitary consent and military prestige, both of which require continuous success\u2014failure in the Caribbean erodes both"
+    ],
+    "factional_pressures": [
+      "Idealist imperialists within Napoleon's inner circle, led by his brothers Joseph and Lucien, who oppose the sale of Louisiana as a betrayal of French grandeur",
+      "Fiscal realists centred on Barbe-Marbois at the Treasury, who regard the sale as the only means of funding renewed European war",
+      "Talleyrand's Foreign Ministry, which pursues its own diplomatic choreography and is not above withholding or shaping intelligence to serve Talleyrand's private interests",
+      "Royalist and Jacobin remnants who watch the Consulate for any sign of weakness that might reopen the question of France's political future"
+    ],
+    "public_legitimacy": "Exceptionally high among the French populace, who associate Napoleon with order, military glory, and the consolidation of revolutionary gains after a decade of chaos; the Consulate is perceived as the republic stabilised rather than betrayed, though this legitimacy is contingent on continued victory.",
+    "plausible_actions": [
+      "Authorise the secret sale of Louisiana to the United States through direct negotiation, bypassing formal treaty convention",
+      "Dispatch a replacement expeditionary force to Saint-Domingue or, conversely, abandon the island to its fate and redirect resources to Europe",
+      "Instruct Talleyrand to conduct deliberate diplomatic delay with American envoys while Napoleon reaches a final decision",
+      "Elevate the Consulate to a hereditary empire by plebiscite, consolidating personal power under constitutional cover",
+      "Renew hostilities with Britain upon the collapse of the Peace of Amiens, fundamentally altering the strategic calculus around Louisiana"
+    ],
+    "implausible_actions": [
+      "Submit the Louisiana sale to a genuinely deliberative legislative vote that Napoleon does not control or predetermine",
+      "Voluntarily cede Saint-Domingue's sovereignty to Toussaint Louverture or his successors through formal treaty recognising Haitian independence",
+      "Pursue a permanent, good-faith alliance with the United States as an equal partner rather than as a temporary expedient"
+    ]
+  },
+  {
+    "name": "United States Executive Branch under Thomas Jefferson",
+    "type": "executive government",
+    "power_level": "ascendant",
+    "constraints": [
+      "The Constitution contains no explicit provision authorising the federal government to acquire foreign territory, forcing Jefferson to act against his own strict-constructionist doctrine",
+      "The Senate must ratify any treaty by a two-thirds majority, and the House must appropriate the purchase funds, making congressional management indispensable",
+      "The foreign service is skeletal\u2014a minister in Paris, a minister in London, and a handful of consuls\u2014making real-time coordination across the Atlantic nearly impossible given mail delays of six to eight weeks",
+      "Jefferson's Republican coalition includes Southern planters deeply suspicious of federal power and Western settlers whose demands may outrun constitutional propriety"
+    ],
+    "factional_pressures": [
+      "Old Republicans led by John Randolph of Roanoke, who regard any expansion of federal executive authority as a betrayal of the revolution of 1800 and will scrutinise the purchase for constitutional violations",
+      "Federalists under Hamilton and Pickering, who privately support the acquisition but will oppose it publicly if it can be used to embarrass Jefferson or argue for a stronger federal government than he has admitted",
+      "Western settlers and their congressional representatives, who demand immediate resolution of the New Orleans deposit crisis and will not wait upon diplomatic niceties",
+      "New England commercial interests who fear that the addition of vast new agricultural territory will permanently shift political power southward and westward, diluting their influence"
+    ],
+    "public_legitimacy": "High among the agrarian majority and Western settlers who form Jefferson's electoral base; contested among New England Federalists who regard the Republican administration as ideologically reckless and constitutionally opportunistic.",
+    "plausible_actions": [
+      "Dispatch special envoys to Paris with authority to purchase New Orleans and the Floridas, and\u2014if fortune permits\u2014the whole of Louisiana",
+      "Threaten a military alliance with Britain to pressure France into negotiation, as Jefferson's letter to Robert Livingston in April 1802 actually contemplated",
+      "Ratify the Louisiana Purchase treaty under the implied powers of the Constitution while privately acknowledging the constitutional difficulty",
+      "Organise the governance of the acquired territory through enabling legislation, creating territorial governments subordinate to federal authority",
+      "Suppress public debate about the constitutional irregularity of the purchase by moving with deliberate speed before opposition can organise"
+    ],
+    "implausible_actions": [
+      "Seek a constitutional amendment before completing the purchase, as Jefferson briefly contemplated\u2014the diplomatic window would close before ratification could be achieved",
+      "Refer the question of territorial acquisition to the Supreme Court for an advisory opinion prior to action",
+      "Offer to purchase Louisiana jointly with Britain, sharing sovereignty over the territory"
+    ]
+  },
+  {
+    "name": "United States Senate",
+    "type": "legislature",
+    "power_level": "contested",
+    "constraints": [
+      "Treaty ratification requires a two-thirds supermajority, meaning a determined minority can defeat any agreement regardless of popular sentiment",
+      "Senators serve six-year terms and are elected by state legislatures, not directly by the people, insulating them from immediate popular pressure but making them responsive to state-level factional interests",
+      "The Senate's constitutional role gives it a check on executive foreign policy, but no mechanism to initiate negotiation or compel diplomatic action",
+      "The speed of the purchase negotiations\u2014concluded in weeks\u2014gives opponents little time to organise, but the constitutional silence on territorial acquisition gives them potent ammunition"
+    ],
+    "factional_pressures": [
+      "Jeffersonian Republicans hold a majority but are divided between pragmatists willing to overlook constitutional ambiguity and doctrinaire Old Republicans who regard the purchase as executive usurpation",
+      "Federalist senators, a shrinking minority, are ideologically tempted to support the purchase but politically incentivised to oppose anything that enhances Jefferson's prestige",
+      "New England senators fear the demographic and electoral consequences of admitting a vast new territory likely to produce Republican states",
+      "Western-state senators and those representing Mississippi Territory constituencies exert intense pressure for rapid ratification, viewing delay as an existential threat to frontier livelihoods"
+    ],
+    "public_legitimacy": "Regarded by Republicans as a necessary check on executive power; regarded by Federalists as the last institutional bulwark against Jeffersonian majoritarianism; largely opaque to ordinary citizens, whose political engagement is mediated through newspapers and local party organisations.",
+    "plausible_actions": [
+      "Ratify the Louisiana Purchase treaty with a comfortable majority, despite private constitutional misgivings among Republican members",
+      "Attach conditions or reservations to ratification demanding clarification of the territory's legal status and the rights of its inhabitants",
+      "Appropriate the fifteen million dollars required for the purchase through a combination of stock issuance and European banking arrangements",
+      "Hold extended debate that serves as a public airing of constitutional anxieties without ultimately blocking the treaty",
+      "Investigate the conduct of American envoys in Paris to determine whether they exceeded their instructions"
+    ],
+    "implausible_actions": [
+      "Reject the Louisiana Purchase treaty outright on constitutional grounds, given the overwhelming political momentum and Western settler pressure",
+      "Initiate its own independent diplomatic channel to France, bypassing the executive branch entirely",
+      "Demand that the acquired territory be immediately admitted as a full state rather than governed as a territory"
+    ]
+  },
+  {
+    "name": "French Ministry of Foreign Affairs under Talleyrand",
+    "type": "diplomatic ministry",
+    "power_level": "waning",
+    "constraints": [
+      "Talleyrand's authority is entirely derivative of Napoleon's confidence, which is itself conditional on results; he operates as an instrument of the First Consul's will, not as an independent policy-maker",
+      "The ministry's correspondence with French agents in America and the Caribbean is subject to British naval interception, compromising operational security",
+      "Talleyrand's known venality\u2014his habit of soliciting payments from foreign governments\u2014has permanently damaged his credibility with American diplomats since the XYZ Affair of 1797-98",
+      "Napoleon's practice of conducting decisive negotiations through private audiences and trusted intermediaries rather than formal diplomatic channels reduces Talleyrand to a stage manager rather than a principal"
+    ],
+    "factional_pressures": [
+      "Napoleon's brothers, particularly Joseph and Lucien Bonaparte, who regard Talleyrand as an untrustworthy survivor of too many regimes and compete for influence over foreign policy",
+      "American envoys Livingston and Monroe, who have learned from the XYZ experience to distrust Talleyrand's overtures and seek direct access to Napoleon or Barbe-Marbois",
+      "Royalist sympathisers within the ministry's permanent staff who regard Talleyrand's service to the Consulate as merely the latest in a series of convenient loyalties",
+      "Spanish diplomatic pressure regarding the terms of the retrocession of Louisiana, which France has not fully honoured, creating legal complications Talleyrand must manage or suppress"
+    ],
+    "public_legitimacy": "Negligible as a public institution; its legitimacy derives entirely from Napoleon's authority. Talleyrand himself is regarded by informed observers as a man of extraordinary intelligence and zero principle\u2014an assessment he does not trouble to refute.",
+    "plausible_actions": [
+      "Conduct deliberate delay in negotiations with Livingston, keeping the Americans in uncertainty while Napoleon reaches his decision on Saint-Domingue and the European situation",
+      "Arrange for Barbe-Marbois to conduct the decisive negotiation with Monroe and Livingston, effectively sidelining the Foreign Ministry at the crucial moment",
+      "Communicate false or misleading intelligence to Napoleon about American intentions to shape the First Consul's decision in directions favourable to Talleyrand's private interests",
+      "Manage Spanish protests about the illegality of the sale\u2014Spain had been promised Louisiana would never be transferred to a third power\u2014through diplomatic evasion and delay",
+      "Position himself to profit financially from the transaction through intermediaries, as was his established practice"
+    ],
+    "implausible_actions": [
+      "Openly oppose Napoleon's decision to sell Louisiana once the First Consul has resolved upon it",
+      "Conduct transparent, good-faith negotiations with American envoys without pursuing a parallel private agenda",
+      "Resign his ministry on grounds of principle regarding the surrender of French imperial territory"
+    ]
+  },
+  {
+    "name": "French Ministry of the Treasury under Barbe-Marbois",
+    "type": "executive ministry",
+    "power_level": "ascendant",
+    "constraints": [
+      "The Treasury's influence depends entirely on the severity of France's fiscal crisis; in periods of military success and revenue, its counsel is less urgently heeded",
+      "Barbe-Marbois must work within Napoleon's ultimate authority and cannot compel a sale that the First Consul has not decided upon",
+      "Any financial arrangement with the United States must be structured through European banking houses\u2014specifically Hope and Company of Amsterdam and Baring Brothers of London\u2014whose cooperation is not guaranteed",
+      "The terms of the purchase must be negotiated rapidly, before the diplomatic window closes with the resumption of Anglo-French hostilities"
+    ],
+    "factional_pressures": [
+      "Napoleon's imperial faction, which regards the sale as a humiliation and argues that France should retain Louisiana regardless of the fiscal cost",
+      "European banking interests, particularly the Barings and Hope partnerships, who will profit from the transaction but whose involvement requires delicate management given that Britain is a likely future enemy",
+      "American negotiators who, once offered the whole of Louisiana, will press for the lowest possible price and the most favourable payment terms",
+      "French military creditors and contractors whose demands on the treasury make rapid infusion of American funds a matter of operational urgency"
+    ],
+    "public_legitimacy": "The Treasury operates as a technical institution without popular constituency; its legitimacy is bureaucratic rather than democratic. Barbe-Marbois's personal reputation for probity\u2014unusual in an era of spectacular venality\u2014lends the ministry a credibility that Talleyrand's Foreign Ministry conspicuously lacks.",
+    "plausible_actions": [
+      "Present Napoleon with a detailed fiscal analysis demonstrating that the cost of defending Louisiana against British naval power exceeds any conceivable revenue from the territory",
+      "Conduct direct, confidential negotiations with Monroe and Livingston, bypassing Talleyrand's ministry at Napoleon's implicit authorisation",
+      "Structure the purchase price as a combination of American government bonds and assumed American claims against France, reducing the immediate cash burden on the United States",
+      "Arrange the financial mechanics of the transfer through the Baring-Hope banking consortium, ensuring that funds reach the French treasury regardless of Anglo-French diplomatic relations",
+      "Advise Napoleon on the minimum acceptable price\u2014sixty million francs for the territory plus twenty million in assumed claims\u2014and hold that floor in negotiation"
+    ],
+    "implausible_actions": [
+      "Refuse to participate in the sale on the grounds that Louisiana is a strategic asset whose value exceeds any monetary consideration",
+      "Conduct the financial arrangements through the French state banking system alone, without recourse to private European banking houses",
+      "Propose that France retain a financial stake or reversionary interest in Louisiana as a condition of the sale"
+    ]
+  },
+  {
+    "name": "Spanish Colonial Administration of Louisiana",
+    "type": "colonial government",
+    "power_level": "waning",
+    "constraints": [
+      "The Treaty of San Ildefonso in 1800 has secretly retroceded Louisiana to France, but formal transfer has not occurred, leaving Spanish officials nominally in authority over a territory that is legally no longer theirs",
+      "The Intendant and Governor-General in New Orleans receive instructions from Madrid that are months out of date and increasingly irrelevant to rapidly changing circumstances",
+      "Spanish military forces in the territory are insufficient to resist either French or American pressure; the garrison at New Orleans is a symbol rather than a strategic asset",
+      "The suspension of the American right of deposit in 1802 was ordered by the Spanish Intendant without Madrid's explicit authorisation, creating a diplomatic crisis that the administration cannot resolve on its own authority"
+    ],
+    "factional_pressures": [
+      "Spanish Creole elites who have prospered under colonial administration and fear the consequences of transfer to either France or the United States for their property rights and social precedence",
+      "American merchants in New Orleans who regard Spanish authority as an obstacle to commerce and agitate openly for American acquisition of the city",
+      "French Creole society, which maintains cultural and emotional ties to France while having accommodated itself to Spanish governance over three decades",
+      "Madrid's shifting diplomatic alignments\u2014Spain is simultaneously a French ally and a power with its own imperial interests in the Americas\u2014creating contradictory instructions to colonial officials"
+    ],
+    "public_legitimacy": "Declining rapidly; accepted by Creole elites as a familiar and relatively tolerant overlord, but regarded with impatience by American commercial interests and with conditional loyalty by French Creoles who anticipate French reacquisition. The suspension of the deposit right has fatally damaged Spanish legitimacy among the American settler population of the trans-Appalachian West.",
+    "plausible_actions": [
+      "Restore the American right of deposit under pressure from Madrid, which fears that its suspension will provoke an American military response Spain cannot repel",
+      "Delay the formal transfer of Louisiana to France on procedural grounds, hoping that changed circumstances\u2014renewed Anglo-French war, Napoleon's death\u2014might reverse the retrocession",
+      "Negotiate quietly with American agents about the status of the Floridas, which Spain retains and which Jefferson covets as much as Louisiana itself",
+      "Attempt to extract concessions from France regarding the terms of the retrocession, including guarantees of Creole property rights and Spanish trading privileges",
+      "Maintain public order in New Orleans through a combination of patronage to Creole elites and suppression of American agitation"
+    ],
+    "implausible_actions": [
+      "Formally ally with the United States against France to prevent the retrocession of Louisiana",
+      "Unilaterally declare Louisiana an independent state rather than submit to French reacquisition",
+      "Mobilise sufficient military force to resist a French or American occupation of New Orleans"
+    ]
+  },
+  {
+    "name": "Roman Catholic Church in Louisiana (Diocese of Louisiana and the Floridas)",
+    "type": "church",
+    "power_level": "contested",
+    "constraints": [
+      "The diocese is suffragant to the Bishop of Santiago de Cuba, whose authority derives from Spanish royal patronage; a change of sovereignty threatens the entire institutional structure of ecclesiastical appointment and funding",
+      "The Church's property holdings and legal privileges in Louisiana are secured under Spanish colonial law, which may not survive transfer to a French republic that has only recently and incompletely reconciled with Rome through the Concordat of 1801",
+      "The clergy in Louisiana are predominantly French Creole in sympathy, creating tension with a Spanish episcopal hierarchy that has governed them for three decades",
+      "American Protestant immigration into the territory, certain to accelerate after any transfer, poses a long-term threat to Catholic cultural dominance that the Church cannot address through institutional means alone"
+    ],
+    "factional_pressures": [
+      "French Creole parishioners who regard the Church as the primary institution of their cultural identity and demand that it protect their interests through any political transition",
+      "Spanish clergy appointed under royal patronage who fear losing their positions and income if Spanish ecclesiastical jurisdiction is replaced by French or American arrangements",
+      "Bishop John Carroll of Baltimore, who has long sought to extend American Catholic episcopal authority over Louisiana and sees the Purchase as an opportunity",
+      "The Vatican's own diplomatic calculations regarding the Concordat with Napoleon, which has restored some Church privileges in France but on terms that subordinate ecclesiastical to state authority"
+    ],
+    "public_legitimacy": "The highest of any institution in Louisiana among the French Creole population; the Church anchors social life, education, charitable provision, and cultural identity in ways that no civil institution can replicate. Its legitimacy among American Protestant settlers is negligible, and its relationship with the enslaved African population is complex\u2014simultaneously a vehicle of spiritual consolation and an instrument of social control.",
+    "plausible_actions": [
+      "Petition the incoming American administration for guarantees of Catholic property rights and freedom of worship as a condition of Creole cooperation with the transfer",
+      "Negotiate with Bishop Carroll of Baltimore regarding the future episcopal jurisdiction of Louisiana, seeking terms that preserve French Creole clerical appointments",
+      "Use the pulpit and confessional to shape Creole public opinion regarding the political transition, either counselling accommodation or resistance depending on what terms are secured",
+      "Appeal to the Holy See for intervention with Napoleon to protect Church interests in any treaty of cession",
+      "Maintain the Church's role in recording births, marriages, and deaths\u2014and thus in adjudicating property inheritance\u2014as a source of institutional power that transcends political sovereignty"
+    ],
+    "implausible_actions": [
+      "Formally excommunicate American Protestant settlers as a means of resisting the cultural consequences of the Purchase",
+      "Organise armed resistance to the transfer of Louisiana on behalf of Spanish colonial authority",
+      "Voluntarily surrender its property holdings and legal privileges in advance of the transfer as a gesture of accommodation to the incoming American administration"
+    ]
+  },
+  {
+    "name": "Cabildo of New Orleans",
+    "type": "municipal government",
+    "power_level": "waning",
+    "constraints": [
+      "The Cabildo's authority derives from Spanish colonial law and royal charter; its legal basis evaporates upon transfer of sovereignty, leaving its members uncertain whether their offices, ordinances, and judicial decisions will be recognised by any successor government",
+      "The body is composed almost entirely of French Creole elites appointed under Spanish patronage, creating a structural tension between their cultural identity and their institutional loyalty",
+      "Its jurisdiction extends only to the city of New Orleans and its immediate environs; it has no authority over the vast interior of the territory whose fate is being decided in Paris and Washington",
+      "Its financial resources are dependent on Spanish colonial appropriations that will cease upon transfer, leaving it unable to fund basic municipal functions during any interregnum"
+    ],
+    "factional_pressures": [
+      "Creole merchant families who dominate the Cabildo and whose commercial interests require stable property law, reliable contract enforcement, and access to both the Mississippi trade and Atlantic markets regardless of which sovereign holds the territory",
+      "American merchants resident in New Orleans who have no representation in the Cabildo but whose economic weight is growing and who demand a voice in the city's governance",
+      "Free persons of colour, a substantial and economically significant community in New Orleans, whose legal status under Spanish law is more secure than it would be under American jurisdiction and who watch the political transition with acute anxiety",
+      "Spanish officials who regard the Cabildo as an instrument of colonial administration rather than genuine self-governance, and who use it to manage Creole elite opinion on behalf of Madrid"
+    ],
+    "public_legitimacy": "Recognised as legitimate by the Creole elite whose members compose it and whose interests it serves; regarded with indifference or hostility by American settlers and with wariness by the free Black community, who understand that its replacement by American territorial government may extinguish legal protections they currently enjoy.",
+    "plausible_actions": [
+      "Send a formal remonstrance to the American Congress protesting the terms of the territorial government established by the Orleans Territory Act of 1804, demanding the rights of American citizens rather than the status of colonial subjects",
+      "Negotiate with incoming American territorial officials for the preservation of Spanish civil law\u2014particularly regarding property, inheritance, and slavery\u2014as the legal foundation of the new territory",
+      "Attempt to maintain public order and municipal services during the interregnum between Spanish and American authority, asserting institutional continuity as a basis for political survival",
+      "Cultivate relationships with sympathetic American officials, particularly those who understand that Creole elite cooperation is essential to stable governance of the territory",
+      "Document and register existing property titles under Spanish law with urgency, anticipating that American legal challenges to Creole landholdings will follow the transfer"
+    ],
+    "implausible_actions": [
+      "Declare New Orleans an independent municipality refusing to recognise either French or American sovereignty",
+      "Invite British military protection as an alternative to American or French rule",
+      "Abolish the institution of slavery within its jurisdiction as a means of securing the loyalty of the city's enslaved population during the transition"
+    ]
+  }
+]

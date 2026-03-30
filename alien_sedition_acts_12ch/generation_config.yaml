@@ -1,0 +1,28 @@
+max_chapters: 12
+
+# Quality gates enabled
+enable_quality_gates: true
+gate_max_chapter_retries: 2
+gate_max_ending_retries: 3
+gate_max_jeopardy_deficit_scenes: 1
+gate_max_exposition_drag_runs: 1
+
+# Literary quality elevation
+enable_narrative_register: true
+enable_physical_interruption_contracts: true
+enable_petty_moment_contracts: true
+enable_ending_variation_gate: true
+
+# Revision enhancements
+enable_targeted_voice_revision: true
+enable_length_guardrails: true
+enable_chapter_completion_gate: true
+enable_smart_repetition_pass: true
+semantic_validator_enabled: true
+
+# Convergence
+enable_pressure_contracts: false
+stage4_scene_count_tolerance: 1
+stage4_max_total_repair_attempts: 8
+next_max_convergence_attempts: 8
+next_max_identical_failure_streak: 3

@@ -1,0 +1,235 @@
+[
+  {
+    "name": "The Presidency under Andrew Jackson",
+    "type": "executive",
+    "power_level": "ascendant",
+    "constraints": [
+      "Constitutional limits on executive authority",
+      "Congressional control over appropriations and legislation",
+      "Dependence on state governments for policy implementation",
+      "Supreme Court's power of judicial review"
+    ],
+    "factional_pressures": [
+      "Kitchen Cabinet advisors pushing for aggressive federal action",
+      "Democratic Party leaders seeking political moderation",
+      "Southern allies demanding protection of slavery and states' rights",
+      "Western supporters calling for Indian removal and territorial expansion"
+    ],
+    "public_legitimacy": "High among common white men who see Jackson as their champion; deeply contested among educated elites and Southern planters.",
+    "plausible_actions": [
+      "Issue proclamations against nullification",
+      "Request congressional authorization for military force",
+      "Mobilize federal troops to Charleston Harbor",
+      "Negotiate tariff compromises through surrogates",
+      "Remove federal deposits from the Bank of the United States"
+    ],
+    "implausible_actions": [
+      "Abolish slavery by executive decree",
+      "Suspend the Constitution during the crisis",
+      "Invade South Carolina without congressional approval"
+    ]
+  },
+  {
+    "name": "South Carolina Legislature",
+    "type": "state government",
+    "power_level": "contested",
+    "constraints": [
+      "Federal supremacy clause in Constitution",
+      "Threat of federal military intervention",
+      "Economic dependence on interstate commerce",
+      "Limited military resources compared to federal government"
+    ],
+    "factional_pressures": [
+      "Nullifiers led by Calhoun demanding immediate resistance",
+      "Unionists opposing nullification as treasonous",
+      "Planter elite fearing economic ruin from tariffs",
+      "Charleston merchants worried about trade disruption"
+    ],
+    "public_legitimacy": "Strong among white South Carolinians who view it as defender of state sovereignty; seen as rebellious by most other Americans.",
+    "plausible_actions": [
+      "Pass nullification ordinances voiding federal tariffs",
+      "Authorize state military preparations",
+      "Call a state convention to consider secession",
+      "Negotiate with other Southern states for joint resistance",
+      "Establish state courts to enforce nullification"
+    ],
+    "implausible_actions": [
+      "Declare war on the federal government",
+      "Form military alliance with foreign power"
+    ]
+  },
+  {
+    "name": "United States Senate",
+    "type": "legislative",
+    "power_level": "dominant",
+    "constraints": [
+      "Equal state representation regardless of population",
+      "Requirement for two-thirds majority to override presidential vetoes",
+      "Dependence on House of Representatives for revenue bills",
+      "Public pressure from expanding democratic electorate"
+    ],
+    "factional_pressures": [
+      "Southern senators defending slavery and states' rights",
+      "Northern senators promoting protective tariffs and internal improvements",
+      "Jackson Democrats seeking to support presidential authority",
+      "Anti-Jackson coalition forming around opposition to executive power"
+    ],
+    "public_legitimacy": "Respected as deliberative body representing state interests; increasingly criticized as aristocratic institution by democratic reformers.",
+    "plausible_actions": [
+      "Pass Force Bill authorizing military action against South Carolina",
+      "Negotiate compromise tariff legislation",
+      "Censure President Jackson for exceeding constitutional authority",
+      "Reject presidential appointments to federal positions",
+      "Investigate executive branch conduct through committee hearings"
+    ],
+    "implausible_actions": [
+      "Abolish the electoral college system",
+      "Expel entire state delegations for disloyalty"
+    ]
+  },
+  {
+    "name": "Democratic Party",
+    "type": "political organization",
+    "power_level": "ascendant",
+    "constraints": [
+      "Sectional divisions between Northern and Southern wings",
+      "Lack of permanent organizational structure",
+      "Dependence on newspaper editors and local politicians",
+      "Constitutional prohibition on national political parties"
+    ],
+    "factional_pressures": [
+      "Southern Democrats demanding protection of slavery and states' rights",
+      "Northern Democrats supporting federal authority and popular democracy",
+      "Van Buren faction seeking party unity and electoral success",
+      "Calhoun faction threatening defection over nullification"
+    ],
+    "public_legitimacy": "High among common white men who identify with Jacksonian democracy; viewed with suspicion by established elites.",
+    "plausible_actions": [
+      "Organize mass rallies supporting Jackson's position",
+      "Coordinate newspaper campaigns across multiple states",
+      "Discipline party members who oppose administration policy",
+      "Recruit candidates for congressional and state elections",
+      "Establish party machinery in new territories"
+    ],
+    "implausible_actions": [
+      "Create permanent national party bureaucracy",
+      "Impose binding party discipline on elected officials"
+    ]
+  },
+  {
+    "name": "Second Bank of the United States",
+    "type": "financial institution",
+    "power_level": "waning",
+    "constraints": [
+      "Twenty-year charter expires in 1836",
+      "Congressional control over charter renewal",
+      "Public hostility toward concentrated financial power",
+      "Presidential opposition to recharter"
+    ],
+    "factional_pressures": [
+      "Nicholas Biddle and bank directors seeking charter renewal",
+      "State banks competing for federal deposits",
+      "Eastern merchants dependent on bank's credit facilities",
+      "Western farmers and Southern planters opposing bank's policies"
+    ],
+    "public_legitimacy": "Low among common people who view it as corrupt monopoly; supported by commercial and financial elites.",
+    "plausible_actions": [
+      "Call in loans to create financial pressure",
+      "Lobby Congress for early charter renewal",
+      "Coordinate with opposition politicians against Jackson",
+      "Manipulate credit markets to influence elections",
+      "Publish pamphlets defending bank's constitutional role"
+    ],
+    "implausible_actions": [
+      "Refuse to honor federal government deposits",
+      "Relocate operations outside United States"
+    ]
+  },
+  {
+    "name": "Supreme Court of the United States",
+    "type": "judicial",
+    "power_level": "contested",
+    "constraints": [
+      "Lack of enforcement power without executive cooperation",
+      "Dependence on lower courts for case development",
+      "Public skepticism toward judicial supremacy",
+      "Limited jurisdiction over state court decisions"
+    ],
+    "factional_pressures": [
+      "Chief Justice Marshall defending federal supremacy and judicial review",
+      "States' rights advocates challenging federal court authority",
+      "Jackson administration questioning court's political role",
+      "Legal profession divided over constitutional interpretation"
+    ],
+    "public_legitimacy": "Moderate among educated classes who respect legal expertise; lower among democratic masses who prefer elected authority.",
+    "plausible_actions": [
+      "Rule on constitutionality of nullification ordinances",
+      "Interpret federal supremacy clause in relevant cases",
+      "Issue writs of mandamus against state officials",
+      "Decline jurisdiction in politically sensitive cases",
+      "Uphold federal authority over interstate commerce"
+    ],
+    "implausible_actions": [
+      "Order military enforcement of judicial decisions",
+      "Remove state officials from office directly"
+    ]
+  },
+  {
+    "name": "Charleston Mercury and Partisan Press",
+    "type": "media institution",
+    "power_level": "ascendant",
+    "constraints": [
+      "Dependence on partisan financial support",
+      "Limited circulation outside major cities",
+      "Postal system controlled by federal government",
+      "Libel laws restricting inflammatory content"
+    ],
+    "factional_pressures": [
+      "Nullification editors promoting resistance to federal authority",
+      "Union editors supporting compromise and federal supremacy",
+      "Political parties seeking favorable coverage",
+      "Advertisers and subscribers influencing editorial positions"
+    ],
+    "public_legitimacy": "High influence among literate political classes; growing reach among expanding electorate through partisan networks.",
+    "plausible_actions": [
+      "Publish inflammatory editorials supporting nullification",
+      "Coordinate messaging across multiple partisan newspapers",
+      "Organize public meetings through editorial campaigns",
+      "Attack political opponents through personal scandals",
+      "Distribute pamphlets and broadsides during crises"
+    ],
+    "implausible_actions": [
+      "Establish independent news gathering network",
+      "Maintain strict editorial neutrality on partisan issues"
+    ]
+  },
+  {
+    "name": "South Carolina Military Organizations",
+    "type": "military",
+    "power_level": "nascent",
+    "constraints": [
+      "Constitutional prohibition on state armies without congressional consent",
+      "Limited weapons and training compared to federal forces",
+      "Dependence on volunteer militia rather than professional soldiers",
+      "Federal control over military supplies and arsenals"
+    ],
+    "factional_pressures": [
+      "Nullification supporters demanding armed resistance preparation",
+      "Unionist officers refusing to participate in rebellion",
+      "Federal officers torn between state and national loyalty",
+      "Charleston elite financing military preparations"
+    ],
+    "public_legitimacy": "Strong among nullification supporters who see armed resistance as legitimate; viewed as treasonous by federal authorities.",
+    "plausible_actions": [
+      "Organize and drill volunteer militia companies",
+      "Seize federal arsenals and fortifications",
+      "Coordinate with other Southern state militias",
+      "Establish military courts to enforce nullification",
+      "Prepare defensive positions around Charleston"
+    ],
+    "implausible_actions": [
+      "Launch offensive military campaign against federal forces",
+      "Establish professional standing army"
+    ]
+  }
+]

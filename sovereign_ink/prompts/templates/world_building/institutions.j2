@@ -1,0 +1,56 @@
+You are modelling the institutional landscape for a historical fiction novel. Institutions—parliaments, courts, churches, armies, guilds, secret societies—are not static backdrops. They are living systems with their own inertia, internal factions, and structural constraints. Understanding them is essential for writing politically realistic fiction.
+
+**Novel Specification:**
+- **Title:** {{ novel_spec.title or "To be determined" }}
+- **Era:** {{ novel_spec.era_start }}–{{ novel_spec.era_end }}
+- **Region:** {{ novel_spec.region }}
+- **Central Event:** {{ novel_spec.central_event }}
+
+**Historical Context:**
+{{ historical_context.era_description }}
+
+**Institutional Landscape Overview:**
+{{ historical_context.institutional_landscape }}
+
+**Cast of Characters:**
+{% for character in characters %}
+- **{{ character.name }}** ({{ character.role }}): {{ character.political_objective }}
+{% endfor %}
+
+**Your task:**
+
+Identify and model 5–8 institutions that are central to the novel's political and social world. For each institution, provide:
+
+1. **Name**: The institution's proper historical name.
+2. **Type**: Category—monarchy, parliament, judiciary, military, church, revolutionary body, secret society, etc.
+3. **Power Level**: Qualitative assessment—dominant, ascendant, waning, contested, nascent, or defunct.
+4. **Constraints**: 2–4 structural, legal, or political constraints that limit the institution's freedom of action.
+5. **Factional Pressures**: 2–4 internal factions or external forces that exert pressure on the institution.
+6. **Public Legitimacy**: How the general population views the institution's right to power or authority.
+7. **Plausible Actions**: 3–5 actions the institution could realistically take in this historical context.
+8. **Implausible Actions**: 2–3 actions that would be historically implausible or anachronistic—these serve as guardrails for the narrative.
+
+**Critical requirements:**
+- Every institution must interact with at least one character's political objective.
+- Include institutions at different power levels to create a dynamic, shifting landscape.
+- The factional pressures should create opportunities for characters to manoeuvre and exploit divisions.
+- Implausible actions are essential guardrails—they prevent the narrative from straying into historical fantasy.
+
+**Output a JSON array** of institutions matching this schema:
+
+```json
+[
+  {
+    "name": "<string>",
+    "type": "<string>",
+    "power_level": "<string: dominant | ascendant | waning | contested | nascent | defunct>",
+    "constraints": ["<string>"],
+    "factional_pressures": ["<string>"],
+    "public_legitimacy": "<string>",
+    "plausible_actions": ["<string>"],
+    "implausible_actions": ["<string>"]
+  }
+]
+```
+
+Produce ONLY the JSON array. No preamble, no commentary, no markdown fences.

@@ -1,0 +1,70 @@
+You are performing a **dialogue revision pass** on a chapter of a historical fiction novel. This pass focuses exclusively on the quality, authenticity, and dramatic effectiveness of all spoken and overheard dialogue.
+
+---
+
+## CHAPTER {{ chapter_number }} — DIALOGUE REVISION
+
+**Chapter Outline:**
+- **Title:** {{ chapter_outline.title }}
+- **POV Character:** {{ chapter_outline.pov_character }}
+- **Chapter Goal:** {{ chapter_outline.chapter_goal }}
+- **Central Conflict:** {{ chapter_outline.conflict }}
+
+{% if character_profiles %}
+**Character Voice Profiles:**
+{% for char in character_profiles %}
+- **{{ char.name }}** ({{ char.role }}):
+  - Speech Style: {{ char.voice_patterns.speech_style }}
+  - Class Markers: {{ char.voice_patterns.class_markers }}
+  - Verbal Tics: {{ char.voice_patterns.verbal_tics }}
+{% endfor %}
+{% endif %}
+
+{% if era_tone_guide %}
+**Dialogue Style Guide:**
+{{ era_tone_guide.dialogue_style_guide }}
+
+**Forbidden Terms:** {{ era_tone_guide.forbidden_terms | join(", ") }}
+
+{% if era_tone_guide.example_dialogue_snippets %}
+**Reference Dialogue Examples:**
+{% for snippet in era_tone_guide.example_dialogue_snippets %}
+{{ snippet }}
+{% endfor %}
+{% endif %}
+{% endif %}
+
+{% if novel_structure_summary %}
+**Novel Structure Context:**
+{{ novel_structure_summary }}
+{% endif %}
+
+---
+
+## CURRENT DRAFT
+
+{{ chapter_content }}
+
+---
+
+## REVISION DIRECTIVES
+
+Revise the chapter focusing EXCLUSIVELY on dialogue quality:
+
+1. **Voice Distinctiveness.** Every character must sound like themselves. A reader should be able to identify the speaker from the dialogue alone, without attribution tags. Check each character's lines against their voice profile. An aristocrat's syntax, vocabulary, and rhythm must differ from a soldier's, a priest's from a merchant's.
+
+2. **Period Authenticity.** Purge every trace of modern speech. No contractions that didn't exist in the period. No modern idioms ("at the end of the day," "to be honest," "the thing is"). No contemporary psychological vocabulary. Forms of address must be era-appropriate—titles, honorifics, and modes of address varied enormously by class and context.
+
+3. **Subtext Over Text.** Great dialogue says one thing and means another. Characters in positions of danger do not speak plainly—they hedge, deflect, insinuate, and test. Revise any dialogue where characters say exactly what they mean. Political speech is especially coded: a compliment may be a threat, an inquiry may be an accusation.
+
+4. **Dialogue as Action.** Every line of dialogue must DO something: reveal character, advance plot, shift a relationship, establish or disrupt power dynamics. Cut any dialogue that exists solely to convey information the reader needs—find a more organic way to deliver exposition.
+
+5. **Rhythm and Cadence.** Read the dialogue aloud (mentally). Does it flow? Does it have the rhythm of actual speech—including interruptions, false starts, and trailing thoughts? Period dialogue tends to be more formally constructed than modern speech, but it should never feel robotic.
+
+6. **Attribution and Action Beats.** Reduce reliance on "he said/she said" by replacing attribution with action beats that reveal character. Instead of *"I refuse," he said angrily*, write *"I refuse." He swept the documents from the table.* Use "said" when attribution is necessary—avoid creative synonyms (exclaimed, opined, retorted).
+
+7. **Power Dynamics in Conversation.** Dialogue between characters of unequal status should reflect that inequality in form and content. Who speaks first? Who speaks longest? Who asks questions and who gives answers? These patterns reveal power more honestly than any narration.
+
+8. **Silence and Refusal.** Sometimes the most powerful dialogue is what is NOT said. Ensure there are moments where characters refuse to speak, where silence communicates more than words, where a pointed pause carries the weight of an accusation.
+
+**Output the fully revised chapter in Markdown.** Preserve scene breaks (`---`). Do not add commentary or annotations—output only the revised prose.

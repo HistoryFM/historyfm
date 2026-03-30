@@ -1,0 +1,47 @@
+# --- Secrets ---
+.env
+.env.*
+*.key
+*.pem
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+dist/
+build/
+.venv/
+venv/
+.eggs/
+
+# --- Node ---
+node_modules/
+.next/
+
+# --- Logs ---
+logs/
+*.log
+
+# --- Generated novel content (large, reproducible) ---
+*/drafts/
+*/state/
+*/config/
+*/logs/
+published/
+test_project/
+
+# --- Claude Code local settings ---
+.claude/settings.local.json
+
+# --- IDE / OS ---
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- Misc ---
+*.lock
+!package-lock.json

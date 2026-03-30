@@ -1,0 +1,18 @@
+{
+  "title": "The Union or the Sword",
+  "region": "United States",
+  "era": "1828-1833",
+  "total_word_count": 19384,
+  "chapter_count": 5,
+  "source_version": "v3_polish",
+  "generated_at": "2026-02-21T22:20:54.402589",
+  "total_tokens_used": 299247,
+  "total_cost_estimate": "$1.4839",
+  "chapter_word_counts": {
+    "1": 2513,
+    "2": 4159,
+    "3": 2740,
+    "11": 6325,
+    "12": 3647
+  }
+}

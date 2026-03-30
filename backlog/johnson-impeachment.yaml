@@ -1,0 +1,112 @@
+title: "The Barricaded Office"
+slug: johnson-impeachment
+project_dir: null
+era_start: 1865
+era_end: 1868
+region: "United States"
+central_event: "The impeachment of President Andrew Johnson, triggered by his attempt to remove Secretary of War Edwin Stanton in violation of the Tenure of Office Act, culminating in the Senate trial of 1868"
+tone_intensity: highly_dramatic
+pov_count: 2
+protagonist_type: historical_figure
+thematic_focus:
+  - "Constitutional limits of executive power"
+  - "The meaning and betrayal of Lincoln's legacy"
+  - "Racial justice versus white supremacist restoration in the postwar South"
+  - "Institutional loyalty and personal conscience in a fractured republic"
+  - "The fragility of democratic norms under political pressure"
+desired_length: novel_120k
+max_chapters: 20
+synopsis: |
+  April 1865. The guns have barely fallen silent when a bullet fired at Ford's Theatre
+  on the fourteenth reshapes the nation's future. Andrew Johnson — a Tennessee tailor's
+  son, a Jacksonian Democrat placed on Lincoln's Union ticket as a gesture of wartime
+  unity — ascends to the presidency carrying none of Lincoln's moral authority and all
+  of his own resentments. Edwin McMasters Stanton, Lincoln's fierce and indispensable
+  Secretary of War, watches from the War Department building on Seventeenth Street and
+  understands immediately: the man now commanding the executive branch is not a
+  Reconstruction president. He is a Restoration president.
+
+  Through alternating points of view, the novel traces the three-year collision between
+  these two men as it widens into a constitutional crisis that nearly breaks the republic.
+
+  Johnson's chapters open in the heady summer of 1865, as he issues sweeping pardons to
+  former Confederates, restores plantation lands seized under General William Sherman's
+  Special Field Order No. 15, and watches his provisional Southern governments
+  immediately enact Black Codes designed to return freedpeople to conditions
+  indistinguishable from slavery. Johnson believes, with bone-deep conviction, that this
+  is a white man's government and that Reconstruction is an illegal occupation of
+  sovereign states. His contempt for the Radical Republicans — Thaddeus Stevens in the
+  House, Charles Sumner in the Senate — is visceral, and when Congress passes the Civil
+  Rights Act of 1866 over his veto in April, and then the Fourteenth Amendment, he
+  begins a "Swing Around the Circle" speaking tour in August that descends into
+  embarrassing public harangues, alienating even moderate Republicans.
+
+  Stanton's chapters reveal a man inhabiting the enemy's citadel by design. He secretly
+  coordinates with Generals Ulysses Grant and William Sherman, shares cabinet
+  deliberations with Radical Republican leaders, and copies documents he believes
+  Johnson will destroy. When Congress passes the Tenure of Office Act in March 1867 —
+  forbidding the president from removing Senate-confirmed officials without congressional
+  approval — Stanton recognizes it as a shield built specifically around him. Johnson
+  suspends Stanton in August 1867, replacing him with Grant on an interim basis. The
+  Senate, reconvening in January 1868, refuses to concur in the suspension and reinstates
+  Stanton. Grant, unwilling to become the instrument of Johnson's defiance, vacates
+  the office. On February 21, 1868, Johnson formally orders Stanton removed and appoints
+  Adjutant General Lorenzo Thomas as acting secretary.
+
+  Stanton does not leave. He locks the War Department doors.
+
+  The novel's climax spans the forty-day standoff: Stanton sleeping in his office,
+  receiving visiting congressmen through a crack in the door, while the House votes
+  articles of impeachment on February 24 — the first in American history against a
+  sitting president. The Senate trial begins March 30, 1868. Chief Justice Salmon Chase
+  presides. Johnson's defense team, led by William Evarts and Benjamin Curtis, argues
+  the Tenure of Office Act is itself unconstitutional and that Lincoln's cabinet members
+  were never protected by it. The prosecution, led by Benjamin Butler and Thaddeus
+  Stevens (who is carried into the chamber in a chair, dying), demands conviction on
+  eleven articles. On May 16 and again on May 26, the Senate votes 35 to 19 for
+  conviction — one vote short of the required two-thirds. Johnson survives by a single
+  vote, cast by Edmund Ross of Kansas, a man who will claim it destroyed his political
+  career.
+
+  The novel ends in the ruins of both men's ambitions: Stanton resigns his barricaded
+  office in May 1868, his health destroyed, dead within eighteen months. Johnson leaves
+  Washington in March 1869 without attending Grant's inauguration. Four million
+  freedpeople watch the retreating hope of federal protection with a dread that will
+  prove entirely justified.
+additional_notes: |
+  POV Characters:
+
+  Andrew Johnson (President, 1865-1869) — A self-made man who genuinely reveres the
+  Constitution but interprets it through a framework of white supremacy and states'
+  rights. His chapters are written in a stubborn, combative interior voice: aggrieved,
+  proud, certain of his own rectitude. Key scenes include his first cabinet meeting after
+  Lincoln's death (April 15, 1865), his veto messages for the Civil Rights Act and
+  Reconstruction Acts, his August 1866 speaking tour, the moment he signs the removal
+  order for Stanton on February 21, 1868, and his private reaction to the Senate vote
+  acquitting him.
+
+  Edwin McMasters Stanton (Secretary of War, 1862-1868) — Asthmatic, driven, and
+  personally abrasive, Stanton administered the largest military mobilization in American
+  history. He loathed Johnson in private while serving in his cabinet, believing the
+  greater duty owed was to the Union dead and the freedpeople. His chapters carry a
+  clinical, exhausted precision. Key scenes include his receipt of Lincoln's death
+  (he sat at the bedside saying "Now he belongs to the ages"), his secret meetings
+  with Radical Republican leaders, his decision not to vacate the War Department on
+  February 21, 1868, and the long nights inside the barricaded office as the Senate
+  trial unfolds across the city.
+
+  Key Supporting Figures: Thaddeus Stevens (House floor manager, impeachment), Charles
+  Sumner (Senate Radical), Ulysses Grant (caught between loyalty to Johnson and to
+  Congress), Benjamin Butler (lead House prosecutor), Edmund Ross (the deciding vote),
+  Salmon Chase (presiding Chief Justice with presidential ambitions of his own), and
+  unnamed freedpeople in the South whose fates are the moral stakes of every political
+  maneuver in Washington.
+
+  Historical accuracy notes: The Tenure of Office Act (March 2, 1867). Johnson's
+  August 1867 suspension of Stanton under the Military Appropriations Act rider. Senate
+  reinstatement, January 13, 1868. Removal order, February 21, 1868. Articles of
+  impeachment adopted February 24, 1868. Senate trial opened March 30, 1868. Acquittal
+  votes May 16 and May 26, 1868 (35-19, one short of two-thirds). The Act was
+  eventually ruled unconstitutional by implication in Myers v. United States (1926).
+description: "A dual-POV historical novel about the constitutional showdown between President Andrew Johnson and Secretary of War Edwin Stanton, whose refusal to vacate his barricaded office triggered the first presidential impeachment in American history."
+status: backlog

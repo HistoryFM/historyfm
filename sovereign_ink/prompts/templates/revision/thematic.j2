@@ -1,0 +1,56 @@
+You are performing a **thematic revision pass** on a chapter of a historical fiction novel. This pass focuses exclusively on ensuring the novel's core themes are woven into the fabric of the prose—not stated, but dramatised through character choice, conflict, and consequence.
+
+---
+
+## CHAPTER {{ chapter_number }} — THEMATIC REVISION
+
+**Chapter Outline:**
+- **Title:** {{ chapter_outline.title }}
+- **POV Character:** {{ chapter_outline.pov_character }}
+- **Chapter Goal:** {{ chapter_outline.chapter_goal }}
+- **Key Turn:** {{ chapter_outline.turn }}
+- **Consequences:** {{ chapter_outline.consequences }}
+
+{% if thematic_focus %}
+**Core Thematic Tensions:**
+{% for theme in thematic_focus %}
+- {{ theme }}
+{% endfor %}
+{% endif %}
+
+{% if novel_structure_summary %}
+**Novel Structure Context:**
+{{ novel_structure_summary }}
+{% endif %}
+
+---
+
+## CURRENT DRAFT
+
+{{ chapter_content }}
+
+---
+
+## REVISION DIRECTIVES
+
+Revise the chapter focusing EXCLUSIVELY on thematic depth and coherence:
+
+1. **Theme Through Action.** Themes must never be stated—they must be dramatised. If the novel explores "loyalty versus ambition," there should be a scene where a character must choose between them and pays the price. Check that each thematic tension is embodied in at least one concrete moment in this chapter, either through the POV character's choices or through events they witness.
+
+2. **Thematic Echoes.** Great novels create thematic resonance through parallel and contrast. Look for opportunities to create echoes:
+   - A minor character facing a diluted version of the protagonist's dilemma
+   - An institutional decision that mirrors a personal one
+   - A historical event that comments on the characters' private struggles
+   These echoes should feel natural, not contrived—the reader should sense the pattern subconsciously.
+
+3. **Symbolic Texture.** Identify objects, settings, and recurring images that can carry thematic weight. A locked door, an unsigned letter, a changing season—these can become symbols that accumulate meaning across chapters. Do not introduce heavy-handed symbolism; instead, let objects acquire significance through repetition and context.
+
+4. **Moral Complexity.** Themes in literary fiction resist easy resolution. If a character makes a morally correct choice, show the cost. If they make a morally compromised choice, show the reasoning. The reader should understand—not necessarily agree with—every character's position. Revise any moment that reduces a theme to a simple moral lesson.
+
+5. **The Specific and the Universal.** The power of historical fiction lies in its ability to illuminate the present through the past. The thematic tensions of this novel should feel urgent and relevant without being allegorical. The characters are people of their time, wrestling with their specific circumstances—but their dilemmas are recognisably human.
+
+6. **Subtext in Dialogue.** Revise dialogue to ensure thematic concerns surface naturally in conversation. Characters do not discuss themes directly—they argue about grain prices, alliances, and personal grievances, and the themes emerge from the substance of the argument.
+
+7. **Chapter-Level Thematic Arc.** By the end of this chapter, the reader's understanding of at least one core theme should have shifted or deepened. The chapter should complicate what seemed simple, or clarify what seemed chaotic. Identify the chapter's thematic contribution and ensure the prose delivers it.
+
+**Output the fully revised chapter in Markdown.** Preserve scene breaks (`---`). Do not add commentary or annotations—output only the revised prose.

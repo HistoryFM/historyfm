@@ -1,0 +1,698 @@
+"""Synchronous LLM client wrapping the Anthropic Messages API.
+
+Provides plain-text generation, structured (JSON→Pydantic) generation,
+and streaming generation — all with exponential-backoff retry, cost
+tracking, and structured logging.
+"""
+
+from __future__ import annotations
+
+import json
+import logging
+import time
+from dataclasses import dataclass, field
+from typing import Callable, Type
+
+import anthropic
+import httpx
+from pydantic import BaseModel
+
+from sovereign_ink.utils.config import GenerationConfig, get_api_key
+from sovereign_ink.utils.token_counter import estimate_cost
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass
+class LLMResponse:
+    """Structured result returned by every LLM call."""
+
+    content: str
+    model: str
+    input_tokens: int
+    output_tokens: int
+    latency_ms: float
+    cost_estimate: float
+    stop_reason: str
+
+
+@dataclass
+class _CumulativeUsage:
+    """Internal tracker for cumulative token usage and cost."""
+
+    total_input_tokens: int = 0
+    total_output_tokens: int = 0
+    total_cost: float = 0.0
+    total_calls: int = 0
+
+
+class LLMClient:
+    """Synchronous Anthropic API client with retry logic and cost tracking.
+
+    Parameters
+    ----------
+    config:
+        The :class:`GenerationConfig` controlling models, temperatures, and
+        retry behaviour.
+    """
+
+    def __init__(self, config: GenerationConfig) -> None:
+        self.config = config
+        self._client = anthropic.Anthropic(
+            api_key=get_api_key(),
+            timeout=httpx.Timeout(connect=10.0, read=1800.0, write=600.0, pool=600.0),
+        )
+        self._usage = _CumulativeUsage()
+        logger.info("LLMClient initialised (default max_tokens=%d)", config.max_tokens_per_call)
+
+    # ------------------------------------------------------------------
+    # Public helpers
+    # ------------------------------------------------------------------
+
+    @property
+    def cumulative_input_tokens(self) -> int:
+        return self._usage.total_input_tokens
+
+    @property
+    def cumulative_output_tokens(self) -> int:
+        return self._usage.total_output_tokens
+
+    @property
+    def cumulative_cost(self) -> float:
+        return round(self._usage.total_cost, 6)
+
+    @property
+    def cumulative_calls(self) -> int:
+        return self._usage.total_calls
+
+    # ------------------------------------------------------------------
+    # Core generation
+    # ------------------------------------------------------------------
+
+    def generate(
+        self,
+        system_prompt: str,
+        user_prompt: str,
+        model: str | None = None,
+        temperature: float | None = None,
+        max_tokens: int | None = None,
+    ) -> LLMResponse:
+        """Send a single messages-API request with automatic retry.
+
+        Parameters
+        ----------
+        system_prompt:
+            System-level instructions.
+        user_prompt:
+            The user turn content.
+        model:
+            Override model; defaults to ``config.model_prose_generation``.
+        temperature:
+            Override temperature; defaults to ``config.temperature_prose``.
+        max_tokens:
+            Override max tokens; defaults to ``config.max_tokens_per_call``.
+
+        Returns
+        -------
+        LLMResponse
+        """
+        model = model or self.config.model_prose_generation
+        temperature = temperature if temperature is not None else self.config.temperature_prose
+        max_tokens = max_tokens or self.config.max_tokens_per_call
+
+        logger.debug(
+            "LLM request — model=%s temp=%.2f max_tokens=%d",
+            model,
+            temperature,
+            max_tokens,
+        )
+
+        last_exc: Exception | None = None
+        for attempt in range(1, self.config.max_retries + 1):
+            try:
+                start = time.perf_counter()
+                response = self._client.messages.create(
+                    model=model,
+                    max_tokens=max_tokens,
+                    temperature=temperature,
+                    system=system_prompt,
+                    messages=[{"role": "user", "content": user_prompt}],
+                )
+                latency_ms = (time.perf_counter() - start) * 1000.0
+
+                content = self._extract_text(response)
+                input_tokens = response.usage.input_tokens
+                output_tokens = response.usage.output_tokens
+                cost = estimate_cost(input_tokens, output_tokens, model, self.config)
+                stop_reason = response.stop_reason or "unknown"
+
+                self._record_usage(input_tokens, output_tokens, cost)
+
+                logger.info(
+                    "LLM response — model=%s in=%d out=%d latency=%.0fms cost=$%.4f stop=%s",
+                    model,
+                    input_tokens,
+                    output_tokens,
+                    latency_ms,
+                    cost,
+                    stop_reason,
+                    extra={
+                        "model": model,
+                        "input_tokens": input_tokens,
+                        "output_tokens": output_tokens,
+                        "latency_ms": round(latency_ms, 1),
+                        "cost": cost,
+                    },
+                )
+
+                return LLMResponse(
+                    content=content,
+                    model=model,
+                    input_tokens=input_tokens,
+                    output_tokens=output_tokens,
+                    latency_ms=round(latency_ms, 1),
+                    cost_estimate=cost,
+                    stop_reason=stop_reason,
+                )
+
+            except anthropic.RateLimitError as exc:
+                last_exc = exc
+                delay = self._backoff_delay(attempt)
+                logger.warning(
+                    "Rate limited (attempt %d/%d) — retrying in %.1fs",
+                    attempt,
+                    self.config.max_retries,
+                    delay,
+                    extra={"retry_attempt": attempt},
+                )
+                time.sleep(delay)
+
+            except anthropic.APIStatusError as exc:
+                last_exc = exc
+                # Content-filter / moderation refusals are non-retryable
+                if exc.status_code == 400:
+                    logger.error("API refusal (400): %s", exc.message)
+                    raise
+                delay = self._backoff_delay(attempt)
+                logger.warning(
+                    "API error %d (attempt %d/%d) — retrying in %.1fs: %s",
+                    exc.status_code,
+                    attempt,
+                    self.config.max_retries,
+                    delay,
+                    exc.message,
+                    extra={"retry_attempt": attempt},
+                )
+                time.sleep(delay)
+
+            except anthropic.APIConnectionError as exc:
+                last_exc = exc
+                delay = self._backoff_delay(attempt)
+                logger.warning(
+                    "Connection error (attempt %d/%d) — retrying in %.1fs: %s",
+                    attempt,
+                    self.config.max_retries,
+                    delay,
+                    exc,
+                    extra={"retry_attempt": attempt},
+                )
+                time.sleep(delay)
+
+            except httpx.TimeoutException as exc:
+                last_exc = exc
+                delay = self._backoff_delay(attempt)
+                logger.warning(
+                    "Timeout (attempt %d/%d) — retrying in %.1fs: %s",
+                    attempt,
+                    self.config.max_retries,
+                    delay,
+                    exc,
+                    extra={"retry_attempt": attempt},
+                )
+                time.sleep(delay)
+
+        logger.error("All %d retries exhausted", self.config.max_retries)
+        raise RuntimeError(
+            f"LLM call failed after {self.config.max_retries} retries"
+        ) from last_exc
+
+    # ------------------------------------------------------------------
+    # Structured (JSON → Pydantic) generation
+    # ------------------------------------------------------------------
+
+    def generate_structured(
+        self,
+        system_prompt: str,
+        user_prompt: str,
+        response_model: Type[BaseModel],
+        model: str | None = None,
+        temperature: float | None = None,
+        max_tokens: int | None = None,
+    ) -> BaseModel:
+        """Generate a response and parse it into a Pydantic model.
+
+        The model is instructed to return valid JSON matching the schema of
+        *response_model*.  If parsing fails, the call is retried up to 2
+        additional times with a clarification prompt.
+
+        Parameters
+        ----------
+        system_prompt:
+            System-level instructions.
+        user_prompt:
+            The user turn content.
+        response_model:
+            The Pydantic class to deserialise into.
+        model:
+            Override model.
+        temperature:
+            Override temperature.
+        max_tokens:
+            Override max tokens for structured output (defaults to config value).
+
+        Returns
+        -------
+        BaseModel
+            An instance of *response_model*.
+        """
+        schema_json = json.dumps(response_model.model_json_schema(), indent=2)
+        json_instruction = (
+            "\n\nYou MUST respond with ONLY valid JSON (no markdown fences, no "
+            "commentary) conforming to this JSON schema:\n"
+            f"```\n{schema_json}\n```"
+        )
+
+        full_system = system_prompt + json_instruction
+        max_parse_attempts = 3
+        last_content = ""
+
+        for parse_attempt in range(1, max_parse_attempts + 1):
+            if parse_attempt == 1:
+                prompt = user_prompt
+            else:
+                prompt = (
+                    f"Your previous response was not valid JSON. "
+                    f"Parse error: {parse_error}\n\n"
+                    f"Please respond ONLY with valid JSON matching the schema. "
+                    f"No extra text, no markdown fences. Keep string values "
+                    f"concise to avoid truncation.\n\n"
+                    f"Original request:\n{user_prompt}"
+                )
+
+            llm_response = self.generate(
+                system_prompt=full_system,
+                user_prompt=prompt,
+                model=model,
+                temperature=temperature,
+                max_tokens=max_tokens,
+            )
+            last_content = llm_response.content.strip()
+
+            # Strip markdown code fences if the model included them
+            if last_content.startswith("```"):
+                lines = last_content.split("\n")
+                if lines[0].startswith("```"):
+                    lines = lines[1:]
+                if lines and lines[-1].strip() == "```":
+                    lines = lines[:-1]
+                last_content = "\n".join(lines).strip()
+
+            # Attempt to repair truncated JSON (missing closing brackets)
+            last_content = self._repair_json(last_content)
+
+            try:
+                parsed = response_model.model_validate_json(last_content)
+                logger.debug(
+                    "Structured parse succeeded on attempt %d", parse_attempt
+                )
+                return parsed
+            except Exception as exc:
+                parse_error = str(exc)
+                logger.warning(
+                    "JSON parse failed (attempt %d/%d): %s",
+                    parse_attempt,
+                    max_parse_attempts,
+                    parse_error,
+                    extra={"retry_attempt": parse_attempt},
+                )
+
+        raise ValueError(
+            f"Failed to parse LLM output into {response_model.__name__} after "
+            f"{max_parse_attempts} attempts. Last response:\n{last_content}"
+        )
+
+    @staticmethod
+    def _repair_json(text: str) -> str:
+        """Attempt to repair truncated or slightly malformed JSON.
+
+        Handles:
+        - Trailing commas before closing brackets
+        - Missing closing brackets/braces at end of truncated output
+        - Unclosed strings at end of truncated output
+        - Unquoted annotations like "word" as verb -> "word (as verb)"
+        - Unescaped double quotes inside JSON string values
+        """
+        import re
+
+        text = text.strip()
+        if not text:
+            return text
+
+        # Fix common pattern: "value" as annotation, or "value" in context,
+        # which is invalid JSON — fold the annotation into the string
+        text = re.sub(
+            r'"([^"]+)"\s+(as|in|for|meaning|i\.e\.|e\.g\.)\s+([^",\]\}]+)',
+            r'"\1 (\2 \3)"',
+            text,
+        )
+
+        # Try parsing first — if it works, return immediately
+        try:
+            import json
+            json.loads(text)
+            return text
+        except (json.JSONDecodeError, Exception):
+            pass
+
+        # Fix unescaped double quotes inside string values by replacing
+        # inner dialogue quotes with single quotes. This targets the
+        # pattern where the model writes "He said "hello"" instead of
+        # proper escaping.
+        def _fix_inner_quotes(match: re.Match) -> str:
+            key = match.group(1)
+            value = match.group(2)
+            fixed = value.replace('\\"', "'").replace('"', "'")
+            return f'"{key}": "{fixed}"'
+
+        # Match JSON key-value pairs where the value is a string that may
+        # contain problematic embedded quotes
+        text = re.sub(
+            r'"(example_dialogue_snippets|dialogue_style_guide|narrative_voice_calibration)"'
+            r'\s*:\s*"((?:[^"\\]|\\.)*(?:"(?![,\]\}\s])(?:[^"\\]|\\.)*)*)"',
+            _fix_inner_quotes,
+            text,
+        )
+
+        # Also fix within arrays: strings in arrays that have unescaped quotes
+        # Try a simpler approach: walk through and fix quote issues
+        text = LLMClient._fix_string_quotes(text)
+
+        # If JSON appears complete, clean up and return
+        if (text.startswith("{") and text.endswith("}")) or \
+           (text.startswith("[") and text.endswith("]")):
+            text = re.sub(r',\s*([\]}])', r'\1', text)
+            return text
+
+        # JSON is truncated — attempt repair
+        open_braces = 0
+        open_brackets = 0
+        in_string = False
+        escape_next = False
+        last_clean_pos = 0
+
+        for i, ch in enumerate(text):
+            if escape_next:
+                escape_next = False
+                continue
+            if ch == '\\' and in_string:
+                escape_next = True
+                continue
+            if ch == '"' and not escape_next:
+                in_string = not in_string
+                continue
+            if in_string:
+                continue
+            if ch == '{':
+                open_braces += 1
+            elif ch == '}':
+                open_braces -= 1
+            elif ch == '[':
+                open_brackets += 1
+            elif ch == ']':
+                open_brackets -= 1
+
+            if not in_string:
+                last_clean_pos = i
+
+        if in_string:
+            text = text[:last_clean_pos + 1]
+
+        text = re.sub(r',\s*$', '', text)
+
+        open_braces = text.count('{') - text.count('}')
+        open_brackets = text.count('[') - text.count(']')
+
+        text += ']' * max(0, open_brackets)
+        text += '}' * max(0, open_braces)
+
+        text = re.sub(r',\s*([\]}])', r'\1', text)
+
+        return text
+
+    @staticmethod
+    def _fix_string_quotes(text: str) -> str:
+        """Walk through JSON text and replace unescaped inner quotes
+        within string values with single quotes."""
+        import json
+
+        try:
+            json.loads(text)
+            return text
+        except json.JSONDecodeError:
+            pass
+
+        result = []
+        i = 0
+        in_string = False
+        string_start = -1
+
+        while i < len(text):
+            ch = text[i]
+
+            if not in_string:
+                result.append(ch)
+                if ch == '"':
+                    in_string = True
+                    string_start = len(result) - 1
+            else:
+                if ch == '\\' and i + 1 < len(text):
+                    next_ch = text[i + 1]
+                    if next_ch == '"':
+                        result.append("'")
+                        i += 2
+                        continue
+                    else:
+                        result.append(ch)
+                        result.append(next_ch)
+                        i += 2
+                        continue
+                elif ch == '"':
+                    lookahead = text[i + 1:i + 20].lstrip() if i + 1 < len(text) else ""
+                    if lookahead and lookahead[0] in (',', ']', '}', ':'):
+                        result.append(ch)
+                        in_string = False
+                    elif not lookahead:
+                        result.append(ch)
+                        in_string = False
+                    else:
+                        result.append("'")
+                else:
+                    result.append(ch)
+
+            i += 1
+
+        repaired = "".join(result)
+        try:
+            json.loads(repaired)
+            return repaired
+        except json.JSONDecodeError:
+            return text
+
+    # ------------------------------------------------------------------
+    # Streaming generation
+    # ------------------------------------------------------------------
+
+    def generate_streaming(
+        self,
+        system_prompt: str,
+        user_prompt: str,
+        model: str | None = None,
+        temperature: float | None = None,
+        max_tokens: int | None = None,
+        on_chunk: Callable[[str], None] | None = None,
+    ) -> LLMResponse:
+        """Stream a response, invoking *on_chunk* for each text delta.
+
+        Parameters
+        ----------
+        system_prompt:
+            System-level instructions.
+        user_prompt:
+            The user turn content.
+        model:
+            Override model.
+        temperature:
+            Override temperature.
+        max_tokens:
+            Override max tokens.
+        on_chunk:
+            Optional callback receiving each streamed text fragment.
+
+        Returns
+        -------
+        LLMResponse
+            The accumulated full response.
+        """
+        model = model or self.config.model_prose_generation
+        temperature = temperature if temperature is not None else self.config.temperature_prose
+        max_tokens = max_tokens or self.config.max_tokens_per_call
+
+        logger.debug(
+            "LLM streaming request — model=%s temp=%.2f max_tokens=%d",
+            model,
+            temperature,
+            max_tokens,
+        )
+
+        last_exc: Exception | None = None
+        for attempt in range(1, self.config.max_retries + 1):
+            try:
+                start = time.perf_counter()
+                accumulated_text: list[str] = []
+                input_tokens = 0
+                output_tokens = 0
+                stop_reason = "unknown"
+
+                with self._client.messages.stream(
+                    model=model,
+                    max_tokens=max_tokens,
+                    temperature=temperature,
+                    system=system_prompt,
+                    messages=[{"role": "user", "content": user_prompt}],
+                ) as stream:
+                    for text in stream.text_stream:
+                        accumulated_text.append(text)
+                        if on_chunk is not None:
+                            on_chunk(text)
+
+                    # Retrieve the final message for usage metadata
+                    final_message = stream.get_final_message()
+                    input_tokens = final_message.usage.input_tokens
+                    output_tokens = final_message.usage.output_tokens
+                    stop_reason = final_message.stop_reason or "unknown"
+
+                latency_ms = (time.perf_counter() - start) * 1000.0
+                content = "".join(accumulated_text)
+                cost = estimate_cost(input_tokens, output_tokens, model, self.config)
+
+                self._record_usage(input_tokens, output_tokens, cost)
+
+                logger.info(
+                    "LLM stream complete — model=%s in=%d out=%d latency=%.0fms cost=$%.4f",
+                    model,
+                    input_tokens,
+                    output_tokens,
+                    latency_ms,
+                    cost,
+                    extra={
+                        "model": model,
+                        "input_tokens": input_tokens,
+                        "output_tokens": output_tokens,
+                        "latency_ms": round(latency_ms, 1),
+                        "cost": cost,
+                    },
+                )
+
+                return LLMResponse(
+                    content=content,
+                    model=model,
+                    input_tokens=input_tokens,
+                    output_tokens=output_tokens,
+                    latency_ms=round(latency_ms, 1),
+                    cost_estimate=cost,
+                    stop_reason=stop_reason,
+                )
+
+            except anthropic.RateLimitError as exc:
+                last_exc = exc
+                delay = self._backoff_delay(attempt)
+                logger.warning(
+                    "Rate limited during stream (attempt %d/%d) — retrying in %.1fs",
+                    attempt,
+                    self.config.max_retries,
+                    delay,
+                    extra={"retry_attempt": attempt},
+                )
+                time.sleep(delay)
+
+            except anthropic.APIStatusError as exc:
+                last_exc = exc
+                if exc.status_code == 400:
+                    logger.error("API refusal (400) during stream: %s", exc.message)
+                    raise
+                delay = self._backoff_delay(attempt)
+                logger.warning(
+                    "API error %d during stream (attempt %d/%d) — retrying in %.1fs",
+                    exc.status_code,
+                    attempt,
+                    self.config.max_retries,
+                    delay,
+                    extra={"retry_attempt": attempt},
+                )
+                time.sleep(delay)
+
+            except anthropic.APIConnectionError as exc:
+                last_exc = exc
+                delay = self._backoff_delay(attempt)
+                logger.warning(
+                    "Connection error during stream (attempt %d/%d) — retrying in %.1fs",
+                    attempt,
+                    self.config.max_retries,
+                    delay,
+                    extra={"retry_attempt": attempt},
+                )
+                time.sleep(delay)
+
+            except httpx.TimeoutException as exc:
+                last_exc = exc
+                delay = self._backoff_delay(attempt)
+                logger.warning(
+                    "Timeout during stream (attempt %d/%d) — retrying in %.1fs: %s",
+                    attempt,
+                    self.config.max_retries,
+                    delay,
+                    exc,
+                    extra={"retry_attempt": attempt},
+                )
+                time.sleep(delay)
+
+        logger.error("All %d retries exhausted for streaming call", self.config.max_retries)
+        raise RuntimeError(
+            f"LLM streaming call failed after {self.config.max_retries} retries"
+        ) from last_exc
+
+    # ------------------------------------------------------------------
+    # Private helpers
+    # ------------------------------------------------------------------
+
+    def _backoff_delay(self, attempt: int) -> float:
+        """Compute exponential-backoff delay for the given attempt number."""
+        return self.config.retry_base_delay * (2 ** (attempt - 1))
+
+    def _record_usage(
+        self, input_tokens: int, output_tokens: int, cost: float
+    ) -> None:
+        """Update cumulative usage counters."""
+        self._usage.total_input_tokens += input_tokens
+        self._usage.total_output_tokens += output_tokens
+        self._usage.total_cost += cost
+        self._usage.total_calls += 1
+
+    @staticmethod
+    def _extract_text(response: anthropic.types.Message) -> str:
+        """Extract concatenated text from an Anthropic Message response."""
+        parts: list[str] = []
+        for block in response.content:
+            if block.type == "text":
+                parts.append(block.text)
+        return "".join(parts)

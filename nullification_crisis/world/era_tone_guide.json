@@ -1,0 +1,50 @@
+{
+  "language_register": "Elevated early American literary prose, reflecting the formal education and classical learning of the political class while remaining accessible to contemporary readers. The register should evoke the oratorical tradition of the early republic\u2014dignified, precise, and weighted with constitutional gravity. Vocabulary draws from the King James Bible, classical rhetoric, and Enlightenment political philosophy, tempered by the directness of frontier democracy.",
+  "vocabulary_constraints": [
+    "Prefer formal Latinate constructions for educated characters; Germanic directness for common folk",
+    "Use period currency (dollars, cents, Spanish pieces of eight for large transactions)",
+    "Employ classical units: miles, leagues, rods, acres, bushels, hogsheads",
+    "Political terminology must reflect constitutional language: 'the General Government' not 'federal government'",
+    "Military ranks and titles follow 1830s American usage: 'General Jackson' not 'President Jackson' in military contexts",
+    "Religious language draws from Protestant evangelical tradition and biblical phraseology",
+    "Legal terms reflect early American jurisprudence: 'interposition' not 'nullification' in formal documents",
+    "Social address follows republican forms: 'sir' and 'madam' rather than aristocratic titles",
+    "Regional dialects must be suggested through syntax and word choice, not phonetic spelling"
+  ],
+  "forbidden_terms": [
+    "okay",
+    "guys",
+    "basically",
+    "pretty much",
+    "kind of",
+    "sort of",
+    "no way",
+    "awesome",
+    "impact as verb",
+    "agenda in modern sense",
+    "issue as problem",
+    "address as verb meaning discuss",
+    "reach out",
+    "touch base",
+    "bottom line",
+    "at the end of the day",
+    "going forward",
+    "moving forward",
+    "back in the day",
+    "24/7",
+    "user-friendly",
+    "state-of-the-art",
+    "cutting-edge",
+    "paradigm",
+    "proactive"
+  ],
+  "dialogue_style_guide": "Dialogue must reflect the oratorical culture of the early republic, where public speaking was the highest political art. Educated characters employ periodic sentences, classical allusions, and constitutional terminology. They address each other with elaborate courtesy even in heated moments\u2014'my dear sir' and 'I venture to suggest' rather than direct contradiction. Southern planters speak with particular formality, drawing on chivalric ideals. Common folk use biblical phraseology and frontier directness but avoid modern contractions. Military men speak with clipped precision. Politicians never speak plainly when circumlocution will serve\u2014they 'take the liberty of observing' rather than simply stating. Emotion is conveyed through elevated language and classical restraint rather than modern psychological terminology. Characters quote Scripture, classical authors, and the Founding Fathers with easy familiarity. Regional differences appear in vocabulary choice and syntax rather than phonetic spelling.",
+  "narrative_voice_calibration": "Close third-person limited, rotating among key figures with the measured authority of a classical historian. The narrator maintains emotional distance while penetrating deeply into characters' motivations and fears. Sentences balance Latinate complexity with Anglo-Saxon force, echoing the constitutional prose of the era. The voice carries the weight of hindsight without betraying knowledge of future events. Metaphors draw from classical antiquity, biblical imagery, and the natural world familiar to the characters. The narrator never editorializes directly but allows the drama to emerge from the collision of principle and ambition. Tone shifts from intimate psychological portraiture to sweeping political panorama, always maintaining the dignity appropriate to a constitutional crisis.",
+  "example_dialogue_snippets": [
+    "\"General Jackson, I fear you mistake firmness for wisdom.\" \"And I fear, Mr. Calhoun, that you mistake rebellion for principle.\"",
+    "\"The tariff is an abomination, sir, and South Carolina will not submit to such tyranny.\" \"Then South Carolina must prepare to face the consequences of defying the Union.\"",
+    "\"You speak of the Constitution as if it were Holy Writ.\" \"In this republic, sir, it is the only scripture that binds us all.\"",
+    "\"I have served my country faithfully for thirty years.\" \"And now you would destroy it for the sake of your peculiar institution.\"",
+    "\"The people have spoken through their representatives.\" \"The people, sir? Or merely those who own sufficient property to make their voices heard?\""
+  ]
+}

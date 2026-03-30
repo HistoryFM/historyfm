@@ -1,0 +1,64 @@
+You are constructing the historical foundation for a novel. Your task is to produce a detailed historical context document that will serve as the factual bedrock for all subsequent world-building, structural planning, and prose generation.
+
+**Novel Specification:**
+- **Title:** {{ novel_spec.title or "To be determined" }}
+- **Era:** {{ novel_spec.era_start }}–{{ novel_spec.era_end }}
+- **Region:** {{ novel_spec.region }}
+- **Central Event:** {{ novel_spec.central_event }}
+- **Tone:** {{ novel_spec.tone_intensity }}
+- **Protagonist Type:** {{ novel_spec.protagonist_type }}
+- **Thematic Focus:** {{ novel_spec.thematic_focus | join(", ") }}
+{% if novel_spec.synopsis %}
+- **Approved Synopsis:** {{ novel_spec.synopsis }}
+{% endif %}
+{% if novel_spec.additional_notes %}
+- **Additional Notes:** {{ novel_spec.additional_notes }}
+{% endif %}
+
+**Your task:**
+
+{% if novel_spec.synopsis %}
+The author has approved the synopsis above as the creative direction for this novel. Focus your historical research on the events, figures, and dynamics most relevant to that narrative. The major players you identify should be weighted toward figures who will appear in or influence the story described in the synopsis.
+{% endif %}
+
+1. **Era Description**: Write a rich prose overview (300–500 words) of the era and its defining characteristics. Cover the political landscape, social fabric, economic conditions, cultural currents, and the dominant anxieties of the period. This should read like the work of a historian who also understands drama—grounding the reader in the period while highlighting the tensions that will fuel the narrative.
+
+2. **Key Events**: Identify 10–20 historically significant events within the window {{ novel_spec.era_start }}–{{ novel_spec.era_end }} in {{ novel_spec.region }} that are relevant to the central event ({{ novel_spec.central_event }}). For each event provide the date, a concise description, and why it matters to a novel built around this subject.
+
+3. **Major Players**: Identify 5–10 historically significant figures who were active in this era and region. For each, provide their name, functional role, and a **titles** array listing every office or title they held during the novel's time span, with the year they assumed it (`from`) and the year they left it (`to`). This must be precise — a figure who was Secretary of State from 1829 to 1831 and Vice President from 1833 to 1837 must have two separate entries, not a single blended string.
+
+4. **Institutional Landscape**: Write a prose overview (200–300 words) of the governing bodies, social structures, religious institutions, and power dynamics that define the period. Focus on how these institutions constrain or enable political action.
+
+5. **Macro-Outcomes**: List 5–8 high-level historical outcomes of this era that are well-documented (e.g., "Fall of the Ancien Régime," "Abolition of feudal privileges"). These serve as guardrails—the novel's events must be consistent with these known outcomes.
+
+**Output the result as a single JSON object** matching this schema exactly:
+
+```json
+{
+  "era_description": "<string: 300-500 word prose overview>",
+  "key_events": [
+    {
+      "date": "<string: date or date-range>",
+      "event": "<string: short name or headline>",
+      "significance": "<string: why this matters to the narrative>"
+    }
+  ],
+  "major_players": [
+    {
+      "name": "<string: full name>",
+      "role": "<string: functional role>",
+      "titles": [
+        {
+          "title": "<string: specific office or title>",
+          "from": "<string: year assumed>",
+          "to": "<string: year left, or 'present'>"
+        }
+      ]
+    }
+  ],
+  "institutional_landscape": "<string: 200-300 word prose overview>",
+  "macro_outcomes": ["<string>"]
+}
+```
+
+Produce ONLY the JSON object. No preamble, no commentary, no markdown fences.

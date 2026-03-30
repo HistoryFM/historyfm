@@ -1,0 +1,52 @@
+You are performing an **emotional depth revision pass** on a chapter of a historical fiction novel. This pass focuses exclusively on the interior lives of the characters—their feelings, fears, desires, and the gap between what they show the world and what they truly experience.
+
+---
+
+## CHAPTER {{ chapter_number }} — EMOTIONAL DEPTH REVISION
+
+**Chapter Outline:**
+- **Title:** {{ chapter_outline.title }}
+- **POV Character:** {{ chapter_outline.pov_character }}
+- **Chapter Goal:** {{ chapter_outline.chapter_goal }}
+- **Key Turn:** {{ chapter_outline.turn }}
+
+{% if pov_profile %}
+**POV Character Profile:**
+- **Personal Fear:** {{ pov_profile.personal_fear }}
+- **Hidden Motivation:** {{ pov_profile.hidden_motivation }}
+- **Moral Conflict:** {{ pov_profile.moral_conflict }}
+- **Emotional Arc:** {{ pov_profile.emotional_arc.start_state }} → {{ pov_profile.emotional_arc.end_state }}
+{% endif %}
+
+{% if novel_structure_summary %}
+**Novel Structure Context:**
+{{ novel_structure_summary }}
+{% endif %}
+
+---
+
+## CURRENT DRAFT
+
+{{ chapter_content }}
+
+---
+
+## REVISION DIRECTIVES
+
+Revise the chapter focusing EXCLUSIVELY on emotional resonance and psychological depth:
+
+1. **Interiority Without Exposition.** The POV character's inner life must be felt, not explained. Replace any sentences that tell the reader what a character feels ("He felt afraid") with physical sensation, action, and perception ("His hand found the edge of the table; he pressed until the wood bit into his palm"). The body knows before the mind articulates.
+
+2. **Emotional Specificity.** Generic emotions weaken prose. "Sadness" is vague; "the particular grief of watching a friend choose survival over principle" is specific. Every emotional beat should be rooted in the specific circumstances of this story, this character, this moment.
+
+3. **The Mask and the Face.** Characters in political dramas wear masks. The reader should always sense the gap between what the character shows others and what they actually feel. This gap—between the composed exterior and the roiling interior—is the engine of dramatic irony and reader empathy.
+
+4. **Vulnerability in Strength.** The most powerful emotional moments come when strong characters are vulnerable, and vice versa. Look for moments where a character's armour cracks—a flash of doubt in a leader, tenderness from an antagonist, rage from someone who has been stoic. These fractures are where the reader connects.
+
+5. **Relationship Dynamics.** Revise dialogue and interaction scenes to deepen the emotional texture of relationships. Characters who care about each other should show it in oblique ways—a warning disguised as a rebuke, a gift that communicates what words cannot. Characters who hate each other should reveal it through precision cruelty, not blunt aggression.
+
+6. **Sensory Anchoring.** Emotion lives in the senses. Ground key emotional moments in physical detail—the smell of a room, the quality of light, the sound of someone's breathing. These sensory anchors make abstract feelings concrete and memorable.
+
+7. **Emotional Arc Progression.** This chapter should advance the POV character's emotional arc from "{{ pov_profile.emotional_arc.start_state if pov_profile else 'their current state' }}" toward "{{ pov_profile.emotional_arc.end_state if pov_profile else 'their eventual state' }}". The movement should be incremental and earned—no sudden transformations.
+
+**Output the fully revised chapter in Markdown.** Preserve scene breaks (`---`). Do not add commentary or annotations—output only the revised prose.

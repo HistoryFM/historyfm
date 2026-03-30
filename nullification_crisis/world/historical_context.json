@@ -1,0 +1,113 @@
+{
+  "era_description": "The years 1828 to 1833 witnessed the young American republic's most perilous constitutional crisis since its founding. Andrew Jackson's presidency opened with the nation fracturing along sectional lines, as the industrial North and agricultural South pursued increasingly incompatible visions of the Union's future. The protective tariffs of 1828 and 1832\u2014dubbed the 'Tariff of Abominations' by Southern planters\u2014crystallized decades of smoldering resentment over federal power and economic policy. South Carolina, led by the brilliant but increasingly radical John C. Calhoun, declared these tariffs null and void within state borders, precipitating a constitutional showdown that would determine whether the United States remained a collection of sovereign states or became a true nation. Jackson, the frontier general turned president, embodied the democratic fervor of the common man while wielding executive power with unprecedented force. His administration coincided with the expansion of suffrage to all white males, the rise of mass political parties, and the emergence of a popular press that transformed political discourse into public spectacle. The period pulsed with contradictions: a democracy that excluded millions, a Union that threatened to dissolve, and leaders who proclaimed liberty while perpetuating bondage. Economic panic stalked the land as the Second Bank of the United States became another battlefield between federal authority and states' rights. The Indian Removal Act of 1830 revealed the republic's capacity for systematic cruelty in pursuit of expansion, while evangelical revivals swept the nation, promising redemption even as political salvation seemed increasingly elusive. These were years when personal honor and political principle collided with devastating force, when friendships shattered over constitutional theory, and when the very survival of the American experiment hung in the balance. The rhetoric of liberty masked the reality of slavery, the promise of democracy concealed the persistence of hierarchy, and the dream of union confronted the nightmare of dissolution.",
+  "key_events": [
+    {
+      "date": "4 March 1829",
+      "event": "Jackson's Presidential Inauguration",
+      "significance": "Marks the beginning of the democratic revolution and sets the stage for unprecedented executive power during the nullification crisis."
+    },
+    {
+      "date": "13 April 1830",
+      "event": "Jefferson Birthday Dinner and Toast Controversy",
+      "significance": "Jackson's toast 'Our Union\u2014it must be preserved' directly challenges Calhoun's states' rights position, marking their public break."
+    },
+    {
+      "date": "28 May 1830",
+      "event": "Indian Removal Act",
+      "significance": "Demonstrates Jackson's willingness to use federal power ruthlessly, foreshadowing his approach to nullification while alienating humanitarian Whigs."
+    },
+    {
+      "date": "28 December 1832",
+      "event": "Calhoun's Resignation as Vice President",
+      "significance": "Unprecedented resignation to become Senator and lead nullification fight, dramatizing the personal cost of political principle."
+    },
+    {
+      "date": "24 November 1832",
+      "event": "South Carolina Nullification Ordinance",
+      "significance": "The formal declaration of nullification that precipitates the constitutional crisis and forces Jackson's hand."
+    },
+    {
+      "date": "10 December 1832",
+      "event": "Jackson's Nullification Proclamation",
+      "significance": "Jackson's definitive assertion of federal supremacy and rejection of nullification theory, escalating the crisis toward potential violence."
+    },
+    {
+      "date": "16 January 1833",
+      "event": "Jackson Requests Force Bill",
+      "significance": "The president asks Congress for authority to use military force against South Carolina, bringing the nation to the brink of civil war."
+    },
+    {
+      "date": "12 February 1833",
+      "event": "Clay's Compromise Tariff Introduced",
+      "significance": "Henry Clay's intervention offers South Carolina a face-saving retreat while preserving Jackson's authority and the Union."
+    },
+    {
+      "date": "2 March 1833",
+      "event": "Force Bill and Compromise Tariff Pass Congress",
+      "significance": "The simultaneous passage of both measures allows all parties to claim victory while defusing the immediate crisis."
+    },
+    {
+      "date": "15 March 1833",
+      "event": "South Carolina Repeals Nullification",
+      "significance": "The crisis ends with federal authority preserved but underlying tensions unresolved, setting precedents for future sectional conflicts."
+    },
+    {
+      "date": "September 1833",
+      "event": "Bank War Escalates with Deposit Removal",
+      "significance": "Jackson's war against the Bank demonstrates his expanded view of executive power and creates new political alignments."
+    }
+  ],
+  "major_players": [
+    {
+      "name": "Andrew Jackson",
+      "role": "President",
+      "position": "Seventh President of the United States, champion of democratic expansion and federal authority"
+    },
+    {
+      "name": "John Caldwell Calhoun",
+      "role": "Political theorist and states' rights advocate",
+      "position": "Vice President (1829-1832), then Senator from South Carolina and leader of nullification movement"
+    },
+    {
+      "name": "Henry Clay",
+      "role": "Congressional leader and compromiser",
+      "position": "Senator from Kentucky, architect of the Compromise Tariff and leader of National Republican opposition"
+    },
+    {
+      "name": "Martin Van Buren",
+      "role": "Political strategist and Jackson ally",
+      "position": "Secretary of State, later Vice President, chief architect of Jackson's political coalition"
+    },
+    {
+      "name": "Robert Young Hayne",
+      "role": "South Carolina politician",
+      "position": "Senator from South Carolina, Calhoun's lieutenant and spokesman for nullification in famous Webster debate"
+    },
+    {
+      "name": "Daniel Webster",
+      "role": "Constitutional lawyer and orator",
+      "position": "Senator from Massachusetts, leading defender of federal supremacy and Union nationalism"
+    },
+    {
+      "name": "James Hamilton Jr.",
+      "role": "South Carolina radical",
+      "position": "Governor of South Carolina during nullification crisis, militant advocate of state resistance"
+    },
+    {
+      "name": "Joel Roberts Poinsett",
+      "role": "Federal agent in South Carolina",
+      "position": "Jackson's chief ally in South Carolina, organizer of Unionist resistance to nullification"
+    }
+  ],
+  "institutional_landscape": "The American political system in this era operated through an intricate web of federal, state, and local authorities whose boundaries remained fiercely contested. The Constitution's ambiguities regarding federal versus state power created a permanent tension that skilled politicians exploited for partisan advantage. Congress functioned as the primary battleground for sectional interests, with the Senate serving as the states' bulwark against majoritarian tyranny and the House reflecting the democratic surge of expanded suffrage. The presidency under Jackson assumed unprecedented authority, transforming from a largely administrative office into a populist tribune wielding the veto power as a weapon of policy. State governments retained enormous influence over daily life, controlling education, internal improvements, and most legal matters, while asserting theoretical sovereignty that challenged federal supremacy. Political parties emerged as the crucial mediating institutions, organizing popular will and channeling democratic energy into coherent governing coalitions. The Democratic Party represented Jackson's coalition of planters, farmers, and urban workers, while the emerging Whig opposition united around resistance to executive tyranny and support for economic nationalism. Religious institutions, particularly Protestant denominations experiencing evangelical revival, provided moral authority that politicians courted and feared in equal measure. The press, freed from earlier partisan constraints, became an independent force capable of making or breaking political careers through the power of public opinion. Military institutions remained weak by design, yet Jackson's willingness to threaten force revealed their potential as instruments of federal will.",
+  "macro_outcomes": [
+    "Preservation of the Union against nullification challenge",
+    "Establishment of federal supremacy over state resistance",
+    "Expansion of presidential power and executive authority",
+    "Emergence of the Second Party System (Democrats vs Whigs)",
+    "Postponement but not resolution of slavery and sectional tensions",
+    "Destruction of the Second Bank of the United States",
+    "Completion of Indian removal from southeastern states",
+    "Entrenchment of democratic political culture and mass participation"
+  ]
+}

@@ -1,0 +1,974 @@
+{
+  "act_structure": {
+    "num_acts": 3,
+    "acts": [
+      {
+        "act_number": 1,
+        "title": "The Gathering Storm",
+        "description": "The novel opens in the charged atmosphere of Jackson's inauguration and the immediate aftermath of the Tariff of Abominations. Thomas Whitmore returns to Charleston from Washington, torn between his inherited nullification rhetoric and growing doubts about its wisdom. Margaret Sinclair arrives in Charleston under cover as a Northern merchant's daughter, tasked with gathering intelligence on nullification activities. Their meeting at a political salon sparks both romantic tension and ideological conflict. Ezra Caldwell positions himself as Calhoun's rising lieutenant, pushing for more aggressive resistance to federal tyranny. The act culminates with the Jefferson Birthday Dinner, where Jackson's toast\u2014'Our Union: it must be preserved'\u2014draws the battle lines and forces every character to choose sides. Personal stakes become political as private convictions collide with public loyalties.",
+        "dramatic_beats": [
+          "Jackson's inauguration and Whitmore's conflicted return to Charleston",
+          "Margaret's arrival and first encounter with Thomas at Mrs. Pinckney's salon",
+          "Caldwell's inflammatory speech advocating nullification as constitutional duty",
+          "Thomas and Margaret's private debate revealing their fundamental philosophical divide",
+          "The Jefferson Birthday Dinner and Jackson's defiant toast",
+          "South Carolina's formal response and the point of no return"
+        ],
+        "stakes_level": "personal and political",
+        "chapters": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "act_number": 2,
+        "title": "The Die Cast",
+        "description": "The crisis escalates as South Carolina moves toward formal nullification while Jackson prepares federal response. Thomas struggles with his growing love for Margaret and his dawning realization that nullification may destroy the Union his father died to create. Margaret's mission becomes increasingly personal as her feelings for Thomas complicate her duty to gather intelligence. Caldwell orchestrates the nullification convention while positioning himself as Calhoun's successor. The Tariff of 1832 triggers South Carolina's Nullification Ordinance, forcing Thomas to choose between state loyalty and Union preservation. Margaret's true identity is discovered, creating a crisis of trust that mirrors the national crisis. The act climaxes with Calhoun's resignation as Vice President and Jackson's Nullification Proclamation, transforming political disagreement into potential civil war. Characters must now navigate between love and duty, principle and survival.",
+        "dramatic_beats": [
+          "The Tariff of 1832 passage and South Carolina's furious response",
+          "Thomas and Margaret's relationship deepening despite political opposition",
+          "Caldwell's manipulation of the nullification convention",
+          "Margaret's cover blown and confrontation with Thomas over her deception",
+          "South Carolina's Nullification Ordinance and the state's defiance",
+          "Calhoun's resignation and Jackson's Proclamation declaring nullification treasonous",
+          "Thomas forced to choose between Margaret and South Carolina loyalty"
+        ],
+        "stakes_level": "national and existential",
+        "chapters": [
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "act_number": 3,
+        "title": "The Union Preserved",
+        "description": "The nation teeters on the brink of civil war as Jackson requests the Force Bill and South Carolina prepares to resist federal authority. Thomas emerges as a voice for compromise, risking his political future by publicly breaking with nullification extremists. Margaret works desperately to prevent violence while protecting Thomas from Caldwell's accusations of treason. Captain Morrison arrives in Charleston with federal forces, walking the knife's edge between enforcing the law and avoiding the first shot. Clay's Compromise Tariff offers a face-saving solution, but Caldwell and the radicals resist any retreat from their principles. The climax comes as federal and state forces face each other, with Thomas's speech to the legislature providing the crucial margin for accepting compromise. The resolution sees the Union preserved but transformed, with Thomas and Margaret's love transcending political divisions while Caldwell's ambitions lie in ruins. The thematic tensions between loyalty and principle, love and duty, are resolved through the characters' choices to place Union above faction and love above politics.",
+        "dramatic_beats": [
+          "Jackson's Force Bill request and South Carolina's military preparations",
+          "Thomas's public break with nullification in a crucial legislative speech",
+          "Federal troops arrive in Charleston harbor creating immediate crisis",
+          "Margaret and Thomas working together to prevent violence despite personal betrayal",
+          "Clay's Compromise Tariff providing face-saving solution for all parties",
+          "Final confrontation between federal and state forces with bloodshed narrowly averted",
+          "South Carolina's acceptance of compromise and nullification's peaceful end",
+          "Thomas and Margaret's reconciliation transcending political divisions"
+        ],
+        "stakes_level": "existential and transformative",
+        "chapters": [
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    ]
+  },
+  "chapter_outlines": [
+    {
+      "chapter_number": 1,
+      "title": "The Inheritance of Discord",
+      "pov_character": "Thomas Beauregard Whitmore",
+      "setting": "Charleston, South Carolina - The Whitmore family plantation house and Charleston's political salons",
+      "time_period": "March 1829",
+      "political_context": "Jackson has just been inaugurated as President, and the Tariff of Abominations continues to strangle Southern commerce while enriching Northern manufacturers.",
+      "chapter_goal": "Establish Thomas's internal conflict between inherited nullification rhetoric and growing doubts about its wisdom while introducing the charged political atmosphere of post-inauguration Charleston.",
+      "conflict": "Thomas must navigate between his father's nullification legacy and his own emerging doubts while maintaining his political standing in Charleston society.",
+      "turn": "Thomas discovers his father's private letters expressing secret doubts about nullification, shattering his certainty about his inherited political position.",
+      "consequences": "Thomas's faith in nullification orthodoxy is shaken, creating internal conflict that will drive his character arc while establishing his vulnerability to alternative perspectives.",
+      "estimated_word_count": 4200,
+      "act_number": 1
+    },
+    {
+      "chapter_number": 2,
+      "title": "The Northern Rose",
+      "pov_character": "Margaret Sinclair",
+      "setting": "Charleston harbor and Mrs. Catherine Pinckney's fashionable salon on Meeting Street",
+      "time_period": "March 1829",
+      "political_context": "Northern merchants and federal agents are increasingly concerned about South Carolina's nullification rhetoric and need intelligence on the state's true intentions.",
+      "chapter_goal": "Introduce Margaret's mission and establish her immediate attraction to Thomas while showcasing the sophisticated political maneuvering of Charleston society.",
+      "conflict": "Margaret must maintain her cover as a merchant's daughter while gathering intelligence on nullification activities, complicated by her unexpected attraction to Thomas.",
+      "turn": "Margaret realizes Thomas is not the radical firebrand she expected but a conflicted moderate, forcing her to recalibrate both her mission and her assumptions.",
+      "consequences": "Margaret's mission becomes personally complicated as her target proves sympathetic, while Thomas encounters a perspective that challenges his inherited beliefs.",
+      "estimated_word_count": 4100,
+      "act_number": 1
+    },
+    {
+      "chapter_number": 3,
+      "title": "The Toast That Shook the Union",
+      "pov_character": "Thomas Beauregard Whitmore",
+      "setting": "Washington D.C. - Brown's Indian Queen Hotel ballroom during the Jefferson Birthday Dinner",
+      "time_period": "April 13, 1830",
+      "political_context": "The Jefferson Birthday Dinner has been organized by Van Buren to showcase Democratic unity, but tensions between Jackson and Calhoun over nullification threaten to explode into open conflict.",
+      "chapter_goal": "Dramatize the pivotal Jefferson Birthday Dinner where Jackson's toast forces the nullification crisis into the open and compels every character to choose sides.",
+      "conflict": "Thomas must navigate the explosive political confrontation between Jackson and Calhoun while wrestling with his growing certainty that nullification threatens the Union.",
+      "turn": "Jackson's toast 'Our Union\u2014it must be preserved' directly challenges Calhoun's position and forces Thomas to publicly align with nullification despite his private doubts.",
+      "consequences": "The national political battle lines are drawn, Thomas is trapped between public loyalty and private conviction, and the crisis moves from theoretical to immediate.",
+      "estimated_word_count": 4300,
+      "act_number": 1
+    },
+    {
+      "chapter_number": 4,
+      "title": "The Radical's Gambit",
+      "pov_character": "Margaret Sinclair",
+      "setting": "Charleston - Caldwell's law office and the South Carolina State House",
+      "time_period": "July 1832",
+      "political_context": "The Tariff of 1832 has failed to satisfy Southern demands for relief, and Calhoun's nullification theory is gaining support as the only constitutional remedy for federal tyranny.",
+      "chapter_goal": "Show Ezra Caldwell orchestrating the nullification movement while Margaret gathers intelligence on South Carolina's true intentions and capabilities.",
+      "conflict": "Margaret must penetrate Caldwell's inner circle to discover nullification's military preparations while avoiding exposure of her federal connections.",
+      "turn": "Margaret discovers that Caldwell is planning armed resistance to federal authority, not mere legal nullification, raising the stakes to potential civil war.",
+      "consequences": "Margaret realizes the crisis is more dangerous than Washington understands, while Caldwell positions himself as the radical alternative to Calhoun's moderation.",
+      "estimated_word_count": 4000,
+      "act_number": 2
+    },
+    {
+      "chapter_number": 5,
+      "title": "Love and Treason",
+      "pov_character": "Thomas Beauregard Whitmore",
+      "setting": "Charleston - The Battery promenade and Whitmore's private study",
+      "time_period": "October 1832",
+      "political_context": "South Carolina is moving rapidly toward formal nullification of the tariff, while Jackson prepares federal response to what he considers treasonous resistance.",
+      "chapter_goal": "Deepen Thomas and Margaret's romantic relationship while forcing Thomas to confront the contradiction between his love for a Unionist and his public nullification stance.",
+      "conflict": "Thomas's growing love for Margaret conflicts with his political obligations to South Carolina and his family's nullification legacy.",
+      "turn": "Thomas privately admits to Margaret his doubts about nullification, crossing the line from public loyalty to private betrayal of his state's cause.",
+      "consequences": "Thomas has committed himself emotionally to Margaret and intellectually to Union, creating an impossible tension with his public political position.",
+      "estimated_word_count": 4200,
+      "act_number": 2
+    },
+    {
+      "chapter_number": 6,
+      "title": "The Die Is Cast",
+      "pov_character": "Margaret Sinclair",
+      "setting": "Charleston - The South Carolina Convention Hall and Caldwell's private residence",
+      "time_period": "November 24, 1832",
+      "political_context": "The South Carolina Nullification Convention has convened to formally nullify the federal tariff, with Caldwell and the radicals pushing for maximum defiance of federal authority.",
+      "chapter_goal": "Dramatize the passage of the Nullification Ordinance while revealing Margaret's true identity and mission to Thomas.",
+      "conflict": "Margaret must choose between maintaining her cover and warning Thomas about Caldwell's suspicions of his loyalty to nullification.",
+      "turn": "Caldwell exposes Margaret as a federal agent in front of Thomas, forcing both lovers to confront the political chasm between them.",
+      "consequences": "Margaret's mission is compromised, Thomas feels betrayed by her deception, and their relationship faces its greatest crisis as South Carolina defies federal law.",
+      "estimated_word_count": 4400,
+      "act_number": 2
+    },
+    {
+      "chapter_number": 7,
+      "title": "The Vice President's Sacrifice",
+      "pov_character": "Thomas Beauregard Whitmore",
+      "setting": "Washington D.C. - Calhoun's Vice Presidential office and the Senate chamber",
+      "time_period": "December 28, 1832",
+      "political_context": "Calhoun has decided to resign the Vice Presidency to return to the Senate and lead South Carolina's nullification fight, while Jackson prepares his response to the state's defiance.",
+      "chapter_goal": "Show Calhoun's unprecedented resignation while Thomas grapples with the personal and political fallout from Margaret's exposed identity.",
+      "conflict": "Thomas must decide whether to support Calhoun's principled sacrifice or break with nullification despite Margaret's apparent betrayal of his trust.",
+      "turn": "Calhoun's resignation speech convinces Thomas that nullification has become a matter of honor transcending personal feelings, hardening his resolve despite his doubts.",
+      "consequences": "Thomas recommits publicly to nullification despite his private reservations, while Calhoun's sacrifice raises the stakes and eliminates moderate alternatives.",
+      "estimated_word_count": 4100,
+      "act_number": 2
+    },
+    {
+      "chapter_number": 8,
+      "title": "The President's Proclamation",
+      "pov_character": "Margaret Sinclair",
+      "setting": "Washington D.C. - The White House and Margaret's boarding house",
+      "time_period": "December 10, 1832",
+      "political_context": "Jackson has issued his Nullification Proclamation declaring nullification unconstitutional and treasonous, transforming the crisis from political disagreement to potential armed conflict.",
+      "chapter_goal": "Show Jackson's definitive rejection of nullification theory while Margaret struggles with her mission's success and her personal loss.",
+      "conflict": "Margaret must report her intelligence success while grappling with the knowledge that her actions may have pushed Thomas toward the radical position she opposes.",
+      "turn": "Margaret realizes that her exposure has eliminated Thomas as a potential moderate voice, possibly making armed conflict more likely rather than less.",
+      "consequences": "The crisis escalates toward potential violence, Margaret questions whether her mission has served the Union's interests, and reconciliation with Thomas seems impossible.",
+      "estimated_word_count": 3900,
+      "act_number": 2
+    },
+    {
+      "chapter_number": 9,
+      "title": "The Sword Unsheathed",
+      "pov_character": "Thomas Beauregard Whitmore",
+      "setting": "Charleston - The South Carolina State House and Charleston Harbor",
+      "time_period": "January 16, 1833",
+      "political_context": "Jackson has requested the Force Bill authorizing military action against South Carolina, while the state prepares to resist federal authority with armed force if necessary.",
+      "chapter_goal": "Show the crisis reaching its most dangerous point while Thomas finally breaks with nullification extremism in a crucial legislative speech.",
+      "conflict": "Thomas must choose between loyalty to South Carolina's radical course and his conviction that armed resistance will destroy both the state and the Union.",
+      "turn": "Thomas delivers a speech to the legislature arguing for compromise over armed resistance, publicly breaking with Caldwell and the nullification extremists.",
+      "consequences": "Thomas saves his conscience but destroys his political career in South Carolina, while providing crucial support for eventual compromise.",
+      "estimated_word_count": 4300,
+      "act_number": 3
+    },
+    {
+      "chapter_number": 10,
+      "title": "The Gathering Storm",
+      "pov_character": "Margaret Sinclair",
+      "setting": "Charleston Harbor - Federal revenue cutter and the Charleston waterfront",
+      "time_period": "February 1833",
+      "political_context": "Federal forces under Captain Morrison have arrived in Charleston Harbor while South Carolina militia prepares to resist, bringing the nation to the brink of civil war.",
+      "chapter_goal": "Show federal and state forces facing each other while Margaret works desperately to prevent the first shot that could ignite civil war.",
+      "conflict": "Margaret must use her knowledge of both sides to prevent violence while navigating the dangerous waters between federal duty and personal loyalty to Thomas.",
+      "turn": "Margaret brokers a secret meeting between Morrison and Thomas to prevent accidental conflict while Clay's compromise tariff is being debated in Congress.",
+      "consequences": "Violence is temporarily averted through personal relationships transcending political divisions, while Clay's compromise offers hope for peaceful resolution.",
+      "estimated_word_count": 4000,
+      "act_number": 3
+    },
+    {
+      "chapter_number": 11,
+      "title": "The Great Compromiser",
+      "pov_character": "Thomas Beauregard Whitmore",
+      "setting": "Charleston - Mrs. Pinckney's salon and the South Carolina State House",
+      "time_period": "March 2, 1833",
+      "political_context": "Clay's Compromise Tariff and Jackson's Force Bill have both passed Congress, offering South Carolina a face-saving retreat while preserving federal authority.",
+      "chapter_goal": "Show South Carolina's acceptance of Clay's compromise while Thomas and Margaret work together to ensure peaceful resolution despite their personal breach.",
+      "conflict": "Thomas must convince the South Carolina legislature to accept compromise while resisting Caldwell's demands for continued resistance regardless of consequences.",
+      "turn": "Thomas's final speech combines his father's states' rights principles with Union loyalty, providing the crucial margin for accepting Clay's compromise.",
+      "consequences": "South Carolina accepts compromise and the immediate crisis ends, while Thomas completes his transformation from inherited ideology to principled moderation.",
+      "estimated_word_count": 4200,
+      "act_number": 3
+    },
+    {
+      "chapter_number": 12,
+      "title": "The Union Preserved",
+      "pov_character": "Margaret Sinclair",
+      "setting": "Charleston - The Battery and St. Michael's Church",
+      "time_period": "March 15, 1833",
+      "political_context": "South Carolina has formally repealed its Nullification Ordinance, ending the immediate crisis while leaving underlying sectional tensions unresolved for the future.",
+      "chapter_goal": "Resolve the romantic and political tensions while showing how the crisis has transformed both characters and established precedents for future conflicts.",
+      "conflict": "Margaret and Thomas must decide whether their love can transcend the political divisions that have driven them apart and the deceptions that have broken their trust.",
+      "turn": "Thomas and Margaret choose love over politics, recognizing that their personal reconciliation models the kind of Union that transcends sectional differences.",
+      "consequences": "The Union is preserved but transformed, personal love triumphs over political division, and the characters have grown through their ordeal into more complex and principled people.",
+      "estimated_word_count": 4400,
+      "act_number": 3
+    }
+  ],
+  "scene_breakdowns": [
+    {
+      "chapter_number": 1,
+      "scenes": [
+        {
+          "scene_number": 1,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "The library of Whitmore plantation house, Magnolia Grove, outside Charleston - early morning light filtering through tall windows, surrounded by leather-bound volumes and portraits of Whitmore ancestors",
+          "goal": "Thomas seeks to prepare his first major speech as heir to his father's nullification legacy, attempting to channel the elder Whitmore's rhetorical fire",
+          "opposition": "His own growing intellectual doubts about nullification doctrine clash with family expectations and political necessity",
+          "turn": "While reviewing his father's speeches for inspiration, Thomas discovers they lack the passionate conviction he remembered, revealing calculated ambiguity rather than principled certainty",
+          "consequences": "Thomas's confidence in his inherited political position begins to crack, making him vulnerable to alternative perspectives and setting up his internal conflict",
+          "emotional_beat": "Mounting unease and self-doubt",
+          "continuity_notes": "Thomas has his father's speech collection, family portraits establish Whitmore political legacy, morning setting, Thomas alone in library",
+          "complexity_score": 6
+        },
+        {
+          "scene_number": 2,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "Charleston's Hibernian Hall during a nullification meeting - packed with planters, merchants, and politicians, thick with tobacco smoke and heated rhetoric",
+          "goal": "Thomas must deliver his speech establishing himself as his father's worthy successor and a committed nullification advocate",
+          "opposition": "His newfound doubts undermine his rhetorical conviction while the audience expects passionate advocacy for the cause",
+          "turn": "Mid-speech, Thomas finds himself moderating his father's most extreme positions, unconsciously advocating for compromise rather than confrontation",
+          "consequences": "Thomas's lukewarm performance disappoints nullification hardliners while attracting the attention of those seeking moderate alternatives, marking him as potentially unreliable to the cause",
+          "emotional_beat": "Anxiety giving way to confused relief",
+          "continuity_notes": "Evening setting, Thomas delivers speech with noticeable hesitation, audience includes key Charleston political figures who will remember this performance",
+          "complexity_score": 7
+        },
+        {
+          "scene_number": 3,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "Mrs. Catherine Pinckney's drawing room during her weekly salon - elegant Charleston townhouse filled with the city's political and social elite",
+          "goal": "Thomas attempts to repair any damage from his speech while navigating Charleston's complex social and political networks",
+          "opposition": "Subtle but pointed questions from other guests probe his commitment to nullification while social etiquette prevents direct confrontation",
+          "turn": "Mrs. Pinckney privately warns Thomas that his moderation has been noted and could prove dangerous to his political future in South Carolina",
+          "consequences": "Thomas realizes his political position is more precarious than he understood, while Mrs. Pinckney emerges as a potential ally who understands the dangerous currents beneath Charleston's polite surface",
+          "emotional_beat": "Social anxiety masking deeper political fear",
+          "continuity_notes": "Late evening, Thomas's reputation for moderation is now established among Charleston elite, Mrs. Pinckney shows protective interest in Thomas",
+          "complexity_score": 8
+        },
+        {
+          "scene_number": 4,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "The private study in Whitmore plantation house - late night, candlelight, Thomas alone with his father's personal papers",
+          "goal": "Thomas searches his father's private correspondence for guidance on how to navigate his political dilemma",
+          "opposition": "The weight of family legacy and political expectation conflicts with his need for honest counsel from his deceased father",
+          "turn": "Thomas discovers a letter his father never sent, expressing private doubts about nullification and fear that it could destroy the Union he fought to create",
+          "consequences": "Thomas's certainty about his inherited political position is shattered, leaving him without clear ideological moorings but free to chart his own course",
+          "emotional_beat": "Shock dissolving into profound uncertainty",
+          "continuity_notes": "Very late night/early morning, Thomas discovers crucial letter that will influence his entire character arc, he is now aware his father had secret doubts about nullification",
+          "complexity_score": 9
+        }
+      ]
+    },
+    {
+      "chapter_number": 2,
+      "scenes": [
+        {
+          "scene_number": 1,
+          "pov": "Margaret Sinclair",
+          "setting": "The deck of a merchant vessel approaching Charleston harbor at dawn, with the city's spires and mansions visible across the water",
+          "goal": "Establish her cover identity as a Northern merchant's daughter while observing Charleston's defenses and commercial activity",
+          "opposition": "The need to maintain her fabricated identity while gathering intelligence, complicated by the ship captain's suspicious questioning",
+          "turn": "Margaret spots federal revenue cutters positioned strategically in the harbor, realizing the crisis is more advanced than her handlers indicated",
+          "consequences": "Margaret understands her mission is more dangerous than anticipated and that federal forces are already preparing for confrontation",
+          "emotional_beat": "Anticipation mixed with growing apprehension",
+          "continuity_notes": "Margaret carries a letter of introduction to Mrs. Pinckney, wears traveling dress appropriate to merchant class, observes two revenue cutters in harbor",
+          "complexity_score": 6
+        },
+        {
+          "scene_number": 2,
+          "pov": "Margaret Sinclair",
+          "setting": "Mrs. Catherine Pinckney's elegant drawing room on Meeting Street, decorated with French furnishings and family portraits",
+          "goal": "Gain acceptance into Charleston society and begin gathering intelligence on nullification sentiment",
+          "opposition": "Mrs. Pinckney's polite but probing questions about Margaret's family connections and true purpose in Charleston",
+          "turn": "Mrs. Pinckney reveals she knows more about Northern concerns than she initially let on, testing Margaret's responses",
+          "consequences": "Margaret realizes Charleston's elite are more politically sophisticated than expected and that her cover may be more transparent than hoped",
+          "emotional_beat": "Wariness beneath social pleasantries",
+          "continuity_notes": "Mrs. Pinckney serves tea in Sevres china, mentions her late husband's service in Revolution, afternoon light through tall windows",
+          "complexity_score": 7
+        },
+        {
+          "scene_number": 3,
+          "pov": "Margaret Sinclair",
+          "setting": "Mrs. Pinckney's salon that evening, filled with Charleston's political and social elite, candlelit and buzzing with conversation",
+          "goal": "Identify key nullification leaders and assess the depth of South Carolina's commitment to resistance",
+          "opposition": "The need to appear socially engaged while covertly gathering intelligence, surrounded by potentially hostile subjects",
+          "turn": "Thomas Whitmore approaches Margaret, and their conversation reveals his conflicted views on nullification rather than the radical stance she expected",
+          "consequences": "Margaret's assumptions about Southern unanimity are shaken, and she finds herself genuinely intrigued by Thomas's intellectual honesty",
+          "emotional_beat": "Surprise and unexpected attraction",
+          "continuity_notes": "Margaret wears blue silk evening dress, Thomas mentions his Harvard education, Ezra Caldwell observed watching from across room",
+          "complexity_score": 8
+        },
+        {
+          "scene_number": 4,
+          "pov": "Margaret Sinclair",
+          "setting": "The moonlit garden behind Mrs. Pinckney's mansion, with jasmine and magnolia trees providing intimate shadows",
+          "goal": "Draw out Thomas's true political views while managing her growing personal attraction to him",
+          "opposition": "Thomas's careful political discretion and her own conflicted feelings about deceiving someone she's beginning to respect",
+          "turn": "Thomas confides his fear that nullification will destroy the Union his father died to create, revealing his fundamental loyalty despite his states' rights beliefs",
+          "consequences": "Margaret realizes Thomas is not her enemy but a potential ally, fundamentally altering both her mission parameters and her personal feelings",
+          "emotional_beat": "Romantic tension complicated by moral conflict",
+          "continuity_notes": "Thomas mentions his father's death at Cowpens, Margaret notes his Harvard class ring, sound of carriages departing in distance",
+          "complexity_score": 9
+        },
+        {
+          "scene_number": 5,
+          "pov": "Margaret Sinclair",
+          "setting": "Margaret's modest lodgings at a respectable boarding house near the Battery, late at night by candlelight",
+          "goal": "Compose her first intelligence report while processing the evening's revelations about Thomas and Charleston society",
+          "opposition": "The conflict between her duty to report accurately and her desire to protect Thomas from federal suspicion",
+          "turn": "Margaret realizes she must choose between her mission's success and Thomas's safety, as her handlers expect her to identify him as a radical leader",
+          "consequences": "Margaret decides to file a report that protects Thomas while emphasizing the real radicals like Caldwell, fundamentally altering her mission's trajectory",
+          "emotional_beat": "Moral determination tinged with romantic hope",
+          "continuity_notes": "Margaret writes with quill pen, mentions Caldwell as true radical, omits Thomas's name from list of nullification leaders",
+          "complexity_score": 8
+        }
+      ]
+    },
+    {
+      "chapter_number": 3,
+      "scenes": [
+        {
+          "scene_number": 1,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "Brown's Indian Queen Hotel lobby and corridors, early evening, April 13, 1830. The grand hotel buzzes with Democratic politicians arriving for the Jefferson Birthday Dinner, servants rushing with preparations, and clusters of men in formal dress conducting whispered conversations.",
+          "goal": "Navigate the pre-dinner political maneuvering to understand the evening's true purpose while maintaining his position within the nullification faction.",
+          "opposition": "Van Buren's careful orchestration of events to isolate the nullifiers and Thomas's growing awareness that he may be walking into a trap.",
+          "turn": "Thomas overhears a conversation between Van Buren allies revealing that Jackson intends to use the evening to force a public confrontation over nullification.",
+          "consequences": "Thomas realizes the dinner is a carefully laid snare and must decide whether to warn Calhoun or protect his own position, while understanding that neutrality may no longer be possible.",
+          "emotional_beat": "Growing unease and political calculation",
+          "continuity_notes": "Thomas arrives at 6:30 PM, wearing formal evening dress with South Carolina pin. Van Buren allies include Senator Forsyth and Congressman Cambreleng. Thomas has not yet spoken with Calhoun this evening.",
+          "complexity_score": 7
+        },
+        {
+          "scene_number": 2,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "Brown's Indian Queen Hotel ballroom, filled with over 100 Democratic politicians seated at long tables decorated with portraits of Jefferson. The room thrums with anticipation as the formal dinner begins.",
+          "goal": "Maintain his composure and political alliances while assessing the loyalty and positions of other Southern Democrats as the evening's tensions build.",
+          "opposition": "The increasingly charged atmosphere as speakers deliver pointed remarks about federal authority and state rights, forcing Thomas to react publicly to veiled challenges.",
+          "turn": "Senator Hayne delivers a toast praising South Carolina's resistance to federal tyranny, drawing enthusiastic applause from nullifiers but stony silence from Jackson's supporters.",
+          "consequences": "The battle lines become visible to all present, with Thomas forced to applaud Hayne's toast, publicly identifying himself with the nullification cause despite his private reservations.",
+          "emotional_beat": "Mounting tension and forced loyalty",
+          "continuity_notes": "Thomas sits at the South Carolina delegation table with Hayne and McDuffie. Jackson sits at the head table with Van Buren. The room has 24 tables with formal place cards. Multiple toasts have been offered before Hayne's.",
+          "complexity_score": 6
+        },
+        {
+          "scene_number": 3,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "The same ballroom, now electric with tension as President Jackson rises to deliver his response toast. Every conversation stops, every eye fixes on the President as he prepares to speak.",
+          "goal": "Interpret and respond appropriately to Jackson's toast while protecting his political future and managing his conflicted loyalties to both Union and state.",
+          "opposition": "Jackson's direct challenge to nullification doctrine and Thomas's realization that he must choose between his public position and his private convictions.",
+          "turn": "Jackson delivers his devastating toast: 'Our Union\u2014it must be preserved!' staring directly at Calhoun and forcing every man present to declare his allegiance.",
+          "consequences": "The nullification crisis explodes into national politics, Thomas is trapped between his public support for nullification and his private belief in Union, and all present must now choose sides in what has become an open political war.",
+          "emotional_beat": "Shock, dread, and the weight of momentous consequence",
+          "continuity_notes": "Jackson's toast occurs at approximately 9:15 PM. Thomas has been drinking wine throughout the evening but remains clear-headed. Calhoun sits three tables away from Thomas. The room falls completely silent after Jackson's words.",
+          "complexity_score": 9
+        },
+        {
+          "scene_number": 4,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "The ballroom immediately following Jackson's toast, as Calhoun rises to deliver his counter-toast while the assembled Democrats watch in stunned silence, the political temperature of the room having shifted dramatically.",
+          "goal": "Navigate the immediate aftermath of the confrontation while assessing the damage to his own position and the nullification cause.",
+          "opposition": "The realization that Calhoun's response, while defiant, may have just declared political war on the President, potentially destroying all who stand with him.",
+          "turn": "Calhoun delivers his response toast: 'The Union\u2014next to our liberty, the most dear!' but his hand trembles as he speaks, revealing his awareness that he may have just ended his national political career.",
+          "consequences": "Thomas understands that he has witnessed the effective end of Democratic Party unity and the beginning of a constitutional crisis that may tear the nation apart, while recognizing that his own political survival now depends on navigating between two irreconcilable positions.",
+          "emotional_beat": "Profound realization of historical consequence and personal peril",
+          "continuity_notes": "Calhoun's voice carries throughout the silent ballroom. Thomas observes Calhoun's trembling hand and pale complexion. Van Buren watches from the head table with satisfaction. The evening is now past 9:30 PM.",
+          "complexity_score": 8
+        },
+        {
+          "scene_number": 5,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "The hotel's side parlor, where Thomas retreats with other South Carolina delegates after the dinner dissolves into uncomfortable small groups, the evening's formal program abandoned in favor of urgent political consultations.",
+          "goal": "Assess the political damage with his fellow South Carolinians while concealing his own doubts about the nullification course they have now publicly embraced.",
+          "opposition": "His colleagues' enthusiasm for the confrontation and their expectation that he will support escalating the conflict with Jackson, despite his growing certainty that they are courting disaster.",
+          "turn": "McDuffie declares that Jackson's challenge means South Carolina must now prepare for actual nullification, not merely threaten it, and looks to Thomas for agreement.",
+          "consequences": "Thomas realizes he can no longer avoid choosing between his public position and private convictions, as events are now moving toward a confrontation that could destroy the Union he secretly wishes to preserve.",
+          "emotional_beat": "Isolation and the burden of concealed conviction",
+          "continuity_notes": "Present are McDuffie, Hayne, and two other SC congressmen. Thomas has removed his jacket due to the room's warmth. The parlor has a single window overlooking the street, where carriages are beginning to depart. Time is approximately 10:45 PM.",
+          "complexity_score": 7
+        }
+      ]
+    },
+    {
+      "chapter_number": 4,
+      "scenes": [
+        {
+          "scene_number": 1,
+          "pov": "Margaret Sinclair",
+          "setting": "The morning room of Mrs. Catherine Pinckney's Charleston mansion, overlooking the harbor",
+          "goal": "Extract information about Caldwell's growing influence and nullification preparations from Charleston society gossip",
+          "opposition": "The need to maintain her cover as a neutral observer while probing for sensitive political intelligence",
+          "turn": "Mrs. Pinckney reveals that Caldwell has been holding private meetings with militia officers, suggesting military preparations beyond legal nullification",
+          "consequences": "Margaret realizes the nullification movement may be preparing for armed resistance, requiring deeper investigation of Caldwell's activities",
+          "emotional_beat": "Growing alarm beneath social propriety",
+          "continuity_notes": "Time: early morning in July 1832. Margaret maintains her cover as a visiting Northern lady with family connections. Mrs. Pinckney knows of militia meetings but not their full purpose. Weather is oppressively hot.",
+          "complexity_score": 6
+        },
+        {
+          "scene_number": 2,
+          "pov": "Margaret Sinclair",
+          "setting": "Caldwell's law office on Broad Street, Charleston - a cramped second-floor space above a bookseller",
+          "goal": "Gain access to Caldwell's inner circle by presenting herself as a potential Northern ally to the nullification cause",
+          "opposition": "Caldwell's suspicion of outsiders and his careful vetting of potential supporters",
+          "turn": "Caldwell tests Margaret's commitment by revealing his belief that nullification must be backed by force, gauging her reaction to armed resistance",
+          "consequences": "Margaret gains Caldwell's provisional trust but realizes he is planning military action, not mere legal protest",
+          "emotional_beat": "Dangerous exhilaration mixed with fear of exposure",
+          "continuity_notes": "Margaret uses her knowledge of constitutional law to impress Caldwell. She claims family connections to Northern anti-tariff merchants. Caldwell's office contains maps of South Carolina and correspondence with militia leaders. Time: late morning, same day.",
+          "complexity_score": 8
+        },
+        {
+          "scene_number": 3,
+          "pov": "Margaret Sinclair",
+          "setting": "The South Carolina State House, Columbia - the legislative chamber during a special session",
+          "goal": "Observe the nullification debate and assess the true extent of radical support among state legislators",
+          "opposition": "The need to remain inconspicuous while gathering intelligence on the state's military preparations and political resolve",
+          "turn": "Margaret witnesses Caldwell's speech advocating for military preparation to enforce nullification, revealing the movement's willingness to use force against federal authority",
+          "consequences": "Margaret understands that South Carolina is preparing for potential civil war, not merely legal resistance, transforming her assessment of the crisis",
+          "emotional_beat": "Cold dread at the prospect of armed conflict",
+          "continuity_notes": "Time: afternoon, two days later. Margaret travels to Columbia under cover of visiting relatives. The legislative chamber is packed with observers. Caldwell speaks after several moderate nullifiers. The heat is stifling, windows open but no breeze.",
+          "complexity_score": 7
+        },
+        {
+          "scene_number": 4,
+          "pov": "Margaret Sinclair",
+          "setting": "A tavern near the State House in Columbia, evening - dimly lit with low ceilings and tobacco smoke",
+          "goal": "Confirm her intelligence about military preparations by observing Caldwell's private meeting with militia commanders",
+          "opposition": "The risk of discovery while eavesdropping on a clandestine meeting of armed conspirators",
+          "turn": "Margaret overhears Caldwell coordinating with militia officers to seize federal arsenals and customs houses, confirming that nullification is a cover for armed rebellion",
+          "consequences": "Margaret possesses definitive proof that South Carolina is planning military action against federal authority, information that must reach Washington immediately",
+          "emotional_beat": "Terrified urgency - the Union faces imminent armed rebellion",
+          "continuity_notes": "Evening of the same day as the legislative session. Margaret poses as a traveler taking supper alone. The meeting includes three militia colonels and a major from the Charleston area. Caldwell mentions specific dates and targets. The tavern keeper is sympathetic to nullification.",
+          "complexity_score": 9
+        },
+        {
+          "scene_number": 5,
+          "pov": "Margaret Sinclair",
+          "setting": "Margaret's room at a boarding house in Columbia - a sparse second-floor chamber with a writing desk by the window",
+          "goal": "Compose an urgent coded message to her federal contacts warning of South Carolina's military preparations",
+          "opposition": "The challenge of conveying the gravity of the situation while maintaining operational security",
+          "turn": "Margaret realizes that her message may trigger federal military intervention, potentially making her complicit in the violence she seeks to prevent",
+          "consequences": "Margaret commits to warning Washington despite knowing it may precipitate the very conflict she hopes to avoid, setting up the federal response",
+          "emotional_beat": "Moral anguish over necessary but potentially catastrophic choices",
+          "continuity_notes": "Late night, same day. Margaret uses a pre-arranged code for her correspondence. She has a small traveling writing kit. The boarding house is quiet except for sounds from the street below. She plans to send the message via trusted courier the next morning.",
+          "complexity_score": 8
+        }
+      ]
+    },
+    {
+      "chapter_number": 5,
+      "scenes": [
+        {
+          "scene_number": 1,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "The Battery promenade, Charleston - evening twilight along the harbor seawall, with distant ships at anchor and the spires of St. Michael's visible against the darkening sky",
+          "goal": "Enjoy a romantic evening with Margaret while maintaining the facade of their courtship being purely social rather than politically charged",
+          "opposition": "The constant awareness that their fundamental political beliefs are in direct opposition, creating tension beneath their romantic conversation",
+          "turn": "Margaret directly challenges Thomas about his true feelings regarding nullification, forcing him to either lie outright or reveal his growing doubts",
+          "consequences": "Thomas realizes he can no longer compartmentalize his feelings for Margaret from his political obligations - the personal has become inescapably political",
+          "emotional_beat": "Romantic tension shadowed by political dread",
+          "continuity_notes": "Evening setting, Margaret wearing dark blue walking dress, Thomas in formal evening attire, harbor lights beginning to appear, temperature cooling with autumn air",
+          "complexity_score": 7
+        },
+        {
+          "scene_number": 2,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "Whitmore's private study - a book-lined room with family portraits, a mahogany desk, and a dying fire in the hearth",
+          "goal": "Process his conflicted feelings about Margaret and nullification in the privacy of his own thoughts while reviewing political correspondence",
+          "opposition": "Letters from nullification leaders demanding his public support conflict with his private doubts, while thoughts of Margaret undermine his resolve",
+          "turn": "Thomas discovers a letter revealing that Margaret has been gathering intelligence on nullification leaders, forcing him to confront that their relationship may be politically motivated on her part",
+          "consequences": "Thomas's trust in Margaret is shaken, but his doubts about nullification are strengthened by realizing how his political allies appear to outside observers",
+          "emotional_beat": "Betrayal mixed with painful self-recognition",
+          "continuity_notes": "Late evening, fire burning low, correspondence from Calhoun and other nullifiers on desk, Thomas still in evening clothes from the walk, brandy glass half-empty",
+          "complexity_score": 6
+        },
+        {
+          "scene_number": 3,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "The same study, later that night - fire reduced to embers, single candle burning, shadows dancing on the walls",
+          "goal": "Confront Margaret when she arrives unexpectedly at his study window, demanding answers about her intelligence gathering",
+          "opposition": "Margaret's refusal to fully explain her actions while simultaneously challenging Thomas to admit his own duplicity regarding nullification",
+          "turn": "Thomas privately admits to Margaret his growing conviction that nullification will destroy South Carolina and possibly the Union, crossing the line from public loyalty to private betrayal of his state's cause",
+          "consequences": "Thomas has committed himself emotionally to Margaret and intellectually to Union, creating an impossible tension with his public political position that will drive future conflicts",
+          "emotional_beat": "Intimate confession shadowed by the weight of treason",
+          "continuity_notes": "Near midnight, Margaret enters through French doors from garden, both characters in emotional extremis, candle providing only light, Thomas's admission is whispered, Margaret's relief visible",
+          "complexity_score": 9
+        },
+        {
+          "scene_number": 4,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "The study's French doors opening onto the garden - threshold between private confession and public world",
+          "goal": "Secure Margaret's promise of discretion while grappling with the magnitude of what he has revealed",
+          "opposition": "Margaret's demand that Thomas act on his convictions rather than simply confessing them in private",
+          "turn": "Margaret reveals she has fallen in love with Thomas despite their political differences, transforming their relationship from potential espionage to genuine romantic commitment",
+          "consequences": "Both characters are now emotionally committed but politically impossible - Thomas faces the prospect of choosing between love and loyalty, Margaret between duty and desire",
+          "emotional_beat": "Love triumphant yet doomed",
+          "continuity_notes": "Garden visible in moonlight, Margaret preparing to leave, Thomas's emotional state transformed from suspicion to commitment, both understand the impossibility of their situation",
+          "complexity_score": 8
+        }
+      ]
+    },
+    {
+      "chapter_number": 6,
+      "scenes": [
+        {
+          "scene_number": 1,
+          "pov": "Margaret Sinclair",
+          "setting": "South Carolina Convention Hall - the main chamber filled with delegates, galleries packed with spectators, morning light streaming through tall windows",
+          "goal": "Observe and document the nullification proceedings while maintaining her cover as a Charleston society woman",
+          "opposition": "The charged atmosphere of radical politics and her growing fear that Caldwell suspects her true mission",
+          "turn": "Caldwell's speech explicitly calls for armed resistance to federal authority, going beyond mere nullification to open defiance",
+          "consequences": "Margaret realizes the crisis has escalated beyond diplomatic resolution and must warn her federal contacts immediately",
+          "emotional_beat": "Rising dread mixed with patriotic resolve",
+          "continuity_notes": "Morning session, Margaret wearing dark blue dress with cameo brooch, seated in ladies' gallery, Caldwell on convention floor, Thomas absent from proceedings",
+          "complexity_score": 6
+        },
+        {
+          "scene_number": 2,
+          "pov": "Margaret Sinclair",
+          "setting": "Convention Hall corridors during recess - crowded hallways buzzing with political conversation, delegates clustering in heated discussion",
+          "goal": "Locate Thomas to warn him about Caldwell's radical intentions and assess his true loyalties",
+          "opposition": "The suspicious attention of other convention attendees and her inability to speak freely in public",
+          "turn": "Thomas arrives and Margaret realizes from his expression that he has heard disturbing rumors about her activities",
+          "consequences": "Margaret knows her cover may be compromised and must decide whether to confess to Thomas or maintain her deception",
+          "emotional_beat": "Mounting anxiety and desperate urgency",
+          "continuity_notes": "Midday recess, delegates in formal attire, Margaret still in blue dress, Thomas wearing black coat with silver buttons, crowd noise prevents private conversation",
+          "complexity_score": 7
+        },
+        {
+          "scene_number": 3,
+          "pov": "Margaret Sinclair",
+          "setting": "Caldwell's private study - evening, candlelit room with law books and political pamphlets, heavy curtains drawn against prying eyes",
+          "goal": "Attend what she believes is a social gathering while secretly gathering intelligence on radical plans",
+          "opposition": "Caldwell's growing suspicion of her true identity and loyalties",
+          "turn": "Caldwell directly confronts Margaret with evidence of her correspondence with federal officials, revealing he has been watching her",
+          "consequences": "Margaret's mission is exposed, forcing her to abandon subterfuge and face the consequences of her deception",
+          "emotional_beat": "Shock and defiant courage in the face of exposure",
+          "continuity_notes": "Evening, Margaret changed to green silk gown, Caldwell in formal evening wear, Thomas present as invited guest, oil lamps and candles for lighting, study contains maps of Charleston harbor",
+          "complexity_score": 9
+        },
+        {
+          "scene_number": 4,
+          "pov": "Margaret Sinclair",
+          "setting": "Caldwell's study continuing - the same candlelit room now feeling like a trap, with Thomas witnessing Margaret's exposure",
+          "goal": "Salvage her relationship with Thomas while defending her actions as a matter of patriotic duty",
+          "opposition": "Thomas's sense of betrayal and Caldwell's manipulation of the situation to drive them apart",
+          "turn": "Thomas demands to know if anything between them was genuine, forcing Margaret to choose between protecting her mission and saving their love",
+          "consequences": "Margaret confesses her true feelings while maintaining her political convictions, creating an irreparable rift between her and Thomas",
+          "emotional_beat": "Heartbreak tempered by unwavering principle",
+          "continuity_notes": "Same evening setting, Margaret's green gown now disheveled, Thomas pale and shaken, Caldwell observing with satisfaction, tension crackling in candlelit atmosphere",
+          "complexity_score": 10
+        },
+        {
+          "scene_number": 5,
+          "pov": "Margaret Sinclair",
+          "setting": "Charleston street outside Caldwell's residence - late evening, gaslit cobblestones wet with November mist, shadows between buildings",
+          "goal": "Escape Caldwell's house and reach safety while processing the destruction of her mission and relationship",
+          "opposition": "The physical and emotional exhaustion of exposure, plus the danger of Caldwell's allies pursuing her",
+          "turn": "Margaret realizes that despite losing Thomas and her cover, she has gained crucial intelligence about the radicals' true intentions",
+          "consequences": "Margaret resolves to continue her work for the Union despite personal cost, setting up her role in the coming confrontation",
+          "emotional_beat": "Sorrowful determination and steely resolve",
+          "continuity_notes": "Late evening, Margaret wearing cloak over green gown, carrying small reticule with coded notes, gas lamps creating pools of light on wet cobblestones, November chill in the air",
+          "complexity_score": 5
+        }
+      ]
+    },
+    {
+      "chapter_number": 7,
+      "scenes": [
+        {
+          "scene_number": 1,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "Thomas's private study in his Washington boarding house, early morning with frost on the windows",
+          "goal": "Process the devastating revelation of Margaret's true identity and allegiance while preparing for what may be Calhoun's final day as Vice President",
+          "opposition": "His own emotional turmoil and the impossibility of reconciling his feelings for Margaret with her betrayal of his trust",
+          "turn": "A messenger arrives with an urgent summons from Calhoun, forcing Thomas to set aside his personal anguish and face the political crisis",
+          "consequences": "Thomas compartmentalizes his pain about Margaret and resolves to focus on the constitutional principles at stake, hardening his political resolve",
+          "emotional_beat": "Bitter resolve masking deep personal betrayal",
+          "continuity_notes": "Thomas knows Margaret's true identity from previous chapter. Morning of December 28, 1832. Calhoun has not yet publicly announced resignation.",
+          "complexity_score": 7
+        },
+        {
+          "scene_number": 2,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "Vice President's office in the Capitol building, with Calhoun packing personal effects into wooden crates",
+          "goal": "Understand Calhoun's decision to resign and gauge whether this sacrifice will strengthen or weaken the nullification cause",
+          "opposition": "Calhoun's emotional guardedness and Thomas's own conflicted feelings about abandoning moderation",
+          "turn": "Calhoun reveals that Jackson has privately threatened military action against South Carolina, making resignation not just principled but strategically necessary",
+          "consequences": "Thomas realizes the crisis has moved beyond political maneuvering to a potential military confrontation, eliminating middle ground",
+          "emotional_beat": "Grim determination tinged with foreboding",
+          "continuity_notes": "Calhoun's office being packed. Jackson's private threats revealed. Thomas still processing Margaret's betrayal but focusing on duty.",
+          "complexity_score": 6
+        },
+        {
+          "scene_number": 3,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "Senate chamber gallery, packed with spectators and tense with anticipation",
+          "goal": "Witness Calhoun's resignation speech and assess its impact on both nullification supporters and Union defenders",
+          "opposition": "The weight of history and his own uncertainty about whether Calhoun's sacrifice will save or doom South Carolina",
+          "turn": "Calhoun's eloquent defense of state sovereignty and constitutional principle transforms what could have been seen as political retreat into moral victory",
+          "consequences": "Thomas becomes convinced that nullification has transcended mere policy disagreement to become a sacred cause worth personal sacrifice",
+          "emotional_beat": "Swelling conviction overriding personal doubts",
+          "continuity_notes": "Packed Senate gallery. Calhoun delivers resignation speech. Thomas observes from gallery, not Senate floor.",
+          "complexity_score": 8
+        },
+        {
+          "scene_number": 4,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "Capitol building corridors immediately after Calhoun's speech, with clusters of senators and congressmen in heated discussion",
+          "goal": "Navigate the immediate political aftermath and signal his continued support for nullification despite changed circumstances",
+          "opposition": "Moderate allies who urge compromise and Union supporters who see Calhoun's resignation as an opportunity to isolate nullifiers",
+          "turn": "A direct confrontation with a Jackson supporter who questions Thomas's loyalty forces him to publicly declare his unwavering commitment to South Carolina's cause",
+          "consequences": "Thomas burns his bridges with moderates and commits himself fully to nullification, eliminating his own political escape routes",
+          "emotional_beat": "Defiant pride masking inner uncertainty",
+          "continuity_notes": "Immediately after Calhoun's speech. Various congressmen and senators present. Thomas makes public declaration of support for nullification.",
+          "complexity_score": 7
+        },
+        {
+          "scene_number": 5,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "A quiet tavern near the Capitol at dusk, with Thomas alone at a corner table nursing whiskey",
+          "goal": "Reconcile his public commitment to nullification with his private doubts and the personal cost of Margaret's betrayal",
+          "opposition": "His own conscience and the growing realization that he may have chosen a path leading to civil war",
+          "turn": "Margaret appears unexpectedly, forcing Thomas to confront both his feelings and the impossible position they're both in",
+          "consequences": "Thomas and Margaret reach a painful understanding that their personal relationship cannot survive their political opposition, but both accept their chosen paths",
+          "emotional_beat": "Melancholy resignation and mature acceptance of irreconcilable differences",
+          "continuity_notes": "Evening of December 28. Margaret knows Thomas discovered her identity. Both understand the personal cost of their political commitments.",
+          "complexity_score": 9
+        }
+      ]
+    },
+    {
+      "chapter_number": 8,
+      "scenes": [
+        {
+          "scene_number": 1,
+          "pov": "Margaret Sinclair",
+          "setting": "Margaret's boarding house parlor, Washington D.C., early morning",
+          "goal": "Process the implications of Jackson's Nullification Proclamation while preparing her intelligence report",
+          "opposition": "Her own conflicted emotions about the success of her mission and its consequences for Thomas",
+          "turn": "Margaret realizes that her intelligence gathering may have provided Jackson with the ammunition he needed to issue such a forceful proclamation",
+          "consequences": "Margaret begins to question whether her loyalty to the Union has come at too high a personal cost",
+          "emotional_beat": "Dawning guilt and moral uncertainty",
+          "continuity_notes": "Margaret has newspapers reporting Jackson's proclamation, knows about Thomas's exposure at the Charleston meeting, morning light filtering through windows",
+          "complexity_score": 7
+        },
+        {
+          "scene_number": 2,
+          "pov": "Margaret Sinclair",
+          "setting": "The White House, President Jackson's private study",
+          "goal": "Deliver her final intelligence report to Jackson while seeking reassurance that her actions served the greater good",
+          "opposition": "Jackson's cold satisfaction with the crisis escalation and his dismissal of her concerns about Thomas",
+          "turn": "Jackson reveals that he has already decided to request congressional authorization for military force against South Carolina",
+          "consequences": "Margaret understands that the crisis has moved beyond political maneuvering to potential armed conflict, with her intelligence as a contributing factor",
+          "emotional_beat": "Horror at the unintended consequences of her success",
+          "continuity_notes": "Jackson has Margaret's previous reports on his desk, references to the Force Bill he plans to request, midday meeting",
+          "complexity_score": 8
+        },
+        {
+          "scene_number": 3,
+          "pov": "Margaret Sinclair",
+          "setting": "Pennsylvania Avenue, walking between the White House and her boarding house",
+          "goal": "Find some way to reconcile her duty to the Union with her personal feelings about Thomas and the crisis",
+          "opposition": "The weight of her own choices and the impossibility of undoing what she has set in motion",
+          "turn": "Margaret encounters a newspaper boy selling extras about South Carolina's response to Jackson's proclamation, realizing the crisis is accelerating beyond anyone's control",
+          "consequences": "Margaret accepts that she must live with the consequences of her choices, even if they lead to civil conflict",
+          "emotional_beat": "Resigned determination mixed with deep regret",
+          "continuity_notes": "Afternoon setting, newspaper headlines about South Carolina's defiance, Margaret carries her final payment from Jackson",
+          "complexity_score": 6
+        },
+        {
+          "scene_number": 4,
+          "pov": "Margaret Sinclair",
+          "setting": "Margaret's boarding house room, evening",
+          "goal": "Write a letter to Thomas explaining her actions and attempting some form of reconciliation or closure",
+          "opposition": "The knowledge that any explanation will sound like justification for betrayal",
+          "turn": "Margaret tears up the letter, realizing that some wounds cannot be healed with words and that Thomas deserves to hate her",
+          "consequences": "Margaret accepts the permanent loss of Thomas's friendship and love as the price of her loyalty to the Union",
+          "emotional_beat": "Grief and acceptance of irreversible loss",
+          "continuity_notes": "Evening lamplight, torn letter fragments, Margaret's traveling trunk visible as she prepares to leave Washington",
+          "complexity_score": 9
+        },
+        {
+          "scene_number": 5,
+          "pov": "Margaret Sinclair",
+          "setting": "Margaret's boarding house parlor, late evening",
+          "goal": "Make peace with her choices by reaffirming her commitment to the Union's preservation",
+          "opposition": "Her own doubts about whether the ends justify the means",
+          "turn": "Margaret receives word that Jackson plans to address Congress about the Force Bill, confirming that her intelligence has pushed the crisis toward its climax",
+          "consequences": "Margaret prepares to leave Washington, knowing she has played her part in preserving the Union but at tremendous personal cost",
+          "emotional_beat": "Melancholy resolve and patriotic duty overcoming personal grief",
+          "continuity_notes": "Late evening, messenger arrives with news about Jackson's congressional address, Margaret's packed belongings ready for departure",
+          "complexity_score": 7
+        }
+      ]
+    },
+    {
+      "chapter_number": 9,
+      "scenes": [
+        {
+          "scene_number": 1,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "Thomas's private study in his Charleston townhouse, early morning, with newspapers and correspondence scattered across his desk",
+          "goal": "Process the implications of Jackson's Force Bill request and prepare for the day's crucial legislative session",
+          "opposition": "The weight of choosing between state loyalty and Union preservation, compounded by threatening letters from constituents",
+          "turn": "Thomas discovers a letter from his son at West Point expressing shame at South Carolina's course and fear of having to choose between duty to the Union and family loyalty",
+          "consequences": "Thomas realizes the personal cost of nullification extends beyond politics to the bonds of family and generation",
+          "emotional_beat": "Anguished resolve crystallizing into moral clarity",
+          "continuity_notes": "Thomas has received Jackson's Force Bill message, knows today's legislative session will be decisive, has threatening letters on desk, son Robert is at West Point",
+          "complexity_score": 7
+        },
+        {
+          "scene_number": 2,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "The South Carolina State House chamber, packed with legislators and observers, tension crackling through the formal proceedings",
+          "goal": "Navigate the preliminary debates while preparing to make his decisive break with nullification extremism",
+          "opposition": "Ezra Caldwell leading the radical faction in demanding immediate military preparations and rejection of any compromise",
+          "turn": "Caldwell delivers a fiery speech calling for armed resistance and questioning the loyalty of any who would counsel moderation, directly challenging Thomas",
+          "consequences": "Thomas realizes he must respond immediately or be swept along with the radical tide, setting up his crucial speech",
+          "emotional_beat": "Rising tension building toward confrontation",
+          "continuity_notes": "Chamber is packed, Caldwell is in full command of radical faction, Thomas has not yet spoken, military preparations are being debated",
+          "complexity_score": 8
+        },
+        {
+          "scene_number": 3,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "The same State House chamber, with Thomas now at the speaker's podium facing a hostile audience",
+          "goal": "Deliver a speech that breaks with nullification extremism while preserving South Carolina's honor and averting armed conflict",
+          "opposition": "A chamber filled with nullification supporters who view any moderation as betrayal, led by Caldwell's organized opposition",
+          "turn": "Thomas abandons his prepared remarks and speaks from the heart about the true cost of armed resistance, invoking the memory of the Revolution and the bonds of Union",
+          "consequences": "Thomas successfully argues for compromise over armed resistance, providing crucial legislative support for eventual resolution while destroying his own political future in South Carolina",
+          "emotional_beat": "Moral courage triumphing over political calculation",
+          "continuity_notes": "This is the chapter's main turn - Thomas's break with extremism, chamber is hostile, Caldwell leads opposition, Thomas speaks without prepared text",
+          "complexity_score": 10
+        },
+        {
+          "scene_number": 4,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "Charleston Harbor at sunset, Thomas walking alone on the battery as ships prepare for potential conflict",
+          "goal": "Process the aftermath of his speech and the personal cost of his principled stand",
+          "opposition": "His own doubts about whether he has betrayed his state and the isolation that follows moral courage",
+          "turn": "Thomas encounters Captain Morrison, who quietly expresses respect for his stand and hints that federal forces will show restraint if South Carolina steps back from the brink",
+          "consequences": "Thomas gains confirmation that his speech may have prevented bloodshed, while accepting that his political career in South Carolina is finished",
+          "emotional_beat": "Melancholy resolution mixed with quiet pride in duty fulfilled",
+          "continuity_notes": "Thomas's speech has occurred, he is now politically isolated, Morrison represents federal military presence, harbor shows signs of potential conflict preparation",
+          "complexity_score": 6
+        }
+      ]
+    },
+    {
+      "chapter_number": 10,
+      "scenes": [
+        {
+          "scene_number": 1,
+          "pov": "Margaret Sinclair",
+          "setting": "Charleston waterfront at dawn, overlooking the harbor where the federal revenue cutter 'Dexter' lies at anchor, with South Carolina militia positions visible on shore",
+          "goal": "Assess the military situation and identify key players on both sides to prevent accidental conflict",
+          "opposition": "The tense standoff between federal and state forces, with neither side willing to back down and both prepared for violence",
+          "turn": "Margaret observes Captain Morrison through her spyglass and realizes he is as reluctant to fire the first shot as the militia commanders, giving her hope for preventing bloodshed",
+          "consequences": "Margaret develops a plan to exploit the mutual reluctance of both commanders, setting up her attempt to broker communication between them",
+          "emotional_beat": "Anxious determination mixed with growing hope",
+          "continuity_notes": "Dawn light, Margaret has a spyglass, federal cutter 'Dexter' in harbor, South Carolina militia positions established, both forces are armed but hesitant",
+          "complexity_score": 6
+        },
+        {
+          "scene_number": 2,
+          "pov": "Margaret Sinclair",
+          "setting": "Private parlor of the Charleston Hotel, where Margaret meets with Thomas Whitmore in secret",
+          "goal": "Convince Thomas to serve as an intermediary between the federal and state forces to prevent violence",
+          "opposition": "Thomas's political caution and fear that any involvement could destroy his career and compromise his principles",
+          "turn": "Thomas agrees to help when Margaret reveals that Captain Morrison served under his command during the Creek War and might trust him",
+          "consequences": "Thomas commits to approaching Morrison, creating the possibility for direct communication between the opposing forces",
+          "emotional_beat": "Urgent persuasion giving way to cautious hope",
+          "continuity_notes": "Charleston Hotel parlor, private meeting, Thomas initially reluctant, Morrison's military history with Thomas established, morning time",
+          "complexity_score": 7
+        },
+        {
+          "scene_number": 3,
+          "pov": "Captain James Morrison",
+          "setting": "Quarterdeck of the revenue cutter 'Dexter' in Charleston Harbor, with the city and militia positions visible from the water",
+          "goal": "Maintain federal authority while avoiding the first shot that could ignite civil war",
+          "opposition": "Conflicting orders from Washington demanding firmness while his own military judgment counsels restraint",
+          "turn": "Thomas Whitmore arrives under a flag of truce, offering Morrison a chance for private communication that could defuse the crisis",
+          "consequences": "Morrison agrees to a secret meeting, opening the possibility for negotiation while maintaining his official stance",
+          "emotional_beat": "Military tension balanced by relief at finding an honorable alternative to violence",
+          "continuity_notes": "Morrison on 'Dexter' quarterdeck, federal orders for firmness, Thomas approaches under flag of truce, afternoon timing, crew watching",
+          "complexity_score": 5
+        },
+        {
+          "scene_number": 4,
+          "pov": "Margaret Sinclair",
+          "setting": "A secluded warehouse on the Charleston waterfront at night, chosen as neutral ground for the secret meeting",
+          "goal": "Facilitate communication between Morrison and Thomas to establish unofficial protocols that prevent accidental violence",
+          "opposition": "The mutual distrust between federal and state representatives and the risk of discovery by extremists on both sides",
+          "turn": "Morrison and Thomas reach an understanding about signals and procedures to prevent misunderstandings, while news arrives that Clay's compromise tariff is advancing in Congress",
+          "consequences": "Both sides agree to restraint while awaiting the congressional compromise, buying crucial time for peaceful resolution",
+          "emotional_beat": "Tense negotiation evolving into cautious optimism",
+          "continuity_notes": "Nighttime warehouse meeting, Margaret facilitating, Morrison and Thomas present, Clay's tariff compromise news arrives, secret protocols established",
+          "complexity_score": 8
+        },
+        {
+          "scene_number": 5,
+          "pov": "Margaret Sinclair",
+          "setting": "Margaret's private study in her Charleston residence, late at night, as she writes encrypted dispatches",
+          "goal": "Report the successful prevention of immediate violence while preparing for the final political resolution",
+          "opposition": "The fragility of the temporary peace and the knowledge that extremists on both sides could still trigger conflict",
+          "turn": "Margaret realizes that personal relationships and individual conscience have proven stronger than political divisions in this crucial moment",
+          "consequences": "The immediate crisis is defused through personal trust, setting the stage for Clay's compromise to provide the political solution",
+          "emotional_beat": "Exhausted relief tempered by awareness of ongoing danger",
+          "continuity_notes": "Late night, Margaret's study, encrypted dispatches being written, temporary peace achieved, Clay's compromise still pending in Congress",
+          "complexity_score": 6
+        }
+      ]
+    },
+    {
+      "chapter_number": 11,
+      "scenes": [
+        {
+          "scene_number": 1,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "Mrs. Catherine Pinckney's drawing room on Meeting Street, Charleston - late afternoon with filtered sunlight through heavy curtains, the room filled with Charleston's political elite gathered in nervous clusters",
+          "goal": "Gauge the political temperature among Charleston's influential families and secure their support for accepting Clay's compromise",
+          "opposition": "Caldwell's faction spreading rumors that compromise equals surrender, and the social awkwardness of his estrangement from Margaret who is also present",
+          "turn": "Mrs. Pinckney publicly endorses Thomas's moderate position, lending her considerable social authority to the compromise faction",
+          "consequences": "The social elite begin shifting toward compromise, but Thomas realizes he must now convince the legislature where Caldwell holds more sway",
+          "emotional_beat": "Cautious hope tempered by social tension",
+          "continuity_notes": "Margaret present but they do not speak directly; Mrs. Pinckney wearing black silk with cameo brooch; servants passing Madeira wine; late afternoon March light",
+          "complexity_score": 7
+        },
+        {
+          "scene_number": 2,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "The corridor outside the South Carolina House chamber in the State House, evening - marble floors echoing with footsteps, oil lamps casting long shadows, legislators huddled in urgent conversation",
+          "goal": "Rally moderate legislators to support the compromise before Caldwell can consolidate opposition",
+          "opposition": "Caldwell intercepting potential supporters with arguments that compromise betrays the nullification principle and dishonors South Carolina's sovereignty",
+          "turn": "Thomas learns that Caldwell has convinced several key legislators that accepting compromise will destroy their political futures and brand them as traitors",
+          "consequences": "Thomas realizes he needs a more dramatic gesture to counter Caldwell's influence and decides to stake his entire political reputation on a floor speech",
+          "emotional_beat": "Growing desperation masked by political calculation",
+          "continuity_notes": "Evening session about to begin; Thomas wearing dark blue coat; Caldwell in black with silver buttons; legislators carrying copies of Clay's bill",
+          "complexity_score": 6
+        },
+        {
+          "scene_number": 3,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "The floor of the South Carolina House of Representatives - packed gallery with Charleston's citizens, representatives at their desks, Speaker's chair elevated, American and South Carolina flags flanking the chamber",
+          "goal": "Deliver the decisive speech that will convince the legislature to accept Clay's compromise and end the nullification crisis",
+          "opposition": "Caldwell's preceding speech inflaming nullifier sentiment and Thomas's own internal struggle between his father's legacy and his Union convictions",
+          "turn": "Thomas invokes his father's memory not to support nullification but to argue that true states' rights means preserving the Union that makes those rights meaningful",
+          "consequences": "The legislature votes to accept Clay's compromise by a narrow margin, effectively ending South Carolina's nullification and the immediate crisis",
+          "emotional_beat": "Solemn triumph mixed with the weight of historical responsibility",
+          "continuity_notes": "Evening session; gas lamps illuminating chamber; Thomas speaking from the well; Margaret watching from gallery; final vote count 72-68",
+          "complexity_score": 9
+        },
+        {
+          "scene_number": 4,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "The steps of the South Carolina State House under a clear March night sky, with small groups of citizens and legislators dispersing after the historic vote",
+          "goal": "Process the magnitude of what has just occurred and reconcile his transformed political identity with his personal relationships",
+          "opposition": "The emotional weight of having broken with his father's political legacy and the uncertainty of his future relationship with Margaret",
+          "turn": "Margaret approaches him on the steps and acknowledges that while their personal relationship remains fractured, they have succeeded in preserving the Union",
+          "consequences": "Thomas completes his political transformation from inherited ideology to principled moderation, while his relationship with Margaret remains unresolved but respectful",
+          "emotional_beat": "Melancholy satisfaction - victory achieved at personal cost",
+          "continuity_notes": "Night air cool; gas lamps lighting State House steps; other legislators and citizens departing; Margaret wearing dark cloak; Thomas still in formal speaking attire",
+          "complexity_score": 8
+        }
+      ]
+    },
+    {
+      "chapter_number": 12,
+      "scenes": [
+        {
+          "scene_number": 1,
+          "pov": "Margaret Sinclair",
+          "setting": "Margaret's lodgings on Meeting Street, Charleston - morning light filtering through shuttered windows",
+          "goal": "Prepare for what may be her final meeting with Thomas while grappling with the weight of her deceptions and their consequences",
+          "opposition": "Her own guilt over the intelligence work that betrayed Thomas's trust and uncertainty about whether reconciliation is possible",
+          "turn": "Margaret discovers a letter from Thomas requesting to meet her at the Battery, written in his own hand rather than through intermediaries",
+          "consequences": "Margaret realizes Thomas still cares enough to reach out personally, giving her hope that their relationship might be salvaged despite everything",
+          "emotional_beat": "Cautious hope tempered by deep regret",
+          "continuity_notes": "Margaret has been staying in Charleston lodgings rather than with the Pinckneys since the crisis intensified. The Nullification Ordinance was officially repealed three days ago. Thomas's letter is dated the previous evening.",
+          "complexity_score": 7
+        },
+        {
+          "scene_number": 2,
+          "pov": "Margaret Sinclair",
+          "setting": "The Battery promenade, Charleston - late morning with harbor views and spring air",
+          "goal": "Confront Thomas honestly about her role in gathering intelligence while trying to salvage their relationship",
+          "opposition": "Thomas's justified anger and hurt over her deceptions, and the fundamental political differences that divided them",
+          "turn": "Thomas reveals he has known about her intelligence work for weeks but chose to trust her anyway, understanding her loyalty to the Union",
+          "consequences": "The revelation that Thomas knew and still cared transforms their dynamic from betrayal to mutual understanding and respect",
+          "emotional_beat": "Surprise giving way to profound relief and renewed love",
+          "continuity_notes": "Thomas appears composed but tired, showing the strain of recent weeks. He mentions specific intelligence Margaret gathered, proving his knowledge. The harbor shows signs of reduced federal naval presence.",
+          "complexity_score": 9
+        },
+        {
+          "scene_number": 3,
+          "pov": "Thomas Beauregard Whitmore",
+          "setting": "St. Michael's Church interior - afternoon light through stained glass windows",
+          "goal": "Seek spiritual guidance and clarity about his future path, both personal and political",
+          "opposition": "His own uncertainty about how to reconcile his love for Margaret with his political principles and the expectations of his constituents",
+          "turn": "Thomas realizes that true Union requires the same kind of compromise and understanding that love demands - not submission, but mutual respect",
+          "consequences": "Thomas achieves the philosophical breakthrough that allows him to propose to Margaret while maintaining his political integrity",
+          "emotional_beat": "Spiritual revelation leading to resolute peace",
+          "continuity_notes": "Thomas sits in the same pew where he prayed during the crisis's darkest moments. The church is nearly empty except for an elderly woman in prayer. Afternoon shadows have shifted since his arrival.",
+          "complexity_score": 8
+        },
+        {
+          "scene_number": 4,
+          "pov": "Margaret Sinclair",
+          "setting": "The Battery at sunset - the harbor peaceful with soft evening light",
+          "goal": "Accept Thomas's proposal while establishing the terms of their future together as equals who respect each other's principles",
+          "opposition": "The lingering fear that their political differences will eventually destroy their happiness",
+          "turn": "Margaret and Thomas pledge to build their marriage on the same principles that should govern the Union - respect for differences within a framework of mutual commitment",
+          "consequences": "Their engagement symbolizes the possibility of unity without uniformity, providing hope for both personal happiness and national reconciliation",
+          "emotional_beat": "Joy tempered by mature understanding of the challenges ahead",
+          "continuity_notes": "The same location as their morning meeting, now transformed by golden sunset light. Thomas presents a simple gold ring that belonged to his grandmother. Margaret wears the blue dress Thomas complimented months ago.",
+          "complexity_score": 8
+        },
+        {
+          "scene_number": 5,
+          "pov": "Margaret Sinclair",
+          "setting": "Mrs. Pinckney's drawing room - evening reception with Charleston society",
+          "goal": "Navigate the social complexities of announcing their engagement while demonstrating that political reconciliation is possible",
+          "opposition": "The skeptical and sometimes hostile reactions of Charleston society members who view their union as politically suspect",
+          "turn": "Mrs. Pinckney publicly endorses their engagement, lending her social authority to the idea that love can transcend political division",
+          "consequences": "The engagement gains social legitimacy and becomes a symbol of hope for healing the wounds left by the nullification crisis",
+          "emotional_beat": "Triumph over social obstacles through grace and determination",
+          "continuity_notes": "The reception includes many characters from earlier scenes - Ezra Caldwell notably absent, Captain Morrison present in civilian clothes. Mrs. Pinckney wears her finest silk gown and family pearls. Gas lamps illuminate the room warmly.",
+          "complexity_score": 6
+        }
+      ]
+    }
+  ]
+}

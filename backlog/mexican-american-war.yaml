@@ -1,0 +1,38 @@
+title: "The Wrath of Manifest"
+slug: mexican-american-war
+project_dir: null
+era_start: 1845
+era_end: 1848
+region: "United States and Mexico"
+central_event: "The Mexican-American War and the conquest of half of Mexico's territory under the doctrine of Manifest Destiny"
+tone_intensity: highly_dramatic
+pov_count: 2
+protagonist_type: historical_figure
+thematic_focus:
+  - "imperial ambition vs democratic conscience"
+  - "the cost of Manifest Destiny"
+  - "loyalty to duty versus moral culpability"
+  - "political cunning and diplomatic deception"
+  - "the shadow of slavery over territorial expansion"
+desired_length: novel_120k
+max_chapters: 20
+synopsis: |
+  POV Characters: James K. Polk (President of the United States) — the iron-willed Tennessee Democrat whose four-point program of continental expansion drives every decision, including the manufactured provocation that starts the war; James Buchanan (Secretary of State) — Polk's cautious, politically ambitious cabinet officer who drafts the war's diplomatic architecture while privately fearing the constitutional and moral consequences of a war of conquest, and who eyes his own presidential ambitions with each dispatch he signs.
+
+  Central Conflict: From the annexation of Texas in December 1845 through the signing of the Treaty of Guadalupe Hidalgo on February 2, 1848, Polk and Buchanan are bound together inside an administration that must simultaneously deceive Congress, manage three competing generals, hold off British and French interference, and settle what to do with the half-million square miles they are determined to strip from Mexico — while the slavery question threatens to detonate the Democratic Party from within.
+
+  The novel opens in Washington in the winter of 1845 as Polk, barely inaugurated, dispatches John Slidell to Mexico City in secret, instructing him to offer $25 million for New Mexico and California. Buchanan drafts Slidell's instructions with misgiving, sensing that Mexico will never sell under duress and that rejection will hand Polk a pretext for war. When Mexico's government refuses to receive Slidell in January 1846, Polk orders General Zachary Taylor to advance across the Nueces River to the Rio Grande — into territory Mexico considers its own — and then waits. In May 1846, after Mexican cavalry kills eleven American soldiers on the disputed bank, Polk appears before Congress claiming that "American blood has been shed on American soil," and a declaration of war follows within two days. Buchanan, alarmed by Whig opposition and by John C. Calhoun's constitutional objections in the Senate, must draft a diplomatic circular assuring European powers that the United States seeks no territorial acquisition — a statement Polk quietly overrules before it is sent.
+
+  The war's middle movements trace Taylor's victories at Palo Alto, Resaca de la Palma, and Monterrey in 1846, then the audacious campaign of General Winfield Scott, who lands at Veracruz in March 1847 and drives inland to Mexico City through Cerro Gordo, Contreras, and Churubusco. Polk distrusts both Taylor and Scott as presidential rivals, and his chapters crackle with the calculation of a man who needs battlefield heroes he cannot afford to let become too heroic. Buchanan, meanwhile, negotiates with the British over the Oregon boundary in June 1846, securing the 49th parallel and avoiding a two-front war — a genuine diplomatic achievement that Polk accepts grudgingly and that Buchanan believes demonstrates the superior wisdom of patient statecraft over military adventure.
+
+  The Wilmot Proviso of August 1846, which would ban slavery from any territory taken from Mexico, fractures the cabinet and the party. Buchanan, calculating the Northern vote he will need in 1848, privately sympathizes with Proviso sentiment; Polk, committed to Southern unity, kills it with cold fury. The two men's relationship corrodes across these chapters into something between mutual dependence and mutual contempt.
+
+  The climax arrives with Scott's capture of Mexico City in September 1847 and the agonizing peace negotiation conducted by State Department clerk Nicholas Trist — whom Polk had recalled in disgust but who defied the order and produced the Treaty of Guadalupe Hidalgo anyway. Polk, furious at Trist's insubordination yet desperate to end a war that is bleeding his political capital, accepts the treaty. The United States acquires California, New Mexico, and the Rio Grande boundary for $15 million. The resolution turns on the ratification fight in the Senate, where the acquired territory's moral price — half a continent purchased in blood and laced with the unresolved question of slavery — echoes through both men's final chapters as they recognize that the peace they have made is, in truth, the seed of a larger, more terrible war to come.
+additional_notes: |
+  POV Characters: James K. Polk (President) — the most underestimated expansionist in American history; obsessively disciplined, physically frail, morally armored by the doctrine of Manifest Destiny, and convinced that a continent secured is worth any constitutional or ethical compromise. His chapters should carry the interior voice of a man who genuinely believes he is doing God's and the nation's work even as he engineers a pretext for invasion. James Buchanan (Secretary of State) — ambitious, cautious, and constitutionally anxious; a skilled drafter of diplomatic language who understands that the war is legally and morally questionable but lacks the courage to resign, instead channeling his unease into careful self-positioning for his own presidential run in 1848 and 1852. His chapters provide the novel's moral counterweight and diplomatic texture.
+
+  Key supporting figures to ground historical accuracy: General Zachary Taylor (commander in northern Mexico, future President), General Winfield Scott (commander of the Veracruz-to-Mexico City campaign), Nicholas Trist (State Department peace envoy who defied recall), John Slidell (failed secret envoy to Mexico, January 1846), Senator David Wilmot (author of the Wilmot Proviso, August 1846), Senator John C. Calhoun (constitutional opponent of the war declaration), and Mexican General Antonio López de Santa Anna (whose return from exile Polk secretly facilitated and who then led Mexican resistance).
+
+  The novel must treat the war's origins as a manufactured provocation, consistent with the historical record and Ulysses S. Grant's own later verdict that it was "one of the most unjust wars ever waged by a stronger nation against a weaker." The slavery-expansion tension should deepen with every chapter, landing the reader at the threshold of the 1850 crisis without crossing it.
+description: "A two-voiced portrait of President Polk and Secretary Buchanan as they engineer, prosecute, and survive a war of conquest that doubles the American republic and lights the fuse of the Civil War."
+status: backlog

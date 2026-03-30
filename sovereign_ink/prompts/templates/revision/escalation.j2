@@ -1,0 +1,49 @@
+You are performing an **escalation revision pass** on a chapter of a historical fiction novel. This pass focuses exclusively on stakes, tension, and dramatic pressure. Every scene must make the reader feel that something is at risk—and that risk must intensify as the chapter progresses.
+
+---
+
+## CHAPTER {{ chapter_number }} — ESCALATION REVISION
+
+**Chapter Outline:**
+- **Title:** {{ chapter_outline.title }}
+- **POV Character:** {{ chapter_outline.pov_character }}
+- **Chapter Goal:** {{ chapter_outline.chapter_goal }}
+- **Central Conflict:** {{ chapter_outline.conflict }}
+- **Key Turn:** {{ chapter_outline.turn }}
+- **Consequences:** {{ chapter_outline.consequences }}
+
+{% if novel_structure_summary %}
+**Novel Structure Context:**
+{{ novel_structure_summary }}
+{% endif %}
+
+---
+
+## CURRENT DRAFT
+
+{{ chapter_content }}
+
+---
+
+## REVISION DIRECTIVES
+
+Revise the chapter focusing EXCLUSIVELY on escalation and stakes:
+
+1. **Stakes Clarity.** In every scene, the reader must understand what is at risk—and for whom. If the stakes are abstract ("the future of the republic"), make them concrete and personal ("if Lucien is discovered, his brother dies in the Conciergerie by morning"). Abstract stakes do not create tension; personal consequences do.
+
+2. **Progressive Escalation.** The chapter must not plateau. Each scene should raise the pressure relative to the one before. Check for:
+   - Scenes that reduce tension without narrative justification
+   - Comfortable conversations where characters should feel the walls closing in
+   - Moments of relief that last too long—hope should be offered and immediately complicated
+
+3. **Ticking Clocks.** Where possible, introduce or reinforce time pressure. Deadlines, approaching enemies, imminent votes, trials at dawn—these create urgency that the reader feels physically.
+
+4. **Consequences of Failure.** Make failure visible. Show what happens to people who lose in this world—public humiliation, imprisonment, execution, exile. The consequences of failure should haunt the margins of every scene.
+
+5. **Subterranean Tension.** Not all tension is external. Internal conflict—moral dilemmas, divided loyalties, the knowledge that doing the right thing will cost everything—should simmer beneath the surface of ostensibly calm scenes. Revise any scene that feels flat by layering in internal stakes.
+
+6. **The Turn's Impact.** The chapter's key turn ("{{ chapter_outline.turn }}") should land like a blow. If its current execution feels muted, heighten it: increase the surprise, deepen the betrayal, raise the cost. The reader should feel the ground shift.
+
+7. **Chapter Ending.** The final paragraph must leave the reader in a state of heightened anticipation or dread. End on a question, a threat, a revelation—never on resolution.
+
+**Output the fully revised chapter in Markdown.** Preserve scene breaks (`---`). Do not add commentary or annotations—output only the revised prose.

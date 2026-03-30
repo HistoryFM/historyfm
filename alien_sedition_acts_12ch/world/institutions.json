@@ -1,0 +1,242 @@
+[
+  {
+    "name": "The Adams Cabinet (Executive Departments of State, War, Treasury, and the Attorney General)",
+    "type": "executive body",
+    "power_level": "contested",
+    "constraints": [
+      "Cabinet officers serve at the president's pleasure but in practice were inherited from the Washington administration and owe their political allegiances elsewhere",
+      "No formal mechanism exists for the president to compel unified loyalty; removal is politically costly and publicly legible as weakness",
+      "Departmental staffs are skeletal\u2014State employs fewer than a dozen clerks\u2014limiting independent executive capacity",
+      "Communication with American ministers abroad takes weeks each direction, forcing cabinet officers to exercise wide discretionary authority in the president's name"
+    ],
+    "factional_pressures": [
+      "Hamiltonians within the cabinet\u2014Pickering at State, McHenry at War, Wolcott at Treasury\u2014regard Hamilton as their true political principal and work to align policy with his war agenda",
+      "Adams's own instinct for independence and his suspicion of faction places him at odds with the cabinet's collective disposition toward confrontation with France",
+      "Abigail Adams exerts informal but substantial influence on the president, functioning as a shrewd political counsellor whose judgements often cut against the cabinet's Hamiltonian drift",
+      "Republican opposition in Congress and the press monitors cabinet conduct for evidence of monarchism or British subservience, limiting the cabinet's room for openly provocative manoeuvre"
+    ],
+    "public_legitimacy": "Formally legitimate as the constitutionally sanctioned instrument of executive governance; practically suspect among Republicans who regard it as a nest of Anglophile placemen, and among some Federalists who consider Adams himself insufficiently vigorous.",
+    "plausible_actions": [
+      "Pickering intercepts, delays, or selectively summarises diplomatic correspondence before it reaches Adams, shaping the president's understanding of French intentions",
+      "McHenry coordinates with Hamilton on the organisation and officer appointments of the Provisional Army, effectively giving Hamilton command authority before Adams can intervene",
+      "Wolcott shares confidential Treasury intelligence with Hamilton's commercial allies in New York, sustaining the financial network that funds Federalist press organs",
+      "The cabinet collectively advises Adams against renewing diplomatic overtures to France, citing French bad faith and domestic political danger",
+      "Pickering uses his departmental authority to expedite prosecutions under the Sedition Act by directing federal attorneys toward Republican newspaper editors"
+    ],
+    "implausible_actions": [
+      "The cabinet cannot formally override a direct presidential order; open defiance would require resignation or the president's impeachment",
+      "Cabinet officers cannot negotiate treaties or commit the United States to military alliances without presidential and Senate sanction",
+      "The cabinet cannot independently raise revenue, conscript troops, or declare war\u2014these powers belong to Congress"
+    ]
+  },
+  {
+    "name": "The United States Senate",
+    "type": "legislature (upper chamber)",
+    "power_level": "ascendant",
+    "constraints": [
+      "Senators are elected by state legislatures, not popular vote, insulating them from immediate public passion but binding them to state political machines",
+      "The Constitution requires a two-thirds supermajority for treaty ratification, giving a determined minority significant blocking power",
+      "Senate proceedings are frequently conducted in closed session on executive business, limiting press access and public accountability",
+      "The vice president\u2014Jefferson, a Republican\u2014presides over the chamber, creating a daily institutional friction between the executive's political adversary and Federalist legislative management"
+    ],
+    "factional_pressures": [
+      "High Federalists aligned with Hamilton press for war appropriations, expanded army and navy, and punitive legislation against Republican editors and alien residents",
+      "Moderate Federalists, anxious about the constitutional and commercial costs of full-scale war, resist the most aggressive measures while supporting naval expansion",
+      "Senate Republicans, a minority but a vocal one, use procedural delay and public dissent to contest the Alien and Sedition Acts and warn of executive tyranny",
+      "Commercial interests from New England mercantile states lobby senators for naval protection of trade without the disruption of land war"
+    ],
+    "public_legitimacy": "High among propertied and educated Federalist constituencies who regard the Senate as the republic's deliberative anchor; viewed with suspicion by Republican partisans who see it as an oligarchic body insulated from democratic accountability.",
+    "plausible_actions": [
+      "Confirm Adams's diplomatic appointments to the peace mission to France, however reluctantly, under pressure from moderate Federalists",
+      "Pass the Alien Enemies Act and Alien Friends Act after managed debate, with High Federalists providing the margin",
+      "Conduct closed-session debate on the XYZ dispatches before Adams releases them publicly, allowing Federalist leadership to coordinate the political response",
+      "Confirm Hamilton's appointment as Inspector General of the Provisional Army over Adams's explicit preference for Knox",
+      "Ratify emergency naval appropriations to fund the construction of frigates and the arming of merchant vessels"
+    ],
+    "implausible_actions": [
+      "The Senate cannot initiate revenue bills\u2014that power belongs exclusively to the House\u2014and cannot therefore independently fund the war apparatus it advocates",
+      "The Senate cannot remove the president without a House impeachment; factional displeasure, however intense, has no direct constitutional mechanism for forcing Adams from office",
+      "The Senate cannot compel the president to dismiss cabinet officers, though it can make continued service politically untenable through public censure and leaked correspondence"
+    ]
+  },
+  {
+    "name": "The United States House of Representatives",
+    "type": "legislature (lower chamber)",
+    "power_level": "ascendant",
+    "constraints": [
+      "All revenue and appropriations bills must originate in the House, making it the indispensable engine of war finance, but also the arena where Republican opposition can most effectively obstruct",
+      "Members face election every two years, making them acutely responsive to shifts in popular sentiment\u2014the war fever of 1798 is a political asset that can become a liability with equal speed",
+      "The House is larger and more fractious than the Senate, making disciplined factional management difficult; individual members pursue local interests that complicate national legislative strategy",
+      "The Speaker's procedural authority shapes the legislative agenda but cannot override a determined floor majority"
+    ],
+    "factional_pressures": [
+      "High Federalists, energised by the XYZ revelations and the public's martial ardour, push for the most expansive war legislation\u2014new taxes, expanded army, sedition prosecutions",
+      "House Republicans, led by figures like Albert Gallatin, fight a rearguard action against the Alien and Sedition Acts, arguing constitutional principle while calculating electoral consequence",
+      "Southern Federalists, uneasy about a standing army that Hamilton might command, quietly moderate their support for the land-war programme while backing naval expansion",
+      "The press gallery amplifies House debates immediately into public circulation, making every speech a political performance with a national audience"
+    ],
+    "public_legitimacy": "Broadly legitimate as the most directly democratic branch; its legitimacy rises with popular passion and falls when its legislation is perceived as oppressive or self-serving. The Sedition Act prosecutions will erode its standing among Republican constituencies.",
+    "plausible_actions": [
+      "Pass the Sedition Act of 1798 after bitter debate, with the vote falling largely along partisan lines",
+      "Appropriate funds for the construction of additional naval frigates and the expansion of the Marine Corps",
+      "Levy new direct taxes on houses, land, and slaves to finance the quasi-war, generating fierce resistance in Pennsylvania and the South",
+      "Debate and pass the Logan Act, criminalising unauthorised diplomatic contact with foreign governments, in direct response to George Logan's private peace mission to Paris",
+      "Conduct public hearings on the XYZ dispatches that function as political theatre, inflaming public opinion against France and Republican sympathisers simultaneously"
+    ],
+    "implausible_actions": [
+      "The House cannot ratify or reject treaties\u2014that power belongs to the Senate\u2014though it can refuse to appropriate funds for treaty implementation",
+      "The House cannot independently conduct foreign policy or dispatch diplomatic envoys; its influence on diplomacy is indirect, exercised through appropriations and public pressure",
+      "The House cannot remove executive officers through legislation alone; impeachment requires a majority vote but conviction and removal require Senate trial"
+    ]
+  },
+  {
+    "name": "The French Directory",
+    "type": "revolutionary executive body",
+    "power_level": "waning",
+    "constraints": [
+      "The Directory's domestic legitimacy is perpetually contested; it survives through a combination of military patronage, electoral manipulation, and the suppression of both Jacobin and royalist opposition",
+      "French foreign policy is partly hostage to the financial appetites of the Directors themselves and the corrupt networks of agents like Talleyrand, whose private enrichment complicates official diplomacy",
+      "Military commanders\u2014above all Bonaparte\u2014operate with increasing independence, and the Directory's authority depends on their continued loyalty and success",
+      "The Atlantic communication lag means that French policy toward America is often formulated in ignorance of American political developments, producing responses that are tactically incoherent"
+    ],
+    "factional_pressures": [
+      "Talleyrand as Foreign Minister pursues a pragmatic policy of extracting maximum advantage from American weakness without triggering actual war, which would close Atlantic trade routes France needs",
+      "Directors hostile to commercial accommodation with the United States use maritime predation as a revenue source and a political signal to domestic audiences",
+      "Republican sympathisers in America\u2014Bache's Aurora, Jefferson's network\u2014provide the Directory with intelligence and political encouragement that distorts its assessment of American resolve",
+      "Bonaparte's Italian and Egyptian campaigns absorb French military attention and resources, making sustained naval war with the United States strategically undesirable"
+    ],
+    "public_legitimacy": "Negligible in America, where it is perceived as a corrupt and predatory oligarchy; declining in France itself, where war-weariness, financial exhaustion, and political instability are eroding the revolutionary settlement. Its days are numbered\u2014Bonaparte's coup of 18 Brumaire is approaching.",
+    "plausible_actions": [
+      "Instruct Talleyrand to open back-channel communications with American intermediaries to test the possibility of renewed negotiations without formal diplomatic recognition",
+      "Continue authorising French privateers and naval vessels to seize American merchant ships in the Caribbean, treating the proceeds as de facto war taxation",
+      "Receive Elbridge Gerry\u2014the one American commissioner who remains in Paris\u2014as a means of maintaining a diplomatic thread while refusing to negotiate seriously",
+      "Respond to Adams's peace mission of 1799 with sufficient flexibility to allow Talleyrand to negotiate the Convention of Mortefontaine",
+      "Use the presence of French agents in American cities to gather intelligence on political divisions and encourage Republican resistance to Federalist war measures"
+    ],
+    "implausible_actions": [
+      "The Directory cannot launch a sustained naval campaign against the American eastern seaboard; French naval capacity is committed to the Mediterranean and the Atlantic approaches to Britain",
+      "The Directory cannot formally declare war on the United States without risking the complete loss of American trade and the consolidation of American public opinion behind Adams",
+      "The Directory cannot compel American Republican politicians to act as formal agents of French policy; the relationship is one of sympathy and occasional coordination, not command"
+    ]
+  },
+  {
+    "name": "The Hamiltonian Federalist Network (High Federalists)",
+    "type": "political faction / informal patronage network",
+    "power_level": "ascendant",
+    "constraints": [
+      "Hamilton holds no formal office after his resignation from Treasury in 1795 and must exercise power entirely through surrogates, correspondence, and the press\u2014his influence is real but always deniable and always dependent on the loyalty of men he cannot directly command",
+      "The faction's war agenda requires Adams's cooperation or removal; outright public opposition to a sitting president of their own party risks fracturing Federalism and handing power to the Republicans",
+      "Hamilton's personal ambition is widely suspected, limiting his ability to act openly; his military pretensions alarm even some Federalist moderates who fear what a standing army under his command might become",
+      "The faction's commercial base in New York and New England has contradictory interests\u2014merchants want naval protection but not the trade disruption that full-scale war would bring"
+    ],
+    "factional_pressures": [
+      "Pickering, McHenry, and Wolcott function as Hamilton's agents within the cabinet, but their usefulness depends on Adams's continued failure to detect or act on the conspiracy",
+      "Moderate Federalists\u2014figures like John Marshall and Charles Cotesworth Pinckney\u2014are susceptible to Hamilton's arguments but not unconditionally loyal; they will not follow him into open revolt against Adams",
+      "The Republican press, led by Bache and Duane, relentlessly exposes Hamiltonian machinations, and the Sedition Act prosecutions, while silencing some editors, create martyrs who amplify the accusations",
+      "Adams's eventual discovery of the cabinet's disloyalty and his decision to dismiss Pickering and McHenry in 1800 represents the faction's critical vulnerability: it has no institutional base independent of the offices it occupies"
+    ],
+    "public_legitimacy": "Strong among commercial, propertied, and anglophile constituencies in the Northeast; deeply suspect among artisans, farmers, and Republican voters who regard the faction as a crypto-monarchist conspiracy against popular government. Hamilton's personal legitimacy is further compromised by the Reynolds Affair pamphlet of 1797.",
+    "plausible_actions": [
+      "Hamilton corresponds directly with Pickering and McHenry to coordinate cabinet resistance to Adams's peace overtures, drafting memoranda that the secretaries present to Adams as their own considered advice",
+      "Hamilton uses his New York legal and commercial networks to place sympathetic officers in the Provisional Army, building a personal military constituency that bypasses Adams's authority",
+      "Federalist-aligned newspapers publish selective leaks from cabinet deliberations to inflame public opinion against French negotiation and make Adams's peace mission politically costly",
+      "Hamilton composes and publishes his devastating pamphlet against Adams's character and conduct in October 1800, intending to suppress it within Federalist circles but losing control of the manuscript",
+      "The faction coordinates with Senate Federalists to confirm Hamilton as Inspector General over Adams's explicit objections, using Washington's nominal seniority as cover"
+    ],
+    "implausible_actions": [
+      "Hamilton cannot stage a coup or use the Provisional Army to remove Adams; the army exists only on paper, the officer corps is not uniformly loyal to Hamilton, and such an act would be recognised as treason by the very commercial classes whose support sustains the faction",
+      "The faction cannot formally expel Adams from the Federalist party; there is no party machinery capable of such an act, and the attempt would be publicly catastrophic",
+      "Hamilton cannot negotiate directly with foreign powers or commit American policy without presidential sanction; his influence on foreign affairs is entirely mediated through the cabinet officers he controls"
+    ]
+  },
+  {
+    "name": "The Republican Opposition (Jeffersonian Democratic-Republicans)",
+    "type": "political faction / nascent party organisation",
+    "power_level": "contested",
+    "constraints": [
+      "Republicans are a minority in both chambers of Congress during the critical 1797\u20131799 period and cannot block legislation they oppose by votes alone; their power is primarily obstructive and rhetorical",
+      "Jefferson as vice president occupies a constitutionally anomalous position\u2014presiding over a Senate hostile to his politics, excluded from executive deliberations, unable to act openly without risking accusations of sedition or foreign sympathy",
+      "The Sedition Act directly targets Republican newspapers and editors, threatening to silence the faction's most effective instrument of mass communication",
+      "The XYZ revelations have temporarily devastated Republican credibility on the French question; defending France after the bribery disclosure is politically untenable, forcing Republicans into awkward silence or qualified condemnation"
+    ],
+    "factional_pressures": [
+      "Jefferson and Madison coordinate through private correspondence to draft the Virginia and Kentucky Resolutions, using state authority as a constitutional counterweight to federal overreach\u2014a strategy that carries its own dangerous implications for union",
+      "Northern Republicans, many of them merchants and artisans with direct experience of French maritime predation, are less sympathetic to France than their Southern counterparts and resist the faction's most Francophile positions",
+      "Republican newspaper editors\u2014Bache, Duane, Thomas Cooper\u2014pursue an aggressive press strategy that sometimes outstrips the caution of Jefferson and Madison, creating political liabilities the faction's leadership cannot fully control",
+      "The Virginia planter aristocracy that forms the faction's social core has material interests in western expansion and commercial independence that align with Republican ideology but also with a kind of parochial nationalism that complicates foreign policy positions"
+    ],
+    "public_legitimacy": "High among Southern planters, Western settlers, artisans, and recent immigrants\u2014particularly the Irish and French communities that the Alien Acts specifically threaten; low among New England commercial interests and those whose livelihoods have been damaged by French privateering.",
+    "plausible_actions": [
+      "Jefferson and Madison draft the Virginia and Kentucky Resolutions asserting the right of states to judge the constitutionality of federal legislation, laying the theoretical groundwork for nullification",
+      "Republican members of Congress deliver extended floor speeches against the Sedition Act that are immediately reprinted in sympathetic newspapers and circulated as pamphlets throughout the republic",
+      "Jefferson uses his position as vice president to cultivate relationships with moderate Federalists alienated by Hamilton's extremism, building the coalition that will win him the presidency in 1800",
+      "Republican editors and pamphleteers publish the full text of the XYZ dispatches alongside commentary arguing that Talleyrand's agents acted without Directory sanction, attempting to limit the diplomatic damage",
+      "The faction coordinates with state legislatures in Virginia, Kentucky, and Pennsylvania to resist enforcement of the Alien Acts and shelter targeted editors and immigrants"
+    ],
+    "implausible_actions": [
+      "Republicans cannot secede from the union or formally nullify federal law; the Virginia and Kentucky Resolutions are rhetorical and political instruments, not acts of constitutional severance",
+      "Jefferson cannot conduct independent diplomacy with France from the vice presidency; his communications with French representatives, however sympathetic, carry no official weight and would be treasonous if they crossed into policy coordination",
+      "The Republican faction cannot win a congressional majority in the 1797\u20131799 period; their legislative strategy is necessarily one of delay, amendment, and public exposure rather than outright legislative defeat of Federalist measures"
+    ]
+  },
+  {
+    "name": "The American Partisan Press",
+    "type": "de facto fourth estate / political instrument",
+    "power_level": "ascendant",
+    "constraints": [
+      "Newspapers operate without formal institutional standing; their power is entirely dependent on readership, financial patronage, and the willingness of political factions to sustain them through subscriptions and advertising",
+      "The Sedition Act of 1798 makes criticism of the president or Congress a criminal offence, exposing editors to prosecution, fines, and imprisonment\u2014a constraint that is unevenly enforced but genuinely chilling",
+      "The press operates on a weekly or semi-weekly cycle with no capacity for the immediate verification of foreign news; rumour, fabrication, and partisan distortion are structurally endemic",
+      "Editors are financially dependent on political patrons and commercial advertisers whose interests may conflict with editorial independence"
+    ],
+    "factional_pressures": [
+      "Federalist commercial press organs\u2014Fenno's Gazette of the United States, Cobbett's Porcupine's Gazette\u2014are sustained by Hamilton's network and pursue an aggressive pro-war, anti-Republican editorial line",
+      "Republican papers\u2014Bache's Aurora, Duane's continuation of it after Bache's death from yellow fever in 1798\u2014conduct a campaign of personal vilification against Adams and exposure of Hamiltonian conspiracy that makes them primary targets of Sedition Act prosecution",
+      "The death of Bache and the prosecution of Duane under the Sedition Act transform the Aurora from a newspaper into a political cause, galvanising Republican readers and fundraising networks",
+      "Foreign governments\u2014both British and French\u2014maintain relationships with sympathetic American editors, providing intelligence, subsidies, and political guidance that further compromise press independence"
+    ],
+    "public_legitimacy": "Contested and partisan; each paper is legitimate to its own readership and an instrument of faction to its opponents. The Sedition Act prosecutions paradoxically elevate the legitimacy of targeted Republican editors among their readers by making them martyrs to press freedom.",
+    "plausible_actions": [
+      "The Aurora publishes leaked cabinet correspondence and diplomatic dispatches that expose Hamiltonian manipulation of Adams, forcing the administration into damaging public denials",
+      "Fenno's Gazette publishes the XYZ dispatches with inflammatory commentary that translates diplomatic outrage into popular war fever, multiplying the political impact of Adams's message to Congress",
+      "Federalist papers publish Hamilton's essays under classical pseudonyms, shaping the public interpretation of the quasi-war crisis while maintaining Hamilton's deniability",
+      "Republican editors reprint the Virginia and Kentucky Resolutions in full, distributing the constitutional argument against the Sedition Act to readers who would never encounter the original legislative texts",
+      "Cobbett's Porcupine's Gazette conducts a sustained personal campaign against Dr. Benjamin Rush, resulting in a successful libel suit that forces Cobbett to flee to Britain\u2014demonstrating that the press's power is not without legal accountability"
+    ],
+    "implausible_actions": [
+      "Newspapers cannot formally coordinate their coverage as a cartel or syndicate; partisan alignment produces similar coverage, but there is no editorial command structure capable of issuing unified instructions",
+      "Editors cannot compel government officials to respond to their accusations or grant interviews; access depends entirely on political relationships and the official's calculation of advantage",
+      "The press cannot independently verify or publish classified diplomatic communications without a source within the government; its exposure of executive secrets requires the active complicity of disaffected insiders"
+    ]
+  },
+  {
+    "name": "The United States Federal Judiciary",
+    "type": "judiciary",
+    "power_level": "nascent",
+    "constraints": [
+      "The federal judiciary in 1797\u20131799 lacks the doctrine of judicial review in its fully articulated form\u2014Marbury v. Madison lies four years in the future, and the courts' authority to strike down federal legislation is asserted but not yet constitutionally settled",
+      "Federal judges are appointed for life and are overwhelmingly Federalist in sympathy, limiting their utility as a check on Federalist legislative excess and making them instruments of Sedition Act enforcement rather than barriers to it",
+      "The judiciary has no independent enforcement mechanism; it depends on executive officers to carry out its orders, making it structurally subordinate to the administration in contested cases",
+      "Circuit riding\u2014Supreme Court justices are required to travel the federal circuits and preside over lower court proceedings\u2014disperses judicial authority and makes consistent legal interpretation difficult to maintain"
+    ],
+    "factional_pressures": [
+      "Federalist judges\u2014including Supreme Court Justice Samuel Chase\u2014pursue Sedition Act prosecutions with evident partisan enthusiasm, delivering charges to grand juries that read as political manifestos against Republican opposition",
+      "Republican defendants and their counsel use sedition trials as political theatre, turning courtrooms into forums for constitutional argument that reaches a public far beyond the immediate proceedings",
+      "Adams's appointment of John Marshall as Chief Justice in 1800 represents a strategic Federalist manoeuvre to entrench judicial power against the incoming Republican administration\u2014an act with consequences extending far beyond the novel's timeframe",
+      "State courts in Republican-controlled jurisdictions resist federal judicial authority on matters touching the Alien Acts, creating jurisdictional conflicts that expose the limits of federal judicial reach"
+    ],
+    "public_legitimacy": "Formally legitimate as the constitutionally established third branch; practically suspect among Republicans who regard the Federalist bench as a partisan instrument rather than an impartial arbiter. Sedition Act prosecutions of popular editors erode public confidence in judicial neutrality among Republican constituencies.",
+    "plausible_actions": [
+      "Federal grand juries, charged by Federalist judges, return indictments against Republican editors under the Sedition Act, initiating prosecutions that become national political causes",
+      "Justice Chase delivers a grand jury charge in Virginia that is so nakedly partisan that it provokes Republican demands for his impeachment\u2014demands that will eventually succeed, though after this novel's timeframe",
+      "Federal courts uphold the constitutionality of the Sedition Act in every case brought before them, declining to exercise any check on congressional authority to criminalise political speech",
+      "The judiciary processes prize cases arising from the quasi-war, adjudicating the seizure of French vessels by American naval forces and establishing the legal framework for undeclared naval conflict",
+      "Adams uses recess appointments to place Federalist loyalists on the federal bench in the final weeks of his administration, attempting to secure judicial control against Jefferson's incoming presidency"
+    ],
+    "implausible_actions": [
+      "The federal judiciary cannot strike down the Sedition Act on First Amendment grounds in this period; no court does so, and the doctrinal machinery for such a ruling does not yet exist in operative form",
+      "Federal judges cannot independently initiate prosecutions or direct executive officers to make arrests; their role is adjudicative, not investigative or executive",
+      "The Supreme Court cannot yet compel the executive branch to comply with its orders through a fully developed contempt and enforcement mechanism; its authority rests on institutional respect rather than coercive power"
+    ]
+  }
+]

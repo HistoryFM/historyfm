@@ -1,0 +1,77 @@
+You are performing an **ending revision pass** on the final chapter(s) of a historical fiction novel. This is the most critical revision pass—the ending is what the reader carries away. It must resolve the central conflicts, complete the character arcs, honour the historical record, and resonate with the novel's themes. A great ending feels both surprising and inevitable.
+
+---
+
+## CHAPTER {{ chapter_number }} — ENDING REVISION
+
+**Chapter Outline:**
+- **Title:** {{ chapter_outline.title }}
+- **POV Character:** {{ chapter_outline.pov_character }}
+- **Chapter Goal:** {{ chapter_outline.chapter_goal }}
+- **Key Turn:** {{ chapter_outline.turn }}
+- **Consequences:** {{ chapter_outline.consequences }}
+
+{% if novel_structure_summary %}
+**Novel Structure Context:**
+{{ novel_structure_summary }}
+{% endif %}
+
+{% if character_arcs %}
+**Character Arc Resolutions:**
+{% for arc in character_arcs %}
+- **{{ arc.name }}:** {{ arc.start_state }} → {{ arc.end_state }}
+{% endfor %}
+{% endif %}
+
+{% if thematic_focus %}
+**Core Thematic Tensions to Resolve:**
+{% for theme in thematic_focus %}
+- {{ theme }}
+{% endfor %}
+{% endif %}
+
+{% if macro_outcomes %}
+**Historical Macro-Outcomes (guardrails):**
+{% for outcome in macro_outcomes %}
+- {{ outcome }}
+{% endfor %}
+{% endif %}
+
+---
+
+## CURRENT DRAFT
+
+{{ chapter_content }}
+
+---
+
+## REVISION DIRECTIVES
+
+Revise this ending chapter with the following concerns:
+
+1. **Arc Completion.** Every POV character's arc must reach its destination—though the destination may be different from what the character intended. Check that the emotional journeys established in Act 1 find their resolutions here. Resolution does not mean happiness; it means a state of irreversible change.
+
+2. **Thematic Resolution Without Didacticism.** The novel's thematic tensions should be resolved through dramatic action, not through characters reflecting on What It All Means. The resolution should be felt, not explained. A character's final choice IS the thematic statement.
+
+3. **The Final Turn.** The ending must contain a final surprise or shift—not a twist for its own sake, but a last complication that reframes what came before. This could be a revelation, a cost extracted, a bittersweet mercy, or an ironic echo of the opening.
+
+4. **Historical Consonance.** The ending must be consistent with the documented historical outcomes. Characters' fictional fates must dovetail with known history. If a historical figure survives to a known later date, they cannot die in the novel. Use the macro-outcomes as guardrails.
+
+5. **Earned Emotion.** The emotional payload of the ending must be earned by everything that preceded it. If the ending reaches for grief, the reader must have built genuine attachment. If it reaches for triumph, the cost must have been genuinely paid. Check that the emotional register matches the weight of what has transpired.
+
+6. **Closure and Resonance.** The final paragraphs should provide closure on the plot while opening a window to a larger meaning. The last image or line should linger—a detail that captures the novel's essence. Consider ending on:
+   - A sensory detail that echoes the opening
+   - A character's small, private gesture that carries enormous weight
+   - An image of the future implied by all that has happened
+   - A sentence that could only belong to this novel
+
+7. **Avoid Common Failures.**
+   - No deus ex machina: every element of the resolution must have been set up earlier
+   - No monologues explaining the meaning of events
+   - No abrupt time-skips that sidestep difficult scenes
+   - No false notes of optimism that betray the novel's emotional logic
+   - No rushed conclusions that compress what deserves full dramatisation
+
+8. **The Final Sentence.** The last sentence of a novel is the most important sentence in the entire work. It is the note that sounds after the music stops. Write and rewrite it until it is inevitable.
+
+**Output the fully revised chapter in Markdown.** Preserve scene breaks (`---`). Do not add commentary or annotations—output only the revised prose.

@@ -1,0 +1,50 @@
+{
+  "language_register": "Formal early-nineteenth-century literary English, modelled on the prose of the period's finest correspondents and statesmen\u2014Jefferson, Madison, Talleyrand. Elevated without ostentation; precise without pedantry. The register accommodates both the drawing rooms of Paris and the river-landing taverns of the Mississippi Valley, shifting register by scene and character while maintaining a consistent authorial gravity. Modern readers must feel the period's weight without requiring a glossary.",
+  "vocabulary_constraints": [
+    "Prefer Latinate vocabulary for educated, professional, and aristocratic characters\u2014'deliberation' over 'thinking it over,' 'remonstrance' over 'complaint,' 'approbation' over 'approval.'",
+    "Use Germanic and vernacular diction for frontier settlers, soldiers of lower rank, and New Orleans tradespeople\u2014short, blunt words that carry the smell of river mud and tallow.",
+    "Currency must be period-accurate: American dollars and cents, French livres and francs (post-Revolution), Spanish reales and piastres where appropriate to New Orleans commerce.",
+    "Distance and measurement in leagues, miles, arpents (for Louisiana land), and toises where French characters are speaking or calculating.",
+    "Political terminology must reflect the era's own usage: 'republican' and 'federalist' as contested ideological labels, not neutral descriptors; 'the people' as a charged rhetorical invocation, not a casual phrase.",
+    "Avoid the word 'negotiate' as a verb applied to persons in casual contexts; prefer 'treat,' 'parley,' 'confer,' or 'conclude an arrangement.'",
+    "Naval and military terminology must be period-correct: 'ship of the line,' 'frigate,' 'battalion,' 'brigade'\u2014never modern equivalents or informal abbreviations.",
+    "Refer to Saint-Domingue, not Haiti, throughout the novel's timeline; the republic of Haiti is proclaimed in January 1804 and may be named only after that date.",
+    "Use 'the First Consul' or 'Bonaparte' for Napoleon in the 1801-1804 period; 'Emperor' only after 18 May 1804 and only in scenes set after that date.",
+    "Avoid abstract nouns ending in '-ize' or '-ization' where a more concrete period formulation exists: 'the ordering of commerce' rather than 'commercialization,' 'the extension of dominion' rather than 'colonization' in formal narrative passages."
+  ],
+  "forbidden_terms": [
+    "okay",
+    "guys",
+    "basically",
+    "agenda (in the modern organizational sense)",
+    "impact (as a verb)",
+    "process (as a verb, e.g. 'process emotions')",
+    "trauma (psychological clinical sense)",
+    "toxic (metaphorical modern sense)",
+    "boundaries (psychological sense)",
+    "triggered (psychological sense)",
+    "stressed out",
+    "in denial",
+    "closure (emotional sense)",
+    "empower",
+    "proactive",
+    "no way",
+    "kind of (as hedge or softener)",
+    "pretty much",
+    "at the end of the day (idiomatic)",
+    "moving forward (idiomatic)",
+    "touch base",
+    "bandwidth (metaphorical sense)",
+    "leverage (as a verb)",
+    "escalate (in interpersonal conflict sense)",
+    "red flag (idiomatic warning sense)"
+  ],
+  "dialogue_style_guide": "Dialogue must be the most reliable index of a character's rank, education, and nation. Statesmen and diplomats speak in periodic sentences, their meaning sometimes deferred to the final clause, their courtesies elaborate and their insults wrapped in silk. A Virginian planter-aristocrat like Jefferson's circle employs classical allusion and the measured cadence of men schooled in Cicero; a French minister of the Consulate speaks with the precision of the Enlightenment and the cold elegance of a man who has survived several regimes. New Orleans merchants and river traders speak in clipped, direct phrases, their English shot through with French idiom. Emotion is conveyed through what is not said\u2014through the sudden brevity of a man who has been insulted, the excessive formality of one who is frightened. Forms of address are observed with care: 'sir,' 'Mr. Secretary,' 'Citizen Minister,' 'mon g\u00e9n\u00e9ral.' Anger does not produce vulgarity in educated characters; it produces precision. Grief does not produce sentiment; it produces silence or displacement into the formal.",
+  "narrative_voice_calibration": "Close third-person, rotating among three to four principal viewpoints, each section anchored firmly in one consciousness. The narrator inhabits the character's perceptions without abandoning authorial intelligence\u2014modelled on Hilary Mantel's Wolf Hall in its intimacy and on Umberto Eco in its willingness to let ideas carry dramatic weight. Sentences vary: long, sinuous constructions for scenes of reflection and political calculation; short declarative strokes for action, shock, and revelation. The narrator does not editorialize about history's outcome; dramatic irony is earned through the reader's knowledge, not the narrator's winking. The emotional temperature is cool on the surface, volcanic beneath\u2014restraint is the dominant mode, which makes eruption, when it comes, devastating.",
+  "example_dialogue_snippets": [
+    "'The right of deposit is not a privilege, Mr. Livingston\u2014it is the breath by which the western country lives.' / 'And France, I am given to understand, has acquired the lungs.'",
+    "'You ask me to sell what does not yet belong to us in law.' / 'I ask you to consider, Citizen Minister, what will belong to England by September if we do not act before April.'",
+    "'She died on the river, sir. Fever took her three days out of Natchez.' / 'I am sorry for it.' / 'Are you. Then perhaps you will explain to me why the deposit was suspended and her cargo left to rot on the levee.'",
+    "'The First Consul has slept four hours. He will see you now.' / 'At this hour?' / 'Citizen, the First Consul keeps no hours that are not his own.'"
+  ]
+}

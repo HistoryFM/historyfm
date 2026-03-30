@@ -1,0 +1,101 @@
+You are updating the continuity ledger for a historical fiction novel. The continuity ledger is a living document that tracks every fact, object, relationship state, and timeline detail that must remain consistent across chapters. It is the novel's single source of truth.
+
+---
+
+## CHAPTER CONTENT JUST WRITTEN
+
+{{ chapter_content }}
+
+---
+
+{% if continuity_ledger %}
+## CURRENT CONTINUITY LEDGER
+
+```json
+{{ continuity_ledger | tojson(indent=2) if continuity_ledger is mapping else continuity_ledger }}
+```
+{% else %}
+## CURRENT CONTINUITY LEDGER
+
+The ledger is empty—this is the first chapter. Create the initial ledger from the chapter content.
+{% endif %}
+
+---
+
+## INSTRUCTIONS
+
+Analyse the chapter content and update the continuity ledger. The ledger must track the following categories:
+
+1. **Timeline.** The current in-story date and time at the end of this chapter. Note any time jumps or references to specific dates.
+
+2. **Character Locations.** Where each character is at the end of this chapter. If a character's location is unknown to the POV character, note that separately.
+
+3. **Character Knowledge.** What each character knows or believes to be true. This is critical for preventing characters from acting on information they haven't received. Track:
+   - Secrets revealed to specific characters
+   - Lies or misinformation characters believe
+   - Plans characters are aware of
+
+4. **Relationship States.** The current state of each significant relationship—who is allied with whom, who distrusts whom, who has betrayed whom.
+
+5. **Physical Objects.** Track significant objects—letters, weapons, documents, keys, tokens—noting who possesses them and where they are.
+
+6. **Injuries and Conditions.** Any physical injuries, illnesses, or states (exhaustion, intoxication, imprisonment) that affect characters.
+
+7. **Promises and Obligations.** Any commitments characters have made—oaths, debts, assignments, threats—that must be followed up.
+
+8. **Open Questions.** Plot threads left unresolved that require resolution in future chapters.
+9. **Subplot Threads.** Track supporting-cast agendas and escalation status (`latent`, `active`, `exploding`).
+
+**Output a single JSON object** with the following structure:
+
+```json
+{
+  "last_updated_after_chapter": <integer>,
+  "timeline": {
+    "current_date": "<string>",
+    "notes": ["<string>"]
+  },
+  "character_locations": {
+    "<character_name>": "<location>"
+  },
+  "character_knowledge": {
+    "<character_name>": ["<string: fact or belief>"]
+  },
+  "relationship_states": [
+    {
+      "characters": ["<name>", "<name>"],
+      "state": "<string>"
+    }
+  ],
+  "physical_objects": [
+    {
+      "object": "<string>",
+      "location_or_holder": "<string>",
+      "significance": "<string>"
+    }
+  ],
+  "injuries_and_conditions": {
+    "<character_name>": "<string>"
+  },
+  "promises_and_obligations": [
+    {
+      "character": "<string>",
+      "obligation": "<string>",
+      "owed_to": "<string>",
+      "status": "<string: pending | fulfilled | broken>"
+    }
+  ],
+  "open_questions": ["<string>"],
+  "subplot_threads": [
+    {
+      "thread_id": "<string>",
+      "description": "<string>",
+      "driving_character": "<string>",
+      "status": "<string: latent | active | exploding>",
+      "last_advanced_chapter": <integer>
+    }
+  ]
+}
+```
+
+Produce ONLY the JSON object. No preamble, no commentary, no markdown fences.

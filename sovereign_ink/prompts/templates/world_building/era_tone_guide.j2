@@ -1,0 +1,64 @@
+You are defining the stylistic and linguistic constraints for a historical fiction novel. This Era Tone Guide will govern every word of prose and dialogue generated throughout the project. It is the single most important document for maintaining period authenticity and narrative consistency.
+
+**Novel Specification:**
+- **Title:** {{ novel_spec.title or "To be determined" }}
+- **Era:** {{ novel_spec.era_start }}–{{ novel_spec.era_end }}
+- **Region:** {{ novel_spec.region }}
+- **Central Event:** {{ novel_spec.central_event }}
+- **Tone Intensity:** {{ novel_spec.tone_intensity }}
+
+**Historical Context:**
+{{ historical_context.era_description }}
+
+**Your task:**
+
+Create a comprehensive Era Tone Guide that will be injected into every prose-generation and revision prompt. It must cover:
+
+1. **Language Register**: Define the overall linguistic register for the novel. Consider the period, the region, and the target readership. The register should feel authentic without being impenetrable—modern readers must be able to follow while feeling immersed in the period.
+
+2. **Vocabulary Constraints**: Provide 6–10 specific rules for vocabulary usage. These should cover:
+   - What kinds of words are preferred (Latinate vs. Germanic, formal vs. vernacular)
+   - Period-appropriate units of measurement, currency, distance
+   - How to handle technical or political terminology
+   - Class-specific language patterns
+
+3. **Forbidden Terms**: List 15–25 specific modern words, phrases, or constructions that must NEVER appear in the prose. Each entry must be a simple string (e.g., "impact (as verb)", "agenda (modern sense)"). Do NOT use unquoted annotations like `"word" as verb` — instead put the annotation inside the string. Categories to cover:
+   - Modern slang and colloquialisms
+   - Contemporary psychological or therapeutic language
+   - Anachronistic technology references
+   - Modern idioms that feel wrong in period context
+
+4. **Dialogue Style Guide**: Provide detailed guidance (150–200 words) on how characters should speak. Cover:
+   - How dialogue reflects social class and education
+   - Period-appropriate forms of address
+   - How to convey emotion within the constraints of period speech
+   - The rhythm and syntax of the era's dialogue
+
+5. **Narrative Voice Calibration**: Describe the target narrative voice in detail (100–150 words). Reference specific literary models if helpful. Cover:
+   - Point-of-view handling (close third, distant third, etc.)
+   - Sentence length and rhythm
+   - How the narrator relates to the characters
+   - The emotional temperature of the narration
+
+6. **Example Dialogue Snippets**: Write 3–5 short example dialogue exchanges (2–4 lines each) that illustrate the target style. These should demonstrate different character types (aristocrat, commoner, military, clergy, etc.) and tonal registers (formal negotiation, heated argument, private confession, etc.).
+
+**CRITICAL JSON FORMATTING RULES:**
+- Use single quotes (') for dialogue within example_dialogue_snippets instead of double quotes, since the values are inside JSON strings. For example: `'I shall not yield, sir.'` NOT `"I shall not yield, sir."`
+- Do NOT use escaped double quotes (\") inside string values. Use single quotes for all in-character speech.
+- Each snippet should be a single string with line breaks represented as ` / ` (space-slash-space) separators.
+- Keep each snippet under 200 characters to avoid truncation.
+
+**Output a single JSON object** matching this schema:
+
+```json
+{
+  "language_register": "<string: 50-100 words>",
+  "vocabulary_constraints": ["<string>"],
+  "forbidden_terms": ["<string>"],
+  "dialogue_style_guide": "<string: 150-200 words>",
+  "narrative_voice_calibration": "<string: 100-150 words>",
+  "example_dialogue_snippets": ["<string: 2-4 line dialogue exchange using single quotes for speech>"]
+}
+```
+
+Produce ONLY the JSON object. No preamble, no commentary, no markdown fences.

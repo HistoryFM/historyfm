@@ -1,0 +1,197 @@
+[
+  {
+    "name": "Thomas Beauregard Whitmore",
+    "is_historical": false,
+    "role": "protagonist",
+    "political_objective": "Navigate the nullification crisis while preserving both his political career and his principles, seeking a middle path that honors both Union and state sovereignty",
+    "personal_fear": "Being exposed as fundamentally indecisive and lacking the moral courage of his convictions",
+    "hidden_motivation": "Desperate to prove himself worthy of his legendary father's legacy while secretly doubting the righteousness of the cause he publicly champions",
+    "moral_conflict": "Must choose between loyalty to South Carolina and his growing conviction that nullification threatens the Union his father died to create",
+    "relationships": [
+      {
+        "character_name": "John Caldwell Calhoun",
+        "nature": "political mentor / father figure",
+        "tension": "Calhoun expects absolute loyalty while Thomas harbors secret doubts about nullification"
+      },
+      {
+        "character_name": "Margaret Sinclair",
+        "nature": "romantic interest / intellectual equal",
+        "tension": "She represents everything he was raised to oppose\u2014Northern principles and federal supremacy"
+      },
+      {
+        "character_name": "Samuel Whitmore",
+        "nature": "deceased father's ghost / impossible standard",
+        "tension": "The weight of living up to a Revolutionary War hero's reputation while facing an opposite crisis"
+      },
+      {
+        "character_name": "Ezra Caldwell",
+        "nature": "political rival / mirror",
+        "tension": "Both compete for Calhoun's favor while representing different approaches to Southern resistance"
+      }
+    ],
+    "emotional_arc": {
+      "start_state": "Conflicted but publicly confident, hiding doubts behind inherited rhetoric",
+      "end_state": "Painfully self-aware and committed to a difficult path of principled moderation"
+    },
+    "voice_patterns": {
+      "speech_style": "Classical rhetoric mixed with frontier directness, formal but not pompous",
+      "class_markers": "Charleston planter aristocracy education, occasional Latin phrases, references to honor and duty",
+      "verbal_tics": "Begins difficult statements with 'I confess...' and invokes his father's memory in moments of uncertainty"
+    },
+    "backstory_summary": "Son of Revolutionary War hero Samuel Whitmore, Thomas inherited vast rice plantations along the Ashley River and a reputation for principled leadership. Educated at South Carolina College and Harvard Law, he returned to Charleston in 1825 torn between Northern intellectual influences and Southern loyalties. His father's death at Yorktown created an impossible standard of sacrifice for the Union, even as Thomas found himself drawn into Calhoun's orbit during the tariff crisis. Elected to the South Carolina legislature in 1828, he has become Calhoun's most promising prot\u00e9g\u00e9 while privately questioning whether nullification honors or betrays his father's legacy. His marriage prospects remain complicated by his attraction to intellectual women who challenge his political assumptions."
+  },
+  {
+    "name": "Margaret Sinclair",
+    "is_historical": false,
+    "role": "protagonist",
+    "political_objective": "Advance the cause of federal supremacy and Union preservation through strategic intelligence gathering and political influence",
+    "personal_fear": "That her deceptions will destroy her capacity for genuine human connection and leave her spiritually bankrupt",
+    "hidden_motivation": "Seeking redemption for her father's financial ruin and suicide, which she blames on Southern economic policies",
+    "moral_conflict": "Must choose between love and duty when her mission requires betraying the man she has come to genuinely care for",
+    "relationships": [
+      {
+        "character_name": "Thomas Beauregard Whitmore",
+        "nature": "romantic interest / target of espionage",
+        "tension": "Genuine affection conflicts with her mission to gather intelligence on nullification plans"
+      },
+      {
+        "character_name": "Joel Roberts Poinsett",
+        "nature": "handler / surrogate father",
+        "tension": "His demands for intelligence increasingly conflict with her moral qualms about deception"
+      },
+      {
+        "character_name": "Daniel Webster",
+        "nature": "distant patron / ideological inspiration",
+        "tension": "His lofty constitutional principles seem disconnected from the messy realities of her espionage work"
+      },
+      {
+        "character_name": "Mrs. Catherine Pinckney",
+        "nature": "Charleston society mentor / unwitting cover",
+        "tension": "The older woman's genuine kindness makes Margaret's deception feel increasingly cruel"
+      }
+    ],
+    "emotional_arc": {
+      "start_state": "Driven by righteous anger and clear sense of mission, emotionally guarded",
+      "end_state": "Morally conflicted but committed to a love that transcends political divisions"
+    },
+    "voice_patterns": {
+      "speech_style": "Precise, educated Northern diction with carefully modulated Southern adaptations",
+      "class_markers": "Boston merchant class education, references to literature and philosophy, occasional Puritan moral language",
+      "verbal_tics": "Uses 'Indeed' to buy time when caught off-guard, quotes Scripture when morally challenged"
+    },
+    "backstory_summary": "Daughter of a Boston textile merchant ruined by the Panic of 1819, Margaret witnessed her father's suicide when Southern planters defaulted on massive debts. Raised by her uncle, a federal judge, she developed fierce loyalty to Union principles and contempt for Southern economic irresponsibility. Educated at Catherine Beecher's seminary, she possesses unusual intellectual accomplishments for a woman of her era. Recruited by Joel Poinsett in 1829, she came to Charleston under the cover of teaching at a select academy for young ladies. Her mission: infiltrate nullification circles and report on their plans. Her sharp wit and Northern sophistication have made her a curious ornament in Charleston society, even as she gathers intelligence that could destroy the men who welcome her into their homes."
+  },
+  {
+    "name": "Ezra Caldwell",
+    "is_historical": false,
+    "role": "antagonist",
+    "political_objective": "Establish himself as Calhoun's true heir and the leading voice of Southern radicalism, pushing nullification toward armed resistance if necessary",
+    "personal_fear": "Being revealed as the son of a tavern keeper rather than the plantation aristocrat he pretends to be",
+    "hidden_motivation": "Desperate need to prove his worthiness to the Charleston elite who will never fully accept his humble origins",
+    "moral_conflict": "Must choose between advancing his career and preventing the violent confrontation his rhetoric is creating",
+    "relationships": [
+      {
+        "character_name": "Thomas Beauregard Whitmore",
+        "nature": "political rival / dark mirror",
+        "tension": "Both compete for Calhoun's favor, but Ezra resents Thomas's inherited advantages"
+      },
+      {
+        "character_name": "John Caldwell Calhoun",
+        "nature": "patron / impossible standard",
+        "tension": "Calhoun values Ezra's radicalism but questions his judgment and breeding"
+      },
+      {
+        "character_name": "James Hamilton Jr.",
+        "nature": "political ally / co-conspirator",
+        "tension": "Hamilton uses Ezra's ambition while privately disdaining his social climbing"
+      },
+      {
+        "character_name": "Sarah Caldwell",
+        "nature": "estranged sister / moral conscience",
+        "tension": "She represents the humble family he's abandoned in pursuit of political glory"
+      }
+    ],
+    "emotional_arc": {
+      "start_state": "Ambitious and ruthlessly calculating, hiding insecurity behind aggressive rhetoric",
+      "end_state": "Isolated and embittered, recognizing the hollowness of his achieved ambitions"
+    },
+    "voice_patterns": {
+      "speech_style": "Overwrought classical rhetoric designed to impress, prone to grandiose metaphors",
+      "class_markers": "Self-consciously aristocratic language, Latin phrases used incorrectly, excessive formality",
+      "verbal_tics": "Refers to 'our sacred soil' and 'the honor of Carolina,' uses 'sir' obsessively when addressing superiors"
+    },
+    "backstory_summary": "Born Ezra Caldwell in a Sumter County tavern, he reinvented himself as the scion of a fictional planter family after arriving in Charleston in 1824. His quick wit and fierce ambition earned him a law degree and entry into nullification circles, where his radical rhetoric compensated for his questionable pedigree. He adopted the middle name 'Beaumont' and fabricated stories of a plantation destroyed by Yankee creditors. His genuine brilliance and willingness to advocate positions that make even Calhoun uncomfortable have made him valuable to the nullification cause, even as whispers about his origins persist. He lives in constant terror that his sister Sarah, now a Charleston seamstress, will expose his deception."
+  },
+  {
+    "name": "Mrs. Catherine Pinckney",
+    "is_historical": false,
+    "role": "supporting",
+    "political_objective": "Preserve Charleston society's stability and traditions while navigating the political crisis without destroying family relationships",
+    "personal_fear": "Witnessing the complete dissolution of the world she has spent her life maintaining and defending",
+    "hidden_motivation": "Protecting her son Robert, a federal customs officer, from the violent consequences of nullification",
+    "moral_conflict": "Must choose between loyalty to South Carolina and protecting her son whose federal position makes him a target",
+    "relationships": [
+      {
+        "character_name": "Margaret Sinclair",
+        "nature": "maternal mentor / unwitting victim",
+        "tension": "Her genuine affection for Margaret makes her vulnerable to manipulation"
+      },
+      {
+        "character_name": "Thomas Beauregard Whitmore",
+        "nature": "surrogate son / political concern",
+        "tension": "She fears his political involvement will destroy him as it did his father"
+      },
+      {
+        "character_name": "Robert Pinckney",
+        "nature": "beloved son / source of anxiety",
+        "tension": "His federal employment puts him in mortal danger from nullification extremists"
+      }
+    ],
+    "emotional_arc": {
+      "start_state": "Confident in her ability to preserve social harmony through traditional feminine influence",
+      "end_state": "Grimly determined to protect what matters most, even at the cost of social position"
+    },
+    "voice_patterns": {
+      "speech_style": "Gracious but firm, with the authority of established social position",
+      "class_markers": "Charleston aristocracy, references to family history and social obligations",
+      "verbal_tics": "Uses 'my dear' as both endearment and gentle warning, invokes 'propriety' when threatened"
+    },
+    "backstory_summary": "Widow of a Charleston merchant and Revolutionary War veteran, Catherine Pinckney has spent thirty years as a pillar of Charleston society, known for her salon where political differences were set aside for civilized discourse. Her husband's death in 1820 left her with modest wealth but enormous social capital, which she has used to maintain stability in an increasingly fractured community. Her son Robert's appointment as a federal customs officer has placed her in an impossible position as nullification fever grows. She has taken Margaret Sinclair under her wing, unaware that her prot\u00e9g\u00e9e is gathering intelligence that could destroy the young men Catherine regards as surrogate sons."
+  },
+  {
+    "name": "Captain James Morrison",
+    "is_historical": false,
+    "role": "catalyst",
+    "political_objective": "Enforce federal law and maintain order while avoiding the kind of violent confrontation that could ignite civil war",
+    "personal_fear": "Being forced to fire on American citizens, potentially triggering the dissolution of the Union he has sworn to defend",
+    "hidden_motivation": "Haunted by his role in the Creek War massacres, seeking redemption through preventing rather than causing bloodshed",
+    "moral_conflict": "Must balance his duty to enforce federal law with his desire to prevent the violence that enforcement might require",
+    "relationships": [
+      {
+        "character_name": "Joel Roberts Poinsett",
+        "nature": "superior officer / political handler",
+        "tension": "Poinsett's political calculations conflict with Morrison's military pragmatism"
+      },
+      {
+        "character_name": "Thomas Beauregard Whitmore",
+        "nature": "reluctant opponent / mutual respect",
+        "tension": "Both men respect each other while representing irreconcilable positions"
+      },
+      {
+        "character_name": "Ezra Caldwell",
+        "nature": "potential enemy / mutual contempt",
+        "tension": "Morrison sees through Ezra's posturing while Ezra views Morrison as a federal oppressor"
+      }
+    ],
+    "emotional_arc": {
+      "start_state": "Grimly dutiful but hoping to avoid violence through professional competence",
+      "end_state": "Scarred but satisfied, having prevented civil war through principled restraint"
+    },
+    "voice_patterns": {
+      "speech_style": "Clipped military precision with occasional frontier bluntness",
+      "class_markers": "Professional soldier, practical rather than educated, references to duty and honor",
+      "verbal_tics": "Uses military time and terminology even in civilian contexts, says 'Begging your pardon' before disagreeing"
+    },
+    "backstory_summary": "A Kentucky-born career soldier who rose through the ranks during the War of 1812 and the Creek campaigns, Morrison carries deep scars from his participation in the massacre of Creek women and children at Horseshoe Bend. Assigned to Charleston in 1831 to command the federal garrison, he has watched the nullification crisis develop with growing dread, knowing that his orders may eventually require him to turn his cannons on American citizens. His military professionalism masks a profound war-weariness and a desperate hope that his presence might deter rather than provoke violence. He has developed grudging respect for some nullification leaders while maintaining absolute loyalty to federal authority."
+  }
+]
