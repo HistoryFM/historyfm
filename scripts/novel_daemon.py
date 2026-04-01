@@ -92,6 +92,20 @@ def main():
     except ImportError:
         logger.warning("python-dotenv not available, relying on environment variables")
 
+    import sentry_sdk
+
+    sentry_sdk.init(
+        dsn=os.environ.get("SENTRY_DSN"),
+        environment=os.environ.get("SENTRY_ENVIRONMENT", "development"),
+        release=os.environ.get("SENTRY_RELEASE"),
+        send_default_pii=False,
+        traces_sample_rate=1.0,
+        profile_session_sample_rate=1.0,
+        profile_lifecycle="trace",
+        enable_logs=True,
+        shutdown_timeout=5,
+    )
+
     # Schedule daily at 3:00 AM
     schedule.every().day.at("03:00").do(daily_generation_job)
     logger.info("Scheduled daily generation at 03:00. Next run: %s", schedule.next_run())

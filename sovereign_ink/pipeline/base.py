@@ -6,6 +6,8 @@ import logging
 from abc import ABC, abstractmethod
 from datetime import datetime
 
+import sentry_sdk
+
 from sovereign_ink.llm import LLMClient
 from sovereign_ink.models import PipelineState, StageProgress, StageStatus
 from sovereign_ink.prompts import PromptRenderer
@@ -54,6 +56,7 @@ class PipelineStage(ABC):
         )
         self.pipeline_state.current_stage = self.STAGE_NAME
         self.pipeline_state.last_updated = datetime.now()
+        sentry_sdk.set_tag("stage_name", self.STAGE_NAME)
         self._save_pipeline_state()
 
     def _mark_completed(self):
@@ -69,6 +72,12 @@ class PipelineStage(ABC):
         progress.error_message = error
         progress.completed_at = datetime.now()
         self.pipeline_state.last_updated = datetime.now()
+        sentry_sdk.set_tag("stage_name", self.STAGE_NAME)
+        sentry_sdk.set_context("stage_failure", {
+            "stage_name": self.STAGE_NAME,
+            "error_message": error,
+            "sub_step": progress.sub_step,
+        })
         self._save_pipeline_state()
 
     def _update_sub_step(self, sub_step: str):

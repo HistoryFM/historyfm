@@ -1,6 +1,0 @@
-# Project-level overrides for John Tyler succession novel
-max_chapters: 12
-max_tokens_per_call: 32768
-enable_selective_opus_structural_revision: false
-enable_pressure_contracts: false
-stage4_scene_count_tolerance: 1

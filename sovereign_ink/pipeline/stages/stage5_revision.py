@@ -4,6 +4,8 @@ import json
 import logging
 import re
 from datetime import datetime
+
+import sentry_sdk
 from rich.console import Console
 
 from sovereign_ink.pipeline.base import PipelineStage
@@ -75,6 +77,7 @@ class RevisionPipelineStage(PipelineStage):
         *,
         error_code: str = "revision_contract_failed",
     ) -> None:
+        sentry_sdk.metrics.count("contracts.failed", 1, attributes={"error_code": error_code, "stage": self.STAGE_NAME})
         is_critical = error_code in self.OUTLINE_CRITICAL_ERROR_CODES
         if is_critical or self._strict_contract_mode():
             raise ContractEnforcementError(
@@ -265,6 +268,12 @@ class RevisionPipelineStage(PipelineStage):
             pass_name = pass_info["name"]
             version = pass_info["version"]
 
+            _rev_span = sentry_sdk.start_span(op="revision.pass", name=f"revision.{pass_name}")
+            _rev_span.set_data("pass_name", pass_name)
+            _rev_span.set_data("pass_number", pass_num)
+            _rev_span.set_data("chapter_number", ch_num)
+            _rev_span.__enter__()
+
             existing = self.state_manager.load_chapter_draft(ch_num, version)
             chapter_state = self.state_manager.load_chapter_state(ch_num) or {}
             fully_accepted = self.state_manager.is_chapter_fully_accepted(ch_num)
@@ -274,6 +283,7 @@ class RevisionPipelineStage(PipelineStage):
                     ch_num, pass_num, pass_name,
                 )
                 final_content = existing
+                _rev_span.__exit__(None, None, None)
                 continue
 
             if pass_num == 1:
@@ -625,10 +635,13 @@ class RevisionPipelineStage(PipelineStage):
                     },
                 )
 
+            _rev_span.__exit__(None, None, None)
+
             # Inter-pass quality tracking: compute delta after each pass (except the last)
             if pass_num < num_passes:
                 delta = compute_quality_delta(source_content, final_content)
                 if delta["has_regressions"]:
+                    sentry_sdk.metrics.distribution("revision.regressions", len(delta["regressions"]), attributes={"pass": pass_name})
                     regression_warnings = format_regression_report(delta, pass_name)
                     regressed_names = ", ".join(
                         r["metric"] for r in delta["regressions"]

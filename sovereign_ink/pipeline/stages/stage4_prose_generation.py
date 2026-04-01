@@ -4,6 +4,8 @@ import logging
 import json
 import re
 from datetime import datetime
+
+import sentry_sdk
 from pathlib import Path
 from rich.console import Console
 from rich.prompt import Prompt
@@ -186,6 +188,7 @@ class ProseGenerationStage(PipelineStage):
         *,
         error_code: str = "contract_enforcement_failed",
     ) -> None:
+        sentry_sdk.metrics.count("contracts.failed", 1, attributes={"error_code": error_code, "stage": self.STAGE_NAME})
         is_critical = error_code in self.OUTLINE_CRITICAL_ERROR_CODES
         if is_critical or self._strict_contract_mode():
             raise ContractEnforcementError(
@@ -945,16 +948,18 @@ class ProseGenerationStage(PipelineStage):
 
             scene_reports: list[dict] = []
             if getattr(self.config, "enable_pressure_contracts", False):
-                chapter_content, scene_reports = self._apply_scene_contracts(
-                    ch_num, chapter_content, system_prompt,
-                    scene_breakdown, chapter_outline,
-                )
+                with sentry_sdk.start_span(op="chapter.scene_contracts", name=f"contracts.ch{ch_num}"):
+                    chapter_content, scene_reports = self._apply_scene_contracts(
+                        ch_num, chapter_content, system_prompt,
+                        scene_breakdown, chapter_outline,
+                    )
                 word_count = len(chapter_content.split())
 
             if self.config.enable_quality_gates:
-                chapter_content = self._apply_chapter_gates(
-                    ch_num, chapter_content, system_prompt
-                )
+                with sentry_sdk.start_span(op="chapter.acceptance_gates", name=f"gates.ch{ch_num}"):
+                    chapter_content = self._apply_chapter_gates(
+                        ch_num, chapter_content, system_prompt
+                    )
                 word_count = len(chapter_content.split())
 
             if getattr(self.config, "enable_ending_variation_gate", False):
@@ -1017,12 +1022,14 @@ class ProseGenerationStage(PipelineStage):
                         f"{'; '.join(failed_requirements[:8]) if failed_requirements else 'none'}",
                         error_code="chapter_convergence_exhausted",
                     )
-                chapter_content = self._repair_chapter_from_failures(
-                    ch_num=ch_num,
-                    chapter_content=chapter_content,
-                    system_prompt=system_prompt,
-                    failed_requirements=failed_requirements,
-                )
+                with sentry_sdk.start_span(op="chapter.repair", name=f"repair.ch{ch_num}.{repair_attempt}") as repair_span:
+                    repair_span.set_data("repair_attempt", repair_attempt)
+                    chapter_content = self._repair_chapter_from_failures(
+                        ch_num=ch_num,
+                        chapter_content=chapter_content,
+                        system_prompt=system_prompt,
+                        failed_requirements=failed_requirements,
+                    )
                 if getattr(self.config, "enable_pressure_contracts", False):
                     chapter_content, scene_reports = self._apply_scene_contracts(
                         ch_num, chapter_content, system_prompt,

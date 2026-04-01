@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import logging
 
+import sentry_sdk
 from pydantic import BaseModel
 from rich.console import Console
 
@@ -84,22 +85,24 @@ class StructuralPlanningStage(PipelineStage):
                 self._update_sub_step(step)
                 console.print(f"  [cyan]Structural planning:[/cyan] {step}")
 
-                if step == "act_structure":
-                    self._build_act_structure(
-                        system_prompt, novel_spec, world_state
-                    )
-                elif step == "chapter_outlines":
-                    self._build_chapter_outlines(
-                        system_prompt, novel_spec, world_state
-                    )
-                elif step == "scene_breakdowns":
-                    self._build_scene_breakdowns(
-                        system_prompt, novel_spec, world_state
-                    )
-                elif step == "continuity_ledger":
-                    self._init_continuity_ledger(world_state)
-                elif step == "assemble_structure":
-                    self._assemble_structure()
+                with sentry_sdk.start_span(op="structure", name=f"structure.{step}") as span:
+                    span.set_data("sub_step", step)
+                    if step == "act_structure":
+                        self._build_act_structure(
+                            system_prompt, novel_spec, world_state
+                        )
+                    elif step == "chapter_outlines":
+                        self._build_chapter_outlines(
+                            system_prompt, novel_spec, world_state
+                        )
+                    elif step == "scene_breakdowns":
+                        self._build_scene_breakdowns(
+                            system_prompt, novel_spec, world_state
+                        )
+                    elif step == "continuity_ledger":
+                        self._init_continuity_ledger(world_state)
+                    elif step == "assemble_structure":
+                        self._assemble_structure()
 
             self._mark_completed()
 

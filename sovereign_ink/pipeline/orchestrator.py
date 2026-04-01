@@ -7,6 +7,8 @@ import signal
 from datetime import datetime
 from pathlib import Path
 
+import sentry_sdk
+
 from sovereign_ink.llm import LLMClient
 from sovereign_ink.models import PipelineState, StageProgress, StageStatus
 from sovereign_ink.prompts import PromptRenderer
@@ -238,8 +240,17 @@ class PipelineOrchestrator:
                         )
 
             logger.info("=== Starting stage: %s ===", stage_name)
+            sentry_sdk.set_tag("stage_name", stage_name)
+            sentry_sdk.set_context("pipeline", {
+                "project_name": self.pipeline_state.project_name,
+                "current_stage": stage_name,
+                "total_tokens": self.pipeline_state.total_tokens_used,
+                "total_cost": self.pipeline_state.total_cost_estimate,
+            })
             try:
-                stage.run()
+                with sentry_sdk.start_span(op="stage", name=f"stage.{stage_name}") as span:
+                    span.set_data("project", self.pipeline_state.project_name)
+                    stage.run()
                 logger.info("=== Completed stage: %s ===", stage_name)
             except KeyboardInterrupt:
                 logger.warning(
@@ -247,6 +258,9 @@ class PipelineOrchestrator:
                 )
                 raise
             except ContractEnforcementError as e:
+                sentry_sdk.set_tag("chapter_number", str(e.chapter_number))
+                sentry_sdk.set_tag("error_code", e.error_code)
+                sentry_sdk.capture_exception(e)
                 logger.error(
                     "Contract enforcement failure in stage %s (chapter=%s, code=%s): %s",
                     stage_name,

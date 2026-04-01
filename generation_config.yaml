@@ -187,10 +187,6 @@ novels:
     slug: louisiana-purchase
     title: "The Louisiana Purchase"
     description: "A sweeping tale of the diplomatic gamble that doubled a young nation's territory and reshaped the future of a continent."
-  - project_dir: john_tyler_succession_12ch
-    slug: john-tyler-succession
-    title: "His Accidency"
-    description: "April 1841: the President is dead and no one agrees who governs. John Tyler's fight to own the office transforms presidential succession forever."
   - project_dir: alien_sedition_acts_12ch
     slug: alien-sedition-acts
     title: "The Faithless Cabinet: Adams, Pickering, and the War That Never Was"

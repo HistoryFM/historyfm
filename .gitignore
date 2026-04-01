@@ -31,6 +31,9 @@ logs/
 published/
 test_project/
 
+# --- Retired novel projects ---
+john_tyler_succession_12ch/
+
 # --- Internal planning/notes (not for repo) ---
 DEPLOY_TODO.md
 FRONTEND_OVERVIEW.md

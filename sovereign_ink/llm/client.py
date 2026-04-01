@@ -15,6 +15,7 @@ from typing import Callable, Type
 
 import anthropic
 import httpx
+import sentry_sdk
 from pydantic import BaseModel
 
 from sovereign_ink.utils.config import GenerationConfig, get_api_key
@@ -185,6 +186,8 @@ class LLMClient:
                     delay,
                     extra={"retry_attempt": attempt},
                 )
+                sentry_sdk.capture_exception(exc)
+                sentry_sdk.metrics.count("llm.retries", 1, attributes={"model": model, "error_type": "rate_limit"})
                 time.sleep(delay)
 
             except anthropic.APIStatusError as exc:
@@ -192,6 +195,7 @@ class LLMClient:
                 # Content-filter / moderation refusals are non-retryable
                 if exc.status_code == 400:
                     logger.error("API refusal (400): %s", exc.message)
+                    sentry_sdk.capture_exception(exc)
                     raise
                 delay = self._backoff_delay(attempt)
                 logger.warning(
@@ -203,6 +207,8 @@ class LLMClient:
                     exc.message,
                     extra={"retry_attempt": attempt},
                 )
+                sentry_sdk.capture_exception(exc)
+                sentry_sdk.metrics.count("llm.retries", 1, attributes={"model": model, "error_type": f"api_status_{exc.status_code}"})
                 time.sleep(delay)
 
             except anthropic.APIConnectionError as exc:
@@ -216,6 +222,8 @@ class LLMClient:
                     exc,
                     extra={"retry_attempt": attempt},
                 )
+                sentry_sdk.capture_exception(exc)
+                sentry_sdk.metrics.count("llm.retries", 1, attributes={"model": model, "error_type": "connection_error"})
                 time.sleep(delay)
 
             except httpx.TimeoutException as exc:
@@ -229,8 +237,15 @@ class LLMClient:
                     exc,
                     extra={"retry_attempt": attempt},
                 )
+                sentry_sdk.capture_exception(exc)
+                sentry_sdk.metrics.count("llm.retries", 1, attributes={"model": model, "error_type": "timeout"})
                 time.sleep(delay)
 
+        sentry_sdk.set_context("llm_retry_exhaustion", {
+            "model": model,
+            "max_retries": self.config.max_retries,
+            "last_error": str(last_exc),
+        })
         logger.error("All %d retries exhausted", self.config.max_retries)
         raise RuntimeError(
             f"LLM call failed after {self.config.max_retries} retries"
@@ -336,6 +351,11 @@ class LLMClient:
                     extra={"retry_attempt": parse_attempt},
                 )
 
+        sentry_sdk.set_context("structured_parse_failure", {
+            "model": model or self.config.model_prose_generation,
+            "response_model": response_model.__name__,
+            "response_text_snippet": last_content[:500] if last_content else "",
+        })
         raise ValueError(
             f"Failed to parse LLM output into {response_model.__name__} after "
             f"{max_parse_attempts} attempts. Last response:\n{last_content}"
@@ -623,12 +643,15 @@ class LLMClient:
                     delay,
                     extra={"retry_attempt": attempt},
                 )
+                sentry_sdk.capture_exception(exc)
+                sentry_sdk.metrics.count("llm.retries", 1, attributes={"model": model, "error_type": "rate_limit"})
                 time.sleep(delay)
 
             except anthropic.APIStatusError as exc:
                 last_exc = exc
                 if exc.status_code == 400:
                     logger.error("API refusal (400) during stream: %s", exc.message)
+                    sentry_sdk.capture_exception(exc)
                     raise
                 delay = self._backoff_delay(attempt)
                 logger.warning(
@@ -639,6 +662,8 @@ class LLMClient:
                     delay,
                     extra={"retry_attempt": attempt},
                 )
+                sentry_sdk.capture_exception(exc)
+                sentry_sdk.metrics.count("llm.retries", 1, attributes={"model": model, "error_type": f"api_status_{exc.status_code}"})
                 time.sleep(delay)
 
             except anthropic.APIConnectionError as exc:
@@ -651,6 +676,8 @@ class LLMClient:
                     delay,
                     extra={"retry_attempt": attempt},
                 )
+                sentry_sdk.capture_exception(exc)
+                sentry_sdk.metrics.count("llm.retries", 1, attributes={"model": model, "error_type": "connection_error"})
                 time.sleep(delay)
 
             except httpx.TimeoutException as exc:
@@ -664,8 +691,30 @@ class LLMClient:
                     exc,
                     extra={"retry_attempt": attempt},
                 )
+                sentry_sdk.capture_exception(exc)
+                sentry_sdk.metrics.count("llm.retries", 1, attributes={"model": model, "error_type": "timeout"})
                 time.sleep(delay)
 
+            except httpx.RemoteProtocolError as exc:
+                last_exc = exc
+                delay = self._backoff_delay(attempt)
+                logger.warning(
+                    "Remote protocol error during stream (attempt %d/%d) — retrying in %.1fs: %s",
+                    attempt,
+                    self.config.max_retries,
+                    delay,
+                    exc,
+                    extra={"retry_attempt": attempt},
+                )
+                sentry_sdk.capture_exception(exc)
+                sentry_sdk.metrics.count("llm.retries", 1, attributes={"model": model, "error_type": "remote_protocol_error"})
+                time.sleep(delay)
+
+        sentry_sdk.set_context("llm_retry_exhaustion", {
+            "model": model,
+            "max_retries": self.config.max_retries,
+            "last_error": str(last_exc),
+        })
         logger.error("All %d retries exhausted for streaming call", self.config.max_retries)
         raise RuntimeError(
             f"LLM streaming call failed after {self.config.max_retries} retries"

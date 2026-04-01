@@ -31,6 +31,20 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 # override=True because the env may have an empty ANTHROPIC_API_KEY already set.
 load_dotenv(REPO_ROOT / ".env", override=True)
 
+import sentry_sdk
+
+sentry_sdk.init(
+    dsn=os.environ.get("SENTRY_DSN"),
+    environment=os.environ.get("SENTRY_ENVIRONMENT", "development"),
+    release=os.environ.get("SENTRY_RELEASE"),
+    send_default_pii=False,
+    traces_sample_rate=1.0,
+    profile_session_sample_rate=1.0,
+    profile_lifecycle="trace",
+    enable_logs=True,
+    shutdown_timeout=5,
+)
+
 BACKLOG_DIR = REPO_ROOT / "backlog"
 LOG_DIR = REPO_ROOT / "logs"
 LOCK_FILE = LOG_DIR / "daily_generate.lock"
@@ -177,7 +191,12 @@ def generate_chapter(project_dir: Path, *, dry_run: bool = False) -> bool:
         logger.info("Chapter generation succeeded for %s", project_dir.name)
         return True
 
-    except subprocess.TimeoutExpired:
+    except subprocess.TimeoutExpired as exc:
+        sentry_sdk.set_context("subprocess_timeout", {
+            "project_dir": project_dir.name,
+            "timeout_seconds": CHAPTER_TIMEOUT_SECONDS,
+        })
+        sentry_sdk.capture_exception(exc)
         logger.error("Chapter generation timed out after %ds for %s", CHAPTER_TIMEOUT_SECONDS, project_dir.name)
         return False
     except Exception:
@@ -224,6 +243,11 @@ def run(*, chapters: int = DEFAULT_CHAPTERS_PER_RUN, deploy: bool = False, dry_r
 
     backlog = load_all_backlog()
     logger.info("Loaded %d backlog entries.", len(backlog))
+
+    in_progress_count = sum(1 for e in backlog if e.get("status") == "in_progress")
+    pending_count = sum(1 for e in backlog if e.get("status") == "backlog")
+    sentry_sdk.metrics.gauge("backlog.pending_novels", pending_count, attributes={"status": "backlog"})
+    sentry_sdk.metrics.gauge("backlog.in_progress_novels", in_progress_count, attributes={"status": "in_progress"})
 
     work = select_work(backlog, chapters)
     if not work:

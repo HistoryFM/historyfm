@@ -10,6 +10,7 @@ from datetime import datetime
 from pathlib import Path
 
 import click
+import sentry_sdk
 import yaml
 from rich.console import Console
 from rich.panel import Panel
@@ -397,6 +398,9 @@ def next_chapter(project_dir, verbose):
 
     try:
         orchestrator = PipelineOrchestrator(project_dir)
+        _txn = sentry_sdk.start_transaction(op="pipeline", name="sovereign-ink.next_chapter")
+        _txn.set_tag("project", project_dir.name)
+        _txn.__enter__()
 
         # 1. Ensure stages 1-3 are complete
         _ensure_prerequisites(orchestrator)
@@ -420,6 +424,8 @@ def next_chapter(project_dir, verbose):
             orchestrator.cleanup()
             return
 
+        _txn.set_tag("chapter_number", str(ch_num))
+        sentry_sdk.logger.info("Chapter {chapter} generation started", chapter=ch_num, project=project_dir.name, stage="next_chapter")
         console.print(
             f"\n[cyan]Generating chapter {ch_num}/{total_chapters}...[/cyan]\n"
         )
@@ -529,6 +535,10 @@ def next_chapter(project_dir, verbose):
                     chapter_state = orchestrator.state_manager.load_chapter_state(ch_num) or {}
                     if chapter_state.get("accepted", False):
                         converged = True
+                        sentry_sdk.metrics.distribution(
+                            "chapter.convergence_attempts", attempts,
+                            attributes={"project": project_dir.name, "escalation_level": str(escalation_level)},
+                        )
                         break
 
                     signature = _build_failure_signature(
@@ -564,6 +574,7 @@ def next_chapter(project_dir, verbose):
                     )
 
             if not converged:
+                sentry_sdk.logger.error("Convergence exhausted for chapter {chapter}", chapter=ch_num, project=project_dir.name)
                 raise RuntimeError(
                     f"Chapter {ch_num} failed to converge after exhausting all "
                     f"{len(_ESCALATION_LEVELS)} escalation levels."
@@ -576,6 +587,18 @@ def next_chapter(project_dir, verbose):
         polished_path = project_dir / "drafts" / "v3_polish" / f"chapter_{ch_num:02d}.md"
         polished = orchestrator.state_manager.load_chapter_draft(ch_num, "v3_polish")
         word_count = len(polished.split()) if polished else 0
+
+        sentry_sdk.metrics.count("chapters.completed", 1, attributes={"project": project_dir.name})
+        sentry_sdk.metrics.distribution("chapter.word_count", word_count, attributes={"project": project_dir.name})
+        sentry_sdk.metrics.distribution(
+            "chapter.cost_usd", orchestrator.llm.cumulative_cost,
+            attributes={"project": project_dir.name, "chapter": str(ch_num)},
+        )
+        sentry_sdk.metrics.distribution(
+            "chapter.total_tokens",
+            orchestrator.llm.cumulative_input_tokens + orchestrator.llm.cumulative_output_tokens,
+            attributes={"project": project_dir.name},
+        )
 
         next_unaccepted = orchestrator.state_manager.get_next_unaccepted_chapter(total_chapters)
         remaining = 0 if next_unaccepted is None else (total_chapters - ch_num)
@@ -608,11 +631,14 @@ def next_chapter(project_dir, verbose):
         )
         console.print(f"  Cost this run: ${orchestrator.llm.cumulative_cost:.4f}")
 
+        _txn.__exit__(None, None, None)
         orchestrator.cleanup()
     except KeyboardInterrupt:
+        _txn.__exit__(None, None, None)
         console.print("\n[yellow]Interrupted. Progress saved — run again to continue.[/yellow]")
         sys.exit(1)
     except Exception as e:
+        _txn.__exit__(type(e), e, e.__traceback__)
         console.print(f"\n[red]Error: {e}[/red]")
         logging.getLogger(__name__).exception("Chapter generation failed")
         sys.exit(1)

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import logging
 
+import sentry_sdk
 from pydantic import BaseModel
 from rich.console import Console
 
@@ -74,16 +75,18 @@ class WorldBuildingStage(PipelineStage):
                 self._update_sub_step(step)
                 console.print(f"  [cyan]World building:[/cyan] {step}")
 
-                if step == "historical_context":
-                    self._build_historical_context(system_prompt, novel_spec)
-                elif step == "characters":
-                    self._build_characters(system_prompt, novel_spec)
-                elif step == "institutions":
-                    self._build_institutions(system_prompt, novel_spec)
-                elif step == "era_tone_guide":
-                    self._build_era_tone_guide(system_prompt, novel_spec)
-                elif step == "assemble_world_state":
-                    self._assemble_world_state()
+                with sentry_sdk.start_span(op="world", name=f"world.{step}") as span:
+                    span.set_data("sub_step", step)
+                    if step == "historical_context":
+                        self._build_historical_context(system_prompt, novel_spec)
+                    elif step == "characters":
+                        self._build_characters(system_prompt, novel_spec)
+                    elif step == "institutions":
+                        self._build_institutions(system_prompt, novel_spec)
+                    elif step == "era_tone_guide":
+                        self._build_era_tone_guide(system_prompt, novel_spec)
+                    elif step == "assemble_world_state":
+                        self._assemble_world_state()
 
             self._mark_completed()
 
