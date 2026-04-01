@@ -1,4 +1,4 @@
-## Chapter 2: The Instrument of Providence
+# Chapter Two: The Instrument of Providence
 
 The morning post arrived at half past seven, and Pickering did not look up.
 
