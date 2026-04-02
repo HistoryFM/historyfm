@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Novel generation daemon — long-running process with daily scheduling.
+"""Novel generation daemon — long-running process with scheduled generation.
 
-Runs daily_generate.py on a schedule. If killed (machine sleep, etc.),
-Sentry cron monitoring (to be added later) will detect missed check-ins.
+Generates 1 chapter per run at noon and 8 PM PST, with auto-publish.
+On startup, checks if any scheduled runs were missed today and catches up.
 
 Usage:
     # Foreground (for testing):
@@ -17,12 +17,13 @@ Usage:
 
 from __future__ import annotations
 
+import json
 import logging
 import os
 import signal
 import sys
 import time
-from datetime import datetime
+from datetime import datetime, date
 from pathlib import Path
 
 import schedule
@@ -30,6 +31,11 @@ import schedule
 REPO_ROOT = Path(__file__).resolve().parent.parent
 LOG_DIR = REPO_ROOT / "logs"
 PID_FILE = LOG_DIR / "novel_daemon.pid"
+STATE_FILE = LOG_DIR / "daemon_state.json"
+
+# Schedule: noon PST and 8 PM PST — 1 chapter each run, 2 per day
+SCHEDULED_TIMES = ["12:00", "20:00"]
+CHAPTERS_PER_RUN = 1
 
 # Import the daily generation runner
 sys.path.insert(0, str(REPO_ROOT))
@@ -37,13 +43,64 @@ sys.path.insert(0, str(REPO_ROOT))
 logger = logging.getLogger("novel_daemon")
 
 
-def daily_generation_job():
-    """Main scheduled job — generates 2 chapters across active novels."""
-    logger.info("=== Scheduled job triggered at %s ===", datetime.now().isoformat())
+def _load_state() -> dict:
+    """Load daemon state (tracks which runs completed today)."""
+    if STATE_FILE.exists():
+        try:
+            return json.loads(STATE_FILE.read_text())
+        except (json.JSONDecodeError, OSError):
+            pass
+    return {}
+
+
+def _save_state(state: dict) -> None:
+    """Persist daemon state to disk."""
+    STATE_FILE.write_text(json.dumps(state, indent=2))
+
+
+def _mark_run_completed(run_time: str) -> None:
+    """Record that a scheduled run completed for today."""
+    state = _load_state()
+    today = date.today().isoformat()
+    if "completed_runs" not in state:
+        state["completed_runs"] = {}
+    if today not in state["completed_runs"]:
+        state["completed_runs"][today] = []
+    if run_time not in state["completed_runs"][today]:
+        state["completed_runs"][today].append(run_time)
+    state["last_run"] = datetime.now().isoformat()
+    # Clean up entries older than 7 days
+    cutoff = date.today().isoformat()
+    state["completed_runs"] = {
+        d: runs for d, runs in state["completed_runs"].items()
+        if d >= cutoff or d == today
+    }
+    _save_state(state)
+
+
+def _get_missed_runs() -> list[str]:
+    """Check which of today's scheduled runs haven't completed yet and are past due."""
+    state = _load_state()
+    today = date.today().isoformat()
+    completed_today = state.get("completed_runs", {}).get(today, [])
+    now = datetime.now()
+    missed = []
+    for t in SCHEDULED_TIMES:
+        hour, minute = map(int, t.split(":"))
+        scheduled_dt = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
+        if now >= scheduled_dt and t not in completed_today:
+            missed.append(t)
+    return missed
+
+
+def generation_job(run_time: str = "manual"):
+    """Main job — generates chapters and deploys."""
+    logger.info("=== Generation job triggered at %s (scheduled for %s) ===",
+                datetime.now().isoformat(), run_time)
 
     try:
         from scripts.daily_generate import run
-        summary = run(chapters=2, deploy=False, dry_run=False)
+        summary = run(chapters=CHAPTERS_PER_RUN, deploy=True, dry_run=False)
 
         logger.info(
             "Job complete: %d generated, %d failed, %d initialized, %d completed",
@@ -52,9 +109,10 @@ def daily_generation_job():
             summary["novels_initialized"],
             summary["novels_completed"],
         )
+        _mark_run_completed(run_time)
 
     except Exception:
-        logger.exception("Daily generation job failed")
+        logger.exception("Generation job failed")
 
 
 def shutdown(signum, _frame):
@@ -106,9 +164,23 @@ def main():
         shutdown_timeout=5,
     )
 
-    # Schedule daily at 3:00 AM
-    schedule.every().day.at("03:00").do(daily_generation_job)
-    logger.info("Scheduled daily generation at 03:00. Next run: %s", schedule.next_run())
+    # Catch up on any missed runs from today
+    missed = _get_missed_runs()
+    if missed:
+        logger.info("Missed runs detected for today: %s — catching up", missed)
+        for run_time in missed:
+            generation_job(run_time=run_time)
+    else:
+        logger.info("No missed runs to catch up on.")
+
+    # Schedule runs at noon and 8 PM PST
+    for t in SCHEDULED_TIMES:
+        schedule.every().day.at(t).do(generation_job, run_time=t)
+    logger.info(
+        "Scheduled generation at %s. Next run: %s",
+        ", ".join(SCHEDULED_TIMES),
+        schedule.next_run(),
+    )
 
     # Main loop
     try:
