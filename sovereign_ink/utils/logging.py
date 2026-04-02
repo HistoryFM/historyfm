@@ -79,6 +79,9 @@ def setup_logging(log_dir: Path, verbose: bool = False) -> None:
     file_handler.setFormatter(_JSONLinesFormatter())
     root_logger.addHandler(file_handler)
 
+    # Suppress noisy httpx "HTTP Request: POST ..." lines
+    logging.getLogger("httpx").setLevel(logging.WARNING)
+
     logging.getLogger("sovereign_ink").info(
         "Logging initialised — file: %s | verbose: %s", log_file, verbose
     )

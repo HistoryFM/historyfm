@@ -745,6 +745,11 @@ class ProseGenerationStage(PipelineStage):
             console.print(
                 f"    [cyan]Scene {scene.scene_number}/{total_scenes} generated[/cyan]"
             )
+            sentry_sdk.logger.info(
+                "Chapter {chapter} scene {scene}/{total} generated",
+                chapter=ch_num, scene=scene.scene_number, total=total_scenes,
+                stage="prose_generation",
+            )
         return "\n\n---\n\n".join(scenes)
 
     # ------------------------------------------------------------------
@@ -834,6 +839,11 @@ class ProseGenerationStage(PipelineStage):
             console.print(
                 f"  [yellow]Writing Chapter {ch_num}/{total_chapters}: "
                 f"{chapter_outline.title}[/yellow]"
+            )
+            sentry_sdk.logger.info(
+                "Chapter {chapter} drafting started",
+                chapter=ch_num, total_chapters=total_chapters,
+                title=chapter_outline.title, stage="prose_generation",
             )
 
             scene_breakdown = None
@@ -998,6 +1008,12 @@ class ProseGenerationStage(PipelineStage):
                 scene_reports=scene_reports,
             )
             self.state_manager.save_compliance_report(ch_num, compliance_report.model_dump())
+            sentry_sdk.logger.info(
+                "Chapter {chapter} compliance {result}",
+                chapter=ch_num,
+                result="passed" if compliance_report.acceptance_passed else "failed",
+                stage="prose_generation", substep="compliance",
+            )
 
             repair_attempt = 0
             convergence_window = max(int(getattr(self.config, "max_contract_retries", 2)), 1)
@@ -1007,6 +1023,11 @@ class ProseGenerationStage(PipelineStage):
             )
             while not compliance_report.acceptance_passed:
                 repair_attempt += 1
+                sentry_sdk.logger.info(
+                    "Chapter {chapter} repair attempt {attempt}/{max}",
+                    chapter=ch_num, attempt=repair_attempt, max=max_total_repairs,
+                    stage="prose_generation", substep="repair",
+                )
                 failed_requirements = self._collect_failed_requirements(compliance_report)
                 self._save_chapter_state(
                     ch_num,
@@ -1061,6 +1082,11 @@ class ProseGenerationStage(PipelineStage):
                         "Chapter %d not accepted after %d repair attempts; re-drafting from generation prompt.",
                         ch_num,
                         repair_attempt,
+                    )
+                    sentry_sdk.logger.warning(
+                        "Chapter {chapter} re-drafting after {attempts} failed repairs",
+                        chapter=ch_num, attempts=repair_attempt,
+                        stage="prose_generation", substep="re_draft",
                     )
                     chapter_content = self._generate_scene_by_scene_chapter(
                         ch_num=ch_num,
@@ -1121,6 +1147,10 @@ class ProseGenerationStage(PipelineStage):
         )
         banned_phrases = load_banned_phrases(state_dir)
 
+        sentry_sdk.logger.info(
+            "Chapter {chapter} draft complete ({words} words)",
+            chapter=ch_num, words=word_count, stage="prose_generation",
+        )
         console.print(
             f"    [green]✓ Chapter {ch_num} draft complete "
             f"({word_count} words, {len(banned_phrases)} banned phrases)[/green]"
@@ -1356,10 +1386,19 @@ class ProseGenerationStage(PipelineStage):
 
         if not failed:
             console.print(f"    [green]All quality gates passed[/green]")
+            sentry_sdk.logger.info(
+                "Chapter {chapter} quality gates passed",
+                chapter=ch_num, stage="prose_generation", substep="quality_gates",
+            )
             self._save_gate_results(ch_num, gate_results, retry=0)
             return chapter_content
 
         gate_names = ", ".join(failed.keys())
+        sentry_sdk.logger.warning(
+            "Chapter {chapter} quality gates failed: {gates}",
+            chapter=ch_num, gates=gate_names,
+            stage="prose_generation", substep="quality_gates",
+        )
         console.print(
             f"    [yellow]Gate failures: {gate_names} — "
             f"running pre-save correction[/yellow]"

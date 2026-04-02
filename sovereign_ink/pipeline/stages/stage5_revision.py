@@ -273,6 +273,11 @@ class RevisionPipelineStage(PipelineStage):
             _rev_span.set_data("pass_number", pass_num)
             _rev_span.set_data("chapter_number", ch_num)
             _rev_span.__enter__()
+            sentry_sdk.logger.info(
+                "Chapter {chapter} revision pass {pass_name} started",
+                chapter=ch_num, pass_name=pass_name, pass_number=pass_num,
+                stage="revision",
+            )
 
             existing = self.state_manager.load_chapter_draft(ch_num, version)
             chapter_state = self.state_manager.load_chapter_state(ch_num) or {}
@@ -464,6 +469,12 @@ class RevisionPipelineStage(PipelineStage):
                     if not critical:
                         break
                     regressed_names = ", ".join(r["metric"] for r in critical)
+                    sentry_sdk.logger.warning(
+                        "Chapter {chapter} {pass_name} regression detected: {metrics}",
+                        chapter=ch_num, pass_name=pass_name, metrics=regressed_names,
+                        stage="revision", substep="regression_retry",
+                        retry=retry_idx + 1, max_retry=max_retry,
+                    )
                     console.print(
                         f"    [yellow]{pass_name} pass critical regressions "
                         f"({regressed_names}) — retrying from pre-pass input "
@@ -569,12 +580,20 @@ class RevisionPipelineStage(PipelineStage):
                         chapter_outline=chapter_outline,
                         structure=structure,
                     )
+                    sentry_sdk.logger.info(
+                        "Chapter {chapter} smart repetition pass complete",
+                        chapter=ch_num, stage="revision", substep="smart_repetition",
+                    )
                 final_content = self._apply_revision_ending_final_check(
                     final_content=final_content,
                     chapter_outline=chapter_outline,
                     system_prompt=system_prompt,
                     ch_num=ch_num,
                     version=version,
+                )
+                sentry_sdk.logger.info(
+                    "Chapter {chapter} ending check complete",
+                    chapter=ch_num, stage="revision", substep="ending_check",
                 )
 
             report, pass_ok = self._validate_revision_contracts(
@@ -615,6 +634,12 @@ class RevisionPipelineStage(PipelineStage):
                     f"Revision pass {pass_num} contract revalidation failed.",
                     error_code="revision_pass_contract_failed",
                 )
+            sentry_sdk.logger.info(
+                "Chapter {chapter} revision pass {pass_name} {result}",
+                chapter=ch_num, pass_name=pass_name,
+                result="passed" if pass_ok else "failed",
+                pass_number=pass_num, stage="revision",
+            )
             if pass_num == num_passes:
                 self.state_manager.save_compliance_report(ch_num, report.model_dump())
                 self.state_manager.save_chapter_state(
@@ -633,6 +658,10 @@ class RevisionPipelineStage(PipelineStage):
                         "accepted_at": datetime.now().isoformat(),
                         "last_updated_at": datetime.now().isoformat(),
                     },
+                )
+                sentry_sdk.logger.info(
+                    "Chapter {chapter} revision complete — accepted at v3_polish",
+                    chapter=ch_num, stage="revision",
                 )
 
             _rev_span.__exit__(None, None, None)

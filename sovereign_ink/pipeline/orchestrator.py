@@ -247,11 +247,22 @@ class PipelineOrchestrator:
                 "total_tokens": self.pipeline_state.total_tokens_used,
                 "total_cost": self.pipeline_state.total_cost_estimate,
             })
+            sentry_sdk.logger.info(
+                "Pipeline stage {stage} started",
+                stage=stage_name,
+                project=self.pipeline_state.project_name,
+            )
             try:
                 with sentry_sdk.start_span(op="stage", name=f"stage.{stage_name}") as span:
                     span.set_data("project", self.pipeline_state.project_name)
                     stage.run()
                 logger.info("=== Completed stage: %s ===", stage_name)
+                sentry_sdk.logger.info(
+                    "Pipeline stage {stage} completed",
+                    stage=stage_name,
+                    project=self.pipeline_state.project_name,
+                    total_cost=round(self.llm.cumulative_cost, 4),
+                )
             except KeyboardInterrupt:
                 logger.warning(
                     "Pipeline interrupted during stage: %s", stage_name
