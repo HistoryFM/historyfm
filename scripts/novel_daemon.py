@@ -179,8 +179,8 @@ def main():
     else:
         logger.info("No missed runs to catch up on.")
 
-    # Force mode: run immediately on startup regardless of schedule
-    if args.force:
+    # Force mode: run immediately on startup (only if no missed runs already caught up)
+    if args.force and not missed:
         logger.info("Force mode: triggering immediate generation run.")
         generation_job(run_time="force", force=True)
 
