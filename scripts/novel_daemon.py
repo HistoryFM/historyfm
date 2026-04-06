@@ -17,6 +17,7 @@ Usage:
 
 from __future__ import annotations
 
+import argparse
 import json
 import logging
 import os
@@ -93,14 +94,14 @@ def _get_missed_runs() -> list[str]:
     return missed
 
 
-def generation_job(run_time: str = "manual"):
+def generation_job(run_time: str = "manual", force: bool = False):
     """Main job — generates chapters and deploys."""
-    logger.info("=== Generation job triggered at %s (scheduled for %s) ===",
-                datetime.now().isoformat(), run_time)
+    logger.info("=== Generation job triggered at %s (scheduled for %s, force=%s) ===",
+                datetime.now().isoformat(), run_time, force)
 
     try:
         from scripts.daily_generate import run
-        summary = run(chapters=CHAPTERS_PER_RUN, deploy=True, dry_run=False)
+        summary = run(chapters=CHAPTERS_PER_RUN, deploy=True, dry_run=False, force=force)
 
         logger.info(
             "Job complete: %d generated, %d failed, %d initialized, %d completed",
@@ -123,6 +124,11 @@ def shutdown(signum, _frame):
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Novel generation daemon.")
+    parser.add_argument("--force", action="store_true",
+                        help="Force generation even for novels marked complete or past max_chapters")
+    args = parser.parse_args()
+
     # Setup logging
     LOG_DIR.mkdir(parents=True, exist_ok=True)
     logging.basicConfig(
@@ -136,7 +142,7 @@ def main():
 
     # Write PID file
     PID_FILE.write_text(str(os.getpid()))
-    logger.info("Novel daemon started (PID %s)", os.getpid())
+    logger.info("Novel daemon started (PID %s, force=%s)", os.getpid(), args.force)
 
     # Register signal handlers for graceful shutdown
     signal.signal(signal.SIGTERM, shutdown)
@@ -169,13 +175,18 @@ def main():
     if missed:
         logger.info("Missed runs detected for today: %s — catching up", missed)
         for run_time in missed:
-            generation_job(run_time=run_time)
+            generation_job(run_time=run_time, force=args.force)
     else:
         logger.info("No missed runs to catch up on.")
 
+    # Force mode: run immediately on startup (only if no missed runs already caught up)
+    if args.force and not missed:
+        logger.info("Force mode: triggering immediate generation run.")
+        generation_job(run_time="force", force=True)
+
     # Schedule runs at noon and 8 PM PST
     for t in SCHEDULED_TIMES:
-        schedule.every().day.at(t).do(generation_job, run_time=t)
+        schedule.every().day.at(t).do(generation_job, run_time=t, force=args.force)
     logger.info(
         "Scheduled generation at %s. Next run: %s",
         ", ".join(SCHEDULED_TIMES),
