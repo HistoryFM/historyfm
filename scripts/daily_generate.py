@@ -9,6 +9,7 @@ Usage:
     python scripts/daily_generate.py --dry-run
     python scripts/daily_generate.py --chapters 1
     python scripts/daily_generate.py --deploy
+    python scripts/daily_generate.py --force
 """
 
 from __future__ import annotations
@@ -107,7 +108,7 @@ def mark_complete(entry: dict) -> None:
 # Work selection
 # ---------------------------------------------------------------------------
 
-def select_work(backlog: list[dict], num_slots: int) -> list[dict]:
+def select_work(backlog: list[dict], num_slots: int, *, force: bool = False) -> list[dict]:
     """Select novels to generate chapters for.
 
     Returns a list of backlog entries (may contain duplicates if one novel gets
@@ -119,17 +120,28 @@ def select_work(backlog: list[dict], num_slots: int) -> list[dict]:
     for entry in backlog:
         if len(work) >= num_slots:
             break
-        if entry.get("status") != "in_progress":
+        if entry.get("status") == "in_progress":
+            pass
+        elif entry.get("status") == "complete" and force:
+            pass
+        else:
             continue
-        if is_novel_complete(entry):
+        if not force and is_novel_complete(entry):
             continue
 
-        project_dir = REPO_ROOT / entry["project_dir"]
+        project_dir_name = entry.get("project_dir")
+        if not project_dir_name:
+            continue
+        project_dir = REPO_ROOT / project_dir_name
         completed = get_completed_chapters(project_dir)
         remaining = entry["max_chapters"] - completed
 
-        # Give this novel as many slots as it needs (up to remaining budget)
-        slots_for_novel = min(remaining, num_slots - len(work))
+        if force and remaining <= 0:
+            # Force mode: give 1 slot even though max_chapters is reached
+            slots_for_novel = min(1, num_slots - len(work))
+        else:
+            # Give this novel as many slots as it needs (up to remaining budget)
+            slots_for_novel = min(remaining, num_slots - len(work))
         work.extend([entry] * slots_for_novel)
 
     # Phase 2: If slots remain, pick the next backlog novel
@@ -229,7 +241,7 @@ def run_deploy(*, dry_run: bool = False) -> None:
 # Main
 # ---------------------------------------------------------------------------
 
-def run(*, chapters: int = DEFAULT_CHAPTERS_PER_RUN, deploy: bool = False, dry_run: bool = False) -> dict:
+def run(*, chapters: int = DEFAULT_CHAPTERS_PER_RUN, deploy: bool = False, dry_run: bool = False, force: bool = False) -> dict:
     """Execute daily generation. Returns a summary dict."""
     summary = {
         "date": datetime.now().isoformat(),
@@ -249,7 +261,7 @@ def run(*, chapters: int = DEFAULT_CHAPTERS_PER_RUN, deploy: bool = False, dry_r
     sentry_sdk.metrics.gauge("backlog.pending_novels", pending_count, attributes={"status": "backlog"})
     sentry_sdk.metrics.gauge("backlog.in_progress_novels", in_progress_count, attributes={"status": "in_progress"})
 
-    work = select_work(backlog, chapters)
+    work = select_work(backlog, chapters, force=force)
     if not work:
         logger.info("No work to do — all novels complete or backlog empty.")
         return summary
@@ -296,7 +308,7 @@ def run(*, chapters: int = DEFAULT_CHAPTERS_PER_RUN, deploy: bool = False, dry_r
             })
 
             # Check if novel is now complete
-            if not dry_run and completed_after >= entry["max_chapters"]:
+            if not dry_run and not force and completed_after >= entry["max_chapters"]:
                 mark_complete(entry)
                 summary["novels_completed"] += 1
         else:
@@ -322,6 +334,8 @@ def main():
                         help="Run deploy pipeline after generation")
     parser.add_argument("--dry-run", action="store_true",
                         help="Log what would be done without making changes")
+    parser.add_argument("--force", action="store_true",
+                        help="Force generation even for novels marked complete or past max_chapters")
     args = parser.parse_args()
 
     # Setup logging
@@ -338,8 +352,8 @@ def main():
         ],
     )
 
-    logger.info("=== Daily generation starting (chapters=%d, deploy=%s, dry_run=%s) ===",
-                args.chapters, args.deploy, args.dry_run)
+    logger.info("=== Daily generation starting (chapters=%d, deploy=%s, dry_run=%s, force=%s) ===",
+                args.chapters, args.deploy, args.dry_run, args.force)
 
     # Acquire file lock (non-blocking)
     lock_fd = None
@@ -358,6 +372,7 @@ def main():
             chapters=args.chapters,
             deploy=args.deploy,
             dry_run=args.dry_run,
+            force=args.force,
         )
 
         logger.info("=== Daily generation complete ===")
