@@ -34,17 +34,18 @@ load_dotenv(REPO_ROOT / ".env", override=True)
 
 import sentry_sdk
 
-sentry_sdk.init(
-    dsn=os.environ.get("SENTRY_DSN"),
-    environment=os.environ.get("SENTRY_ENVIRONMENT", "development"),
-    release=os.environ.get("SENTRY_RELEASE"),
-    send_default_pii=True,
-    traces_sample_rate=1.0,
-    profile_session_sample_rate=1.0,
-    profile_lifecycle="trace",
-    enable_logs=True,
-    shutdown_timeout=5,
-)
+if not sentry_sdk.is_initialized():
+    sentry_sdk.init(
+        dsn=os.environ.get("SENTRY_DSN"),
+        environment=os.environ.get("SENTRY_ENVIRONMENT", "development"),
+        release=os.environ.get("SENTRY_RELEASE"),
+        send_default_pii=True,
+        traces_sample_rate=1.0,
+        profile_session_sample_rate=1.0,
+        profile_lifecycle="trace",
+        enable_logs=True,
+        shutdown_timeout=5,
+    )
 
 BACKLOG_DIR = REPO_ROOT / "backlog"
 LOG_DIR = REPO_ROOT / "logs"
@@ -178,12 +179,21 @@ def generate_chapter(project_dir: Path, *, dry_run: bool = False) -> bool:
 
     logger.info("Generating chapter in %s...", project_dir.name)
     try:
+        env = os.environ.copy()
+        traceparent = sentry_sdk.get_traceparent()
+        baggage = sentry_sdk.get_baggage()
+        if traceparent:
+            env["SENTRY_TRACE"] = traceparent
+        if baggage:
+            env["SENTRY_BAGGAGE"] = baggage
+
         result = subprocess.run(
             [sys.executable, "-m", "sovereign_ink", "next", "-p", str(project_dir)],
             cwd=str(REPO_ROOT),
             capture_output=True,
             text=True,
             timeout=CHAPTER_TIMEOUT_SECONDS,
+            env=env,
         )
         # Log stdout/stderr
         if result.stdout:
@@ -243,87 +253,108 @@ def run_deploy(*, dry_run: bool = False) -> None:
 
 def run(*, chapters: int = DEFAULT_CHAPTERS_PER_RUN, deploy: bool = False, dry_run: bool = False, force: bool = False) -> dict:
     """Execute daily generation. Returns a summary dict."""
-    summary = {
-        "date": datetime.now().isoformat(),
-        "chapters_requested": chapters,
-        "chapters_generated": 0,
-        "chapters_failed": 0,
-        "novels_initialized": 0,
-        "novels_completed": 0,
-        "details": [],
-    }
+    _txn = sentry_sdk.start_transaction(op="pipeline", name="daily-generate.run")
+    _txn.set_tag("chapters_requested", str(chapters))
+    _txn.set_tag("force", str(force))
+    _txn.set_tag("deploy", str(deploy))
+    _txn.set_tag("dry_run", str(dry_run))
+    _txn.__enter__()
 
-    backlog = load_all_backlog()
-    logger.info("Loaded %d backlog entries.", len(backlog))
+    try:
+        summary = {
+            "date": datetime.now().isoformat(),
+            "chapters_requested": chapters,
+            "chapters_generated": 0,
+            "chapters_failed": 0,
+            "novels_initialized": 0,
+            "novels_completed": 0,
+            "details": [],
+        }
 
-    in_progress_count = sum(1 for e in backlog if e.get("status") == "in_progress")
-    pending_count = sum(1 for e in backlog if e.get("status") == "backlog")
-    sentry_sdk.metrics.gauge("backlog.pending_novels", pending_count, attributes={"status": "backlog"})
-    sentry_sdk.metrics.gauge("backlog.in_progress_novels", in_progress_count, attributes={"status": "in_progress"})
+        backlog = load_all_backlog()
+        logger.info("Loaded %d backlog entries.", len(backlog))
 
-    work = select_work(backlog, chapters, force=force)
-    if not work:
-        logger.info("No work to do — all novels complete or backlog empty.")
+        in_progress_count = sum(1 for e in backlog if e.get("status") == "in_progress")
+        pending_count = sum(1 for e in backlog if e.get("status") == "backlog")
+        sentry_sdk.metrics.gauge("backlog.pending_novels", pending_count, attributes={"status": "backlog"})
+        sentry_sdk.metrics.gauge("backlog.in_progress_novels", in_progress_count, attributes={"status": "in_progress"})
+
+        work = select_work(backlog, chapters, force=force)
+        if not work:
+            logger.info("No work to do — all novels complete or backlog empty.")
+            _txn.set_tag("chapters_generated", "0")
+            _txn.set_tag("chapters_failed", "0")
+            _txn.__exit__(None, None, None)
+            return summary
+
+        logger.info(
+            "Selected %d chapter slot(s): %s",
+            len(work),
+            ", ".join(e["title"] for e in work),
+        )
+
+        for i, entry in enumerate(work):
+            with sentry_sdk.start_span(op="chapter.generate", name=f"generate.{entry['title']}.slot_{i+1}") as slot_span:
+                slot_span.set_tag("novel", entry["title"])
+                slot_span.set_tag("slot", str(i + 1))
+                logger.info("--- Slot %d/%d: %s ---", i + 1, len(work), entry["title"])
+
+                # Initialize if needed
+                if entry.get("status") == "backlog":
+                    logger.info("Novel '%s' needs initialization.", entry["title"])
+                    try:
+                        dir_name = init_novel_from_backlog(entry, dry_run=dry_run)
+                        entry["project_dir"] = dir_name
+                        entry["status"] = "in_progress"
+                        summary["novels_initialized"] += 1
+                    except Exception:
+                        logger.exception("Failed to initialize novel '%s', skipping.", entry["title"])
+                        summary["chapters_failed"] += 1
+                        summary["details"].append({
+                            "novel": entry["title"], "action": "init_failed",
+                        })
+                        continue
+
+                project_dir = REPO_ROOT / entry["project_dir"]
+                completed_before = get_completed_chapters(project_dir)
+
+                success = generate_chapter(project_dir, dry_run=dry_run)
+
+                if success:
+                    summary["chapters_generated"] += 1
+                    completed_after = completed_before + 1 if not dry_run else completed_before
+                    summary["details"].append({
+                        "novel": entry["title"],
+                        "project_dir": entry["project_dir"],
+                        "chapter": completed_after,
+                        "max_chapters": entry["max_chapters"],
+                        "action": "generated",
+                    })
+
+                    # Check if novel is now complete
+                    if not dry_run and not force and completed_after >= entry["max_chapters"]:
+                        mark_complete(entry)
+                        summary["novels_completed"] += 1
+                else:
+                    summary["chapters_failed"] += 1
+                    summary["details"].append({
+                        "novel": entry["title"],
+                        "project_dir": entry.get("project_dir"),
+                        "action": "failed",
+                    })
+
+        # Deploy if requested
+        if deploy:
+            run_deploy(dry_run=dry_run)
+
+        _txn.set_tag("chapters_generated", str(summary["chapters_generated"]))
+        _txn.set_tag("chapters_failed", str(summary["chapters_failed"]))
+        _txn.__exit__(None, None, None)
         return summary
 
-    logger.info(
-        "Selected %d chapter slot(s): %s",
-        len(work),
-        ", ".join(e["title"] for e in work),
-    )
-
-    for i, entry in enumerate(work):
-        logger.info("--- Slot %d/%d: %s ---", i + 1, len(work), entry["title"])
-
-        # Initialize if needed
-        if entry.get("status") == "backlog":
-            logger.info("Novel '%s' needs initialization.", entry["title"])
-            try:
-                dir_name = init_novel_from_backlog(entry, dry_run=dry_run)
-                entry["project_dir"] = dir_name
-                entry["status"] = "in_progress"
-                summary["novels_initialized"] += 1
-            except Exception:
-                logger.exception("Failed to initialize novel '%s', skipping.", entry["title"])
-                summary["chapters_failed"] += 1
-                summary["details"].append({
-                    "novel": entry["title"], "action": "init_failed",
-                })
-                continue
-
-        project_dir = REPO_ROOT / entry["project_dir"]
-        completed_before = get_completed_chapters(project_dir)
-
-        success = generate_chapter(project_dir, dry_run=dry_run)
-
-        if success:
-            summary["chapters_generated"] += 1
-            completed_after = completed_before + 1 if not dry_run else completed_before
-            summary["details"].append({
-                "novel": entry["title"],
-                "project_dir": entry["project_dir"],
-                "chapter": completed_after,
-                "max_chapters": entry["max_chapters"],
-                "action": "generated",
-            })
-
-            # Check if novel is now complete
-            if not dry_run and not force and completed_after >= entry["max_chapters"]:
-                mark_complete(entry)
-                summary["novels_completed"] += 1
-        else:
-            summary["chapters_failed"] += 1
-            summary["details"].append({
-                "novel": entry["title"],
-                "project_dir": entry.get("project_dir"),
-                "action": "failed",
-            })
-
-    # Deploy if requested
-    if deploy:
-        run_deploy(dry_run=dry_run)
-
-    return summary
+    except Exception as exc:
+        _txn.__exit__(type(exc), exc, exc.__traceback__)
+        raise
 
 
 def main():

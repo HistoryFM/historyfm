@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 import shutil
 import sys
 from datetime import datetime
@@ -398,6 +399,12 @@ def next_chapter(project_dir, verbose):
 
     try:
         orchestrator = PipelineOrchestrator(project_dir)
+        incoming_trace = os.environ.get("SENTRY_TRACE")
+        incoming_baggage = os.environ.get("SENTRY_BAGGAGE")
+        if incoming_trace:
+            sentry_sdk.continue_trace(
+                {"sentry-trace": incoming_trace, "baggage": incoming_baggage or ""},
+            )
         _txn = sentry_sdk.start_transaction(op="pipeline", name="sovereign-ink.next_chapter")
         _txn.set_tag("project", project_dir.name)
         _txn.__enter__()

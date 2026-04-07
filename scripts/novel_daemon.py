@@ -96,8 +96,15 @@ def _get_missed_runs() -> list[str]:
 
 def generation_job(run_time: str = "manual", force: bool = False):
     """Main job — generates chapters and deploys."""
+    import sentry_sdk
+
     logger.info("=== Generation job triggered at %s (scheduled for %s, force=%s) ===",
                 datetime.now().isoformat(), run_time, force)
+
+    _txn = sentry_sdk.start_transaction(op="daemon.job", name="novel-daemon.generation_job")
+    _txn.set_tag("run_time", run_time)
+    _txn.set_tag("force", str(force))
+    _txn.__enter__()
 
     try:
         from scripts.daily_generate import run
@@ -111,8 +118,12 @@ def generation_job(run_time: str = "manual", force: bool = False):
             summary["novels_completed"],
         )
         _mark_run_completed(run_time)
+        _txn.set_tag("chapters_generated", str(summary["chapters_generated"]))
+        _txn.set_tag("chapters_failed", str(summary["chapters_failed"]))
+        _txn.__exit__(None, None, None)
 
-    except Exception:
+    except Exception as exc:
+        _txn.__exit__(type(exc), exc, exc.__traceback__)
         logger.exception("Generation job failed")
 
 
