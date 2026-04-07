@@ -68,9 +68,10 @@ def load_all_backlog() -> list[dict]:
         data["_path"] = path
         entries.append(data)
 
-    # Sort: in_progress first, then backlog, then complete
-    priority = {"in_progress": 0, "backlog": 1, "complete": 2}
-    entries.sort(key=lambda e: priority.get(e.get("status", "complete"), 9))
+    # Sort: in_progress first, then backlog, then complete.
+    # Within the same status, respect optional `priority` field (lower = first).
+    status_order = {"in_progress": 0, "backlog": 1, "complete": 2}
+    entries.sort(key=lambda e: (status_order.get(e.get("status", "complete"), 9), e.get("priority", 999)))
     return entries
 
 
@@ -112,8 +113,8 @@ def mark_complete(entry: dict) -> None:
 def select_work(backlog: list[dict], num_slots: int, *, force: bool = False) -> list[dict]:
     """Select novels to generate chapters for.
 
-    Returns a list of backlog entries (may contain duplicates if one novel gets
-    multiple slots). Length <= num_slots.
+    Returns a list of backlog entries, one per novel (spreads slots across
+    different novels). Length <= num_slots.
     """
     work: list[dict] = []
 
@@ -141,18 +142,18 @@ def select_work(backlog: list[dict], num_slots: int, *, force: bool = False) -> 
             # Force mode: give 1 slot even though max_chapters is reached
             slots_for_novel = min(1, num_slots - len(work))
         else:
-            # Give this novel as many slots as it needs (up to remaining budget)
-            slots_for_novel = min(remaining, num_slots - len(work))
+            # Cap at 1 slot per novel to spread work across novels
+            slots_for_novel = min(1, remaining, num_slots - len(work))
         work.extend([entry] * slots_for_novel)
 
-    # Phase 2: If slots remain, pick the next backlog novel
+    # Phase 2: If slots remain, pick from backlog novels (1 slot each)
     if len(work) < num_slots:
         for entry in backlog:
+            if len(work) >= num_slots:
+                break
             if entry.get("status") != "backlog":
                 continue
-            slots_remaining = num_slots - len(work)
-            work.extend([entry] * slots_remaining)
-            break
+            work.append(entry)
 
     return work[:num_slots]
 
