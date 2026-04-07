@@ -428,6 +428,8 @@ def next_chapter(project_dir, verbose):
             console.print(
                 f"Run [bold]sovereign-ink export -p {project_dir}[/bold] to assemble the manuscript."
             )
+            _txn.__exit__(None, None, None)
+            sentry_sdk.flush(timeout=10)
             orchestrator.cleanup()
             return
 
@@ -639,13 +641,16 @@ def next_chapter(project_dir, verbose):
         console.print(f"  Cost this run: ${orchestrator.llm.cumulative_cost:.4f}")
 
         _txn.__exit__(None, None, None)
+        sentry_sdk.flush(timeout=10)
         orchestrator.cleanup()
     except KeyboardInterrupt:
         _txn.__exit__(None, None, None)
+        sentry_sdk.flush(timeout=10)
         console.print("\n[yellow]Interrupted. Progress saved — run again to continue.[/yellow]")
         sys.exit(1)
     except Exception as e:
         _txn.__exit__(type(e), e, e.__traceback__)
+        sentry_sdk.flush(timeout=10)
         console.print(f"\n[red]Error: {e}[/red]")
         logging.getLogger(__name__).exception("Chapter generation failed")
         sys.exit(1)

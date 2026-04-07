@@ -253,7 +253,13 @@ def run_deploy(*, dry_run: bool = False) -> None:
 
 def run(*, chapters: int = DEFAULT_CHAPTERS_PER_RUN, deploy: bool = False, dry_run: bool = False, force: bool = False) -> dict:
     """Execute daily generation. Returns a summary dict."""
-    _txn = sentry_sdk.start_transaction(op="pipeline", name="daily-generate.run")
+    # Use start_span if there's already an active transaction (e.g. daemon calling us),
+    # otherwise create a root transaction for standalone runs.
+    active_span = sentry_sdk.get_current_span()
+    if active_span is not None:
+        _txn = sentry_sdk.start_span(op="pipeline", name="daily-generate.run")
+    else:
+        _txn = sentry_sdk.start_transaction(op="pipeline", name="daily-generate.run")
     _txn.set_tag("chapters_requested", str(chapters))
     _txn.set_tag("force", str(force))
     _txn.set_tag("deploy", str(deploy))
