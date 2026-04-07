@@ -35,8 +35,8 @@ export default function HomePage() {
           HistoryFM
         </h1>
         <p className="text-lg text-ink-light max-w-xl mx-auto leading-relaxed">
-          Where history finds its voice. Meticulously researched historical
-          fiction that brings pivotal moments in American history to life.
+          The past, dramatized. Historical fiction that turns real events
+          into gripping, character-driven stories.
         </p>
         <hr className="mx-auto mt-8 w-24 border-t border-rule" />
       </section>
