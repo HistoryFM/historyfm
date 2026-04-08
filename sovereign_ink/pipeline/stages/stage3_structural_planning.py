@@ -336,6 +336,7 @@ class StructuralPlanningStage(PipelineStage):
                 response_model=SceneBreakdownList,
                 model=self.config.model_structural_planning,
                 temperature=self.config.temperature_world_building,
+                max_tokens=16384,
             )
 
             for sb in result.scene_breakdowns:
