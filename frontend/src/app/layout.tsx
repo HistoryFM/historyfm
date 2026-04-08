@@ -21,7 +21,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "HistoryFM — Historical Fiction",
   description:
-    "Immerse yourself in meticulously researched historical fiction that brings pivotal moments in American history to life.",
+    "The past, dramatized. Historical fiction that turns real events into gripping, character-driven stories.",
 };
 
 function Header() {
