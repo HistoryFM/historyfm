@@ -51,7 +51,7 @@ BACKLOG_DIR = REPO_ROOT / "backlog"
 LOG_DIR = REPO_ROOT / "logs"
 LOCK_FILE = LOG_DIR / "daily_generate.lock"
 DEFAULT_CHAPTERS_PER_RUN = 2
-CHAPTER_TIMEOUT_SECONDS = 3600  # 1 hour per chapter
+CHAPTER_TIMEOUT_SECONDS = 7200  # 2 hours per chapter
 
 logger = logging.getLogger("daily_generate")
 
