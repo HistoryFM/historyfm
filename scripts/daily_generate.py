@@ -129,7 +129,10 @@ def select_work(backlog: list[dict], num_slots: int, *, force: bool = False, ski
             break
         if entry.get("status") == "in_progress":
             pass
-        elif entry.get("status") == "complete" and force:
+        elif entry.get("status") == "complete" and force and not _skip:
+            # Only force-include complete novels when there's no rotation skip
+            # active — otherwise we'd backfill with finished novels instead of
+            # moving to the next unfinished one.
             pass
         else:
             continue
