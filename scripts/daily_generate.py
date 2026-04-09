@@ -110,13 +110,18 @@ def mark_complete(entry: dict) -> None:
 # Work selection
 # ---------------------------------------------------------------------------
 
-def select_work(backlog: list[dict], num_slots: int, *, force: bool = False) -> list[dict]:
+def select_work(backlog: list[dict], num_slots: int, *, force: bool = False, skip_novels: list[str] | None = None) -> list[dict]:
     """Select novels to generate chapters for.
 
     Returns a list of backlog entries, one per novel (spreads slots across
     different novels). Length <= num_slots.
+
+    *skip_novels* is a list of project_dir names that have already been
+    generated in a previous run today and should be skipped so that a
+    different novel gets a turn.
     """
     work: list[dict] = []
+    _skip = set(skip_novels or [])
 
     # Phase 1: Allocate slots to in_progress novels
     for entry in backlog:
@@ -133,6 +138,8 @@ def select_work(backlog: list[dict], num_slots: int, *, force: bool = False) -> 
 
         project_dir_name = entry.get("project_dir")
         if not project_dir_name:
+            continue
+        if project_dir_name in _skip:
             continue
         project_dir = REPO_ROOT / project_dir_name
         completed = get_completed_chapters(project_dir)
@@ -152,6 +159,8 @@ def select_work(backlog: list[dict], num_slots: int, *, force: bool = False) -> 
             if len(work) >= num_slots:
                 break
             if entry.get("status") != "backlog":
+                continue
+            if entry.get("project_dir") in _skip:
                 continue
             work.append(entry)
 
@@ -252,7 +261,7 @@ def run_deploy(*, dry_run: bool = False) -> None:
 # Main
 # ---------------------------------------------------------------------------
 
-def run(*, chapters: int = DEFAULT_CHAPTERS_PER_RUN, deploy: bool = False, dry_run: bool = False, force: bool = False) -> dict:
+def run(*, chapters: int = DEFAULT_CHAPTERS_PER_RUN, deploy: bool = False, dry_run: bool = False, force: bool = False, skip_novels: list[str] | None = None) -> dict:
     """Execute daily generation. Returns a summary dict."""
     # Use start_span if there's already an active transaction (e.g. daemon calling us),
     # otherwise create a root transaction for standalone runs.
@@ -286,7 +295,7 @@ def run(*, chapters: int = DEFAULT_CHAPTERS_PER_RUN, deploy: bool = False, dry_r
         sentry_sdk.metrics.gauge("backlog.pending_novels", pending_count, attributes={"status": "backlog"})
         sentry_sdk.metrics.gauge("backlog.in_progress_novels", in_progress_count, attributes={"status": "in_progress"})
 
-        work = select_work(backlog, chapters, force=force)
+        work = select_work(backlog, chapters, force=force, skip_novels=skip_novels)
         if not work:
             logger.info("No work to do — all novels complete or backlog empty.")
             _txn.set_tag("chapters_generated", "0")

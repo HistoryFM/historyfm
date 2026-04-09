@@ -76,6 +76,34 @@ def _mark_run_completed(run_time: str) -> None:
         d: runs for d, runs in state["completed_runs"].items()
         if d >= cutoff or d == today
     }
+    if "generated_novels_today" in state:
+        state["generated_novels_today"] = {
+            d: novels for d, novels in state["generated_novels_today"].items()
+            if d >= cutoff or d == today
+        }
+    _save_state(state)
+
+
+def _get_today_generated_novels() -> list[str]:
+    """Return project_dir names of novels that already got a chapter today."""
+    state = _load_state()
+    today = date.today().isoformat()
+    return state.get("generated_novels_today", {}).get(today, [])
+
+
+def _record_generated_novels(novels: list[str]) -> None:
+    """Append project_dir names to today's generated list."""
+    if not novels:
+        return
+    state = _load_state()
+    today = date.today().isoformat()
+    if "generated_novels_today" not in state:
+        state["generated_novels_today"] = {}
+    if today not in state["generated_novels_today"]:
+        state["generated_novels_today"][today] = []
+    for n in novels:
+        if n not in state["generated_novels_today"][today]:
+            state["generated_novels_today"][today].append(n)
     _save_state(state)
 
 
@@ -108,7 +136,8 @@ def generation_job(run_time: str = "manual", force: bool = False):
 
     try:
         from scripts.daily_generate import run
-        summary = run(chapters=CHAPTERS_PER_RUN, deploy=True, dry_run=False, force=force)
+        skip_novels = _get_today_generated_novels()
+        summary = run(chapters=CHAPTERS_PER_RUN, deploy=True, dry_run=False, force=force, skip_novels=skip_novels)
 
         logger.info(
             "Job complete: %d generated, %d failed, %d initialized, %d completed",
@@ -117,6 +146,12 @@ def generation_job(run_time: str = "manual", force: bool = False):
             summary["novels_initialized"],
             summary["novels_completed"],
         )
+        # Record which novels got chapters so subsequent runs today pick different novels
+        generated = [
+            d["project_dir"] for d in summary.get("details", [])
+            if d.get("action") == "generated" and d.get("project_dir")
+        ]
+        _record_generated_novels(generated)
         _mark_run_completed(run_time)
         _txn.set_tag("chapters_generated", str(summary["chapters_generated"]))
         _txn.set_tag("chapters_failed", str(summary["chapters_failed"]))
