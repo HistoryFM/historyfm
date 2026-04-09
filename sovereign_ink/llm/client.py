@@ -309,8 +309,11 @@ class LLMClient:
                     f"Your previous response was not valid JSON. "
                     f"Parse error: {parse_error}\n\n"
                     f"Please respond ONLY with valid JSON matching the schema. "
-                    f"No extra text, no markdown fences. Keep string values "
-                    f"concise to avoid truncation.\n\n"
+                    f"No extra text, no markdown fences.\n\n"
+                    f"CRITICAL: Inside JSON string values, you MUST escape any "
+                    f"double quotes with a backslash (e.g., \\\"hello\\\"). "
+                    f"Do not use literal newlines inside string values; use "
+                    f"\\n instead. Keep string values concise.\n\n"
                     f"Original request:\n{user_prompt}"
                 )
 
@@ -378,6 +381,10 @@ class LLMClient:
         if not text:
             return text
 
+        # Normalize unicode smart quotes to ASCII equivalents
+        text = text.replace('\u201c', '"').replace('\u201d', '"')
+        text = text.replace('\u2018', "'").replace('\u2019', "'")
+
         # Fix common pattern: "value" as annotation, or "value" in context,
         # which is invalid JSON — fold the annotation into the string
         text = re.sub(
@@ -394,27 +401,8 @@ class LLMClient:
         except (json.JSONDecodeError, Exception):
             pass
 
-        # Fix unescaped double quotes inside string values by replacing
-        # inner dialogue quotes with single quotes. This targets the
-        # pattern where the model writes "He said "hello"" instead of
-        # proper escaping.
-        def _fix_inner_quotes(match: re.Match) -> str:
-            key = match.group(1)
-            value = match.group(2)
-            fixed = value.replace('\\"', "'").replace('"', "'")
-            return f'"{key}": "{fixed}"'
-
-        # Match JSON key-value pairs where the value is a string that may
-        # contain problematic embedded quotes
-        text = re.sub(
-            r'"(example_dialogue_snippets|dialogue_style_guide|narrative_voice_calibration)"'
-            r'\s*:\s*"((?:[^"\\]|\\.)*(?:"(?![,\]\}\s])(?:[^"\\]|\\.)*)*)"',
-            _fix_inner_quotes,
-            text,
-        )
-
-        # Also fix within arrays: strings in arrays that have unescaped quotes
-        # Try a simpler approach: walk through and fix quote issues
+        # Fix unescaped quotes and control characters inside JSON string values
+        # using error-position-guided iterative repair
         text = LLMClient._fix_string_quotes(text)
 
         # If JSON appears complete, clean up and return
@@ -471,62 +459,64 @@ class LLMClient:
 
     @staticmethod
     def _fix_string_quotes(text: str) -> str:
-        """Walk through JSON text and replace unescaped inner quotes
-        within string values with single quotes."""
+        """Fix unescaped characters inside JSON string values using
+        json.JSONDecodeError position as a guide.
+
+        Iteratively attempts to parse the JSON.  On each failure the
+        error position tells us exactly where the parser choked.  We
+        look at both the error position and the nearest preceding
+        unescaped quote to determine which character to fix.
+
+        Common failure pattern: ``"turn": "She said "hello" loudly"``
+        The parser consumes ``"She said "`` as a complete string, then
+        sees ``hello`` where it expects ``,`` or ``}``.  The fix is to
+        escape the quote *before* the error position (the one that
+        prematurely closed the string).
+        """
         import json
 
-        try:
-            json.loads(text)
-            return text
-        except json.JSONDecodeError:
-            pass
+        max_fixes = 50  # safety bound
+        for _ in range(max_fixes):
+            try:
+                json.loads(text)
+                return text
+            except json.JSONDecodeError as exc:
+                pos = exc.pos
+                if pos is None or pos >= len(text):
+                    break
 
-        result = []
-        i = 0
-        in_string = False
-        string_start = -1
+                ch = text[pos] if pos < len(text) else ''
 
-        while i < len(text):
-            ch = text[i]
+                # Case 1: Error char is a literal newline/tab inside a string
+                if ch == '\n':
+                    text = text[:pos] + '\\n' + text[pos + 1:]
+                    continue
+                if ch == '\r':
+                    text = text[:pos] + '\\r' + text[pos + 1:]
+                    continue
+                if ch == '\t':
+                    text = text[:pos] + '\\t' + text[pos + 1:]
+                    continue
 
-            if not in_string:
-                result.append(ch)
-                if ch == '"':
-                    in_string = True
-                    string_start = len(result) - 1
-            else:
-                if ch == '\\' and i + 1 < len(text):
-                    next_ch = text[i + 1]
-                    if next_ch == '"':
-                        result.append("'")
-                        i += 2
-                        continue
-                    else:
-                        result.append(ch)
-                        result.append(next_ch)
-                        i += 2
-                        continue
-                elif ch == '"':
-                    lookahead = text[i + 1:i + 20].lstrip() if i + 1 < len(text) else ""
-                    if lookahead and lookahead[0] in (',', ']', '}', ':'):
-                        result.append(ch)
-                        in_string = False
-                    elif not lookahead:
-                        result.append(ch)
-                        in_string = False
-                    else:
-                        result.append("'")
-                else:
-                    result.append(ch)
+                # Case 2: The parser expected a delimiter but got a normal
+                # character.  This means the *previous* unescaped quote
+                # prematurely closed a string.  Find it and escape it.
+                #
+                # Scan backward from pos to find the last unescaped quote.
+                fixed = False
+                scan = pos - 1
+                while scan >= 0:
+                    if text[scan] == '"' and (scan == 0 or text[scan - 1] != '\\'):
+                        # Found the problematic quote — escape it
+                        text = text[:scan] + '\\"' + text[scan + 1:]
+                        fixed = True
+                        break
+                    scan -= 1
 
-            i += 1
+                if not fixed:
+                    break  # can't find a quote to fix
 
-        repaired = "".join(result)
-        try:
-            json.loads(repaired)
-            return repaired
-        except json.JSONDecodeError:
-            return text
+        return text
 
     # ------------------------------------------------------------------
     # Streaming generation
