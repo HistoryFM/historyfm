@@ -401,6 +401,20 @@ class LLMClient:
         except (json.JSONDecodeError, Exception):
             pass
 
+        # The model sometimes switches mid-output to pre-escaped JSON,
+        # writing \"key\":\"value\" where "key":"value" is needed.
+        # Try un-escaping all \" → " first; if that produces valid JSON
+        # we're done.  Otherwise pass the un-escaped text to the
+        # error-guided repair which will re-escape any inner quotes that
+        # were legitimately escaped.
+        if '\\"' in text:
+            unescaped = text.replace('\\"', '"')
+            try:
+                json.loads(unescaped)
+                return unescaped
+            except json.JSONDecodeError:
+                text = unescaped
+
         # Fix unescaped quotes and control characters inside JSON string values
         # using error-position-guided iterative repair
         text = LLMClient._fix_string_quotes(text)
