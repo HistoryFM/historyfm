@@ -64,6 +64,10 @@ class LLMClient:
             timeout=httpx.Timeout(connect=10.0, read=1800.0, write=600.0, pool=600.0),
         )
         self._usage = _CumulativeUsage()
+        # Circuit breaker: pause after consecutive API 500 errors
+        self._consecutive_500s = 0
+        self._circuit_breaker_threshold = 3
+        self._circuit_breaker_cooldown = 600  # 10 minutes
         logger.info("LLMClient initialised (default max_tokens=%d)", config.max_tokens_per_call)
 
     # ------------------------------------------------------------------
@@ -128,6 +132,21 @@ class LLMClient:
             max_tokens,
         )
 
+        # Circuit breaker: pause if we've hit too many consecutive 500s
+        if self._consecutive_500s >= self._circuit_breaker_threshold:
+            logger.warning(
+                "Circuit breaker triggered: %d consecutive API 500 errors. "
+                "Pausing for %ds before retrying...",
+                self._consecutive_500s,
+                self._circuit_breaker_cooldown,
+            )
+            sentry_sdk.metrics.count(
+                "llm.circuit_breaker_triggered", 1,
+                attributes={"model": model},
+            )
+            time.sleep(self._circuit_breaker_cooldown)
+            self._consecutive_500s = 0
+
         last_exc: Exception | None = None
         for attempt in range(1, self.config.max_retries + 1):
             try:
@@ -166,6 +185,7 @@ class LLMClient:
                     },
                 )
 
+                self._consecutive_500s = 0  # reset circuit breaker on success
                 return LLMResponse(
                     content=content,
                     model=model,
@@ -197,6 +217,13 @@ class LLMClient:
                     logger.error("API refusal (400): %s", exc.message)
                     sentry_sdk.capture_exception(exc)
                     raise
+                if exc.status_code >= 500:
+                    self._consecutive_500s += 1
+                    logger.warning(
+                        "API 500 error (consecutive count: %d/%d)",
+                        self._consecutive_500s,
+                        self._circuit_breaker_threshold,
+                    )
                 delay = self._backoff_delay(attempt)
                 logger.warning(
                     "API error %d (attempt %d/%d) — retrying in %.1fs: %s",
@@ -578,6 +605,21 @@ class LLMClient:
             max_tokens,
         )
 
+        # Circuit breaker: pause if we've hit too many consecutive 500s
+        if self._consecutive_500s >= self._circuit_breaker_threshold:
+            logger.warning(
+                "Circuit breaker triggered: %d consecutive API 500 errors. "
+                "Pausing for %ds before retrying...",
+                self._consecutive_500s,
+                self._circuit_breaker_cooldown,
+            )
+            sentry_sdk.metrics.count(
+                "llm.circuit_breaker_triggered", 1,
+                attributes={"model": model},
+            )
+            time.sleep(self._circuit_breaker_cooldown)
+            self._consecutive_500s = 0
+
         last_exc: Exception | None = None
         for attempt in range(1, self.config.max_retries + 1):
             try:
@@ -627,6 +669,7 @@ class LLMClient:
                     },
                 )
 
+                self._consecutive_500s = 0  # reset circuit breaker on success
                 return LLMResponse(
                     content=content,
                     model=model,
@@ -657,6 +700,13 @@ class LLMClient:
                     logger.error("API refusal (400) during stream: %s", exc.message)
                     sentry_sdk.capture_exception(exc)
                     raise
+                if exc.status_code >= 500:
+                    self._consecutive_500s += 1
+                    logger.warning(
+                        "API 500 error during stream (consecutive count: %d/%d)",
+                        self._consecutive_500s,
+                        self._circuit_breaker_threshold,
+                    )
                 delay = self._backoff_delay(attempt)
                 logger.warning(
                     "API error %d during stream (attempt %d/%d) — retrying in %.1fs",
