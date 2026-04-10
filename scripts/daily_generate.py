@@ -156,8 +156,12 @@ def select_work(backlog: list[dict], num_slots: int, *, force: bool = False, ski
             slots_for_novel = min(1, remaining, num_slots - len(work))
         work.extend([entry] * slots_for_novel)
 
-    # Phase 2: If slots remain, pick from backlog novels (1 slot each)
-    if len(work) < num_slots:
+    # Phase 2: If slots remain, pick from backlog novels (1 slot each).
+    # But only if we haven't hit the max concurrent in-progress novels —
+    # we don't want to pull in new novels when we already have enough active.
+    max_concurrent = 2
+    in_progress_count = sum(1 for e in backlog if e.get("status") == "in_progress")
+    if len(work) < num_slots and in_progress_count < max_concurrent:
         for entry in backlog:
             if len(work) >= num_slots:
                 break

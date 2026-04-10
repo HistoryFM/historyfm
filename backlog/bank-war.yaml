@@ -1,30 +1,84 @@
-title: "The President's Veto"
+title: The President's Veto
 slug: bank-war
 project_dir: null
 era_start: 1832
 era_end: 1836
-region: "Washington D.C., Philadelphia, and the American frontier"
-central_event: "Andrew Jackson's war against the Second Bank of the United States"
+region: Washington D.C., Philadelphia, and the American frontier
+central_event: Andrew Jackson's war against the Second Bank of the United States
 tone_intensity: highly_dramatic
 pov_count: 2
 protagonist_type: historical_figure
 thematic_focus:
-  - "power vs principle"
-  - "democracy vs entrenched privilege"
+- power vs principle
+- democracy vs entrenched privilege
 desired_length: novella_50k
 max_chapters: 12
-synopsis: |
-  Protagonists: Andrew Jackson (historical), President of the United States, a frontier-born soldier who views the Second Bank of the United States as a corrupt aristocratic engine rigged against the common man; and Roger B. Taney (historical), Jackson's Attorney General and later Secretary of the Treasury, the most intellectually ruthless instrument of Jackson's war — the lawyer who translated presidential fury into constitutional doctrine and whose personal loyalty cost him a Senate confirmation and nearly his career.
+synopsis: 'Protagonists: Andrew Jackson (historical), President of the United States,
+  a frontier-born soldier who views the Second Bank of the United States as a corrupt
+  aristocratic engine rigged against the common man; and Roger B. Taney (historical),
+  Jackson''s Attorney General and later Secretary of the Treasury, the most intellectually
+  ruthless instrument of Jackson''s war — the lawyer who translated presidential fury
+  into constitutional doctrine and whose personal loyalty cost him a Senate confirmation
+  and nearly his career.
 
-  Central Conflict: From Nicholas Biddle's calculated recharter gambit in January 1832 through the final collapse of the Bank's charter in 1836, both POVs must choose how far they will push executive power, personal loyalty, and constitutional improvisation to destroy an institution backed by Congress, Eastern capital, and the full force of Henry Clay's political machine.
 
-  The novella opens in January 1832 in Washington as Bank president Nicholas Biddle, prodded by Henry Clay, files early for recharter — four years ahead of the Bank's expiration — calculating that Jackson will not risk a veto in an election year. Jackson receives the news as a declaration of war. Taney's chapters in early 1832 track his transformation from reluctant cabinet voice into the ideological architect of the veto, drafting legal arguments that the Supreme Court's McCulloch v. Maryland ruling does not bind the executive branch, a doctrine that alarmed even Jackson's allies. Jackson's chapters carry the physical and emotional weight of a man who is simultaneously managing a reelection campaign, the nullification crisis in South Carolina, and a grinding illness that his physicians believe will kill him before a second term.
+  Central Conflict: From Nicholas Biddle''s calculated recharter gambit in January
+  1832 through the final collapse of the Bank''s charter in 1836, both POVs must choose
+  how far they will push executive power, personal loyalty, and constitutional improvisation
+  to destroy an institution backed by Congress, Eastern capital, and the full force
+  of Henry Clay''s political machine.
 
-  By July 1832 the recharter bill passes both chambers. Jackson signs Taney's veto message on July 10 — a document that frames the Bank not as a legal question but as a class war between the privileged few and the laboring many. Clay's campaign seizes on the veto as proof of tyranny. Jackson wins the November 1832 election by a landslide that he reads as a popular mandate for annihilation. The novel's second half tracks the Treasury removal of federal deposits from the Bank beginning in September 1833. Two Treasury Secretaries refuse the order. Taney accepts the post, signs the removal order, and is rewarded with a Senate rejection of his Treasury confirmation in June 1834 — the first Cabinet officer rejected in American history. Jackson's chapters in 1833 and 1834 navigate the Senate censure passed by Clay in March 1834, which Jackson experiences as a personal desecration of his honor and the Constitution. The climax runs through the Senate's expungement of the censure in January 1837 and the Bank's quiet death when its federal charter expires in 1836, its corpse reduced to a Pennsylvania state charter and Biddle's increasingly reckless speculation. The resolution closes on Jackson in his final weeks in office and Taney confirmed as Chief Justice of the Supreme Court — both men transformed, one vindicated by history and one about to author the Dred Scott decision, which will unravel everything the Democratic coalition claimed to stand for.
 
-additional_notes: |
-  POV Characters: Andrew Jackson (President) — the volcanic, physically deteriorating general who transforms personal grievance into democratic ideology and will burn constitutional norms to defeat what he calls the Monster Bank. Roger B. Taney (Attorney General / Secretary of the Treasury) — Jackson's coldly brilliant legal mind, loyal to the point of professional self-destruction, whose arguments for executive supremacy will outlast the Bank War itself.
+  The novella opens in January 1832 in Washington as Bank president Nicholas Biddle,
+  prodded by Henry Clay, files early for recharter — four years ahead of the Bank''s
+  expiration — calculating that Jackson will not risk a veto in an election year.
+  Jackson receives the news as a declaration of war. Taney''s chapters in early 1832
+  track his transformation from reluctant cabinet voice into the ideological architect
+  of the veto, drafting legal arguments that the Supreme Court''s McCulloch v. Maryland
+  ruling does not bind the executive branch, a doctrine that alarmed even Jackson''s
+  allies. Jackson''s chapters carry the physical and emotional weight of a man who
+  is simultaneously managing a reelection campaign, the nullification crisis in South
+  Carolina, and a grinding illness that his physicians believe will kill him before
+  a second term.
 
-  Taney must appear in multiple chapters as a co-equal POV, not merely as Jackson's instrument. Nicholas Biddle (Bank president) should appear as a significant antagonist with fully rendered scenes but no POV chapters. Keep the narrative anchored to documented events: the July 10, 1832 veto message, the September 1833 deposit removal order, the March 1834 Senate censure, the June 1834 Senate rejection of Taney's Treasury confirmation, and the Bank's charter expiration in 1836.
-description: "A fierce dual portrait of Andrew Jackson and Roger Taney as they wage a constitutional war to destroy the Second Bank of the United States and remake the limits of presidential power."
+
+  By July 1832 the recharter bill passes both chambers. Jackson signs Taney''s veto
+  message on July 10 — a document that frames the Bank not as a legal question but
+  as a class war between the privileged few and the laboring many. Clay''s campaign
+  seizes on the veto as proof of tyranny. Jackson wins the November 1832 election
+  by a landslide that he reads as a popular mandate for annihilation. The novel''s
+  second half tracks the Treasury removal of federal deposits from the Bank beginning
+  in September 1833. Two Treasury Secretaries refuse the order. Taney accepts the
+  post, signs the removal order, and is rewarded with a Senate rejection of his Treasury
+  confirmation in June 1834 — the first Cabinet officer rejected in American history.
+  Jackson''s chapters in 1833 and 1834 navigate the Senate censure passed by Clay
+  in March 1834, which Jackson experiences as a personal desecration of his honor
+  and the Constitution. The climax runs through the Senate''s expungement of the censure
+  in January 1837 and the Bank''s quiet death when its federal charter expires in
+  1836, its corpse reduced to a Pennsylvania state charter and Biddle''s increasingly
+  reckless speculation. The resolution closes on Jackson in his final weeks in office
+  and Taney confirmed as Chief Justice of the Supreme Court — both men transformed,
+  one vindicated by history and one about to author the Dred Scott decision, which
+  will unravel everything the Democratic coalition claimed to stand for.
+
+  '
+additional_notes: 'POV Characters: Andrew Jackson (President) — the volcanic, physically
+  deteriorating general who transforms personal grievance into democratic ideology
+  and will burn constitutional norms to defeat what he calls the Monster Bank. Roger
+  B. Taney (Attorney General / Secretary of the Treasury) — Jackson''s coldly brilliant
+  legal mind, loyal to the point of professional self-destruction, whose arguments
+  for executive supremacy will outlast the Bank War itself.
+
+
+  Taney must appear in multiple chapters as a co-equal POV, not merely as Jackson''s
+  instrument. Nicholas Biddle (Bank president) should appear as a significant antagonist
+  with fully rendered scenes but no POV chapters. Keep the narrative anchored to documented
+  events: the July 10, 1832 veto message, the September 1833 deposit removal order,
+  the March 1834 Senate censure, the June 1834 Senate rejection of Taney''s Treasury
+  confirmation, and the Bank''s charter expiration in 1836.
+
+  '
+description: A fierce dual portrait of Andrew Jackson and Roger Taney as they wage
+  a constitutional war to destroy the Second Bank of the United States and remake
+  the limits of presidential power.
 status: backlog

@@ -1017,13 +1017,19 @@ def _publish_single_novel(repo_root: Path, published_root: Path, novel: dict) ->
         )
         return False
 
-    if dest_dir.exists():
-        shutil.rmtree(dest_dir)
-    dest_dir.mkdir(parents=True, exist_ok=True)
-
     chapter_files = sorted(
         f for f in source_dir.glob("chapter_*.md") if f.is_file()
     )
+
+    if not chapter_files:
+        console.print(
+            f"[yellow]⊘ {novel['slug']}: no chapters yet, skipping[/yellow]"
+        )
+        return False
+
+    if dest_dir.exists():
+        shutil.rmtree(dest_dir)
+    dest_dir.mkdir(parents=True, exist_ok=True)
 
     chapter_count = 0
     for chapter_file in chapter_files:

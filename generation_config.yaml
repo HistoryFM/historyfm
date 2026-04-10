@@ -191,3 +191,7 @@ novels:
     slug: alien-sedition-acts
     title: "A Republic Divided"
     description: "A two-voiced historical novella in which President John Adams fights France abroad and his own traitorous Secretary of State at home, choosing peace over party and paying for it with his presidency."
+  - project_dir: mexican_american_war_20ch
+    slug: mexican-american-war
+    title: "The Wrath of Manifest"
+    description: "A two-voiced portrait of President Polk and Secretary Buchanan as they engineer, prosecute, and survive a war of conquest that doubles the American republic and lights the fuse of the Civil War."
