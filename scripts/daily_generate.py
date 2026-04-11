@@ -345,7 +345,7 @@ def run(*, chapters: int = DEFAULT_CHAPTERS_PER_RUN, deploy: bool = False, dry_r
 
                 if success:
                     summary["chapters_generated"] += 1
-                    completed_after = completed_before + 1 if not dry_run else completed_before
+                    completed_after = get_completed_chapters(project_dir) if not dry_run else completed_before
                     summary["details"].append({
                         "novel": entry["title"],
                         "project_dir": entry["project_dir"],
