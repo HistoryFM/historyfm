@@ -22,6 +22,30 @@ export const metadata: Metadata = {
   title: "HistoryFM — Historical Fiction",
   description:
     "The past, dramatized. Historical fiction that turns real events into gripping, character-driven stories.",
+  metadataBase: new URL("https://www.historyfm.net"),
+  openGraph: {
+    title: "HistoryFM — Historical Fiction",
+    description:
+      "The past, dramatized. Historical fiction that turns real events into gripping, character-driven stories.",
+    url: "https://www.historyfm.net",
+    siteName: "HistoryFM",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "HistoryFM — Historical Fiction",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "HistoryFM — Historical Fiction",
+    description:
+      "The past, dramatized. Historical fiction that turns real events into gripping, character-driven stories.",
+    images: ["/og-image.png"],
+  },
 };
 
 function Header() {
