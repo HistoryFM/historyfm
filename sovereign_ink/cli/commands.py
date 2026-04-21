@@ -402,10 +402,19 @@ def next_chapter(project_dir, verbose):
         incoming_trace = os.environ.get("SENTRY_TRACE")
         incoming_baggage = os.environ.get("SENTRY_BAGGAGE")
         if incoming_trace:
-            sentry_sdk.continue_trace(
+            # continue_trace returns a pre-configured Transaction carrying the
+            # parent's trace_id, parent_span_id, parent_sampled, and baggage.
+            # It MUST be passed to start_transaction — otherwise start_transaction
+            # creates a disconnected transaction and the subprocess spans are
+            # never sent to Sentry.
+            txn_ctx = sentry_sdk.continue_trace(
                 {"sentry-trace": incoming_trace, "baggage": incoming_baggage or ""},
+                op="pipeline",
+                name="sovereign-ink.next_chapter",
             )
-        _txn = sentry_sdk.start_transaction(op="pipeline", name="sovereign-ink.next_chapter")
+            _txn = sentry_sdk.start_transaction(txn_ctx)
+        else:
+            _txn = sentry_sdk.start_transaction(op="pipeline", name="sovereign-ink.next_chapter")
         _txn.set_tag("project", project_dir.name)
         _txn.__enter__()
 
