@@ -1,175 +1,211 @@
 # Chapter Eight: The Portrait
 
-## I.
+## Scene One
 
-The road ran east and the smoke ran west.
+The road west of the ford gave no shade worth the name. Scrub oak and persimmon pressed close on both sides, their August crowns thinned to dust, and the afternoon sun fell through them in columns that shifted across Madison's hands and the neck of his horse as they rode. Behind him he could hear the dragoons — four of them, their sabres ringing faintly with each stride — and ahead, nothing but the dry percussion of hooves on packed clay, and somewhere further, the formless noise of men in retreat, a low and directionless sound that spread across the country like water finding low ground.
 
-Madison did not look back. The grey mare found the packed Virginia earth with a sound like a slow drum, and the dragoons behind him kept their interval without being told, which meant they too had concluded there was nothing to say. His aide Pleasants rode to his left, the dispatch satchel bouncing at his hip, its brass clasp filmed with the afternoon's dust. The sun had not yet surrendered its ferocity, and the sweat between Madison's shoulder blades had soaked through to the lining of his coat.
+He had been in the saddle since before the light. His coat was wet through at the back.
 
-He heard the courier before he saw him — the broken, lurching gait of a mount driven past its limit, coming on from the northeast at an angle that would cross their path perhaps a quarter-mile ahead. Madison raised one hand without turning. The dragoons slowed.
+Pleasants rode a half-length to his left, the leather satchel of paper and quills bouncing against his hip with each step of his horse. The aide had not spoken in twenty minutes. Madison had not invited speech. There was nothing to say that the road had not already said: it was clogged, a quarter-mile back, with men who had ceased to be soldiers in any meaningful sense — some still carrying their flintlocks, most not, all of them moving north and west with the blank urgency of men frightened past the point of shame.
 
-The man who arrived was young, his face so thoroughly masked with road dust that his age could only be estimated from his bearing — the bearing of someone who had not slept and had lately witnessed something he did not possess sufficient philosophy to accommodate. He wore the remnants of a uniform. He pulled up hard, and his animal blew and sidled.
+He had watched them from the road's edge as he crossed at the grey mare ford. He had not permitted himself to name what he saw.
 
-'Sir.' A pause while he located Madison among the riders, then a correction: 'Mr. President.'
+The courier came from the east at a gallop, his horse badly blown, a figure so uniformly grey with road dust that at forty yards Madison could not have said whether the man was young or old. He pulled up hard and the horse skidded in the clay.
 
-'Your dispatch.'
+'Sir.' The man was perhaps twenty-two. He was not saluting because he had apparently lost his hat. 'From General Winder. Urgent.'
 
-The courier produced it from inside his coat. It was damp with his sweat. Madison took it, broke the seal, and read it standing in the stirrup with the sun over his shoulder. Pleasants moved closer without being asked, positioning himself to shade the page.
+Madison held out his hand.
 
-Winder. The hand was recognizable even at this compression, the letters crowding one another as they always did when Winder wrote in haste — which was every occasion the situation required deliberation. *All forces north of the Eastern Branch to withdraw without delay. No secondary position to be established. The road to Georgetown to be kept clear for the passage of troops.* And then, as though added in afterthought, a sentence that accomplished what the preceding ones had only approached: *The city cannot be held.*
+The dispatch was brief — Winder's hand, compressed by haste, some words barely legible. Madison read it once. He removed his spectacles and cleaned them with his handkerchief, which was already grey with the afternoon's dust, so that the cleaning accomplished very little. He replaced the spectacles and read it again.
 
-Madison folded the dispatch and placed it inside his coat. He turned in the saddle to face Pleasants directly.
+*All forces north of the Eastern Branch to withdraw without delay. No secondary position will be established. The roads north are at present clogged with the militia of Stansbury's command. The capital cannot be held.*
 
-'We are going to halt the withdrawal.'
+The courier watched him. Behind the exhaustion in the young man's face was something else — a waiting, a need for the President of the United States to say something that would make sense of what the courier had ridden through to deliver.
 
-Pleasants blinked. 'Sir — General Winder's order — '
+Madison said: 'How many have thrown their arms?'
 
-'General Winder's order concedes the capital of the republic without establishing so much as a rearguard.' He held out his hand. 'The board.'
+'A good many, sir. I could not say a number.'
 
-Pleasants hesitated — the span of a single breath — then produced the writing board and laid the paper flat against it. Madison took it across his pommel and wrote in the saddle, the mare standing still beneath him as though she understood the requirement. The sentences arrived in the compressed script of executive command: that all officers of whatever rank encountered on the Georgetown approaches were hereby directed to halt their withdrawal and establish a rallying position at the heights north of the bridge; that this order superseded all prior directives; that the authority of the President was fully committed to its execution.
+'No. You could not.' He looked at the courier steadily. 'You will carry an order back. Do you have paper?'
 
-He signed it. Held it out.
+'I — no, sir.'
 
-'To the first officer of field rank you encounter. If you find none before the bridge, nail it to the bridge itself, where it cannot be missed.'
+'Pleasants.' Madison did not turn his head. He heard the satchel buckle, the rustle of paper.
 
-The young man took the dispatch but did not turn his horse. 'Sir — the roads north. What I passed was — ' He stopped. 'I stopped counting, sir. Some had thrown away their cartridge-boxes. Some their muskets entire.'
+A pain drove upward from the muscle above his right hip — the hours in the saddle, the ford crossing, the angle at which he had been holding his back since noon — and he gripped the pommel and shifted his weight until the worst of it passed. He took the sheet Pleasants offered and held it against the pommel while he wrote, the quill moving in the compressed, authoritative hand he had learned to produce under conditions that did not favour composition.
 
-'Then you will ride until you find an officer who still commands men who carry theirs.' Madison's voice did not rise. 'Do you understand me.'
+*To any officer of field rank who may receive this: You are directed to halt your withdrawal and establish a rallying position at the heights north of Georgetown bridge. You are to hold that position until further orders from the President. This order supersedes the directive of General Winder. Signed, J. Madison, President.*
 
-'Yes, sir.' He turned his horse and went.
+He folded it and held it out without ceremony.
 
-'Pleasants.' Madison did not watch him go. 'A second rider. To the President's House. Mrs. Madison is to depart immediately with whatever has been prepared. She is not to wait for further word from me.' He paused. 'She will not need the instruction explained to her.'
-
-Pleasants was already writing. Around them the dragoons sat their mounts in silence, and the road ran east toward a city Madison could not see, and the smoke above the treeline had turned the colour of something that has been burning for some time.
-
----
-
-The farmhouse parlour smelled of grease and cold ash — the hearth had not been cleaned since winter, and beneath the sharper reek of the tallow candle Madison had set on the pine board, something older persisted: the must of river damp rising through the floorboards, the Potomac announcing itself even here, two miles from its western bank.
-
-He had spread what maps he possessed, though he had already acknowledged their uselessness. The cartographer's Washington — its diagonal avenues, its government buildings rendered in careful ink — bore no relation to the city that existed tonight.
-
-He squared the blank sheets, aligning each edge with the deliberate care of a man who has very little left to order, then uncapped the inkwell and drew the first toward him.
-
-He had completed two dispatches — one to the Secretary of the Navy directing an account of all ordnance not lost at the Yard, one to the quartermaster at Frederick — when a voice came from the dooryard, sharp and young, demanding to know who held the house. The dragoon sergeant answered. The door opened before Pleasants could reach it.
-
-The boy — he was perhaps nineteen — stood in the doorframe with his hat crushed in his fist. His eyes found the candle, the maps, the small man in the dark coat, and his face underwent a visible reorganization, something between relief and fresh dread.
-
-'The Capitol, sir.' His voice broke on the second word. He steadied it. 'It's burning. The whole roof. They fired it from inside — carried in the furniture from the Representatives' chamber and made a pyre of it.'
-
-Madison set down the quill. He placed both hands flat on the surface before him and held them there, feeling the grain of the wood, the slight unevenness where the plane had skipped. The boy's words settled into the room the way ash settles on still water — slowly, covering everything.
-
-'When.'
-
-'Perhaps an hour past. Maybe less. They marched straight up the centre of Pennsylvania Avenue. I watched from the corner of Sixth Street. No one stopped them.' His jaw tightened. 'There wasn't anyone to stop them, sir. Not one soldier between the river and the Eastern Branch.'
-
-'The Navy Yard.'
-
-'Burning. Was burning when I left. But they say it was our own men that fired it — Commodore Tingey's orders, to keep the stores from the British.' A pause. 'Is that — sir, is that true? That we burned our own — '
-
-'It is standing orders,' Madison said. 'Issued against precisely this contingency.' He let a moment pass. 'The republic's own officers are burning what they cannot defend, by authority I signed six months ago. Those orders presumed a government that would be present to issue new ones. That government is in this room.' He looked at the boy steadily. 'You will eat and rest. I require you fit to ride at first light.'
-
-The boy stared at him. Then he withdrew.
-
-Madison pulled a fresh sheet forward. His hand cramped at the third finger as he formed the salutation — the joint seizing in a sudden contraction. He set the quill down, worked the fingers open one by one against the edge of the wood until the spasm released, then took up the quill again.
-
-*To the Secretary of State, greetings — It is the direction of the President that you assume immediate command of such military forces as you may encounter in the vicinity of Georgetown and its approaches, and that you establish and hold a rallying point at a position not further north than Tenleytown, communicating your situation by express rider at the earliest practicable opportunity. The executive authority of the United States continues in full force and effect.*
-
-He wrote without pausing. The candle threw his shadow long against the far wall, and outside, the insects kept their indifferent chorus, and somewhere across the river, the seat of the republic's legislature was being consumed by fire set with its own furniture.
-
----
-
-The candle had burned past its midpoint and the parlour had grown close, the August heat pressing through the clapboard walls, the air carrying the faint mineral smell of hot plaster. Madison had set his quill down to rest his fingers, and now he sat with his hands in his lap and looked toward the single east-facing window.
-
-The glow.
-
-He had been aware of it for some time — an amber suffusion along the lower edge of the sky, too steady for lightning, too wide for a single structure. He had written the dispatch to the governor of Virginia instead, and the one to the quartermaster at Frederick, and he had not gone to the glass.
-
-He went now.
-
-The light was larger than he had permitted himself to calculate. The Capitol. The Yard. And something else — a second bloom of orange, nearer the centre, in the direction of —
-
-He pressed his forehead against the pane. The glass was warm, not from the fires — at two miles the heat could not carry — but from the day's sun, still giving itself back to the night. He stood with his forehead against that borrowed warmth and breathed. The breath fogged the glass, and through the fog the glow pulsed with the slow, inexorable patience of something that does not need to hurry.
-
-She had been at the sideboard that morning, the household account-book open before her. He had told her he was riding to Bladensburg and she had looked up — that particular quality of attention she brought to the things he said when she had already decided what she would do about them. Her reply had been calm and specific. *Take the grey mare. She holds the road better than the bay.* She had returned to the account-book before he left the room.
-
-She had not asked when he would return. She had known he could not answer. She had known he was leaving her with a city that might not stand and a house full of state papers and silver and the portrait of the first president watching from the dining room wall, and she had said: *Take the grey mare.*
-
-He lifted his forehead from the glass. A small circle of condensation remained where his skin had been, and he watched it shrink and vanish, the glass clearing to reveal the glow again — unchanged, patient, absolute.
-
-The dispatch to the governor lay half-composed. He sat down. Dipped the nib.
-
-*—and it is the earnest expectation of the executive that such militia as the Commonwealth may furnish without depletion of her own immediate defenses shall be directed with all practicable speed toward the heights above Georgetown, there to report to such officer as shall be designated—*
-
-He wrote the completion. The nib scratched against the paper, and outside, somewhere in the dooryard, one of the dragoons' horses stamped and settled — the sound of an animal that required nothing further from the evening. He dipped again and began the next sentence. The glow behind him did not diminish. He did not turn to look. The dispatch required specific language regarding the chain of command, regarding the authority under which the governor's militia would operate, and he applied himself to these questions because they were the questions before him and because there was nothing else he could do, and because she had told him, in the only language available to her, that she had already seen to the rest.
-
----
-
-The hoofbeats came up the lane at a canter, then dropped to a walk, then stopped. A murmured exchange with the sergeant. Then the door opened — not thrown wide as the boy's had been, but eased open with the care of someone carrying something he had promised to deliver intact.
-
-He was perhaps five-and-twenty, hatless, his neckcloth blackened with soot. He held a leather satchel against his chest with both arms. The smell entered with him — dense, resinous, foreign. Not woodsmoke. Not hearth-char. The smell of paint and plaster and varnish burning, the smell of a built thing being unmade.
-
-'Dispatch from Mr. Carroll, sir. And a letter.'
-
-Madison extended his hand. The man placed the satchel on the board, worked the buckle with fingers that were not entirely steady, and produced two folded papers. Madison took them both. He did not open them immediately.
-
-'The President's House,' he said. 'You passed it.'
-
-The man's mouth worked. 'What's left of it, sir.'
-
-Madison held the two papers in his lap. He looked at them. Then he opened Carroll's.
-
-The penmanship was assured, unhurried — the hand of a man who had kept his composure by keeping his letters steady. Madison read it through once, then again, more slowly.
-
-*The President's House was fired by the British at approximately nine o'clock this evening. I observed the flames from the upper windows of Rokeby before the smoke obscured the view entirely. Mrs. Madison arrived at this house in good order at half past seven, having departed with the cabinet papers, the silver service, and — I am instructed to report specifically — the full-length portrait of General Washington, removed from its frame at her direction and conveyed in a wagon. She is in good health and good spirits, as much as the occasion admits.*
-
-He stopped reading.
-
-He set the letter on his knee and sat very still, his thumb resting against the fold.
-
-The portrait. She had saved the portrait.
-
-He could see it — not the painting itself but the act: Dolley in the dining room, the great gilt frame screwed to the wall, the wagons already loaded in the drive, the distant percussion of musketry or perhaps only thunder rolling up the Potomac, and her voice — calm, specific, impossible to refuse — directing the servants to break the frame, to cut the canvas if they must, to get it out. She would not have weighed the personal risk against the symbolic value, because for her the calculation did not exist in those terms. The portrait was the republic's memory of its own origin. She would have understood that before anyone thought to explain it to her.
-
-He opened the second paper.
-
-Dolley's hand. Quick, close, the pen skipping where she had written faster than the ink could follow. She described the afternoon: the wagons, the silver, the papers already packed, the portrait that required the frame to be broken before it could be moved, and how Sioussat had organized the removal with great presence of mind while Paul loaded the second wagon and saw it through the gate.
-
-Then — partway down the second page, where her account of the departure gave way to something else — a sentence she had written for him alone.
-
-*I looked back once as the wagon turned onto the avenue, and the house was still standing, its windows lit, entirely ordinary in appearance, as though it expected us to return before supper.*
-
-Madison set the letter on his knee.
-
-He sat with it there for a long time. The candle guttered and recovered. The man stood by the door and did not speak, and the smell of the burned city hung in the air between them.
-
-She had looked back. She had looked back and seen the house still whole and written him what she saw, because she knew he would need to carry that image — the house standing, lit, waiting — against the image that would replace it. She had given him the last moment before the fire.
-
-He folded both letters together. He placed them inside his coat, against his ribs, where the paper edges pressed through the linen of his shirt. Then he became aware that his right hand was resting flat on the table, the fingers spread wide, pressing into the pine as though testing whether the surface would hold. He drew the hand back into his lap and looked at it briefly — a stranger's hand, or a hand he had not examined in some years — then set it aside.
-
-The relief and the shame were indistinguishable. He did not try to separate them.
-
-'The Georgetown road,' he said. 'Is it passable?'
-
-'It was when I crossed, sir. Two hours ago. I cannot speak for it now.'
-
-'Mrs. Madison intends to cross at Little Falls in the morning. You will return to Rokeby and tell Mr. Carroll that if the ferry is not running, he is to find a boat. Any boat. She is not to remain on the eastern bank past dawn.'
-
-The man straightened. 'Yes, sir.'
-
-'Wait.' Madison drew a clean sheet toward him. He wrote — not a dispatch, not the formal architecture of executive command, but something briefer, in a smaller hand. The order to the cabinet: all officers were directed to present themselves at Frederick, at the house of the postmaster, by ten o'clock in the forenoon of the twenty-fifth of August, for the resumption of the ordinary business of government. He dated it — August 24, 1814, written in full, as though the date were itself an argument — and signed it.
-
-'Copies of this to every rider between here and the Tenleytown road. Each copy to a different man. The government of the United States will convene tomorrow morning. That is not a hope. It is an order.'
+'You will carry that to the first officer of field rank you encounter. If you encounter none, ride to the Georgetown road and give it to whoever commands whatever body of men you find assembled there.'
 
 'Yes, sir.'
 
-'Go.'
+'And you will not tell them the road is clogged with men in flight. You will tell them that the President has ordered a rally and that they are expected to hold.' He held the courier's gaze. 'Do you understand the difference?'
 
-The man went. The door closed. The smoke smell stayed, woven now into the fabric of the room, into the maps, into the grain of the wood.
+A pause. 'Yes, sir.'
 
-Madison sat alone in the Virginia darkness. The glow through the east window had not diminished. His capital was burning. His house was ash. The papers of state were in a wagon on a road he could not see, in the keeping of a woman who had understood, before he did, what was worth saving — and who had performed, in the space of a single afternoon, the act of preservation he had not been present to perform himself.
+'Then ride.'
 
-He reached for a clean sheet. The nib found the ink.
+The courier went. Madison listened to the hooves diminish eastward, then turned to Pleasants.
 
-Outside, the first intimation of wind moved through the trees along the lane — a dry rustling, like the turning of many pages at once — and the candle flame bent toward the east, toward the fire, and held there, trembling, and did not go out.
+'A second rider. To the President's House. Mrs. Madison is to depart immediately with whatever has been prepared — she requires no further instruction from me on what that means. She is to go at once, without waiting for my return.' A brief pause. 'Tell the rider to be quick.'
 
-But the wind was freshening. By morning it would carry the smell of ash across the river, and with it the first riders from Frederick, and among them, he knew with a certainty that settled in his gut like cold iron, would be Armstrong — still Secretary of War, still possessed of his office, still waiting to discover whether Madison had the nerve to take it from him.
+Pleasants was already signalling to the rearmost dragoon.
+
+Madison turned his horse back to the road and nudged it forward. The scrub timber closed around them again, and somewhere ahead, invisible but audible, the retreat continued — that low, dispersed, purposeless sound, the sound of an army that had ceased to be one.
+
+---
+
+## Scene Two
+
+The farmhouse smelled of old grease and someone else's supper — salt pork cooked down to its residue — and beneath that, rising through the pine floor, the damp of a cellar that had never properly dried. Madison had been given the use of the parlour: a table of no particular age, two chairs, a shelf holding a Bible and a clay pipe with a broken stem. The candle the farmer's wife had provided was tallow, not wax, and it threw a yellow, uncertain light that made the maps spread across the table look like documents recovered from a fire.
+
+He squared the blank sheets against the table's corner before he took up the quill.
+
+The first dispatch had gone to Monroe, directing him to assume command of whatever forces he could encounter on the Georgetown road and to establish a position not further north than Tenleytown. The second had gone to the Secretary of the Navy, requesting an accounting of ordnance removed from the city. He was beginning the third — to the executive of the Commonwealth of Virginia, militia requisitioned with all dispatch — when he heard the gate.
+
+Not hooves. A wooden complaint, then boots on the step, then the door swung wide and a young man stood in it, perhaps nineteen, his coat dark across the shoulders where he had sweated through it and not yet dried. He had the look of someone who had ridden hard toward a purpose and arrived to find the purpose had already happened without him.
+
+'From the city, sir.' He held a folded paper at arm's length. 'I came by the Chain Bridge.'
+
+Madison set down the quill and rose. He crossed to the door and took the dispatch from the man's hand rather than waiting for it to be brought to him — a small thing, but it put him in motion, and motion was what the room required. He broke the seal and read it standing, his lips pressed together, then carried it back to the candle and held it there until the words had yielded every particular he could extract from them.
+
+The Capitol was in flames. The entire roof consumed. The walls standing, the interior gone.
+
+He set the paper on the table. He did not fold it.
+
+'You came through the city?'
+
+'Near enough, sir. I kept to the north side of the avenue. The British are on Pennsylvania Avenue. In column. Walking it.' A pause. 'There's no one to stop them. I didn't see a single American uniform between the Potomac and the Eastern Branch.'
+
+The air that had drifted across the river carried something acrid — barely perceptible but present — the smell of things that were not meant to burn burning. Madison had noticed it an hour since and had not remarked upon it. He noticed it now with a different quality of attention.
+
+'The Navy Yard.' His voice had gone very quiet.
+
+'Burning, sir. I could see it from the bridge. I don't know if that was them or ours.'
+
+Madison looked at him. The question of whether the Navy Yard had been fired by the British or by Tingey's own order was not one this courier could answer, and the distinction mattered — it was the difference between enemy destruction and deliberate self-immolation, between loss and sacrifice — but the answer would not arrive tonight. He picked up the quill.
+
+'You have ridden far enough for one evening. Speak to the dragoon outside. He will see you have water and whatever food can be found.'
+
+The courier did not move at once. He had expected something — orders, perhaps, or the particular solace of a man in authority who would explain what the burning of the Capitol meant and what was to be done about it. When neither came, he shifted his weight, touched his hat, and went out. The door drew to behind him.
+
+Madison dipped the quill.
+
+*The present exigency being such as to require immediate consolidation of military authority in the vicinity of Georgetown and its approaches, I do hereby direct and authorize the Honourable James Monroe, Secretary of State, to assume temporary command of such regular and militia forces as he may encounter in the said vicinity, and to establish and maintain a rallying position at the heights above Georgetown, there to hold until further orders are received from this office or until the military situation admits of a more permanent arrangement. The government of the United States, though temporarily displaced from the seat of its ordinary operations, continues to exercise full constitutional authority, and all officers civil and military are directed to comport themselves accordingly.*
+
+His hand cramped around the quill after the third line. He set it down, flexed the fingers, waited for the spasm to subside, and picked it up again.
+
+Outside, somewhere east of the river, the sky was the colour of iron left in a fire.
+
+---
+
+## Scene Three
+
+The candle had burned to a third of itself.
+
+The room had taken on the warmth of the August night — not the aggressive heat of the afternoon, which had pressed from above and demanded acknowledgment, but a warmth that came from all sides at once, intimate and close, the heat of the house itself having absorbed the day and now releasing it through every board and plaster wall. Madison sat with the quill set aside and three completed dispatches drying before him, their ink going dull, and for the first time in several hours there was no sound from outside except the insects and the distant, irregular shifting of horses in the yard, and the slow tick of the pine boards contracting in the cooling air.
+
+The glow was visible through the eastern window.
+
+He stood and went to it — not drifted, not moved, but went, with the deliberateness of a man approaching a thing he has been putting off — and placed both hands flat against the glass. The panes were cool against his palms, cooler by some degrees than the room behind him.
+
+It sat on the low clouds like an ember: orange, vast, and very still. Not a single fire but many fires resolved by distance into one continuous illumination, the clouds above amber at their undersides and dark above, the light holding with a steadiness that spoke of something very large consuming very slowly. He had known the sum of it since the first dispatch arrived. He looked at it now and the sum did not change.
+
+Washington. The seat of the republic he had spent thirty years constructing — the constitutional architecture, the careful balances, the whole intricate machinery of a government that was supposed to be too principled to require a king and too well-ordered to be destroyed by its enemies. He did not need to enumerate the buildings. He knew what burned.
+
+He pressed his forehead against the glass.
+
+The coolness of it was a small, specific shock — the pane cold where everything else was warm — and he held it there a moment, his breath fogging the glass.
+
+Her face came to him. Not as he had wished to see it — not in any imagined reunion he had not permitted himself to imagine — but as it had been that morning, in the upstairs passage, when he had told her he was riding to Bladensburg. She had been standing in the doorway of the dressing room, her hair not yet dressed, a letter in her hand she had set aside to receive him. He had told her the situation, briefly. She had listened with the quality of attention he had observed in her across twenty years of marriage — not passive reception but active assessment, the mind already moving ahead of the words. Then: *You must go, then. I will see to what remains here.*
+
+Not a question. Not an appeal. The statement of a woman who had already made her calculation and was offering him the result of it, cleanly, without requiring him to ask.
+
+He had understood, even in that moment — understood it only in the way one understands a thing moving too fast to be examined — that she was telling him she did not expect him to return before the crisis was upon them. That she had looked at the morning's probabilities and arrived, before he had, at the conclusion he was not yet ready to voice. He had kissed her and ridden for Bladensburg, and the last thing he had seen of her was the set of her shoulders as she turned back to the letter on the dressing-room table, already returned to the work she had assigned herself.
+
+The glass was cold beneath his forehead. The amber held.
+
+Behind him, a moth struck the candle — a dry, small percussion, its wings catching and releasing with a papery urgency. It batted twice against the flame and then was still. The sound of it pulled him back into the room: the tallow smell, the cooling pine, the three dispatches drying on the table.
+
+He lifted his head from the glass. He turned.
+
+He returned to the table and drew the fourth sheet toward him. The executive of the Commonwealth of Virginia — the militia to be assembled with all practicable speed and directed toward Georgetown heights. The language must be precise without being alarming, urgent without conceding the extent of the collapse. He dipped the quill.
+
+*His Excellency the Governor of Virginia — The exigency of the present circumstance compels me to address you with a directness that the ordinary forms of intercourse between the executive and the several states would not require—*
+
+He wrote. Outside, the glow continued.
+
+---
+
+## Scene Four
+
+The hooves came across packed earth at a walk, not a gallop.
+
+That told him something before the rider appeared. A man carrying news of catastrophe rides hard; a man carrying news that is finished and irrevocable and admits of no further urgency walks his horse. Madison set down the quill and waited.
+
+The man who entered was perhaps twenty, and he had been through fire — not through flames, but through the country of fire: his collar dark with it, his face mapped in grey ash and the reddish residue of smoke-thinned air. He removed his hat. He did not speak at once, and in the silence Madison could smell it on him — the acrid sweetness of burned wood and burned cloth, the smell of the city carried west across the water on the August air.
+
+'From Mr. Carroll, sir.'
+
+Madison took the letter. He stood at the table and read it by the candle's light, his shadow thrown large across the wall behind him, and when he had finished he set it down with the deliberate care of a man placing a stone upon a grave. He already knew. He had known since he pressed his forehead against the cool glass and watched the amber sky.
+
+The Executive Mansion was gone. The roof first, then the rooms beneath. The British had carried torches in — not a stray coal, not an accident of war, but a deliberate act, systematic as a survey party taking measurements. The Capitol gutted. The Treasury stripped to its walls. The War Office a shell. Pennsylvania Avenue empty of every American presence, the enemy moving along it without haste, without opposition.
+
+He set the letter on the table.
+
+'You passed it.' His voice was very quiet. 'The house on Pennsylvania Avenue.'
+
+The rider turned his hat in his hands. His knuckles were raw where the reins had worked against them. 'The whole of it, sir. I could not stay to watch it entire.'
+
+'No.' Madison looked at him — the rawness of the hands, the ash on the collar, the stillness of a young man who has seen something he will carry the rest of his life. 'Carroll's letter — there is more.'
+
+'Yes, sir. He enclosed another paper. Mrs. Madison's own hand — a letter to her sister, begun at the house and finished at Rokeby.'
+
+Madison turned back to Carroll's account. Tucked beneath it, folded separately and sealed with a different hand: Dolley's letter. The paper was good — her stationery, not a courier's sheet — and the ink was clear, the letters formed with the unhurried precision of a woman who had composed herself before she composed her sentences.
+
+He read it.
+
+She had saved the cabinet papers. She had saved the silver. She had directed — and Carroll's note confirmed this — the removal of the full-length portrait of General Washington from its frame, the canvas conveyed by wagon to Rokeby before the British column reached the avenue.
+
+*Mr. Sioussat showed the greatest presence of mind*, she had written, *directing the removal of the canvas with a quickness and efficiency I cannot sufficiently praise, and without whose exertions the portrait must certainly have been lost.*
+
+Madison set the letter on the table. He picked it up again. He read that sentence again.
+
+*Without whose exertions the portrait must certainly have been lost.*
+
+He stood very still.
+
+She had done it. While he was at Bladensburg watching the militia break and the road to Washington open like a wound, while he was crossing the Potomac into the Virginia dark, while he was writing by tallow-light in a farmhouse that smelled of old grease — she had stayed. She had made her inventory. She had given her orders. She had seen to what remained, exactly as she had told him she would, and she had done it with a thoroughness and composure that the moment required and that he had not been present to provide. The portrait of Washington — the republic's first image of itself, its founding face — was at Rokeby because Dolley Madison had put it there.
+
+The relief moved through him like cold water finding its level. And beneath the relief, immediate and inseparable, something else: a weight that settled behind the sternum and did not move.
+
+He had kissed her and ridden for Bladensburg.
+
+He closed his eyes for a moment — a moment precisely too long — and when he opened them the room was unchanged: the candle burning, the letter still in his hand, the rider waiting with his hat turning slowly in his raw-knuckled grip.
+
+'Carroll's letter —' He stopped. Drew breath. 'She is to cross at the Little Falls ferry? That is her route?'
+
+'In the morning, sir. Carroll gives his word she is safe at Rokeby tonight.'
+
+Madison folded Dolley's letter with great care, aligning each crease with a precision that had nothing to do with the paper and everything to do with the need to do something with his hands. He placed it inside his coat. He felt its edges through the linen of his shirt — the slight stiffness of good paper, the faint warmth it had taken from the room.
+
+He stood for a moment with his hands flat on the table. The candle guttered in a draught from the ill-fitted casement and steadied again. Somewhere outside, one of the horses stamped and blew.
+
+Then he drew a fresh sheet toward him.
+
+The order was brief. All officers of the cabinet were directed to present themselves at Frederick by ten o'clock on the morning of the twenty-fifth for the resumption of government business. The language was unadorned — no qualification, no acknowledgment of the circumstances that made such a summons extraordinary, no concession to the ash still drifting across the Potomac. A cabinet meeting required only a time, a place, and the authority of the office that convened it.
+
+He signed it. He blotted it.
+
+'Armstrong is to receive a copy. By name.' He looked at the rider. 'He is to present himself as directed.'
+
+The rider's hat had gone still in his hands.
+
+Madison held the order out. 'Every rider you can find tonight. I want this in as many hands as possible before first light.'
+
+The rider took the papers and went. The door fell shut.
+
+The candle burned. Beyond the eastern window the amber had begun, almost imperceptibly, to thin — the fires cooling toward their residue, the clouds above Washington releasing their colour back to the dark. Not extinguished. Diminished. The glow that remained was not the glow of burning but of what burning leaves: a dull, patient luminescence, the colour of a forge gone cold. The republic's capital settling into its ruin, waiting for whatever came next to come and find it there — and whatever came next would find, among the ash and the standing walls, a cabinet summons already in motion, riders carrying it through the Virginia dark, the name of John Armstrong written at the head of the list.
