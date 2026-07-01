@@ -186,6 +186,28 @@ def main():
         ],
     )
 
+    # Singleton guard: exit if another daemon instance is already running
+    if PID_FILE.exists():
+        existing_pid = None
+        try:
+            existing_pid = int(PID_FILE.read_text().strip())
+            os.kill(existing_pid, 0)  # signal 0 = liveness check, no actual signal sent
+            logger.error(
+                "Novel daemon is already running (PID %s). Exiting to prevent concurrent execution.",
+                existing_pid,
+            )
+            sys.exit(1)
+        except ProcessLookupError:
+            # Stale PID file — previous daemon exited without cleanup
+            logger.warning("Stale PID file found (PID %s); overwriting.", existing_pid)
+        except ValueError:
+            # Corrupt/empty PID file — overwrite it
+            logger.warning("Corrupt PID file found; overwriting.")
+        except PermissionError:
+            # Process exists but is owned by another user — treat as running
+            logger.error("Novel daemon appears to be running (PID file exists). Exiting.")
+            sys.exit(1)
+
     # Write PID file
     PID_FILE.write_text(str(os.getpid()))
     logger.info("Novel daemon started (PID %s, force=%s)", os.getpid(), args.force)

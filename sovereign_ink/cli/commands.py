@@ -397,6 +397,7 @@ def next_chapter(project_dir, verbose):
 
     from sovereign_ink.pipeline.orchestrator import PipelineOrchestrator
 
+    _txn = None
     try:
         orchestrator = PipelineOrchestrator(project_dir)
         incoming_trace = os.environ.get("SENTRY_TRACE")
@@ -653,12 +654,14 @@ def next_chapter(project_dir, verbose):
         sentry_sdk.flush(timeout=10)
         orchestrator.cleanup()
     except KeyboardInterrupt:
-        _txn.__exit__(None, None, None)
+        if _txn is not None:
+            _txn.__exit__(None, None, None)
         sentry_sdk.flush(timeout=10)
         console.print("\n[yellow]Interrupted. Progress saved — run again to continue.[/yellow]")
         sys.exit(1)
     except Exception as e:
-        _txn.__exit__(type(e), e, e.__traceback__)
+        if _txn is not None:
+            _txn.__exit__(type(e), e, e.__traceback__)
         sentry_sdk.flush(timeout=10)
         console.print(f"\n[red]Error: {e}[/red]")
         logging.getLogger(__name__).exception("Chapter generation failed")
