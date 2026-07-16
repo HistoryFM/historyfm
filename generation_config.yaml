@@ -9,17 +9,18 @@
 # ---------------------------------------------------------------------------
 # Model assignments
 # ---------------------------------------------------------------------------
-# Each pipeline stage can use a different model.  Sonnet is the default for
-# quality-critical tasks; Haiku is used for lightweight utility work.
+# Each pipeline stage can use a different model.  Use OpenRouter slugs
+# (provider/model).  Sonnet is the default for quality-critical tasks;
+# Haiku is used for lightweight utility work.
 
-model_world_building: "claude-sonnet-4-6"
-model_structural_planning: "claude-opus-4-6"
-model_prose_generation: "claude-sonnet-4-6"
-model_revision_structural: "claude-sonnet-4-6"
-model_revision_structural_opus: "claude-opus-4-6"
-model_revision_creative: "claude-sonnet-4-6"
-model_revision_polish: "claude-sonnet-4-6"
-model_utility: "claude-haiku-4-5-20251001"
+model_world_building: "anthropic/claude-sonnet-4.6"
+model_structural_planning: "anthropic/claude-opus-4.6"
+model_prose_generation: "anthropic/claude-sonnet-4.6"
+model_revision_structural: "anthropic/claude-sonnet-4.6"
+model_revision_structural_opus: "anthropic/claude-opus-4.6"
+model_revision_creative: "anthropic/claude-sonnet-4.6"
+model_revision_polish: "anthropic/claude-sonnet-4.6"
+model_utility: "anthropic/claude-haiku-4.5"
 
 # ---------------------------------------------------------------------------
 # Generation parameters
@@ -104,10 +105,10 @@ contract_enforcement_mode: "safe"
 contract_fail_closed: false
 max_contract_retries: 2
 semantic_validator_enabled: false
-semantic_validator_model: "claude-sonnet-4-6"
+semantic_validator_model: "anthropic/claude-sonnet-4.6"
 semantic_confidence_threshold: 0.70
 adversarial_verifier_enabled: false
-adversarial_verifier_model: "claude-sonnet-4-6"
+adversarial_verifier_model: "anthropic/claude-sonnet-4.6"
 adversarial_trigger: "both"
 
 # ---------------------------------------------------------------------------
@@ -168,16 +169,16 @@ summary_target_words: 250
 # Add entries here when new models are used.
 
 cost_per_1k_input_tokens:
-  "claude-sonnet-4-6": 0.003
-  "claude-sonnet-4-20250514": 0.003
-  "claude-opus-4-6": 0.015
-  "claude-haiku-4-5-20251001": 0.001
+  "anthropic/claude-sonnet-4.6": 0.003
+  "anthropic/claude-sonnet-4": 0.003
+  "anthropic/claude-opus-4.6": 0.015
+  "anthropic/claude-haiku-4.5": 0.001
 
 cost_per_1k_output_tokens:
-  "claude-sonnet-4-6": 0.015
-  "claude-sonnet-4-20250514": 0.015
-  "claude-opus-4-6": 0.075
-  "claude-haiku-4-5-20251001": 0.005
+  "anthropic/claude-sonnet-4.6": 0.015
+  "anthropic/claude-sonnet-4": 0.015
+  "anthropic/claude-opus-4.6": 0.075
+  "anthropic/claude-haiku-4.5": 0.005
 
 # ---------------------------------------------------------------------------
 # Published content mapping for frontend sync/deploy
@@ -195,3 +196,19 @@ novels:
     slug: mexican-american-war
     title: "The Wrath of Manifest"
     description: "A two-voiced portrait of President Polk and Secretary Buchanan as they engineer, prosecute, and survive a war of conquest that doubles the American republic and lights the fuse of the Civil War."
+  - project_dir: bank_war_12ch
+    slug: bank-war
+    title: "The President's Veto"
+    description: "A fierce dual portrait of Andrew Jackson and Roger Taney as they wage a constitutional war to destroy the Second Bank of the United States and remake the limits of presidential power."
+  - project_dir: burning_of_washington_12ch
+    slug: burning-of-washington
+    title: "The Ash of Nations: Madison, Armstrong, and the Fall of Washington"
+    description: "Two men, one burning capital: President Madison and Secretary Armstrong each believe the other is responsible for the greatest military humiliation in American history."
+  - project_dir: fort_sumter_25ch
+    slug: fort-sumter
+    title: "The Guns at Sumter"
+    description: "A taut political drama of the days Lincoln and Seward spent pulling in opposite directions as the Confederacy's guns ended the last hope of peace."
+  - project_dir: johnson_impeachment_20ch
+    slug: johnson-impeachment
+    title: "The Barricaded Office"
+    description: "A dual-POV historical novel about the constitutional showdown between President Andrew Johnson and Secretary of War Edwin Stanton, whose refusal to vacate his barricaded office triggered the first presidential impeachment in American history."

@@ -28,8 +28,8 @@ from dotenv import load_dotenv
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
-# Load .env so ANTHROPIC_API_KEY is available to subprocesses.
-# override=True because the env may have an empty ANTHROPIC_API_KEY already set.
+# Load .env so OPENROUTER_API_KEY is available to subprocesses.
+# override=True because the env may have an empty API key already set.
 load_dotenv(REPO_ROOT / ".env", override=True)
 
 import sentry_sdk

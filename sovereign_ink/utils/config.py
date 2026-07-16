@@ -23,15 +23,15 @@ class GenerationConfig(BaseModel):
 
     model_config = {"protected_namespaces": ()}
 
-    # --- Model assignments per task type ----------------------------------
-    model_world_building: str = "claude-sonnet-4-6"
-    model_structural_planning: str = "claude-sonnet-4-6"
-    model_prose_generation: str = "claude-sonnet-4-6"
-    model_revision_structural: str = "claude-sonnet-4-6"
-    model_revision_structural_opus: str = "claude-opus-4-6"
-    model_revision_creative: str = "claude-sonnet-4-6"
-    model_revision_polish: str = "claude-sonnet-4-6"
-    model_utility: str = "claude-haiku-4-5-20251001"
+    # --- Model assignments per task type (OpenRouter slugs) ---------------
+    model_world_building: str = "anthropic/claude-sonnet-4.6"
+    model_structural_planning: str = "anthropic/claude-sonnet-4.6"
+    model_prose_generation: str = "anthropic/claude-sonnet-4.6"
+    model_revision_structural: str = "anthropic/claude-sonnet-4.6"
+    model_revision_structural_opus: str = "anthropic/claude-opus-4.6"
+    model_revision_creative: str = "anthropic/claude-sonnet-4.6"
+    model_revision_polish: str = "anthropic/claude-sonnet-4.6"
+    model_utility: str = "anthropic/claude-haiku-4.5"
 
     # --- Generation parameters --------------------------------------------
     temperature_world_building: float = 0.7
@@ -85,10 +85,10 @@ class GenerationConfig(BaseModel):
     next_max_convergence_attempts: int = 12
     next_max_identical_failure_streak: int = 3
     semantic_validator_enabled: bool = True
-    semantic_validator_model: str = "claude-sonnet-4-6"
+    semantic_validator_model: str = "anthropic/claude-sonnet-4.6"
     semantic_confidence_threshold: float = 0.70
     adversarial_verifier_enabled: bool = True
-    adversarial_verifier_model: str = "claude-sonnet-4-6"
+    adversarial_verifier_model: str = "anthropic/claude-sonnet-4.6"
     adversarial_trigger: str = "both"  # disagreement | low_confidence | both
 
     # --- Voice pass regression control ------------------------------------
@@ -121,9 +121,9 @@ class GenerationConfig(BaseModel):
     smart_repetition_require_effective_reduction: bool = True
     smart_repetition_tiebreak_mode: str = "conservative_keep_original"
     smart_repetition_anchor_window_paragraphs: int = 1
-    smart_repetition_model_critic: str = "claude-sonnet-4-6"
-    smart_repetition_model_editor: str = "claude-sonnet-4-6"
-    smart_repetition_model_judge: str = "claude-sonnet-4-6"
+    smart_repetition_model_critic: str = "anthropic/claude-sonnet-4.6"
+    smart_repetition_model_editor: str = "anthropic/claude-sonnet-4.6"
+    smart_repetition_model_judge: str = "anthropic/claude-sonnet-4.6"
 
     # --- Pressure contracts (Stage 3 scene-level enforcement) ---------------
     enable_pressure_contracts: bool = True
@@ -191,18 +191,18 @@ class GenerationConfig(BaseModel):
     # --- Cost tracking (USD per 1 000 tokens) -----------------------------
     cost_per_1k_input_tokens: dict[str, float] = Field(
         default_factory=lambda: {
-            "claude-sonnet-4-6": 0.003,
-            "claude-sonnet-4-20250514": 0.003,
-            "claude-opus-4-6": 0.015,
-            "claude-haiku-4-5-20251001": 0.001,
+            "anthropic/claude-sonnet-4.6": 0.003,
+            "anthropic/claude-sonnet-4": 0.003,
+            "anthropic/claude-opus-4.6": 0.015,
+            "anthropic/claude-haiku-4.5": 0.001,
         }
     )
     cost_per_1k_output_tokens: dict[str, float] = Field(
         default_factory=lambda: {
-            "claude-sonnet-4-6": 0.015,
-            "claude-sonnet-4-20250514": 0.015,
-            "claude-opus-4-6": 0.075,
-            "claude-haiku-4-5-20251001": 0.005,
+            "anthropic/claude-sonnet-4.6": 0.015,
+            "anthropic/claude-sonnet-4": 0.015,
+            "anthropic/claude-opus-4.6": 0.075,
+            "anthropic/claude-haiku-4.5": 0.005,
         }
     )
 
@@ -254,18 +254,41 @@ def load_config(project_dir: Path) -> GenerationConfig:
     return config
 
 
+# OpenRouter Anthropic-compatible endpoint. The Anthropic SDK appends
+# ``/v1/messages``, so the final URL is ``https://openrouter.ai/api/v1/messages``.
+DEFAULT_OPENROUTER_BASE_URL = "https://openrouter.ai/api"
+
+
 def get_api_key() -> str:
-    """Return the Anthropic API key from the environment.
+    """Return the OpenRouter API key from the environment.
+
+    Prefers ``OPENROUTER_API_KEY``; falls back to ``ANTHROPIC_API_KEY`` for
+    transitional setups where the OpenRouter key was stored under the old name.
 
     Raises
     ------
     ValueError
-        If ``ANTHROPIC_API_KEY`` is not set.
+        If neither key is set.
     """
-    key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
+    key = (
+        os.environ.get("OPENROUTER_API_KEY", "").strip()
+        or os.environ.get("ANTHROPIC_API_KEY", "").strip()
+    )
     if not key:
         raise ValueError(
-            "ANTHROPIC_API_KEY is not set. "
+            "OPENROUTER_API_KEY is not set. "
             "Add it to your .env file or export it as an environment variable."
         )
     return key
+
+
+def get_llm_base_url() -> str:
+    """Return the LLM API base URL (OpenRouter Anthropic Skin by default).
+
+    Override with ``OPENROUTER_BASE_URL`` or ``ANTHROPIC_BASE_URL``.
+    """
+    return (
+        os.environ.get("OPENROUTER_BASE_URL", "").strip()
+        or os.environ.get("ANTHROPIC_BASE_URL", "").strip()
+        or DEFAULT_OPENROUTER_BASE_URL
+    )

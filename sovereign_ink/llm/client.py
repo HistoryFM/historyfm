@@ -1,8 +1,11 @@
-"""Synchronous LLM client wrapping the Anthropic Messages API.
+"""Synchronous LLM client wrapping the Anthropic Messages API via OpenRouter.
 
 Provides plain-text generation, structured (JSON→Pydantic) generation,
 and streaming generation — all with exponential-backoff retry, cost
 tracking, and structured logging.
+
+Calls go through OpenRouter's Anthropic-compatible endpoint (Anthropic Skin)
+so Claude models remain available under OpenRouter API keys.
 """
 
 from __future__ import annotations
@@ -18,7 +21,7 @@ import httpx
 import sentry_sdk
 from pydantic import BaseModel
 
-from sovereign_ink.utils.config import GenerationConfig, get_api_key
+from sovereign_ink.utils.config import GenerationConfig, get_api_key, get_llm_base_url
 from sovereign_ink.utils.token_counter import estimate_cost
 
 logger = logging.getLogger(__name__)
@@ -48,7 +51,7 @@ class _CumulativeUsage:
 
 
 class LLMClient:
-    """Synchronous Anthropic API client with retry logic and cost tracking.
+    """Synchronous OpenRouter (Anthropic Messages) client with retry and cost tracking.
 
     Parameters
     ----------
@@ -59,16 +62,26 @@ class LLMClient:
 
     def __init__(self, config: GenerationConfig) -> None:
         self.config = config
+        base_url = get_llm_base_url()
         self._client = anthropic.Anthropic(
             api_key=get_api_key(),
+            base_url=base_url,
             timeout=httpx.Timeout(connect=10.0, read=1800.0, write=600.0, pool=600.0),
+            default_headers={
+                "HTTP-Referer": "https://github.com/NovelGen",
+                "X-Title": "NovelGen / Sovereign Ink",
+            },
         )
         self._usage = _CumulativeUsage()
         # Circuit breaker: pause after consecutive API 500 errors
         self._consecutive_500s = 0
         self._circuit_breaker_threshold = 3
         self._circuit_breaker_cooldown = 600  # 10 minutes
-        logger.info("LLMClient initialised (default max_tokens=%d)", config.max_tokens_per_call)
+        logger.info(
+            "LLMClient initialised (base_url=%s, default max_tokens=%d)",
+            base_url,
+            config.max_tokens_per_call,
+        )
 
     # ------------------------------------------------------------------
     # Public helpers

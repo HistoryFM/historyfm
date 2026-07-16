@@ -6,7 +6,7 @@ from sovereign_ink.pipeline.stages.stage5_revision import RevisionPipelineStage
 from sovereign_ink.utils.config import GenerationConfig
 
 
-def _resp(content: str, model: str = "claude-sonnet-4-6"):
+def _resp(content: str, model: str = "anthropic/claude-sonnet-4.6"):
     return types.SimpleNamespace(
         content=content,
         model=model,

@@ -194,7 +194,7 @@ def main():
     signal.signal(signal.SIGTERM, shutdown)
     signal.signal(signal.SIGINT, shutdown)
 
-    # Load .env for ANTHROPIC_API_KEY (sovereign-ink also loads it, but be safe)
+    # Load .env for OPENROUTER_API_KEY (sovereign-ink also loads it, but be safe)
     try:
         from dotenv import load_dotenv
         load_dotenv(REPO_ROOT / ".env")

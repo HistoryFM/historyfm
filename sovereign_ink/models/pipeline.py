@@ -163,7 +163,7 @@ class ChapterDraft(BaseModel):
     )
     model_used: str = Field(
         ...,
-        description="Identifier of the LLM model used (e.g. 'claude-sonnet-4-20250514').",
+        description="Identifier of the LLM model used (e.g. 'anthropic/claude-sonnet-4.6').",
     )
     tokens_used: int = Field(
         ...,

@@ -8,14 +8,14 @@
 #   C) _build_jeopardy_recovery_macro in stage5_revision.py (code-level, Phase 11).
 #      Injects scene-indexed repair directives when jeopardy is in critical regressions.
 
-model_world_building: "claude-sonnet-4-6"
-model_structural_planning: "claude-sonnet-4-6"
-model_prose_generation: "claude-sonnet-4-6"
-model_revision_structural: "claude-sonnet-4-6"
-model_revision_structural_opus: "claude-opus-4-6"
-model_revision_creative: "claude-sonnet-4-6"
-model_revision_polish: "claude-sonnet-4-6"
-model_utility: "claude-haiku-4-5-20251001"
+model_world_building: "anthropic/claude-sonnet-4.6"
+model_structural_planning: "anthropic/claude-sonnet-4.6"
+model_prose_generation: "anthropic/claude-sonnet-4.6"
+model_revision_structural: "anthropic/claude-sonnet-4.6"
+model_revision_structural_opus: "anthropic/claude-opus-4.6"
+model_revision_creative: "anthropic/claude-sonnet-4.6"
+model_revision_polish: "anthropic/claude-sonnet-4.6"
+model_utility: "anthropic/claude-haiku-4.5"
 
 temperature_world_building: 0.7
 temperature_prose: 0.85
@@ -118,13 +118,13 @@ max_context_tokens: 180000
 summary_target_words: 250
 
 cost_per_1k_input_tokens:
-  "claude-sonnet-4-6": 0.003
-  "claude-sonnet-4-20250514": 0.003
-  "claude-opus-4-6": 0.015
-  "claude-haiku-4-5-20251001": 0.001
+  "anthropic/claude-sonnet-4.6": 0.003
+  "anthropic/claude-sonnet-4": 0.003
+  "anthropic/claude-opus-4.6": 0.015
+  "anthropic/claude-haiku-4.5": 0.001
 
 cost_per_1k_output_tokens:
-  "claude-sonnet-4-6": 0.015
-  "claude-sonnet-4-20250514": 0.015
-  "claude-opus-4-6": 0.075
-  "claude-haiku-4-5-20251001": 0.005
+  "anthropic/claude-sonnet-4.6": 0.015
+  "anthropic/claude-sonnet-4": 0.015
+  "anthropic/claude-opus-4.6": 0.075
+  "anthropic/claude-haiku-4.5": 0.005
