@@ -73,7 +73,8 @@ class LLMClient:
             },
         )
         self._usage = _CumulativeUsage()
-        # Circuit breaker: pause after consecutive API 500 errors
+        # Circuit breaker: pause after consecutive server-overload errors
+        # (HTTP 5xx, HTTP 529, or a mid-stream "overloaded_error" event).
         self._consecutive_500s = 0
         self._circuit_breaker_threshold = 3
         self._circuit_breaker_cooldown = 600  # 10 minutes
@@ -219,7 +220,6 @@ class LLMClient:
                     delay,
                     extra={"retry_attempt": attempt},
                 )
-                sentry_sdk.capture_exception(exc)
                 sentry_sdk.metrics.count("llm.retries", 1, attributes={"model": model, "error_type": "rate_limit"})
                 time.sleep(delay)
 
@@ -230,10 +230,10 @@ class LLMClient:
                     logger.error("API refusal (400): %s", exc.message)
                     sentry_sdk.capture_exception(exc)
                     raise
-                if exc.status_code >= 500:
+                if exc.status_code >= 500 or self._is_overloaded(exc):
                     self._consecutive_500s += 1
                     logger.warning(
-                        "API 500 error (consecutive count: %d/%d)",
+                        "API server/overload error (consecutive count: %d/%d)",
                         self._consecutive_500s,
                         self._circuit_breaker_threshold,
                     )
@@ -247,7 +247,6 @@ class LLMClient:
                     exc.message,
                     extra={"retry_attempt": attempt},
                 )
-                sentry_sdk.capture_exception(exc)
                 sentry_sdk.metrics.count("llm.retries", 1, attributes={"model": model, "error_type": f"api_status_{exc.status_code}"})
                 time.sleep(delay)
 
@@ -262,7 +261,6 @@ class LLMClient:
                     exc,
                     extra={"retry_attempt": attempt},
                 )
-                sentry_sdk.capture_exception(exc)
                 sentry_sdk.metrics.count("llm.retries", 1, attributes={"model": model, "error_type": "connection_error"})
                 time.sleep(delay)
 
@@ -277,15 +275,17 @@ class LLMClient:
                     exc,
                     extra={"retry_attempt": attempt},
                 )
-                sentry_sdk.capture_exception(exc)
                 sentry_sdk.metrics.count("llm.retries", 1, attributes={"model": model, "error_type": "timeout"})
                 time.sleep(delay)
 
+        # Every retry was exhausted — this is a genuine, non-transient failure,
+        # so capture it once here rather than once per (retried) attempt above.
         sentry_sdk.set_context("llm_retry_exhaustion", {
             "model": model,
             "max_retries": self.config.max_retries,
             "last_error": str(last_exc),
         })
+        sentry_sdk.capture_exception(last_exc)
         logger.error("All %d retries exhausted", self.config.max_retries)
         raise RuntimeError(
             f"LLM call failed after {self.config.max_retries} retries"
@@ -703,7 +703,6 @@ class LLMClient:
                     delay,
                     extra={"retry_attempt": attempt},
                 )
-                sentry_sdk.capture_exception(exc)
                 sentry_sdk.metrics.count("llm.retries", 1, attributes={"model": model, "error_type": "rate_limit"})
                 time.sleep(delay)
 
@@ -713,10 +712,10 @@ class LLMClient:
                     logger.error("API refusal (400) during stream: %s", exc.message)
                     sentry_sdk.capture_exception(exc)
                     raise
-                if exc.status_code >= 500:
+                if exc.status_code >= 500 or self._is_overloaded(exc):
                     self._consecutive_500s += 1
                     logger.warning(
-                        "API 500 error during stream (consecutive count: %d/%d)",
+                        "API server/overload error during stream (consecutive count: %d/%d)",
                         self._consecutive_500s,
                         self._circuit_breaker_threshold,
                     )
@@ -729,7 +728,6 @@ class LLMClient:
                     delay,
                     extra={"retry_attempt": attempt},
                 )
-                sentry_sdk.capture_exception(exc)
                 sentry_sdk.metrics.count("llm.retries", 1, attributes={"model": model, "error_type": f"api_status_{exc.status_code}"})
                 time.sleep(delay)
 
@@ -743,7 +741,6 @@ class LLMClient:
                     delay,
                     extra={"retry_attempt": attempt},
                 )
-                sentry_sdk.capture_exception(exc)
                 sentry_sdk.metrics.count("llm.retries", 1, attributes={"model": model, "error_type": "connection_error"})
                 time.sleep(delay)
 
@@ -758,7 +755,6 @@ class LLMClient:
                     exc,
                     extra={"retry_attempt": attempt},
                 )
-                sentry_sdk.capture_exception(exc)
                 sentry_sdk.metrics.count("llm.retries", 1, attributes={"model": model, "error_type": "timeout"})
                 time.sleep(delay)
 
@@ -773,15 +769,17 @@ class LLMClient:
                     exc,
                     extra={"retry_attempt": attempt},
                 )
-                sentry_sdk.capture_exception(exc)
                 sentry_sdk.metrics.count("llm.retries", 1, attributes={"model": model, "error_type": "remote_protocol_error"})
                 time.sleep(delay)
 
+        # Every retry was exhausted — this is a genuine, non-transient failure,
+        # so capture it once here rather than once per (retried) attempt above.
         sentry_sdk.set_context("llm_retry_exhaustion", {
             "model": model,
             "max_retries": self.config.max_retries,
             "last_error": str(last_exc),
         })
+        sentry_sdk.capture_exception(last_exc)
         logger.error("All %d retries exhausted for streaming call", self.config.max_retries)
         raise RuntimeError(
             f"LLM streaming call failed after {self.config.max_retries} retries"
@@ -794,6 +792,28 @@ class LLMClient:
     def _backoff_delay(self, attempt: int) -> float:
         """Compute exponential-backoff delay for the given attempt number."""
         return self.config.retry_base_delay * (2 ** (attempt - 1))
+
+    @staticmethod
+    def _is_overloaded(exc: anthropic.APIStatusError) -> bool:
+        """Return ``True`` when *exc* represents an Anthropic overload signal.
+
+        The API reports server overload as a dedicated HTTP 529, but when the
+        overload happens *mid-stream* it instead arrives as an SSE ``error``
+        event on an otherwise-200 response.  In that case the SDK raises a
+        generic :class:`~anthropic.APIStatusError` carrying ``status_code == 200``
+        and a body of ``{"type": "error", "error": {"type": "overloaded_error",
+        ...}}``.  A plain ``status_code >= 500`` check misses this, so the
+        circuit breaker never engages during a sustained overload.  Inspect the
+        error body (and code) to catch both shapes.
+        """
+        if getattr(exc, "status_code", None) == 529:
+            return True
+        body = getattr(exc, "body", None)
+        if isinstance(body, dict):
+            error = body.get("error", body)
+            if isinstance(error, dict) and error.get("type") == "overloaded_error":
+                return True
+        return False
 
     def _record_usage(
         self, input_tokens: int, output_tokens: int, cost: float
